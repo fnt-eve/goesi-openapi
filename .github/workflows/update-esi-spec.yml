@@ -1,0 +1,161 @@
+name: Update ESI Specification
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC to check for ESI spec updates
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual triggering
+    inputs:
+      force_update:
+        description: 'Force update even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  update-esi-spec:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.21'
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+
+    - name: Download OpenAPI Generator
+      run: |
+        echo "Downloading OpenAPI Generator CLI..."
+        curl -L https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.15.0/openapi-generator-cli-7.15.0.jar \
+          -o openapi-generator-cli.jar
+
+    - name: Download latest ESI specification
+      run: |
+        echo "Downloading latest ESI OpenAPI specification..."
+        curl -L https://esi.evetech.net/meta/openapi-3.0.json -o esi-openapi-spec.json
+        
+        # Validate the downloaded JSON using jq
+        if ! jq empty esi-openapi-spec.json >/dev/null 2>&1; then
+          echo "ERROR: Downloaded specification is not valid JSON"
+          exit 1
+        fi
+        
+        echo "Successfully downloaded and validated ESI specification"
+
+    - name: Generate client code
+      run: |
+        echo "Generating Go client code from latest ESI specification..."
+        make generate
+
+    - name: Check for code changes
+      id: check-changes
+      run: |
+        # Check if there are any changes in the generated code
+        if git diff --quiet esi/; then
+          echo "No changes detected in generated code"
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected in generated code"
+          echo "changed=true" >> $GITHUB_OUTPUT
+          
+          # Show a summary of what changed
+          echo "=== Files changed ==="
+          git diff --name-only esi/
+          
+          echo "=== Summary of changes ==="
+          git diff --stat esi/
+        fi
+
+    - name: Get specification version info
+      if: steps.check-changes.outputs.changed == 'true' || github.event.inputs.force_update == 'true'
+      id: spec-info
+      run: |
+        # Extract version and other info from the spec file using jq
+        VERSION=$(jq -r '.info.version // "unknown"' esi-openapi-spec.json)
+        TITLE=$(jq -r '.info.title // "ESI API"' esi-openapi-spec.json)
+        
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        echo "title=${TITLE}" >> $GITHUB_OUTPUT
+        
+        # Create simple commit message
+        echo "commit_message=Update ESI client to version ${VERSION}" >> $GITHUB_OUTPUT
+
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.changed == 'true' || github.event.inputs.force_update == 'true'
+      run: |
+        # Configure git
+        git config --local user.email "action@github.com"
+        git config --local user.name "ESI Spec Updater"
+        
+        # Stage all changes in generated code and related files
+        git add esi/
+        git add scopes.go
+        git add APIClient.go
+        
+        # Check if there are staged changes before committing
+        if git diff --cached --quiet; then
+          echo "No changes to commit after staging"
+          exit 0
+        fi
+        
+        # Commit with detailed message
+        git commit -m "${{ steps.spec-info.outputs.commit_message }}"
+        
+        # Push changes to main branch
+        git push origin main
+        
+        echo "Successfully committed and pushed ESI specification updates"
+
+    - name: Create workflow summary
+      if: always()
+      run: |
+        echo "## ESI Specification Update Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ steps.check-changes.outputs.changed }}" == "true" ]; then
+          echo "**ESI specification updated successfully**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Details:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Specification version: \`${{ steps.spec-info.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- Generated client code has been updated" >> $GITHUB_STEP_SUMMARY
+          echo "- Changes committed and pushed to main branch" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Modified files:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          git diff --name-only HEAD~1 HEAD >> $GITHUB_STEP_SUMMARY || echo "Unable to show file diff" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        elif [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+          echo "**Force update completed**" >> $GITHUB_STEP_SUMMARY
+          echo "- Manual update requested but no changes were needed" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "**No updates required**" >> $GITHUB_STEP_SUMMARY
+          echo "- Generated code is already up to date with latest ESI specification" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "---" >> $GITHUB_STEP_SUMMARY
+        echo "**Configuration:**" >> $GITHUB_STEP_SUMMARY
+        echo "- **Specification source:** https://esi.evetech.net/meta/openapi-3.0.json" >> $GITHUB_STEP_SUMMARY
+        echo "- **Generator:** OpenAPI Generator v7.15.0" >> $GITHUB_STEP_SUMMARY
+        echo "- **Target:** Go client library" >> $GITHUB_STEP_SUMMARY
+        echo "- **Workflow run:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+    - name: Clean up downloaded files
+      if: always()
+      run: |
+        # Clean up the downloaded files (they're gitignored anyway)
+        rm -f esi-openapi-spec.json
+        rm -f openapi-generator-cli.jar
+        echo "Cleaned up temporary files"

@@ -1,0 +1,9 @@
+packageName: esi
+packageVersion: 1.0.0
+generateInterfaces: true
+generateMarshalJSON: true
+generateUnmarshalJSON: true
+hideGenerationTimestamp: true
+withGoMod: false
+structPrefix: false
+enumClassPrefix: false
