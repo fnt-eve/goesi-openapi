@@ -42,19 +42,47 @@ type Config struct {
 	JWTKeyFunc   jwt.Keyfunc
 }
 
+// StringOrArray is a custom type that can unmarshal both string and []string from JSON
+type StringOrArray []string
+
+// UnmarshalJSON implements custom unmarshaling for StringOrArray
+func (s *StringOrArray) UnmarshalJSON(data []byte) error {
+	// Try to unmarshal as array first
+	var arr []string
+	if err := json.Unmarshal(data, &arr); err == nil {
+		*s = StringOrArray(arr)
+		return nil
+	}
+
+	// If that fails, try to unmarshal as single string
+	var str string
+	if err := json.Unmarshal(data, &str); err != nil {
+		return err
+	}
+
+	*s = StringOrArray([]string{str})
+	return nil
+}
+
+// MarshalJSON implements custom marshaling for StringOrArray
+func (s StringOrArray) MarshalJSON() ([]byte, error) {
+	// Always marshal as array for consistency
+	return json.Marshal([]string(s))
+}
+
 // ESIJWTClaims represents the claims in an ESI JWT token with embedded standard claims
 type ESIJWTClaims struct {
 	jwt.RegisteredClaims
 
 	// ESI-specific claims
-	Scopes []string `json:"scp"`
-	Name   string   `json:"name"`
-	Owner  string   `json:"owner"`
-	Kid    string   `json:"kid"`
-	Azp    string   `json:"azp"`
-	Tenant string   `json:"tenant"`
-	Tier   string   `json:"tier"`
-	Region string   `json:"region"`
+	Scopes StringOrArray `json:"scp"`
+	Name   string        `json:"name"`
+	Owner  string        `json:"owner"`
+	Kid    string        `json:"kid"`
+	Azp    string        `json:"azp"`
+	Tenant string        `json:"tenant"`
+	Tier   string        `json:"tier"`
+	Region string        `json:"region"`
 }
 
 // CharacterID extracts the character ID from the JWT subject

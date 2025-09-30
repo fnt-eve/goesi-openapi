@@ -393,3 +393,239 @@ func TestParseClaims_NoKeyFunc(t *testing.T) {
 	require.Nil(t, claims, "Claims should be nil")
 	require.Contains(t, err.Error(), "no keyfunc available", "Error message should mention keyfunc")
 }
+
+func TestStringOrArray_UnmarshalJSON(t *testing.T) {
+	testCases := []struct {
+		name        string
+		jsonData    string
+		wantLen     int
+		wantScopes  []string
+		expectError bool
+	}{
+		{
+			name:        "array of scopes",
+			jsonData:    `["scope1", "scope2", "scope3"]`,
+			wantLen:     3,
+			wantScopes:  []string{"scope1", "scope2", "scope3"},
+			expectError: false,
+		},
+		{
+			name:        "single string scope",
+			jsonData:    `"single-scope"`,
+			wantLen:     1,
+			wantScopes:  []string{"single-scope"},
+			expectError: false,
+		},
+		{
+			name:        "empty array",
+			jsonData:    `[]`,
+			wantLen:     0,
+			wantScopes:  []string{},
+			expectError: false,
+		},
+		{
+			name:        "empty string",
+			jsonData:    `""`,
+			wantLen:     1,
+			wantScopes:  []string{""},
+			expectError: false,
+		},
+		{
+			name:        "invalid JSON object",
+			jsonData:    `{invalid}`,
+			expectError: true,
+		},
+		{
+			name:        "number instead of string",
+			jsonData:    `123`,
+			expectError: true,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			var scopes StringOrArray
+			err := json.Unmarshal([]byte(tc.jsonData), &scopes)
+
+			if tc.expectError {
+				require.Error(t, err, "Should return error")
+			} else {
+				require.NoError(t, err, "Should not return error")
+				require.Len(t, scopes, tc.wantLen, "Scope count should match")
+				for i, expectedScope := range tc.wantScopes {
+					require.Equal(t, expectedScope, scopes[i], "Scope at index %d should match", i)
+				}
+			}
+		})
+	}
+}
+
+func TestStringOrArray_MarshalJSON(t *testing.T) {
+	testCases := []struct {
+		name       string
+		scopes     StringOrArray
+		wantResult []string
+	}{
+		{
+			name:       "multiple scopes",
+			scopes:     StringOrArray{"scope1", "scope2", "scope3"},
+			wantResult: []string{"scope1", "scope2", "scope3"},
+		},
+		{
+			name:       "single scope",
+			scopes:     StringOrArray{"single-scope"},
+			wantResult: []string{"single-scope"},
+		},
+		{
+			name:       "empty array",
+			scopes:     StringOrArray{},
+			wantResult: []string{},
+		},
+		{
+			name:       "nil array",
+			scopes:     nil,
+			wantResult: nil,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			jsonData, err := json.Marshal(tc.scopes)
+			require.NoError(t, err, "MarshalJSON should not return error")
+
+			var result []string
+			err = json.Unmarshal(jsonData, &result)
+			require.NoError(t, err, "Result should be valid JSON array")
+
+			if tc.wantResult == nil {
+				require.Nil(t, result, "Result should be nil")
+			} else {
+				require.Equal(t, tc.wantResult, result, "Result should match expected")
+			}
+		})
+	}
+}
+
+func TestESIJWTClaims_ScopesUnmarshaling(t *testing.T) {
+	testCases := []struct {
+		name        string
+		jsonData    string
+		wantScopes  []string
+		expectError bool
+	}{
+		{
+			name: "array of scopes",
+			jsonData: `{
+				"sub": "CHARACTER:EVE:123456789",
+				"name": "Test Character",
+				"scp": ["scope1", "scope2", "scope3"],
+				"owner": "owner123",
+				"exp": 1234567890
+			}`,
+			wantScopes:  []string{"scope1", "scope2", "scope3"},
+			expectError: false,
+		},
+		{
+			name: "single string scope",
+			jsonData: `{
+				"sub": "CHARACTER:EVE:123456789",
+				"name": "Test Character",
+				"scp": "single-scope",
+				"owner": "owner123",
+				"exp": 1234567890
+			}`,
+			wantScopes:  []string{"single-scope"},
+			expectError: false,
+		},
+		{
+			name: "empty array of scopes",
+			jsonData: `{
+				"sub": "CHARACTER:EVE:123456789",
+				"name": "Test Character",
+				"scp": [],
+				"owner": "owner123",
+				"exp": 1234567890
+			}`,
+			wantScopes:  []string{},
+			expectError: false,
+		},
+		{
+			name: "missing scp field",
+			jsonData: `{
+				"sub": "CHARACTER:EVE:123456789",
+				"name": "Test Character",
+				"owner": "owner123",
+				"exp": 1234567890
+			}`,
+			wantScopes:  nil,
+			expectError: false,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			var claims ESIJWTClaims
+			err := json.Unmarshal([]byte(tc.jsonData), &claims)
+
+			if tc.expectError {
+				require.Error(t, err, "Should return error")
+			} else {
+				require.NoError(t, err, "Should not return error")
+				require.Equal(t, "Test Character", claims.Name, "Name should match")
+				require.Equal(t, "CHARACTER:EVE:123456789", claims.Subject, "Subject should match")
+
+				if tc.wantScopes == nil {
+					require.Nil(t, claims.Scopes, "Scopes should be nil")
+				} else {
+					require.Equal(t, tc.wantScopes, []string(claims.Scopes), "Scopes should match")
+				}
+			}
+		})
+	}
+}
+
+func TestESIJWTClaims_MarshalUnmarshal_RoundTrip(t *testing.T) {
+	testCases := []struct {
+		name   string
+		scopes StringOrArray
+	}{
+		{
+			name:   "multiple scopes",
+			scopes: StringOrArray{"scope1", "scope2"},
+		},
+		{
+			name:   "single scope",
+			scopes: StringOrArray{"single-scope"},
+		},
+		{
+			name:   "empty scopes",
+			scopes: StringOrArray{},
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			original := ESIJWTClaims{
+				RegisteredClaims: jwt.RegisteredClaims{
+					Subject:   "CHARACTER:EVE:123456789",
+					ExpiresAt: jwt.NewNumericDate(time.Unix(1234567890, 0)),
+				},
+				Scopes: tc.scopes,
+				Name:   "Test Character",
+				Owner:  "owner123",
+			}
+
+			jsonData, err := json.Marshal(original)
+			require.NoError(t, err, "Should marshal claims")
+
+			var restored ESIJWTClaims
+			err = json.Unmarshal(jsonData, &restored)
+			require.NoError(t, err, "Should unmarshal claims")
+
+			require.Equal(t, original.Subject, restored.Subject, "Subject should match")
+			require.Equal(t, original.Name, restored.Name, "Name should match")
+			require.Equal(t, original.Owner, restored.Owner, "Owner should match")
+			require.Equal(t, []string(original.Scopes), []string(restored.Scopes), "Scopes should match")
+		})
+	}
+}
