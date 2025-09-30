@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	"github.com/fnt-eve/goesi-openapi/esi"
+	"golang.org/x/oauth2"
 )
 
 const (
@@ -15,8 +16,14 @@ const (
 	ESICompatibilityDate = "2020-01-01"
 )
 
+// Context keys for ESI authentication
+var (
+	// ContextOAuth2 is the context key for GoESI authentication. Pass a tokenSource with this key to a context for an ESI API Call
+	ContextOAuth2 = esi.ContextOAuth2
+)
+
 // NewAuthenticatedESIClient creates a new ESI API client with OAuth2 authentication
-func NewAuthenticatedESIClient(ctx context.Context, config *Config, token *Token, userAgent string) *esi.APIClient {
+func NewAuthenticatedESIClient(ctx context.Context, config *Config, token *oauth2.Token, userAgent string) *esi.APIClient {
 	httpClient := config.Client(ctx, token)
 	return newESIClient(httpClient, userAgent)
 }

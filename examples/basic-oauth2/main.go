@@ -51,7 +51,7 @@ func main() {
 	fmt.Scanln(&code)
 
 	// Step 3: Exchange authorization code for access token
-	token, err := config.Exchange(ctx, code, state, state)
+	token, claims, err := config.Exchange(ctx, code, state, state)
 	if err != nil {
 		log.Fatalf("Failed to exchange code for token: %v", err)
 	}
@@ -61,24 +61,27 @@ func main() {
 	// Step 4: Create authenticated ESI client
 	esiClient := goesi.NewAuthenticatedESIClient(ctx, config, token, userAgent)
 
-	// Step 6: Make authenticated API calls
-	fmt.Println("\nMaking authenticated API calls...")
+	// Step 5: Display character information from JWT claims
+	fmt.Println("\nCharacter Information from JWT Claims:")
 
-	// Get character ID from the JWT token
-	characterID, err := token.CharacterID()
+	// Get character ID from the JWT claims
+	characterID, err := claims.CharacterID()
 	if err != nil {
-		log.Fatalf("Failed to get character ID from token: %v", err)
+		log.Fatalf("Failed to get character ID from claims: %v", err)
 	}
 
 	fmt.Printf("Character ID: %d\n", characterID)
-	fmt.Printf("Character Name: %s\n", token.CharacterName())
-	fmt.Printf("Token Scopes: %v\n", token.TokenScopes())
+	fmt.Printf("Character Name: %s\n", claims.CharacterName())
+	fmt.Printf("Token Scopes: %v\n", claims.TokenScopes())
 
-	// Make API call using the character ID from the token
+	// Step 6: Make authenticated API calls
+	fmt.Println("\nMaking authenticated API calls...")
+
+	// Make API call using the character ID from the claims
 	locationInfo, _, err := esiClient.LocationAPI.GetCharactersCharacterIdLocation(ctx, int64(characterID)).Execute()
 
 	if err != nil {
-		log.Printf("Failed to get character info: %v", err)
+		log.Printf("Failed to get character location: %v", err)
 	} else {
 		fmt.Printf("Location from API: %d\n", locationInfo.GetSolarSystemId())
 	}

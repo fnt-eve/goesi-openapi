@@ -27,7 +27,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v5
       with:
-        go-version: '1.21'
+        go-version: '1.24'
 
     - name: Set up Java
       uses: actions/setup-java@v4
@@ -58,6 +58,25 @@ jobs:
       run: |
         echo "Generating Go client code from latest ESI specification..."
         make generate
+
+    - name: Download dependencies
+      run: |
+        echo "Downloading Go dependencies..."
+        go mod download
+        go mod verify
+
+    - name: Run tests
+      id: test
+      run: |
+        echo "Running tests on generated code..."
+        if go test -v -race ./...; then
+          echo "All tests passed"
+          echo "tests_passed=true" >> $GITHUB_OUTPUT
+        else
+          echo "Tests failed - generated code will not be committed"
+          echo "tests_passed=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
 
     - name: Check for code changes
       id: check-changes
@@ -93,7 +112,7 @@ jobs:
         echo "commit_message=Update ESI client to version ${VERSION}" >> $GITHUB_OUTPUT
 
     - name: Commit and push changes
-      if: steps.check-changes.outputs.changed == 'true' || github.event.inputs.force_update == 'true'
+      if: (steps.check-changes.outputs.changed == 'true' || github.event.inputs.force_update == 'true') && steps.test.outputs.tests_passed == 'true'
       run: |
         # Configure git
         git config --local user.email "action@github.com"
@@ -124,12 +143,18 @@ jobs:
         echo "## ESI Specification Update Results" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         
-        if [ "${{ steps.check-changes.outputs.changed }}" == "true" ]; then
+        if [ "${{ steps.test.outputs.tests_passed }}" == "false" ]; then
+          echo "**Tests Failed**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Generated code changes were **not committed** because tests failed." >> $GITHUB_STEP_SUMMARY
+          echo "Please review the test failures and update the code generation or tests accordingly." >> $GITHUB_STEP_SUMMARY
+        elif [ "${{ steps.check-changes.outputs.changed }}" == "true" ]; then
           echo "**ESI specification updated successfully**" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Details:**" >> $GITHUB_STEP_SUMMARY
           echo "- Specification version: \`${{ steps.spec-info.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
           echo "- Generated client code has been updated" >> $GITHUB_STEP_SUMMARY
+          echo "- All tests passed" >> $GITHUB_STEP_SUMMARY
           echo "- Changes committed and pushed to main branch" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Modified files:**" >> $GITHUB_STEP_SUMMARY

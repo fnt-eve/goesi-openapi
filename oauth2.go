@@ -58,20 +58,14 @@ type ESIJWTClaims struct {
 	Region string   `json:"region"`
 }
 
-// Token represents an ESI access token with parsed JWT claims
-type Token struct {
-	*oauth2.Token
-	Claims *ESIJWTClaims `json:"claims,omitempty"`
-}
-
 // CharacterID extracts the character ID from the JWT subject
-func (t *Token) CharacterID() (int32, error) {
-	if t.Claims == nil {
+func (claims *ESIJWTClaims) CharacterID() (int32, error) {
+	if claims == nil {
 		return 0, errors.New("no claims available")
 	}
 
 	// Subject format is "CHARACTER:EVE:123456789"
-	parts := strings.Split(t.Claims.Subject, ":")
+	parts := strings.Split(claims.Subject, ":")
 	if len(parts) != 3 || parts[0] != "CHARACTER" || parts[1] != "EVE" {
 		return 0, errors.New("invalid subject format")
 	}
@@ -85,19 +79,19 @@ func (t *Token) CharacterID() (int32, error) {
 }
 
 // CharacterName returns the character name from the JWT claims
-func (t *Token) CharacterName() string {
-	if t.Claims == nil {
+func (claims *ESIJWTClaims) CharacterName() string {
+	if claims == nil {
 		return ""
 	}
-	return t.Claims.Name
+	return claims.Name
 }
 
 // TokenScopes returns the scopes from the JWT claims
-func (t *Token) TokenScopes() []string {
-	if t.Claims == nil {
+func (claims *ESIJWTClaims) TokenScopes() []string {
+	if claims == nil {
 		return nil
 	}
-	return t.Claims.Scopes
+	return claims.Scopes
 }
 
 // NewConfig creates a new ESI OAuth2 configuration
@@ -150,69 +144,63 @@ func (c *Config) AuthURL(state string) string {
 	)
 }
 
-// Exchange exchanges the authorization code for an access token
-func (c *Config) Exchange(ctx context.Context, code, state string, expectedState string) (*Token, error) {
+// Exchange exchanges the authorization code for an access token and parses JWT claims
+func (c *Config) Exchange(ctx context.Context, code, state string, expectedState string) (*oauth2.Token, *ESIJWTClaims, error) {
 	if code == "" {
-		return nil, ErrMissingCode
+		return nil, nil, ErrMissingCode
 	}
 	if state != expectedState {
-		return nil, ErrInvalidState
+		return nil, nil, ErrInvalidState
 	}
 
 	token, err := c.oauth2Config.Exchange(ctx, code,
 		oauth2.SetAuthURLParam("code_verifier", c.verifier),
 	)
 	if err != nil {
-		return nil, fmt.Errorf("failed to exchange code for token: %w", err)
+		return nil, nil, fmt.Errorf("failed to exchange code for token: %w", err)
 	}
 
-	esiToken := &Token{Token: token}
-
-	// Parse character info from token if available
-	if err := c.parseTokenInfo(esiToken); err != nil {
-		// Log warning but don't fail - character info is optional
-		// In a real implementation, you might want to use a logger here
+	// Parse and validate JWT claims - this is required for ESI tokens
+	claims, err := c.parseTokenInfo(token.AccessToken)
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to parse token claims: %w", err)
 	}
 
-	return esiToken, nil
+	return token, claims, nil
 }
 
-// RefreshToken refreshes an expired access token
-func (c *Config) RefreshToken(ctx context.Context, token *Token) (*Token, error) {
+// RefreshToken refreshes an expired access token and parses the new JWT claims
+func (c *Config) RefreshToken(ctx context.Context, token *oauth2.Token) (*oauth2.Token, *ESIJWTClaims, error) {
 	if token.RefreshToken == "" {
-		return nil, ErrTokenRefresh
+		return nil, nil, ErrTokenRefresh
 	}
 
-	newToken, err := c.oauth2Config.TokenSource(ctx, token.Token).Token()
+	newToken, err := c.oauth2Config.TokenSource(ctx, token).Token()
 	if err != nil {
-		return nil, fmt.Errorf("%w: %v", ErrTokenRefresh, err)
+		return nil, nil, fmt.Errorf("%w: %v", ErrTokenRefresh, err)
 	}
 
-	refreshedToken := &Token{
-		Token:  newToken,
-		Claims: token.Claims, // Preserve existing claims
+	// Parse and validate JWT claims from the refreshed token
+	claims, err := c.parseTokenInfo(newToken.AccessToken)
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to parse refreshed token claims: %w", err)
 	}
 
-	// Re-parse token info for the refreshed token
-	if err := c.parseTokenInfo(refreshedToken); err != nil {
-		// Log warning but don't fail - character info is optional
-	}
-
-	return refreshedToken, nil
+	return newToken, claims, nil
 }
 
 // Client returns an HTTP client that automatically includes authentication
-func (c *Config) Client(ctx context.Context, token *Token) *http.Client {
-	return c.oauth2Config.Client(ctx, token.Token)
+func (c *Config) Client(ctx context.Context, token *oauth2.Token) *http.Client {
+	return c.oauth2Config.Client(ctx, token)
 }
 
 // IsExpired checks if the token is expired or will expire soon
-func (t *Token) IsExpired() bool {
-	if t.Token == nil {
+func IsExpired(token *oauth2.Token) bool {
+	if token == nil {
 		return true
 	}
 	// Consider token expired if it expires within the next 30 seconds
-	return t.Token.Expiry.Before(time.Now().Add(30 * time.Second))
+	return token.Expiry.Before(time.Now().Add(30 * time.Second))
 }
 
 // ESIDefaultKeyfunc creates a default keyfunc that fetches ESI JWT signing keys from JWKS
@@ -242,31 +230,38 @@ func generatePKCE() (verifier, challenge string, err error) {
 	return verifier, challenge, nil
 }
 
-// parseTokenInfo extracts character information from the JWT access token
-func (c *Config) parseTokenInfo(token *Token) error {
-	if token.AccessToken == "" {
-		return errors.New("no access token available")
+// ParseClaims extracts and validates claims from an oauth2.Token's access token
+func (c *Config) ParseClaims(token *oauth2.Token) (*ESIJWTClaims, error) {
+	if token == nil {
+		return nil, errors.New("token is nil")
+	}
+	return c.parseTokenInfo(token.AccessToken)
+}
+
+// parseTokenInfo extracts and validates character information from the JWT access token
+func (c *Config) parseTokenInfo(accessToken string) (*ESIJWTClaims, error) {
+	if accessToken == "" {
+		return nil, errors.New("no access token available")
 	}
 
 	// Keyfunc must be set
 	keyFunc := c.JWTKeyFunc
 	if keyFunc == nil {
-		return errors.New("no keyfunc available for JWT validation")
+		return nil, errors.New("no keyfunc available for JWT validation")
 	}
 
 	// Parse and validate JWT token with signature verification
-	jwtToken, err := jwt.ParseWithClaims(token.AccessToken, &ESIJWTClaims{}, keyFunc)
+	jwtToken, err := jwt.ParseWithClaims(accessToken, &ESIJWTClaims{}, keyFunc)
 	if err != nil {
-		return fmt.Errorf("failed to validate JWT token: %w", err)
+		return nil, fmt.Errorf("failed to validate JWT token: %w", err)
 	}
 
 	// Extract the custom claims
 	if claims, ok := jwtToken.Claims.(*ESIJWTClaims); ok {
-		token.Claims = claims
-		return nil
+		return claims, nil
 	}
 
-	return errors.New("failed to extract ESI JWT claims")
+	return nil, errors.New("failed to extract ESI JWT claims")
 }
 
 // TokenToJSON helper function to convert a token to a storable format.

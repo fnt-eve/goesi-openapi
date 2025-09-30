@@ -1,30 +1,9 @@
 # GoESI OpenAPI Client
 
-[![Go Version](https://img.shields.io/badge/go-%3E%3D1.25-blue.svg)](https://golang.org/)
+[![Go Version](https://img.shields.io/badge/go-%3E%3D1.24-blue.svg)](https://golang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A comprehensive Go client library for the [EVE Online ESI (EVE Swagger Interface) API](https://esi.evetech.net/), automatically generated from the official OpenAPI 3.0 specification.
-
-## Overview
-
-This library provides a type-safe, feature-complete Go client for accessing EVE Online game data through the ESI API. It includes:
-
-- **Auto-generated client** from the official ESI OpenAPI specification
-- **OAuth2 authentication** with PKCE support for secure API access
-- **Complete API coverage** for all ESI endpoints
-- **Type safety** with strongly-typed Go structs for all requests and responses
-- **Built-in rate limiting** compliance with ESI requirements
-- **Automatic header management** including required ESI headers
-
-## Features
-
-- **Complete ESI API Coverage**: Auto-generated from the official OpenAPI spec
-- **OAuth2 Authentication**: Full OAuth2 flow with PKCE for security
-- **Type Safety**: Strongly-typed structs for all API calls
-- **Rate Limit Compliance**: Respects ESI's rate limiting requirements
-- **Caching Headers**: Proper handling of ESI cache-control headers
-- **Error Handling**: Comprehensive error types and handling
-- **Go Modules**: Full Go modules support for easy dependency management
+A Go client library for the [EVE Online ESI API](https://esi.evetech.net/), generated from the official OpenAPI specification.
 
 ## Installation
 
@@ -34,7 +13,7 @@ go get github.com/fnt-eve/goesi-openapi
 
 ## Quick Start
 
-### 1. Basic Setup
+### Public API (No Authentication)
 
 ```go
 package main
@@ -47,246 +26,263 @@ import (
 )
 
 func main() {
-    // Create OAuth2 configuration
-    config, err := goesi.NewConfig(
-        "your-client-id",
-        "http://localhost:8080/callback",
-        []string{goesi.ScopeLocationReadLocationV1},
-    )
+    ctx := context.Background()
+    
+    // Create client for public endpoints
+    client := goesi.NewPublicESIClient("MyApp/1.0 (contact@example.com)")
+    
+    // Get system information
+    system, _, err := client.UniverseAPI.GetUniverseSystemsSystemId(ctx, 30000142).Execute()
     if err != nil {
         log.Fatal(err)
     }
+    
+    log.Printf("System: %s", system.GetName())
+}
+```
 
-    // Generate authorization URL
-    authURL := config.AuthURL("random-state-string")
+### Authenticated API
+
+```go
+package main
+
+import (
+    "context"
+    "log"
+    "os"
+
+    "github.com/fnt-eve/goesi-openapi"
+)
+
+func main() {
+    ctx := context.Background()
+    
+    // Set up OAuth2
+    clientID := os.Getenv("ESI_CLIENT_ID")
+    redirectURL := "http://localhost:8080/callback"
+    scopes := []string{goesi.ScopeLocationReadLocationV1}
+    
+    // Create JWT key function for token validation
+    keyFunc, err := goesi.ESIDefaultKeyfunc(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    // Create OAuth2 config
+    config, err := goesi.NewConfig(clientID, redirectURL, scopes, &keyFunc)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    // Get authorization URL
+    state := "random-state-string"
+    authURL := config.AuthURL(state)
     log.Printf("Visit: %s", authURL)
     
-    // ... handle OAuth2 flow (see examples/ for complete flow)
+    // Exchange code for token (after user authorization)
+    // var code string // Get this from the callback
+    // token, claims, err := config.Exchange(ctx, code, state, state)
+    // if err != nil {
+    //     log.Fatal(err)
+    // }
+    
+    // Create authenticated client
+    // client := goesi.NewAuthenticatedESIClient(ctx, config, token, "MyApp/1.0 (contact@example.com)")
 }
 ```
 
-### 2. Making API Calls
+## OAuth2 Authentication
 
-```go
-// After obtaining a token through OAuth2 flow, use the helper to create ESI client
-userAgent := "MyApp/1.0 (contact@example.com)"
-client := goesi.NewAuthenticatedESIClient(ctx, config, token, userAgent)
+ESI uses OAuth2 with PKCE. The authentication flow:
 
-// Make API calls
-characterInfo, _, err := client.CharacterAPI.GetCharactersCharacterId(ctx, characterID).Execute()
-if err != nil {
-    log.Fatal(err)
-}
+1. **Create config** with client ID, redirect URL, and scopes
+2. **Generate auth URL** and redirect user to authorize
+3. **Exchange code** for access token
+4. **Use token** to make authenticated API calls
+5. **Refresh token** when it expires
 
-log.Printf("Character: %s", characterInfo.Name)
-```
+### Available Scopes
 
-### 3. Public API Calls (No Authentication)
-
-```go
-// For public endpoints that don't require authentication
-userAgent := "MyApp/1.0 (contact@example.com)"
-client := goesi.NewPublicESIClient(userAgent)
-
-// Make public API calls
-systemInfo, _, err := client.UniverseAPI.GetUniverseSystemsSystemId(ctx, systemID).Execute()
-if err != nil {
-    log.Fatal(err)
-}
-
-log.Printf("System: %s", systemInfo.Name)
-```
-
-## Authentication
-
-ESI uses OAuth2 with PKCE for authentication. This library provides a complete OAuth2 implementation:
-
-### OAuth2 Scopes
-
-The library provides idiomatic Go constants for all available ESI scopes:
+The library includes constants for all ESI scopes:
 
 ```go
 scopes := []string{
     goesi.ScopeLocationReadLocationV1,
-    goesi.ScopeAssetsReadAssetsV1,
+    goesi.ScopeAssetsReadAssetsV1, 
     goesi.ScopeSkillsReadSkillsV1,
     goesi.ScopeCorporationsReadBlueprintsV1,
-    // ... many more available, all following CamelCase convention
+    // ... many more
 }
 ```
 
-### JWT Token Parsing
+### JWT Token Information
 
-The library automatically parses JWT tokens returned by ESI and provides convenient methods:
-
-```go
-// After successful OAuth2 exchange, the token contains parsed JWT claims
-token, err := config.Exchange(ctx, code, state, expectedState)
-
-// Extract information from the JWT token
-characterID, err := token.CharacterID()       // int32
-characterName := token.CharacterName()        // string
-scopes := token.TokenScopes()                // []string
-```
-
-### Complete OAuth2 Flow
+Access tokens are JWTs containing character information. The `Exchange` method returns both the token and parsed claims:
 
 ```go
-// 1. Create configuration
-config, err := goesi.NewConfig(clientID, redirectURL, scopes)
-
-// 2. Get authorization URL
-authURL := config.AuthURL(state)
-
-// 3. User authorizes and you receive the code
-token, err := config.Exchange(ctx, code, state, expectedState)
-
-// 4. Use token to make authenticated requests or create ESI client
-userAgent := "MyApp/1.0 (contact@example.com)"
-client := goesi.NewAuthenticatedESIClient(ctx, config, token, userAgent)
-
-// 5. Refresh token when needed
-if token.IsExpired() {
-    token, err = config.RefreshToken(ctx, token)
+// Exchange authorization code for token and claims
+token, claims, err := config.Exchange(ctx, code, state, state)
+if err != nil {
+    log.Fatal(err)
 }
+
+// Extract character information from claims
+characterID, err := claims.CharacterID()    // int32
+characterName := claims.CharacterName()     // string  
+scopes := claims.TokenScopes()              // []string
 ```
 
-## API Structure
+## API Usage
 
-The generated client organizes ESI endpoints into logical groups:
-
-- **CharacterAPI**: Character information, skills, assets, etc.
-- **CorporationAPI**: Corporation data and management
-- **MarketAPI**: Market orders and history
-- **UniverseAPI**: Static universe data (systems, types, etc.)
-- **AllianceAPI**: Alliance information
-- **And many more...**
-
-## Examples
-
-See the [`examples/`](examples/) directory for complete working examples:
-
-- [`oauth2_example.go`](examples/oauth2_example.go): Complete OAuth2 authentication flow
-
-## Configuration
-
-### Environment Variables
-
-Set up your ESI application credentials:
-
-```bash
-export ESI_CLIENT_ID="your-client-id-here"
-```
-
-### User Agent
-
-ESI requires a proper User-Agent header with contact information:
+The generated client provides access to all ESI endpoints through API groups:
 
 ```go
-userAgent := "MyEVEApp/1.0 (contact@example.com)"
+client := goesi.NewPublicESIClient("MyApp/1.0 (contact@example.com)")
+
+// Character information
+client.CharacterAPI.GetCharactersCharacterId(ctx, characterID)
+
+// Market data  
+client.MarketAPI.GetMarketsRegionIdOrders(ctx, regionID)
+
+// Universe data
+client.UniverseAPI.GetUniverseSystemsSystemId(ctx, systemID)
+
+// Corporation data
+client.CorporationAPI.GetCorporationsCorporationId(ctx, corporationID)
+
+// Alliance data
+client.AllianceAPI.GetAlliancesAllianceId(ctx, allianceID)
 ```
-
-## Rate Limits
-
-ESI has rate limits that this library respects:
-- **20 requests/second** for authenticated requests
-- **10 requests/second** for unauthenticated requests
-
-The library automatically includes required headers and follows ESI best practices.
 
 ## Error Handling
 
-The library provides comprehensive error handling:
-
 ```go
-characterInfo, response, err := client.CharacterAPI.GetCharactersCharacterId(ctx, characterID).Execute()
+data, response, err := client.CharacterAPI.GetCharactersCharacterId(ctx, characterID).Execute()
 if err != nil {
-    // Handle different types of errors
-    switch e := err.(type) {
-    case *esi.GenericOpenAPIError:
-        log.Printf("API Error: %s", e.Error())
-        log.Printf("Response Body: %s", e.Body())
-    default:
+    if apiErr, ok := err.(*esi.GenericOpenAPIError); ok {
+        log.Printf("API Error: %s", apiErr.Error())
+        log.Printf("Response: %s", apiErr.Body())
+    } else {
         log.Printf("Other error: %v", err)
     }
     return
 }
 ```
 
-## Caching
-
-ESI responses include cache headers. Respect these to minimize API load:
+## Token Management
 
 ```go
-import "time"
+// Check if token needs refresh
+if goesi.IsExpired(token) {
+    newToken, newClaims, err := config.RefreshToken(ctx, token)
+    if err != nil {
+        log.Fatal("Token refresh failed:", err)
+    }
+    token = newToken
+    claims = newClaims
+}
 
-// Check cache expiration
-expires := esi.CacheExpires(response)
-if time.Now().Before(expires) {
-    // Use cached data
+// Store/load tokens (stores only the oauth2.Token, not claims)
+tokenJSON, _ := goesi.TokenToJSON(token)
+// Store tokenJSON in database/file
+
+// Later: restore token and parse claims
+storedToken, _ := goesi.TokenFromJSON(tokenJSON)
+claims, err := config.ParseClaims(storedToken)
+if err != nil {
+    log.Fatal("Failed to parse claims:", err)
 }
 ```
+
+## Rate Limits
+
+ESI rate limits:
+- **20 requests/second** for authenticated requests  
+- **10 requests/second** for public requests
+
+The client automatically includes required headers like `X-Compatibility-Date`.
+
+## Examples
+
+See [`examples/`](examples/) directory:
+- [`oauth2_example.go`](examples/oauth2_example.go) - Complete OAuth2 flow
 
 ## Development
 
 ### Code Generation
 
-This library is generated from the ESI OpenAPI specification. The `generate` command in the `Makefile` will regenerate the client from the latest ESI spec, fix the generated code, and run `go generate` to update scopes and compatibility dates.
+The client is generated from the ESI OpenAPI specification:
 
 ```bash
-# Regenerate client and update generated files
 make generate
 ```
+
+This downloads the latest ESI spec, generates the client code, and runs post-processing scripts.
 
 ### Building
 
 ```bash
-# Build the library
 go build ./...
-
-# Run tests
 go test ./...
-
-# Run examples
 go run examples/oauth2_example.go
 ```
 
-## Contributing
+## Library Configuration
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
+### User Agent 
 
-## ESI Resources
+ESI requires all requests to include a User-Agent header with contact information:
 
-- [ESI Documentation](https://esi.evetech.net/ui/)
-- [ESI OpenAPI Specification](https://esi.evetech.net/meta/openapi-3.0.json)
-- [Third Party Developer Resources](https://developers.eveonline.com/)
-- [ESI Community](https://github.com/esi/esi-issues)
+```go
+userAgent := "MyEVEApp/1.0 (contact@example.com)"
+client := goesi.NewPublicESIClient(userAgent)
+```
+
+Format: `AppName/Version (contact-email)`
+
+## Running Examples
+
+The examples require an ESI application registration:
+
+### 1. Register Your Application
+
+Visit [EVE Developers](https://developers.eveonline.com/) to create an application and get a Client ID.
+
+### 2. Set Environment Variables
+
+```bash
+export ESI_CLIENT_ID="your-client-id-from-developers-portal"
+```
+
+### 3. Run Examples
+
+```bash
+go run examples/basic-oauth2/main.go
+go run examples/context-auth/main.go
+```
+
+## Dependencies
+
+- `golang.org/x/oauth2` - OAuth2 client
+- `github.com/golang-jwt/jwt/v5` - JWT token parsing
+- `github.com/MicahParks/keyfunc/v3` - JWT key validation
 
 ## Requirements
 
-- Go 1.25 or later
+- Go 1.24+
 - Valid ESI application registration
-- Network access to ESI endpoints
+
+## Resources
+
+- [ESI Documentation](https://esi.evetech.net/ui/)
+- [ESI OpenAPI Spec](https://esi.evetech.net/meta/openapi-3.0.json)
+- [Developer Resources](https://developers.eveonline.com/)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file.
 
 ## Disclaimer
 
-This library is not affiliated with CCP Games. EVE Online is a trademark of CCP hf.
-
-## Support
-
-- Check the [examples/](examples/) directory for usage examples
-- Report bugs via GitHub Issues  
-- Discuss on EVE Online third-party developer communities
-- Contact: See User-Agent header for contact information
-
----
-
-**Built for the EVE Online development community**
+Not affiliated with CCP Games. EVE Online is a trademark of CCP hf.
