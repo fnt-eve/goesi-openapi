@@ -206,7 +206,8 @@ The client automatically includes required headers like `X-Compatibility-Date`.
 ## Examples
 
 See [`examples/`](examples/) directory:
-- [`oauth2_example.go`](examples/oauth2_example.go) - Complete OAuth2 flow
+- [`basic-oauth2/`](examples/basic-oauth2/main.go) - Complete OAuth2 flow with authenticated client
+- [`context-auth/`](examples/context-auth/main.go) - Context-based authentication pattern
 
 ## Development
 
