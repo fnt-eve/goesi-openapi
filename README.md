@@ -5,6 +5,10 @@
 
 A Go client library for the [EVE Online ESI API](https://esi.evetech.net/), generated from the official OpenAPI specification.
 
+## About
+
+This library is a spiritual successor to the original [goesi](https://github.com/antihax/goesi) package, updated to support CCP's OpenAPI 3.x+ specification. When CCP migrated ESI to OpenAPI 3.0+, a new code generation approach was needed to maintain compatibility with the updated specification format.
+
 ## Installation
 
 ```bash
