@@ -59,7 +59,7 @@ type ESIJWTClaims struct {
 }
 
 // CharacterID extracts the character ID from the JWT subject
-func (claims *ESIJWTClaims) CharacterID() (int32, error) {
+func (claims *ESIJWTClaims) CharacterID() (int64, error) {
 	if claims == nil {
 		return 0, errors.New("no claims available")
 	}
@@ -70,12 +70,12 @@ func (claims *ESIJWTClaims) CharacterID() (int32, error) {
 		return 0, errors.New("invalid subject format")
 	}
 
-	id, err := strconv.ParseInt(parts[2], 10, 32)
+	id, err := strconv.ParseInt(parts[2], 10, 64)
 	if err != nil {
 		return 0, fmt.Errorf("invalid character ID: %w", err)
 	}
 
-	return int32(id), nil
+	return id, nil
 }
 
 // NewConfig creates a new ESI OAuth2 configuration
