@@ -132,8 +132,8 @@ if err != nil {
 
 // Extract character information from claims
 characterID, err := claims.CharacterID()    // int32
-characterName := claims.CharacterName()     // string  
-scopes := claims.TokenScopes()              // []string
+characterName := claims.Name                 // string
+scopes := claims.Scopes                      // []string
 ```
 
 ## API Usage
@@ -212,6 +212,7 @@ The client automatically includes required headers like `X-Compatibility-Date`.
 See [`examples/`](examples/) directory:
 - [`basic-oauth2/`](examples/basic-oauth2/main.go) - Complete OAuth2 flow with authenticated client
 - [`context-auth/`](examples/context-auth/main.go) - Context-based authentication pattern
+- [`token-persistence/`](examples/token-persistence/main.go) - Token serialization and TokenSource usage
 
 ## Development
 

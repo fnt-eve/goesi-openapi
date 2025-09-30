@@ -78,22 +78,6 @@ func (claims *ESIJWTClaims) CharacterID() (int32, error) {
 	return int32(id), nil
 }
 
-// CharacterName returns the character name from the JWT claims
-func (claims *ESIJWTClaims) CharacterName() string {
-	if claims == nil {
-		return ""
-	}
-	return claims.Name
-}
-
-// TokenScopes returns the scopes from the JWT claims
-func (claims *ESIJWTClaims) TokenScopes() []string {
-	if claims == nil {
-		return nil
-	}
-	return claims.Scopes
-}
-
 // NewConfig creates a new ESI OAuth2 configuration
 func NewConfig(clientID, redirectURL string, scopes []string, keyFunc *jwt.Keyfunc) (*Config, error) {
 	if clientID == "" {
@@ -192,6 +176,11 @@ func (c *Config) RefreshToken(ctx context.Context, token *oauth2.Token) (*oauth2
 // Client returns an HTTP client that automatically includes authentication
 func (c *Config) Client(ctx context.Context, token *oauth2.Token) *http.Client {
 	return c.oauth2Config.Client(ctx, token)
+}
+
+// TokenSource returns a TokenSource that automatically refreshes the token as needed
+func (c *Config) TokenSource(ctx context.Context, token *oauth2.Token) oauth2.TokenSource {
+	return c.oauth2Config.TokenSource(ctx, token)
 }
 
 // IsExpired checks if the token is expired or will expire soon

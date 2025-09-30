@@ -58,7 +58,7 @@ func main() {
 	}
 
 	fmt.Printf("Successfully authenticated!\n")
-	fmt.Printf("Character Name: %s\n", claims.CharacterName())
+	fmt.Printf("Character Name: %s\n", claims.Name)
 
 	// Step 4: Create a public ESI client
 	esiClient := goesi.NewPublicESIClient(userAgent)
@@ -74,7 +74,7 @@ func main() {
 	}
 
 	fmt.Printf("Character ID: %d\n", characterID)
-	fmt.Printf("Token Scopes: %v\n", claims.TokenScopes())
+	fmt.Printf("Token Scopes: %v\n", claims.Scopes)
 
 	// Step 7: Make authenticated API calls using the authenticated context
 	fmt.Println("\nMaking authenticated API calls...")

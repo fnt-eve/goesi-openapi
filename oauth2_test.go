@@ -133,39 +133,6 @@ func TestESIJWTClaims_CharacterID_InvalidFormat(t *testing.T) {
 	}
 }
 
-func TestESIJWTClaims_CharacterName(t *testing.T) {
-	claims := &ESIJWTClaims{
-		Name: "Test Character",
-	}
-
-	name := claims.CharacterName()
-	require.Equal(t, "Test Character", name, "Character name should match")
-}
-
-func TestESIJWTClaims_CharacterName_NilClaims(t *testing.T) {
-	var claims *ESIJWTClaims
-
-	name := claims.CharacterName()
-	require.Empty(t, name, "Character name should be empty for nil claims")
-}
-
-func TestESIJWTClaims_TokenScopes(t *testing.T) {
-	scopes := []string{"scope1", "scope2", "scope3"}
-	claims := &ESIJWTClaims{
-		Scopes: scopes,
-	}
-
-	result := claims.TokenScopes()
-	require.Equal(t, scopes, result, "Token scopes should match")
-}
-
-func TestESIJWTClaims_TokenScopes_NilClaims(t *testing.T) {
-	var claims *ESIJWTClaims
-
-	scopes := claims.TokenScopes()
-	require.Nil(t, scopes, "Token scopes should be nil for nil claims")
-}
-
 func TestIsExpired_NilToken(t *testing.T) {
 	expired := IsExpired(nil)
 	require.True(t, expired, "Nil token should be considered expired")
@@ -357,6 +324,31 @@ func TestClient(t *testing.T) {
 
 	client := config.Client(context.Background(), token)
 	require.NotNil(t, client, "Client should not be nil")
+}
+
+func TestTokenSource(t *testing.T) {
+	keyFunc := mockKeyFunc()
+	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	require.NoError(t, err)
+
+	token := &oauth2.Token{
+		AccessToken:  "test-token",
+		TokenType:    "Bearer",
+		RefreshToken: "test-refresh-token",
+		Expiry:       time.Now().Add(1 * time.Hour),
+	}
+
+	tokenSource := config.TokenSource(context.Background(), token)
+	require.NotNil(t, tokenSource, "TokenSource should not be nil")
+}
+
+func TestTokenSource_NilToken(t *testing.T) {
+	keyFunc := mockKeyFunc()
+	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	require.NoError(t, err)
+
+	tokenSource := config.TokenSource(context.Background(), nil)
+	require.NotNil(t, tokenSource, "TokenSource should not be nil even with nil token")
 }
 
 func TestParseClaims_NilToken(t *testing.T) {

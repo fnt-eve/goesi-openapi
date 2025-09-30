@@ -71,8 +71,8 @@ func main() {
 	}
 
 	fmt.Printf("Character ID: %d\n", characterID)
-	fmt.Printf("Character Name: %s\n", claims.CharacterName())
-	fmt.Printf("Token Scopes: %v\n", claims.TokenScopes())
+	fmt.Printf("Character Name: %s\n", claims.Name)
+	fmt.Printf("Token Scopes: %v\n", claims.Scopes)
 
 	// Step 6: Make authenticated API calls
 	fmt.Println("\nMaking authenticated API calls...")
