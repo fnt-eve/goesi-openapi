@@ -13,13 +13,12 @@ import (
 
 func TestNewConfig_Success(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1", "scope2"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 
 	require.NoError(t, err, "NewConfig should not return error")
 	require.NotNil(t, config, "Config should not be nil")
 	require.Equal(t, "test-client-id", config.ClientID, "ClientID should match")
 	require.Equal(t, "http://localhost/callback", config.RedirectURL, "RedirectURL should match")
-	require.Equal(t, []string{"scope1", "scope2"}, config.Scopes, "Scopes should match")
 	require.NotEmpty(t, config.verifier, "PKCE verifier should be generated")
 	require.NotEmpty(t, config.challenge, "PKCE challenge should be generated")
 	require.NotNil(t, config.oauth2Config, "OAuth2 config should be initialized")
@@ -28,7 +27,7 @@ func TestNewConfig_Success(t *testing.T) {
 
 func TestNewConfig_MissingClientID(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("", "http://localhost/callback", &keyFunc)
 
 	require.Error(t, err, "NewConfig should return error for missing client ID")
 	require.Nil(t, config, "Config should be nil on error")
@@ -37,7 +36,7 @@ func TestNewConfig_MissingClientID(t *testing.T) {
 
 func TestNewConfig_MissingRedirectURL(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "", &keyFunc)
 
 	require.Error(t, err, "NewConfig should return error for missing redirect URL")
 	require.Nil(t, config, "Config should be nil on error")
@@ -45,7 +44,7 @@ func TestNewConfig_MissingRedirectURL(t *testing.T) {
 }
 
 func TestNewConfig_NilKeyFunc(t *testing.T) {
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, nil)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", nil)
 
 	require.NoError(t, err, "NewConfig should not error with nil keyFunc")
 	require.NotNil(t, config, "Config should not be nil")
@@ -54,11 +53,12 @@ func TestNewConfig_NilKeyFunc(t *testing.T) {
 
 func TestAuthURL(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	state := "test-state-123"
-	authURL := config.AuthURL(state)
+	scopes := []string{"scope1", "scope2"}
+	authURL := config.AuthURL(state, scopes)
 
 	require.NotEmpty(t, authURL, "AuthURL should not be empty")
 	require.Contains(t, authURL, "test-client-id", "AuthURL should contain client ID")
@@ -66,6 +66,7 @@ func TestAuthURL(t *testing.T) {
 	require.Contains(t, authURL, "code_challenge=", "AuthURL should contain code_challenge")
 	require.Contains(t, authURL, "code_challenge_method=S256", "AuthURL should contain code_challenge_method")
 	require.Contains(t, authURL, esiAuthURL, "AuthURL should start with ESI auth URL")
+	require.Contains(t, authURL, "scope=scope1", "AuthURL should contain scope")
 }
 
 func TestESIJWTClaims_CharacterID_Success(t *testing.T) {
@@ -77,7 +78,7 @@ func TestESIJWTClaims_CharacterID_Success(t *testing.T) {
 
 	charID, err := claims.CharacterID()
 	require.NoError(t, err, "CharacterID should not return error")
-	require.Equal(t, int32(123456789), charID, "Character ID should match")
+	require.Equal(t, int64(123456789), charID, "Character ID should match")
 }
 
 func TestESIJWTClaims_CharacterID_NilClaims(t *testing.T) {
@@ -85,7 +86,7 @@ func TestESIJWTClaims_CharacterID_NilClaims(t *testing.T) {
 
 	charID, err := claims.CharacterID()
 	require.Error(t, err, "CharacterID should return error for nil claims")
-	require.Equal(t, int32(0), charID, "Character ID should be 0")
+	require.Equal(t, int64(0), charID, "Character ID should be 0")
 	require.Contains(t, err.Error(), "no claims available", "Error message should mention claims")
 }
 
@@ -127,7 +128,7 @@ func TestESIJWTClaims_CharacterID_InvalidFormat(t *testing.T) {
 
 			charID, err := claims.CharacterID()
 			require.Error(t, err, "CharacterID should return error")
-			require.Equal(t, int32(0), charID, "Character ID should be 0")
+			require.Equal(t, int64(0), charID, "Character ID should be 0")
 			require.Contains(t, err.Error(), tc.errMsg, "Error message should match")
 		})
 	}
@@ -251,7 +252,7 @@ func TestTokenToJSON_TokenFromJSON_RoundTrip(t *testing.T) {
 
 func TestExchange_MissingCode(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	token, claims, err := config.Exchange(context.Background(), "", "state", "state")
@@ -263,7 +264,7 @@ func TestExchange_MissingCode(t *testing.T) {
 
 func TestExchange_InvalidState(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	token, claims, err := config.Exchange(context.Background(), "code123", "wrong-state", "expected-state")
@@ -275,7 +276,7 @@ func TestExchange_InvalidState(t *testing.T) {
 
 func TestRefreshToken_MissingRefreshToken(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	token := &oauth2.Token{
@@ -292,7 +293,7 @@ func TestRefreshToken_MissingRefreshToken(t *testing.T) {
 
 func TestParseTokenInfo_EmptyAccessToken(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	claims, err := config.parseTokenInfo("")
@@ -302,7 +303,7 @@ func TestParseTokenInfo_EmptyAccessToken(t *testing.T) {
 }
 
 func TestParseTokenInfo_NoKeyFunc(t *testing.T) {
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, nil)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", nil)
 	require.NoError(t, err)
 
 	claims, err := config.parseTokenInfo("test-token")
@@ -313,7 +314,7 @@ func TestParseTokenInfo_NoKeyFunc(t *testing.T) {
 
 func TestClient(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	token := &oauth2.Token{
@@ -328,7 +329,7 @@ func TestClient(t *testing.T) {
 
 func TestTokenSource(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	token := &oauth2.Token{
@@ -344,7 +345,7 @@ func TestTokenSource(t *testing.T) {
 
 func TestTokenSource_NilToken(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	tokenSource := config.TokenSource(context.Background(), nil)
@@ -353,7 +354,7 @@ func TestTokenSource_NilToken(t *testing.T) {
 
 func TestParseClaims_NilToken(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	claims, err := config.ParseClaims(nil)
@@ -364,7 +365,7 @@ func TestParseClaims_NilToken(t *testing.T) {
 
 func TestParseClaims_EmptyAccessToken(t *testing.T) {
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", &keyFunc)
 	require.NoError(t, err)
 
 	token := &oauth2.Token{
@@ -379,7 +380,7 @@ func TestParseClaims_EmptyAccessToken(t *testing.T) {
 }
 
 func TestParseClaims_NoKeyFunc(t *testing.T) {
-	config, err := NewConfig("test-client-id", "http://localhost/callback", []string{"scope1"}, nil)
+	config, err := NewConfig("test-client-id", "http://localhost/callback", nil)
 	require.NoError(t, err)
 
 	token := &oauth2.Token{

@@ -22,13 +22,6 @@ func main() {
 	redirectURL := "http://localhost:8080/esi/callback"
 	userAgent := "MyEVEApp/1.0 (contact@example.com)" // Replace with your contact info
 
-	// Request scopes for character information
-	scopes := []string{
-		goesi.ScopeLocationReadLocationV1,
-		goesi.ScopeAssetsReadAssetsV1,
-		goesi.ScopeSkillsReadSkillsV1,
-	}
-
 	// Create keyfunc for JWT token validation
 	ctx := context.Background()
 	keyFunc, err := goesi.ESIDefaultKeyfunc(ctx)
@@ -36,14 +29,19 @@ func main() {
 		log.Fatalf("Failed to create ESI keyfunc: %v", err)
 	}
 
-	config, err := goesi.NewConfig(clientID, redirectURL, scopes, &keyFunc)
+	config, err := goesi.NewConfig(clientID, redirectURL, &keyFunc)
 	if err != nil {
 		log.Fatalf("Failed to create OAuth2 config: %v", err)
 	}
 
-	// Step 2: Generate authorization URL
+	// Step 2: Generate authorization URL with requested scopes
 	state := "random-state-string" // In production, use a secure random string
-	authURL := config.AuthURL(state)
+	scopes := []string{
+		goesi.ScopeLocationReadLocationV1,
+		goesi.ScopeAssetsReadAssetsV1,
+		goesi.ScopeSkillsReadSkillsV1,
+	}
+	authURL := config.AuthURL(state, scopes)
 
 	fmt.Printf("Please visit this URL to authorize the application:\n%s\n", authURL)
 	fmt.Print("Enter the authorization code from the callback: ")

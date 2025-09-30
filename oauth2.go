@@ -36,7 +36,6 @@ var (
 type Config struct {
 	ClientID     string
 	RedirectURL  string
-	Scopes       []string
 	oauth2Config *oauth2.Config
 	verifier     string
 	challenge    string
@@ -79,7 +78,7 @@ func (claims *ESIJWTClaims) CharacterID() (int64, error) {
 }
 
 // NewConfig creates a new ESI OAuth2 configuration
-func NewConfig(clientID, redirectURL string, scopes []string, keyFunc *jwt.Keyfunc) (*Config, error) {
+func NewConfig(clientID, redirectURL string, keyFunc *jwt.Keyfunc) (*Config, error) {
 	if clientID == "" {
 		return nil, errors.New("client ID is required")
 	}
@@ -96,7 +95,6 @@ func NewConfig(clientID, redirectURL string, scopes []string, keyFunc *jwt.Keyfu
 	oauth2Config := &oauth2.Config{
 		ClientID:    clientID,
 		RedirectURL: redirectURL,
-		Scopes:      scopes,
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  esiAuthURL,
 			TokenURL: esiTokenURL,
@@ -112,7 +110,6 @@ func NewConfig(clientID, redirectURL string, scopes []string, keyFunc *jwt.Keyfu
 	return &Config{
 		ClientID:     clientID,
 		RedirectURL:  redirectURL,
-		Scopes:       scopes,
 		oauth2Config: oauth2Config,
 		verifier:     verifier,
 		challenge:    challenge,
@@ -121,11 +118,18 @@ func NewConfig(clientID, redirectURL string, scopes []string, keyFunc *jwt.Keyfu
 }
 
 // AuthURL generates the OAuth2 authorization URL with PKCE
-func (c *Config) AuthURL(state string) string {
-	return c.oauth2Config.AuthCodeURL(state,
+func (c *Config) AuthURL(state string, scopes []string) string {
+	// Update oauth2Config with the requested scopes
+	c.oauth2Config.Scopes = scopes
+
+	url := c.oauth2Config.AuthCodeURL(state,
 		oauth2.SetAuthURLParam("code_challenge", c.challenge),
 		oauth2.SetAuthURLParam("code_challenge_method", "S256"),
 	)
+
+	c.oauth2Config.Scopes = []string{}
+
+	return url
 }
 
 // Exchange exchanges the authorization code for an access token and parses JWT claims

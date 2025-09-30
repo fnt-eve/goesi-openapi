@@ -64,7 +64,6 @@ func main() {
     // Set up OAuth2
     clientID := os.Getenv("ESI_CLIENT_ID")
     redirectURL := "http://localhost:8080/callback"
-    scopes := []string{goesi.ScopeLocationReadLocationV1}
     
     // Create JWT key function for token validation
     keyFunc, err := goesi.ESIDefaultKeyfunc(ctx)
@@ -73,14 +72,15 @@ func main() {
     }
     
     // Create OAuth2 config
-    config, err := goesi.NewConfig(clientID, redirectURL, scopes, &keyFunc)
+    config, err := goesi.NewConfig(clientID, redirectURL, &keyFunc)
     if err != nil {
         log.Fatal(err)
     }
     
-    // Get authorization URL
+    // Get authorization URL with requested scopes
     state := "random-state-string"
-    authURL := config.AuthURL(state)
+    scopes := []string{goesi.ScopeLocationReadLocationV1}
+    authURL := config.AuthURL(state, scopes)
     log.Printf("Visit: %s", authURL)
     
     // Exchange code for token (after user authorization)
@@ -99,8 +99,8 @@ func main() {
 
 ESI uses OAuth2 with PKCE. The authentication flow:
 
-1. **Create config** with client ID, redirect URL, and scopes
-2. **Generate auth URL** and redirect user to authorize
+1. **Create config** with client ID and redirect URL
+2. **Generate auth URL** with requested scopes and redirect user to authorize
 3. **Exchange code** for access token
 4. **Use token** to make authenticated API calls
 5. **Refresh token** when it expires

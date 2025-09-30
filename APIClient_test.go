@@ -29,7 +29,7 @@ func TestNewAuthenticatedESIClient(t *testing.T) {
 	userAgent := "TestAgent/1.0"
 
 	keyFunc := mockKeyFunc()
-	config, err := NewConfig("test-client-id", "http://localhost:8080/callback", []string{"scope1"}, &keyFunc)
+	config, err := NewConfig("test-client-id", "http://localhost:8080/callback", &keyFunc)
 	require.NoError(t, err, "NewConfig should not return error")
 	require.NotNil(t, config, "Config should not be nil")
 
