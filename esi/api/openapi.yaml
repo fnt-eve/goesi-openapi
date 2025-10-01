@@ -20561,7 +20561,6 @@ components:
           description: List of individual error details.
           items:
             $ref: "#/components/schemas/ErrorDetail"
-          nullable: true
           type: array
         error:
           description: Error message.
@@ -21002,7 +21001,6 @@ components:
           additionalProperties:
             items:
               $ref: "#/components/schemas/MetaChangelogEntry"
-            nullable: true
             type: array
           description: "Per date, list changes for that date"
           type: object

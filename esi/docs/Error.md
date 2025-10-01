@@ -51,16 +51,6 @@ SetDetails sets Details field to given value.
 
 HasDetails returns a boolean if a field has been set.
 
-### SetDetailsNil
-
-`func (o *Error) SetDetailsNil(b bool)`
-
- SetDetailsNil sets the value for Details to be an explicit nil
-
-### UnsetDetails
-`func (o *Error) UnsetDetails()`
-
-UnsetDetails ensures that no value is present for Details, not even an explicit nil
 ### GetError
 
 `func (o *Error) GetError() string`

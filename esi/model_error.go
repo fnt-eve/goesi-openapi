@@ -47,9 +47,9 @@ func NewErrorWithDefaults() *Error {
 	return &this
 }
 
-// GetDetails returns the Details field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDetails returns the Details field value if set, zero value otherwise.
 func (o *Error) GetDetails() []ErrorDetail {
-	if o == nil {
+	if o == nil || IsNil(o.Details) {
 		var ret []ErrorDetail
 		return ret
 	}
@@ -58,7 +58,6 @@ func (o *Error) GetDetails() []ErrorDetail {
 
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Error) GetDetailsOk() ([]ErrorDetail, bool) {
 	if o == nil || IsNil(o.Details) {
 		return nil, false
@@ -114,7 +113,7 @@ func (o Error) MarshalJSON() ([]byte, error) {
 
 func (o Error) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Details != nil {
+	if !IsNil(o.Details) {
 		toSerialize["details"] = o.Details
 	}
 	toSerialize["error"] = o.Error
