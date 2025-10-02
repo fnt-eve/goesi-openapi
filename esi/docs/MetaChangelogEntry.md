@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CompatibilityDate** | **string** |  | 
 **Description** | **string** | Description | 
-**IsBreaking** | **bool** | Whether this is a breaking change | 
 **Method** | **string** | HTTP method of the route | 
 **Path** | **string** | Path of the route | 
+**Type** | **string** | Type of the change | 
 
 ## Methods
 
 ### NewMetaChangelogEntry
 
-`func NewMetaChangelogEntry(compatibilityDate string, description string, isBreaking bool, method string, path string, ) *MetaChangelogEntry`
+`func NewMetaChangelogEntry(compatibilityDate string, description string, method string, path string, type_ string, ) *MetaChangelogEntry`
 
 NewMetaChangelogEntry instantiates a new MetaChangelogEntry object
 This constructor will assign default values to properties that have it defined,
@@ -69,26 +69,6 @@ and a boolean to check if the value has been set.
 SetDescription sets Description field to given value.
 
 
-### GetIsBreaking
-
-`func (o *MetaChangelogEntry) GetIsBreaking() bool`
-
-GetIsBreaking returns the IsBreaking field if non-nil, zero value otherwise.
-
-### GetIsBreakingOk
-
-`func (o *MetaChangelogEntry) GetIsBreakingOk() (*bool, bool)`
-
-GetIsBreakingOk returns a tuple with the IsBreaking field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsBreaking
-
-`func (o *MetaChangelogEntry) SetIsBreaking(v bool)`
-
-SetIsBreaking sets IsBreaking field to given value.
-
-
 ### GetMethod
 
 `func (o *MetaChangelogEntry) GetMethod() string`
@@ -127,6 +107,26 @@ and a boolean to check if the value has been set.
 `func (o *MetaChangelogEntry) SetPath(v string)`
 
 SetPath sets Path field to given value.
+
+
+### GetType
+
+`func (o *MetaChangelogEntry) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *MetaChangelogEntry) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *MetaChangelogEntry) SetType(v string)`
+
+SetType sets Type field to given value.
 
 
 

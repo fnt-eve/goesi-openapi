@@ -8,7 +8,7 @@ info:
     url: https://developers.eveonline.com/license-agreement
   termsOfService: https://support.eveonline.com/hc/en-us/articles/8414770561948-EVE-Online-Terms-of-Service
   title: EVE Stable Infrastructure (ESI) - tranquility
-  version: 2020-01-01
+  version: 2025-09-30
 servers:
 - url: https://esi.evetech.net
 tags:
@@ -20,6 +20,7 @@ tags:
 - name: Contacts
 - name: Contracts
 - name: Corporation
+- name: Corporation Projects
 - name: Dogma
 - name: Faction Warfare
 - name: Fittings
@@ -83,7 +84,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -169,7 +170,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -265,7 +266,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -361,7 +362,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -450,7 +451,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -539,7 +540,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -616,7 +617,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -715,7 +716,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -803,7 +804,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -902,7 +903,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1000,7 +1001,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1103,7 +1104,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1204,7 +1205,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1303,7 +1304,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1411,7 +1412,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1509,7 +1510,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1606,7 +1607,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1706,7 +1707,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1795,7 +1796,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1897,7 +1898,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -1990,7 +1991,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2116,7 +2117,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2246,7 +2247,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2342,7 +2343,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2443,7 +2444,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2548,7 +2549,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2646,7 +2647,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2736,7 +2737,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2823,7 +2824,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -2924,7 +2925,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3013,7 +3014,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3101,7 +3102,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3204,7 +3205,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3288,7 +3289,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3380,7 +3381,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3468,7 +3469,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3566,7 +3567,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3665,7 +3666,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3763,7 +3764,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3853,7 +3854,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -3967,7 +3968,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4055,7 +4056,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4150,7 +4151,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4238,7 +4239,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4341,7 +4342,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4425,7 +4426,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4523,7 +4524,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4615,7 +4616,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4712,7 +4713,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4802,7 +4803,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4902,7 +4903,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -4998,7 +4999,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5088,7 +5089,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5177,7 +5178,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5266,7 +5267,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5366,7 +5367,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5462,7 +5463,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5563,7 +5564,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5655,7 +5656,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5740,7 +5741,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5872,7 +5873,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -5963,7 +5964,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6052,7 +6053,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6141,7 +6142,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6231,7 +6232,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6320,7 +6321,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6409,7 +6410,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6508,7 +6509,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6614,7 +6615,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6714,7 +6715,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6824,7 +6825,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -6934,7 +6935,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7038,7 +7039,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7147,7 +7148,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7264,7 +7265,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7357,7 +7358,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7442,7 +7443,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7529,7 +7530,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7625,7 +7626,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7725,7 +7726,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7830,7 +7831,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -7943,7 +7944,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8051,7 +8052,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8147,7 +8148,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8247,7 +8248,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8357,7 +8358,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8472,7 +8473,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8577,7 +8578,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8676,7 +8677,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8775,7 +8776,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8866,7 +8867,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -8960,7 +8961,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9048,7 +9049,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9154,7 +9155,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9262,7 +9263,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9370,7 +9371,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9476,7 +9477,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9575,7 +9576,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9664,7 +9665,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9755,7 +9756,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9847,7 +9848,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -9948,7 +9949,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10058,7 +10059,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10110,6 +10111,530 @@ paths:
       x-required-roles:
       - Accountant
       - Trader
+  /corporations/{corporation_id}/projects:
+    get:
+      description: Listing of all (active) corporation projects.
+      operationId: GetCorporationsProjectsListing
+      parameters:
+      - description: Return records from after this cursor (mutual exclusive with
+          'before'). '0' to start from the beginning.
+        explode: false
+        in: query
+        name: after
+        required: false
+        schema:
+          description: Return records from after this cursor (mutual exclusive with
+            'before'). '0' to start from the beginning.
+          type: string
+        style: form
+      - description: Return records from before this cursor (mutual exclusive with
+          'after'). '0' to start from the end.
+        explode: false
+        in: query
+        name: before
+        required: false
+        schema:
+          description: Return records from before this cursor (mutual exclusive with
+            'after'). '0' to start from the end.
+          type: string
+        style: form
+      - description: The amount of records to retrieve per request.
+        explode: false
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 10
+          description: The amount of records to retrieve per request.
+          format: int64
+          maximum: 100
+          minimum: 10
+          type: integer
+        style: form
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: Filter by state
+        explode: false
+        in: query
+        name: state
+        required: false
+        schema:
+          default: Active
+          description: Filter by state
+          enum:
+          - All
+          - Active
+          type: string
+          x-enum-descriptions:
+          - All states
+          - Active projects only
+        style: form
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2025-09-30
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsProjectsListing"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+      security:
+      - OAuth2:
+        - esi-corporations.read_projects.v1
+      summary: List corporation projects
+      tags:
+      - Corporation Projects
+      x-cache-age: 31536000
+      x-compatibility-date: 2025-08-26
+      x-pagination: cursor
+  /corporations/{corporation_id}/projects/{project_id}:
+    get:
+      description: Get the details of a corporation project.
+      operationId: GetCorporationsProjectsDetail
+      parameters:
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The ID of the project
+        explode: false
+        in: path
+        name: project_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/UUID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2025-09-30
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsProjectsDetail"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+      security:
+      - OAuth2:
+        - esi-corporations.read_projects.v1
+      summary: Get project details
+      tags:
+      - Corporation Projects
+      x-cache-age: 600
+      x-compatibility-date: 2025-08-26
+  /corporations/{corporation_id}/projects/{project_id}/contribution/{character_id}:
+    get:
+      description: Show your contribution to a corporation project.
+      operationId: GetCorporationsProjectsContribution
+      parameters:
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The ID of the project
+        explode: false
+        in: path
+        name: project_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/UUID"
+        style: simple
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2025-09-30
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsProjectsContribution"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+      security:
+      - OAuth2:
+        - esi-corporations.read_projects.v1
+      summary: Get your project contribution
+      tags:
+      - Corporation Projects
+      x-cache-age: 600
+      x-compatibility-date: 2025-08-26
+  /corporations/{corporation_id}/projects/{project_id}/contributors:
+    get:
+      description: Listing of all contributors to a corporation project.
+      operationId: GetCorporationsProjectsContributors
+      parameters:
+      - description: Return records from after this cursor (mutual exclusive with
+          'before'). '0' to start from the beginning.
+        explode: false
+        in: query
+        name: after
+        required: false
+        schema:
+          description: Return records from after this cursor (mutual exclusive with
+            'before'). '0' to start from the beginning.
+          type: string
+        style: form
+      - description: Return records from before this cursor (mutual exclusive with
+          'after'). '0' to start from the end.
+        explode: false
+        in: query
+        name: before
+        required: false
+        schema:
+          description: Return records from before this cursor (mutual exclusive with
+            'after'). '0' to start from the end.
+          type: string
+        style: form
+      - description: The amount of records to retrieve per request.
+        explode: false
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 10
+          description: The amount of records to retrieve per request.
+          format: int64
+          maximum: 100
+          minimum: 10
+          type: integer
+        style: form
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The ID of the project
+        explode: false
+        in: path
+        name: project_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/UUID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2025-09-30
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsProjectsContributors"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+      security:
+      - OAuth2:
+        - esi-corporations.read_projects.v1
+      summary: List project contributors
+      tags:
+      - Corporation Projects
+      x-cache-age: 31536000
+      x-compatibility-date: 2025-08-26
+      x-pagination: cursor
+      x-required-roles:
+      - Project_Manager
   /corporations/{corporation_id}/roles:
     get:
       description: Return the roles of all members if the character has the personnel
@@ -10158,7 +10683,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10258,7 +10783,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10366,7 +10891,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10475,7 +11000,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10581,7 +11106,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10697,7 +11222,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10799,7 +11324,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10899,7 +11424,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -10990,7 +11515,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11102,7 +11627,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11220,7 +11745,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11307,7 +11832,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11396,7 +11921,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11492,7 +12017,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11572,7 +12097,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11661,7 +12186,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11747,7 +12272,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11836,7 +12361,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -11927,7 +12452,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12019,7 +12544,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12119,7 +12644,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12212,7 +12737,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12312,7 +12837,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12405,7 +12930,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12496,7 +13021,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12587,7 +13112,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12686,7 +13211,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12779,7 +13304,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12879,7 +13404,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -12962,7 +13487,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13042,7 +13567,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13122,7 +13647,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13202,7 +13727,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13279,7 +13804,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13360,7 +13885,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13437,7 +13962,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13515,7 +14040,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13593,7 +14118,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13671,7 +14196,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13768,7 +14293,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13857,7 +14382,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -13937,7 +14462,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14026,7 +14551,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14105,7 +14630,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14202,7 +14727,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14311,7 +14836,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14430,7 +14955,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14535,7 +15060,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14620,7 +15145,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14664,7 +15189,7 @@ paths:
       summary: Get changelog
       tags:
       - Meta
-      x-compatibility-date: 2020-01-01
+      x-compatibility-date: 2025-09-26
   /meta/compatibility-dates:
     get:
       description: Get a list of compatibility dates.
@@ -14704,7 +15229,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14749,71 +15274,26 @@ paths:
       tags:
       - Meta
       x-compatibility-date: 2020-01-01
-  /route/{origin}/{destination}:
-    get:
-      description: Get the systems between origin and destination
-      operationId: GetRouteOriginDestination
+  /route/{origin_system_id}/{destination_system_id}:
+    post:
+      description: Calculate the systems between the given origin and destination.
+      operationId: PostRoute
       parameters:
-      - explode: true
-        in: query
-        name: avoid
-        required: false
-        schema:
-          description: avoid solar system ID(s)
-          items:
-            format: int64
-            type: integer
-          maxItems: 100
-          type: array
-          uniqueItems: true
-        style: form
-      - explode: true
-        in: query
-        name: connections
-        required: false
-        schema:
-          description: connected solar system pairs
-          items:
-            items:
-              format: int64
-              type: integer
-            maxItems: 2
-            minItems: 2
-            type: array
-          maxItems: 100
-          type: array
-          uniqueItems: true
-        style: form
-      - explode: false
+      - description: Origin system
+        explode: false
         in: path
-        name: destination
+        name: origin_system_id
         required: true
         schema:
-          description: destination solar system ID
-          format: int64
-          type: integer
+          $ref: "#/components/schemas/SolarSystemID"
         style: simple
-      - explode: true
-        in: query
-        name: flag
-        required: false
-        schema:
-          default: shortest
-          description: route security preference
-          enum:
-          - shortest
-          - secure
-          - insecure
-          type: string
-        style: form
-      - explode: false
+      - description: Destination system
+        explode: false
         in: path
-        name: origin
+        name: destination_system_id
         required: true
         schema:
-          description: origin solar system ID
-          format: int64
-          type: integer
+          $ref: "#/components/schemas/SolarSystemID"
         style: simple
       - description: The language to use for the response.
         explode: false
@@ -14849,7 +15329,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -14863,12 +15343,18 @@ paths:
           default: tranquility
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RouteRequestBody"
+        required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RouteOriginDestinationGet"
+                $ref: "#/components/schemas/Route"
           description: OK
           headers:
             Cache-Control:
@@ -14883,11 +15369,17 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-      summary: Get route
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+      summary: Get route between two systems
       tags:
       - Routes
-      x-cache-age: 86400
-      x-compatibility-date: 2020-01-01
+      x-compatibility-date: 2025-09-30
   /sovereignty/campaigns:
     get:
       description: Shows sovereignty data for campaigns.
@@ -14927,7 +15419,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15005,7 +15497,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15083,7 +15575,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15161,7 +15653,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15268,7 +15760,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15353,7 +15845,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15439,7 +15931,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15525,7 +16017,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15602,7 +16094,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15687,7 +16179,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15777,7 +16269,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15857,7 +16349,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -15939,7 +16431,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16028,7 +16520,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16110,7 +16602,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16198,7 +16690,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16280,7 +16772,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16362,7 +16854,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16450,7 +16942,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16540,7 +17032,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16636,7 +17128,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16718,7 +17210,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16822,7 +17314,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -16901,7 +17393,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17002,7 +17494,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17082,7 +17574,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17164,7 +17656,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17252,7 +17744,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17340,7 +17832,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17429,7 +17921,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17517,7 +18009,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17605,7 +18097,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17693,7 +18185,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17781,7 +18273,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17864,7 +18356,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -17944,7 +18436,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18025,7 +18517,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18113,7 +18605,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18205,7 +18697,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18301,7 +18793,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18389,7 +18881,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18476,7 +18968,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18573,7 +19065,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2020-01-01
+          - 2025-09-30
           format: date
           type: string
         style: simple
@@ -18685,7 +19177,7 @@ components:
       required: true
       schema:
         enum:
-        - 2020-01-01
+        - 2025-09-30
         format: date
         type: string
       style: simple
@@ -20359,6 +20851,721 @@ components:
         format: int64
         type: integer
       type: array
+    CorporationsProjectsContribution:
+      example:
+        last_modified: 2025-08-26T00:00:00Z
+        contributed: 10
+      properties:
+        contributed:
+          description: Your contribution
+          example: 10
+          format: int64
+          type: integer
+        last_modified:
+          description: Moment this information was last modified
+          example: 2025-08-26T00:00:00Z
+          format: date-time
+          type: string
+      required:
+      - contributed
+      type: object
+    CorporationsProjectsContributors:
+      example:
+        cursor:
+          before: before
+          after: after
+        contributors:
+        - name: Contributor Name
+          id: 90000001
+          contributed: 10
+        - name: Contributor Name
+          id: 90000001
+          contributed: 10
+      properties:
+        contributors:
+          description: List of contributors
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsContributorsContributor"
+          type: array
+        cursor:
+          $ref: "#/components/schemas/Cursor"
+      required:
+      - contributors
+      type: object
+    CorporationsProjectsContributorsContributor:
+      example:
+        name: Contributor Name
+        id: 90000001
+        contributed: 10
+      properties:
+        contributed:
+          description: Contributor's contributed progress
+          example: 10
+          format: int64
+          type: integer
+        id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        name:
+          description: Contributor's name
+          example: Contributor Name
+          type: string
+      required:
+      - contributed
+      - id
+      - name
+      type: object
+    CorporationsProjectsDetail:
+      example:
+        reward:
+          initial: 12345.5
+          remaining: 5432.1
+        creator:
+          name: Creator Name
+          id: 90000001
+        contribution:
+          reward_per_contribution: 123.5
+          participation_limit: 1000
+          submission_multiplier: 1.5
+          submission_limit: 100
+        configuration:
+          capture_fw_complex:
+            archetypes:
+            - archetype_id: 33
+            - archetype_id: 33
+            locations:
+            - solar_system_id: 30000001
+            - solar_system_id: 30000001
+            factions:
+            - faction_id: 500002
+            - faction_id: 500002
+        name: Project Name
+        progress:
+          current: 50
+          desired: 100
+        details:
+          career: Explorer
+          expires: 2025-06-01T00:01:00Z
+          created: 2025-06-01T00:00:00Z
+          description: Project Description
+          finished: 2025-06-01T00:00:00Z
+        id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+        state: Active
+        last_modified: 2025-06-01T00:00:00Z
+      properties:
+        configuration:
+          $ref: "#/components/schemas/CorporationsProjectsDetail_configuration"
+        contribution:
+          $ref: "#/components/schemas/CorporationsProjectsDetailContribution"
+        creator:
+          $ref: "#/components/schemas/CorporationsProjectsDetailCreator"
+        details:
+          $ref: "#/components/schemas/CorporationsProjectsDetailDetails"
+        id:
+          example: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          format: uuid
+          type: string
+          x-common-model: "true"
+        last_modified:
+          description: Moment this project was last modified. Project contributions
+            also count as a modification
+          example: 2025-06-01T00:00:00Z
+          format: date-time
+          type: string
+        name:
+          description: Project's name
+          example: Project Name
+          type: string
+        progress:
+          $ref: "#/components/schemas/CorporationsProjectsDetailProgress"
+        reward:
+          $ref: "#/components/schemas/CorporationsProjectsDetailReward"
+        state:
+          description: Project's current state
+          enum:
+          - Unspecified
+          - Active
+          - Closed
+          - Completed
+          - Expired
+          - Deleted
+          example: Active
+          type: string
+          x-enum-descriptions:
+          - An unspecified state
+          - Active and accepting contributions
+          - Closed by the corporation
+          - Completed
+          - Expired
+          - Deleted and the details are no longer available
+      required:
+      - configuration
+      - creator
+      - details
+      - id
+      - last_modified
+      - name
+      - progress
+      - state
+      type: object
+    CorporationsProjectsDetailConfigurationcapturefwcomplex:
+      example:
+        archetypes:
+        - archetype_id: 33
+        - archetype_id: 33
+        locations:
+        - solar_system_id: 30000001
+        - solar_system_id: 30000001
+        factions:
+        - faction_id: 500002
+        - faction_id: 500002
+      properties:
+        archetypes:
+          description: Archetype of complex
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmatcherarchetype"
+          type: array
+        factions:
+          description: Faction to capture for
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmatcherfaction"
+          type: array
+        locations:
+          description: Location of complex
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationdamageship:
+      properties:
+        identities:
+          description: Identity of capsuleer
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_identities_inner"
+          type: array
+        locations:
+          description: Location of capsuleer's ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        ships:
+          description: Ship-type of capsuleer's ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_ships_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationdefendfwcomplex:
+      properties:
+        archetypes:
+          description: Archetype of complex
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmatcherarchetype"
+          type: array
+        factions:
+          description: Faction to defend for
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmatcherfaction"
+          type: array
+        locations:
+          description: Location of complex
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationdeliveritem:
+      properties:
+        docking_locations:
+          description: Docking location to deliver to
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdeliveritem_docking_locations_inner"
+          type: array
+        items:
+          description: Item to deliver
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdeliveritem_items_inner"
+          type: array
+        office_id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      type: object
+    CorporationsProjectsDetailConfigurationdestroynpc:
+      properties:
+        locations:
+          description: Location of non-capsuleer
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationdestroyship:
+      properties:
+        identities:
+          description: Identity of capsuleer
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_identities_inner"
+          type: array
+        locations:
+          description: Location of capsuleer's ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        ships:
+          description: Ship-type of capsuleer's ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_ships_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationearnloyaltypoints:
+      properties:
+        corporations:
+          description: Corporation issuing loyalty points
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmatchercorporation"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationlostship:
+      properties:
+        identities:
+          description: Identity of killer
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_identities_inner"
+          type: array
+        locations:
+          description: Location of lost ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        ships:
+          description: Ship-type of lost ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_ships_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationmanual:
+      type: object
+    CorporationsProjectsDetailConfigurationmanufactureitem:
+      properties:
+        docking_locations:
+          description: Station / structure to manufacture in
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdeliveritem_docking_locations_inner"
+          type: array
+        items:
+          description: Item to manufacture
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdeliveritem_items_inner"
+          type: array
+        owner:
+          description: Manufacture for
+          enum:
+          - Any
+          - Corporation
+          - Character
+          type: string
+          x-enum-descriptions:
+          - Either a corporation or a character
+          - A corporation
+          - A character
+      required:
+      - owner
+      type: object
+    CorporationsProjectsDetailConfigurationmatcherarchetype:
+      example:
+        archetype_id: 33
+      properties:
+        archetype_id:
+          example: 33
+          format: int64
+          type: integer
+          x-common-model: "true"
+      type: object
+    CorporationsProjectsDetailConfigurationmatchercorporation:
+      properties:
+        corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+      type: object
+    CorporationsProjectsDetailConfigurationmatcherfaction:
+      example:
+        faction_id: 500002
+      properties:
+        faction_id:
+          example: 500002
+          format: int64
+          type: integer
+          x-common-model: "true"
+      type: object
+    CorporationsProjectsDetailConfigurationmatchersignature:
+      properties:
+        signature_type_id:
+          example: 209
+          format: int64
+          type: integer
+          x-common-model: "true"
+      type: object
+    CorporationsProjectsDetailConfigurationminematerial:
+      properties:
+        locations:
+          description: Location to mine
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        materials:
+          description: Materials to mine
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdeliveritem_items_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationremoteboostshield:
+      properties:
+        identities:
+          description: Identity of capsuleer to boost
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_identities_inner"
+          type: array
+        locations:
+          description: Location of capsuleer's ship to boost
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        ships:
+          description: Ship-type of capsuleer's ship to boost
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_ships_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationremoterepairarmor:
+      properties:
+        identities:
+          description: Identity of capsuleer to repair
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_identities_inner"
+          type: array
+        locations:
+          description: Location of capsuleer's ship to repair
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        ships:
+          description: Ship-type of capsuleer's ship to repair
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_ships_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationsalvagewreck:
+      properties:
+        locations:
+          description: Location of wreck
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationscansignature:
+      properties:
+        locations:
+          description: Locations of signatures
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        signatures:
+          description: Signatures to scan
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmatchersignature"
+          type: array
+      type: object
+    CorporationsProjectsDetailConfigurationshipinsurance:
+      properties:
+        conflict_type:
+          description: Conflict type
+          enum:
+          - Any
+          - Pvp
+          - Pve
+          type: string
+          x-enum-descriptions:
+          - Either PvP or PvE
+          - Player vs Player
+          - Player vs Environment
+        identities:
+          description: Identity of killer
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_identities_inner"
+          type: array
+        locations:
+          description: Location of lost ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner"
+          type: array
+        reimburse_implants:
+          description: Reimburse implants
+          type: boolean
+        ships:
+          description: Ship-type of lost ship
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship_ships_inner"
+          type: array
+      required:
+      - conflict_type
+      - reimburse_implants
+      type: object
+    CorporationsProjectsDetailConfigurationunknown:
+      properties:
+        data:
+          description: JSON-encoded configuration
+          example: {}
+        type:
+          description: Configuration type
+          example: projectType
+          type: string
+      required:
+      - data
+      - type
+      type: object
+    CorporationsProjectsDetailContribution:
+      example:
+        reward_per_contribution: 123.5
+        participation_limit: 1000
+        submission_multiplier: 1.5
+        submission_limit: 100
+      properties:
+        participation_limit:
+          description: Limit on the contribution of the individual participant
+          example: 1000
+          format: int64
+          type: integer
+        reward_per_contribution:
+          description: ISK reward per contribution
+          example: 123.5
+          format: double
+          type: number
+        submission_limit:
+          description: Limit on amount of contribution per submission
+          example: 100
+          format: int64
+          type: integer
+        submission_multiplier:
+          description: Multiplier towards progress per contribution
+          example: 1.5
+          format: double
+          type: number
+      type: object
+    CorporationsProjectsDetailCreator:
+      example:
+        name: Creator Name
+        id: 90000001
+      properties:
+        id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        name:
+          description: Creator's name
+          example: Creator Name
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    CorporationsProjectsDetailDetails:
+      example:
+        career: Explorer
+        expires: 2025-06-01T00:01:00Z
+        created: 2025-06-01T00:00:00Z
+        description: Project Description
+        finished: 2025-06-01T00:00:00Z
+      properties:
+        career:
+          description: Assigned career path
+          enum:
+          - Unspecified
+          - Explorer
+          - Industrialist
+          - Enforcer
+          - Soldier of Fortune
+          example: Explorer
+          type: string
+          x-enum-descriptions:
+          - An unspecified career
+          - Explorer career
+          - Industrialist career
+          - Enforcer career
+          - Soldier of Fortune career
+        created:
+          description: Moment this project was created
+          example: 2025-06-01T00:00:00Z
+          format: date-time
+          type: string
+        description:
+          description: Description
+          example: Project Description
+          type: string
+        expires:
+          description: Moment this project expires
+          example: 2025-06-01T00:01:00Z
+          format: date-time
+          type: string
+        finished:
+          description: Moment this project transitioned to a non-active state.
+          example: 2025-06-01T00:00:00Z
+          format: date-time
+          type: string
+      required:
+      - career
+      - created
+      - description
+      type: object
+    CorporationsProjectsDetailProgress:
+      example:
+        current: 50
+        desired: 100
+      properties:
+        current:
+          description: Current progress
+          example: 50
+          format: int64
+          type: integer
+        desired:
+          description: Desired progress
+          example: 100
+          format: int64
+          type: integer
+      required:
+      - current
+      - desired
+      type: object
+    CorporationsProjectsDetailProject:
+      example:
+        reward:
+          initial: 12345.5
+          remaining: 5432.1
+        name: Project Name
+        progress:
+          current: 50
+          desired: 100
+        id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+        state: Active
+        last_modified: 2025-06-01T00:00:00Z
+      properties:
+        id:
+          example: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          format: uuid
+          type: string
+          x-common-model: "true"
+        last_modified:
+          description: Moment this project was last modified. Project contributions
+            also count as a modification
+          example: 2025-06-01T00:00:00Z
+          format: date-time
+          type: string
+        name:
+          description: Project's name
+          example: Project Name
+          type: string
+        progress:
+          $ref: "#/components/schemas/CorporationsProjectsDetailProgress"
+        reward:
+          $ref: "#/components/schemas/CorporationsProjectsDetailReward"
+        state:
+          description: Project's current state
+          enum:
+          - Unspecified
+          - Active
+          - Closed
+          - Completed
+          - Expired
+          - Deleted
+          example: Active
+          type: string
+          x-enum-descriptions:
+          - An unspecified state
+          - Active and accepting contributions
+          - Closed by the corporation
+          - Completed
+          - Expired
+          - Deleted and the details are no longer available
+      required:
+      - id
+      - last_modified
+      - name
+      - progress
+      - state
+      type: object
+    CorporationsProjectsDetailReward:
+      example:
+        initial: 12345.5
+        remaining: 5432.1
+      properties:
+        initial:
+          description: Original amount of ISK that was reserved for this project
+          example: 12345.5
+          format: double
+          type: number
+        remaining:
+          description: Remaining ISK to be awarded
+          example: 5432.1
+          format: double
+          type: number
+      required:
+      - initial
+      - remaining
+      type: object
+    CorporationsProjectsListing:
+      example:
+        cursor:
+          before: before
+          after: after
+        projects:
+        - reward:
+            initial: 12345.5
+            remaining: 5432.1
+          name: Project Name
+          progress:
+            current: 50
+            desired: 100
+          id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          state: Active
+          last_modified: 2025-06-01T00:00:00Z
+        - reward:
+            initial: 12345.5
+            remaining: 5432.1
+          name: Project Name
+          progress:
+            current: 50
+            desired: 100
+          id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          state: Active
+          last_modified: 2025-06-01T00:00:00Z
+      properties:
+        cursor:
+          $ref: "#/components/schemas/Cursor"
+        projects:
+          description: List of projects
+          items:
+            $ref: "#/components/schemas/CorporationsProjectsDetailProject"
+          type: array
+      required:
+      - projects
+      type: object
+    Cursor:
+      example:
+        before: before
+        after: after
+      properties:
+        after:
+          description: "Cursor to use as 'after' in your next request, to continue\
+            \ walking forwards in time."
+          type: string
+        before:
+          description: "Cursor to use as 'before' in your next request, to continue\
+            \ walking backwards in time."
+          type: string
+      type: object
     DogmaAttributesAttributeIdGet:
       example:
         stackable: true
@@ -20988,14 +22195,14 @@ components:
           key:
           - compatibility_date: 2025-08-26
             path: /meta/changelog
-            is_breaking: false
             method: GET
             description: Updated response schema.
+            type: breaking
           - compatibility_date: 2025-08-26
             path: /meta/changelog
-            is_breaking: false
             method: GET
             description: Updated response schema.
+            type: breaking
       properties:
         changelog:
           additionalProperties:
@@ -21011,9 +22218,9 @@ components:
       example:
         compatibility_date: 2025-08-26
         path: /meta/changelog
-        is_breaking: false
         method: GET
         description: Updated response schema.
+        type: breaking
       properties:
         compatibility_date:
           example: 2025-08-26
@@ -21024,10 +22231,6 @@ components:
           description: Description
           example: Updated response schema.
           type: string
-        is_breaking:
-          description: Whether this is a breaking change
-          example: false
-          type: boolean
         method:
           description: HTTP method of the route
           enum:
@@ -21046,12 +22249,26 @@ components:
           description: Path of the route
           example: /meta/changelog
           type: string
+        type:
+          description: Type of the change
+          enum:
+          - breaking
+          - changed
+          - new
+          - removed
+          example: breaking
+          type: string
+          x-enum-descriptions:
+          - Breaking change
+          - Non-breaking change
+          - New route
+          - Removed route
       required:
       - compatibility_date
       - description
-      - is_breaking
       - method
       - path
+      - type
       type: object
     MetaCompatibilityDates:
       example:
@@ -21072,13 +22289,95 @@ components:
       format: int64
       type: integer
       x-common-model: "true"
-    RouteOriginDestinationGet:
-      description: Solar systems in route
-      items:
-        description: Solar system in route
-        format: int64
-        type: integer
-      type: array
+    Route:
+      example:
+        route:
+        - 30000001
+        - 30000001
+      properties:
+        route:
+          description: The route between the origin and destination systems
+          items:
+            $ref: "#/components/schemas/SolarSystemID"
+          type: array
+      required:
+      - route
+      type: object
+    RouteConnection:
+      example:
+        from: 30000001
+        to: 30000001
+      properties:
+        from:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        to:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - from
+      - to
+      type: object
+    RouteRequestBody:
+      example:
+        avoid_systems:
+        - 30000001
+        - 30000001
+        - 30000001
+        - 30000001
+        - 30000001
+        preference: Shorter
+        security_penalty: 8
+        connections:
+        - from: 30000001
+          to: 30000001
+        - from: 30000001
+          to: 30000001
+        - from: 30000001
+          to: 30000001
+        - from: 30000001
+          to: 30000001
+        - from: 30000001
+          to: 30000001
+      properties:
+        avoid_systems:
+          description: Systems to avoid
+          items:
+            $ref: "#/components/schemas/SolarSystemID"
+          maxItems: 1000
+          type: array
+          uniqueItems: true
+        connections:
+          description: Additional one-way connections (like Jump Bridges) between
+            systems
+          items:
+            $ref: "#/components/schemas/RouteConnection"
+          maxItems: 1000
+          type: array
+        preference:
+          default: Shorter
+          description: Preference for the route
+          enum:
+          - Shorter
+          - Safer
+          - LessSecure
+          type: string
+          x-enum-descriptions:
+          - Shorter routes
+          - Safer routes
+          - Less secure routes
+        security_penalty:
+          default: 50
+          description: Strictness of the path preference
+          format: int64
+          maximum: 100
+          minimum: 0
+          type: integer
+      type: object
     ShipTreeGroupID:
       description: Ship tree group identifier.
       example: 1559
@@ -28354,6 +29653,273 @@ components:
       - balance
       - division
       type: object
+    capture_fw_complex:
+      example:
+        capture_fw_complex:
+          archetypes:
+          - archetype_id: 33
+          - archetype_id: 33
+          locations:
+          - solar_system_id: 30000001
+          - solar_system_id: 30000001
+          factions:
+          - faction_id: 500002
+          - faction_id: 500002
+      properties:
+        capture_fw_complex:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationcapturefwcomplex"
+      title: capture_fw_complex
+      type: object
+    damage_ship:
+      properties:
+        damage_ship:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdamageship"
+      title: damage_ship
+      type: object
+    defend_fw_complex:
+      properties:
+        defend_fw_complex:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdefendfwcomplex"
+      title: defend_fw_complex
+      type: object
+    deliver_item:
+      properties:
+        deliver_item:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdeliveritem"
+      title: deliver_item
+      type: object
+    destroy_npc:
+      properties:
+        destroy_npc:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdestroynpc"
+      title: destroy_npc
+      type: object
+    destroy_ship:
+      properties:
+        destroy_ship:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationdestroyship"
+      title: destroy_ship
+      type: object
+    earn_loyalty_point:
+      properties:
+        earn_loyalty_point:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationearnloyaltypoints"
+      title: earn_loyalty_point
+      type: object
+    lost_ship:
+      properties:
+        lost_ship:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationlostship"
+      title: lost_ship
+      type: object
+    manual:
+      properties:
+        manual:
+          type: object
+      title: manual
+      type: object
+    manufacture_item:
+      properties:
+        manufacture_item:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationmanufactureitem"
+      title: manufacture_item
+      type: object
+    mine_material:
+      properties:
+        mine_material:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationminematerial"
+      title: mine_material
+      type: object
+    remote_boost_shield:
+      properties:
+        remote_boost_shield:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationremoteboostshield"
+      title: remote_boost_shield
+      type: object
+    remote_repair_armor:
+      properties:
+        remote_repair_armor:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationremoterepairarmor"
+      title: remote_repair_armor
+      type: object
+    salvage_wreck:
+      properties:
+        salvage_wreck:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationsalvagewreck"
+      title: salvage_wreck
+      type: object
+    scan_signature:
+      properties:
+        scan_signature:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationscansignature"
+      title: scan_signature
+      type: object
+    ship_insurance:
+      properties:
+        ship_insurance:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationshipinsurance"
+      title: ship_insurance
+      type: object
+    unknown:
+      properties:
+        unknown:
+          $ref: "#/components/schemas/CorporationsProjectsDetailConfigurationunknown"
+      title: unknown
+      type: object
+    CorporationsProjectsDetail_configuration:
+      description: Project's configuration
+      oneOf:
+      - $ref: "#/components/schemas/capture_fw_complex"
+      - $ref: "#/components/schemas/damage_ship"
+      - $ref: "#/components/schemas/defend_fw_complex"
+      - $ref: "#/components/schemas/deliver_item"
+      - $ref: "#/components/schemas/destroy_npc"
+      - $ref: "#/components/schemas/destroy_ship"
+      - $ref: "#/components/schemas/earn_loyalty_point"
+      - $ref: "#/components/schemas/lost_ship"
+      - $ref: "#/components/schemas/manual"
+      - $ref: "#/components/schemas/manufacture_item"
+      - $ref: "#/components/schemas/mine_material"
+      - $ref: "#/components/schemas/remote_boost_shield"
+      - $ref: "#/components/schemas/remote_repair_armor"
+      - $ref: "#/components/schemas/salvage_wreck"
+      - $ref: "#/components/schemas/scan_signature"
+      - $ref: "#/components/schemas/ship_insurance"
+      - $ref: "#/components/schemas/unknown"
+    solar_system_id:
+      example:
+        solar_system_id: 30000001
+      properties:
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: solar_system_id
+      type: object
+    constellation_id:
+      properties:
+        constellation_id:
+          example: 20000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: constellation_id
+      type: object
+    region_id:
+      properties:
+        region_id:
+          example: 10000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: region_id
+      type: object
+    CorporationsProjectsDetailConfigurationcapturefwcomplex_locations_inner:
+      oneOf:
+      - $ref: "#/components/schemas/solar_system_id"
+      - $ref: "#/components/schemas/constellation_id"
+      - $ref: "#/components/schemas/region_id"
+    character_id:
+      properties:
+        character_id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: character_id
+      type: object
+    corporation_id:
+      properties:
+        corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: corporation_id
+      type: object
+    alliance_id:
+      properties:
+        alliance_id:
+          example: 99000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: alliance_id
+      type: object
+    faction_id:
+      properties:
+        faction_id:
+          example: 500002
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: faction_id
+      type: object
+    CorporationsProjectsDetailConfigurationdamageship_identities_inner:
+      oneOf:
+      - $ref: "#/components/schemas/character_id"
+      - $ref: "#/components/schemas/corporation_id"
+      - $ref: "#/components/schemas/alliance_id"
+      - $ref: "#/components/schemas/faction_id"
+    type_id:
+      properties:
+        type_id:
+          example: 587
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: type_id
+      type: object
+    group_id:
+      properties:
+        group_id:
+          description: Ship tree group identifier.
+          example: 1559
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: group_id
+      type: object
+    CorporationsProjectsDetailConfigurationdamageship_ships_inner:
+      oneOf:
+      - $ref: "#/components/schemas/type_id"
+      - $ref: "#/components/schemas/group_id"
+    structure_id:
+      properties:
+        structure_id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: structure_id
+      type: object
+    station_id:
+      properties:
+        station_id:
+          example: 60000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: station_id
+      type: object
+    CorporationsProjectsDetailConfigurationdeliveritem_docking_locations_inner:
+      oneOf:
+      - $ref: "#/components/schemas/structure_id"
+      - $ref: "#/components/schemas/station_id"
+    group_id_1:
+      properties:
+        group_id:
+          example: 1559
+          format: int64
+          type: integer
+          x-common-model: "true"
+      title: group_id
+      type: object
+    CorporationsProjectsDetailConfigurationdeliveritem_items_inner:
+      oneOf:
+      - $ref: "#/components/schemas/type_id"
+      - $ref: "#/components/schemas/group_id_1"
     DogmaDynamicItemsTypeIdItemIdGet_dogma_attributes_inner:
       description: dogma_attribute object
       example:
