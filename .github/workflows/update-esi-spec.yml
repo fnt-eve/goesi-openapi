@@ -42,17 +42,16 @@ jobs:
           -o openapi-generator-cli.jar
 
     - name: Download latest ESI specification
+      id: download-spec
       run: |
         echo "Downloading latest ESI OpenAPI specification..."
-        curl -L https://esi.evetech.net/meta/openapi-3.0.json -o esi-openapi-spec.json
         
-        # Validate the downloaded JSON using jq
-        if ! jq empty esi-openapi-spec.json >/dev/null 2>&1; then
-          echo "ERROR: Downloaded specification is not valid JSON"
-          exit 1
-        fi
+        # Run the script and capture the spec version (last line of output)
+        SPEC_OUTPUT=$(./scripts/get_latest_esi_spec.sh)
+        SPEC_VERSION=$(echo "${SPEC_OUTPUT}" | tail -n 1)
         
-        echo "Successfully downloaded and validated ESI specification"
+        echo "spec_version=${SPEC_VERSION}" >> $GITHUB_OUTPUT
+        echo "Specification version: ${SPEC_VERSION}"
 
     - name: Generate client code
       run: |
@@ -113,6 +112,7 @@ jobs:
 
     - name: Commit and push changes
       if: (steps.check-changes.outputs.changed == 'true' || github.event.inputs.force_update == 'true') && steps.test.outputs.tests_passed == 'true'
+      id: commit
       run: |
         # Configure git
         git config --local user.email "action@github.com"
@@ -126,6 +126,7 @@ jobs:
         # Check if there are staged changes before committing
         if git diff --cached --quiet; then
           echo "No changes to commit after staging"
+          echo "committed=false" >> $GITHUB_OUTPUT
           exit 0
         fi
         
@@ -135,7 +136,46 @@ jobs:
         # Push changes to main branch
         git push origin main
         
+        echo "committed=true" >> $GITHUB_OUTPUT
         echo "Successfully committed and pushed ESI specification updates"
+
+    - name: Create and push release tag
+      if: steps.commit.outputs.committed == 'true'
+      run: |
+        # Get the spec version from download step
+        SPEC_VERSION="${{ steps.download-spec.outputs.spec_version }}"
+        
+        echo "Creating release tag for spec version: ${SPEC_VERSION}"
+        
+        # Fetch all tags
+        git fetch --tags
+        
+        # Find existing tags for this spec version
+        EXISTING_TAGS=$(git tag -l "esi-${SPEC_VERSION}-*" | sort -V)
+        
+        if [ -z "${EXISTING_TAGS}" ]; then
+          # No existing tags for this version, start with patch 1
+          PATCH_VERSION=1
+          echo "No existing tags found for ${SPEC_VERSION}, starting with patch 1"
+        else
+          # Find the highest patch number
+          HIGHEST_TAG=$(echo "${EXISTING_TAGS}" | tail -n 1)
+          HIGHEST_PATCH=$(echo "${HIGHEST_TAG}" | grep -oP 'esi-.*-\K\d+$')
+          PATCH_VERSION=$((HIGHEST_PATCH + 1))
+          echo "Found existing tags. Highest patch: ${HIGHEST_PATCH}, incrementing to: ${PATCH_VERSION}"
+        fi
+        
+        # Create the new tag
+        NEW_TAG="esi-${SPEC_VERSION}-${PATCH_VERSION}"
+        echo "Creating tag: ${NEW_TAG}"
+        
+        git tag -a "${NEW_TAG}" -m "Release ${NEW_TAG}: ESI specification ${SPEC_VERSION} (patch ${PATCH_VERSION})"
+        git push origin "${NEW_TAG}"
+        
+        echo "Successfully created and pushed tag: ${NEW_TAG}"
+        
+        # Output for summary
+        echo "NEW_TAG=${NEW_TAG}" >> $GITHUB_ENV
 
     - name: Create workflow summary
       if: always()
@@ -156,6 +196,9 @@ jobs:
           echo "- Generated client code has been updated" >> $GITHUB_STEP_SUMMARY
           echo "- All tests passed" >> $GITHUB_STEP_SUMMARY
           echo "- Changes committed and pushed to main branch" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${NEW_TAG}" ]; then
+            echo "- Release tag created: \`${NEW_TAG}\`" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Modified files:**" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

@@ -1,4 +1,7 @@
-.PHONY: build test generate lint
+.PHONY: build test generate lint download-spec
+
+download-spec:
+	@./scripts/get_latest_esi_spec.sh
 
 generate:
 	@java -jar openapi-generator-cli.jar generate \
