@@ -314,10 +314,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdExecute(r ApiGetCharacters
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -471,10 +470,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdAgentsResearchExecute(r Ap
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -634,10 +632,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdBlueprintsExecute(r ApiGet
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -794,10 +791,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdCorporationhistoryExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -951,10 +947,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdFatigueExecute(r ApiGetCha
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1108,10 +1103,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdMedalsExecute(r ApiGetChar
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1265,10 +1259,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdNotificationsExecute(r Api
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1422,10 +1415,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdNotificationsContactsExecu
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1581,10 +1573,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdPortraitExecute(r ApiGetCh
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1738,10 +1729,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdRolesExecute(r ApiGetChara
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1895,10 +1885,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdStandingsExecute(r ApiGetC
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2052,10 +2041,9 @@ func (a *CharacterAPIService) GetCharactersCharacterIdTitlesExecute(r ApiGetChar
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2211,10 +2199,9 @@ func (a *CharacterAPIService) PostCharactersAffiliationExecute(r ApiPostCharacte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2385,10 +2372,9 @@ func (a *CharacterAPIService) PostCharactersCharacterIdCspaExecute(r ApiPostChar
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}

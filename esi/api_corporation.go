@@ -435,10 +435,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdExecute(r ApiGetCorp
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -592,10 +591,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdAlliancehistoryExecu
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -755,10 +753,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdBlueprintsExecute(r 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -921,10 +918,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdContainersLogsExecut
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1081,10 +1077,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdDivisionsExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1238,10 +1233,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdFacilitiesExecute(r 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1395,10 +1389,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdIconsExecute(r ApiGe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1558,10 +1551,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdMedalsExecute(r ApiG
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1724,10 +1716,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdMedalsIssuedExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1884,10 +1875,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdMembersExecute(r Api
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2041,10 +2031,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdMembersLimitExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2198,10 +2187,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdMembersTitlesExecute
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2355,10 +2343,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdMembertrackingExecut
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2512,10 +2499,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdRolesExecute(r ApiGe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2675,10 +2661,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdRolesHistoryExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -2841,10 +2826,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdShareholdersExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -3007,10 +2991,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdStandingsExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -3173,10 +3156,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdStarbasesExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -3346,10 +3328,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdStarbasesStarbaseIdE
 		return localVarReturnValue, nil, reportError("systemId is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -3510,10 +3491,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdStructuresExecute(r 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -3670,10 +3650,9 @@ func (a *CorporationAPIService) GetCorporationsCorporationIdTitlesExecute(r ApiG
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -3825,10 +3804,9 @@ func (a *CorporationAPIService) GetCorporationsNpccorpsExecute(r ApiGetCorporati
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}

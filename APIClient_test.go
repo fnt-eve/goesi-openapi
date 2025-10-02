@@ -19,9 +19,7 @@ func TestNewPublicESIClient(t *testing.T) {
 
 	cfg := client.GetConfig()
 	require.Equal(t, userAgent, cfg.UserAgent, "UserAgent should match")
-	require.NotEmpty(t, cfg.DefaultHeader, "Default headers should be set")
-	require.Contains(t, cfg.DefaultHeader, "X-Compatibility-Date", "X-Compatibility-Date header should be set")
-	require.Equal(t, ESICompatibilityDate, cfg.DefaultHeader["X-Compatibility-Date"], "Compatibility date should match")
+	require.NotEmpty(t, cfg.CompatibilityDate, "CompatibilityDate should be set from spec")
 }
 
 func TestNewAuthenticatedESIClient(t *testing.T) {
@@ -57,8 +55,7 @@ func TestNewESIClientWithOptions_DefaultCompatibilityDate(t *testing.T) {
 	require.NotNil(t, client, "NewESIClientWithOptions should not return nil")
 
 	cfg := client.GetConfig()
-	require.Contains(t, cfg.DefaultHeader, "X-Compatibility-Date", "X-Compatibility-Date header should be set")
-	require.Equal(t, ESICompatibilityDate, cfg.DefaultHeader["X-Compatibility-Date"], "Should use default compatibility date")
+	require.NotEmpty(t, cfg.CompatibilityDate, "CompatibilityDate should be set from spec by default")
 }
 
 func TestNewESIClientWithOptions_CustomCompatibilityDate(t *testing.T) {
@@ -72,8 +69,7 @@ func TestNewESIClientWithOptions_CustomCompatibilityDate(t *testing.T) {
 	require.NotNil(t, client, "NewESIClientWithOptions should not return nil")
 
 	cfg := client.GetConfig()
-	require.Contains(t, cfg.DefaultHeader, "X-Compatibility-Date", "X-Compatibility-Date header should be set")
-	require.Equal(t, customDate, cfg.DefaultHeader["X-Compatibility-Date"], "Should use custom compatibility date")
+	require.Equal(t, customDate, cfg.CompatibilityDate, "Should use custom compatibility date")
 }
 
 func TestNewESIClientWithOptions_CustomBaseURL(t *testing.T) {
@@ -107,7 +103,7 @@ func TestNewESIClientWithOptions_AllOptions(t *testing.T) {
 
 	cfg := client.GetConfig()
 	require.Equal(t, customAgent, cfg.UserAgent, "UserAgent should match")
-	require.Equal(t, customDate, cfg.DefaultHeader["X-Compatibility-Date"], "Compatibility date should match")
+	require.Equal(t, customDate, cfg.CompatibilityDate, "Compatibility date should match")
 	require.NotEmpty(t, cfg.Servers, "Servers should be configured")
 	require.Equal(t, customURL, cfg.Servers[0].URL, "Base URL should match")
 }

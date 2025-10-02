@@ -233,10 +233,9 @@ func (a *FactionWarfareAPIService) GetCharactersCharacterIdFwStatsExecute(r ApiG
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -392,10 +391,9 @@ func (a *FactionWarfareAPIService) GetCorporationsCorporationIdFwStatsExecute(r 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -547,10 +545,9 @@ func (a *FactionWarfareAPIService) GetFwLeaderboardsExecute(r ApiGetFwLeaderboar
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -702,10 +699,9 @@ func (a *FactionWarfareAPIService) GetFwLeaderboardsCharactersExecute(r ApiGetFw
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -857,10 +853,9 @@ func (a *FactionWarfareAPIService) GetFwLeaderboardsCorporationsExecute(r ApiGet
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1012,10 +1007,9 @@ func (a *FactionWarfareAPIService) GetFwStatsExecute(r ApiGetFwStatsRequest) ([]
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1165,10 +1159,9 @@ func (a *FactionWarfareAPIService) GetFwSystemsExecute(r ApiGetFwSystemsRequest)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1320,10 +1313,9 @@ func (a *FactionWarfareAPIService) GetFwWarsExecute(r ApiGetFwWarsRequest) ([]Fw
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}

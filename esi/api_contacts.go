@@ -250,10 +250,9 @@ func (a *ContactsAPIService) DeleteCharactersCharacterIdContactsExecute(r ApiDel
 		return nil, reportError("contactIds must have less than 20 elements")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -415,10 +414,9 @@ func (a *ContactsAPIService) GetAlliancesAllianceIdContactsExecute(r ApiGetAllia
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -575,10 +573,9 @@ func (a *ContactsAPIService) GetAlliancesAllianceIdContactsLabelsExecute(r ApiGe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -738,10 +735,9 @@ func (a *ContactsAPIService) GetCharactersCharacterIdContactsExecute(r ApiGetCha
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -898,10 +894,9 @@ func (a *ContactsAPIService) GetCharactersCharacterIdContactsLabelsExecute(r Api
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1061,10 +1056,9 @@ func (a *ContactsAPIService) GetCorporationsCorporationIdContactsExecute(r ApiGe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1221,10 +1215,9 @@ func (a *ContactsAPIService) GetCorporationsCorporationIdContactsLabelsExecute(r
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1405,10 +1398,9 @@ func (a *ContactsAPIService) PostCharactersCharacterIdContactsExecute(r ApiPostC
 		return localVarReturnValue, nil, reportError("standing is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -1616,10 +1608,9 @@ func (a *ContactsAPIService) PutCharactersCharacterIdContactsExecute(r ApiPutCha
 		return nil, reportError("standing is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}

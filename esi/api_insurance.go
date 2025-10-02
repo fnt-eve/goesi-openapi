@@ -112,10 +112,9 @@ func (a *InsuranceAPIService) GetInsurancePricesExecute(r ApiGetInsurancePricesR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return localVarReturnValue, nil, reportError("xCompatibilityDate is required and must be specified")
 	}

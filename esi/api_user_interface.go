@@ -188,10 +188,9 @@ func (a *UserInterfaceAPIService) PostUiAutopilotWaypointExecute(r ApiPostUiAuto
 		return nil, reportError("destinationId is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -342,10 +341,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowContractExecute(r ApiPostUiOpe
 		return nil, reportError("contractId is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -494,10 +492,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowInformationExecute(r ApiPostUi
 		return nil, reportError("targetId is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -646,10 +643,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowMarketdetailsExecute(r ApiPost
 		return nil, reportError("typeId is required and must be specified")
 	}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}
@@ -795,10 +791,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowNewmailExecute(r ApiPostUiOpen
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.xCompatibilityDate == nil {
-		defaultCompatibilityDate := "2020-01-01"
-		r.xCompatibilityDate = &defaultCompatibilityDate
+		r.xCompatibilityDate = &a.client.cfg.CompatibilityDate
 	}
-	// Removed original error check - now using default value
+	// Removed original error check - now using configuration default value
 	if false {
 		return nil, reportError("xCompatibilityDate is required and must be specified")
 	}

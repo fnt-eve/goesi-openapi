@@ -83,6 +83,7 @@ type Configuration struct {
 	Servers          ServerConfigurations
 	OperationServers map[string]ServerConfigurations
 	HTTPClient       *http.Client
+	CompatibilityDate  string            `json:"compatibilityDate,omitempty"`
 }
 
 // NewConfiguration returns a new Configuration object
@@ -91,6 +92,7 @@ func NewConfiguration() *Configuration {
 		DefaultHeader:    make(map[string]string),
 		UserAgent:        "OpenAPI-Generator/1.0.0/go",
 		Debug:            false,
+		CompatibilityDate: "2020-01-01",
 		Servers:          ServerConfigurations{
 			{
 				URL: "https://esi.evetech.net",

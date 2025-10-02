@@ -1,5 +1,4 @@
 //go:generate ./scripts/generate_scopes.sh
-//go:generate ./scripts/update_compatibility_date.sh
 
 package goesi
 
@@ -9,11 +8,6 @@ import (
 
 	"github.com/fnt-eve/goesi-openapi/esi"
 	"golang.org/x/oauth2"
-)
-
-const (
-	// ESI compatibility date for API versioning
-	ESICompatibilityDate = "2020-01-01"
 )
 
 // Context keys for ESI authentication
@@ -50,12 +44,10 @@ func NewESIClientWithOptions(httpClient *http.Client, options ClientOptions) *es
 		cfg.UserAgent = options.UserAgent
 	}
 
-	// Set compatibility date
-	compatibilityDate := options.CompatibilityDate
-	if compatibilityDate == "" {
-		compatibilityDate = ESICompatibilityDate
+	// Set compatibility date - uses the one from Configuration if not specified
+	if options.CompatibilityDate != "" {
+		cfg.CompatibilityDate = options.CompatibilityDate
 	}
-	cfg.AddDefaultHeader("X-Compatibility-Date", compatibilityDate)
 
 	// Set base URL if provided
 	if options.BaseURL != "" {
@@ -74,9 +66,6 @@ func newESIClient(httpClient *http.Client, userAgent string) *esi.APIClient {
 	cfg := esi.NewConfiguration()
 	cfg.HTTPClient = httpClient
 	cfg.UserAgent = userAgent
-
-	// Add required ESI headers
-	cfg.AddDefaultHeader("X-Compatibility-Date", ESICompatibilityDate)
 
 	return esi.NewAPIClient(cfg)
 }
