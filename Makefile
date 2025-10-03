@@ -12,6 +12,9 @@ generate:
 		>/dev/null 2>&1
 	@./scripts/fix-generated-code.sh
 	@go generate ./...
+	@# Update ESI_VERSION with current spec version
+	@jq -r '.info.version' esi-openapi-spec.json > ESI_VERSION
+	@echo "Updated ESI_VERSION to $$(cat ESI_VERSION)"
 
 build:
 	@go build ./...

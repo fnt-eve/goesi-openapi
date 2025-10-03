@@ -118,10 +118,11 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "ESI Spec Updater"
         
-        # Stage all changes in generated code and related files
+        # Stage all changes in generated code and related files (including ESI_VERSION)
         git add esi/
         git add scopes.go
         git add APIClient.go
+        git add ESI_VERSION
         
         # Check if there are staged changes before committing
         if git diff --cached --quiet; then
@@ -139,43 +140,84 @@ jobs:
         echo "committed=true" >> $GITHUB_OUTPUT
         echo "Successfully committed and pushed ESI specification updates"
 
-    - name: Create and push release tag
+    - name: Determine semantic version
       if: steps.commit.outputs.committed == 'true'
+      id: determine-version
       run: |
-        # Get the spec version from download step
-        SPEC_VERSION="${{ steps.download-spec.outputs.spec_version }}"
-        
-        echo "Creating release tag for spec version: ${SPEC_VERSION}"
-        
-        # Fetch all tags
+        # Fetch all tags for version determination
         git fetch --tags
         
-        # Find existing tags for this spec version
-        EXISTING_TAGS=$(git tag -l "esi-${SPEC_VERSION}-*" | sort -V)
+        # Run version determination script
+        NEW_VERSION=$(./scripts/determine_semver.sh)
+        echo "new_version=${NEW_VERSION}" >> $GITHUB_OUTPUT
+        echo "Determined new version: ${NEW_VERSION}"
+
+    - name: Format changelog for release
+      if: steps.commit.outputs.committed == 'true'
+      id: format-changelog
+      run: |
+        # Get ESI versions for changelog
+        PREV_VERSION=$(git show HEAD~1:ESI_VERSION 2>/dev/null || echo "")
+        CURR_VERSION=$(cat ESI_VERSION)
         
-        if [ -z "${EXISTING_TAGS}" ]; then
-          # No existing tags for this version, start with patch 1
-          PATCH_VERSION=1
-          echo "No existing tags found for ${SPEC_VERSION}, starting with patch 1"
-        else
-          # Find the highest patch number
-          HIGHEST_TAG=$(echo "${EXISTING_TAGS}" | tail -n 1)
-          HIGHEST_PATCH=$(echo "${HIGHEST_TAG}" | grep -oP 'esi-.*-\K\d+$')
-          PATCH_VERSION=$((HIGHEST_PATCH + 1))
-          echo "Found existing tags. Highest patch: ${HIGHEST_PATCH}, incrementing to: ${PATCH_VERSION}"
-        fi
+        # Format changelog and write to file
+        ./scripts/format_changelog.sh "$PREV_VERSION" "$CURR_VERSION" > /tmp/changelog.md
+        echo "Changelog written to /tmp/changelog.md"
+
+    - name: Create and push semantic version tag
+      if: steps.commit.outputs.committed == 'true'
+      run: |
+        VERSION="${{ steps.determine-version.outputs.new_version }}"
+        ESI_VERSION=$(cat ESI_VERSION)
         
-        # Create the new tag
-        NEW_TAG="esi-${SPEC_VERSION}-${PATCH_VERSION}"
-        echo "Creating tag: ${NEW_TAG}"
+        # Read changelog from file
+        CHANGELOG=$(cat /tmp/changelog.md)
         
-        git tag -a "${NEW_TAG}" -m "Release ${NEW_TAG}: ESI specification ${SPEC_VERSION} (patch ${PATCH_VERSION})"
-        git push origin "${NEW_TAG}"
+        # Create tag annotation with ESI version and changelog
+        TAG_MESSAGE="ESI ${ESI_VERSION}
+
+        ${CHANGELOG}"
         
-        echo "Successfully created and pushed tag: ${NEW_TAG}"
+        echo "Creating tag: ${VERSION}"
+        git tag -a "${VERSION}" -m "${TAG_MESSAGE}"
+        git push origin "${VERSION}"
         
-        # Output for summary
-        echo "NEW_TAG=${NEW_TAG}" >> $GITHUB_ENV
+        echo "Successfully created and pushed tag: ${VERSION}"
+        echo "NEW_TAG=${VERSION}" >> $GITHUB_ENV
+
+    - name: Create GitHub release
+      if: steps.commit.outputs.committed == 'true'
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        VERSION="${{ steps.determine-version.outputs.new_version }}"
+        ESI_VERSION=$(cat ESI_VERSION)
+        
+        # Read changelog from file
+        CHANGELOG=$(cat /tmp/changelog.md)
+        
+        # Create release body file
+        cat > /tmp/release-body.md <<EOF
+        ## ESI Specification: ${ESI_VERSION}
+
+        ### Installation
+
+        \`\`\`bash
+        go get github.com/fnt-eve/goesi-openapi@${VERSION}
+        \`\`\`
+
+        ### Changelog
+
+        ${CHANGELOG}
+        EOF
+        
+        # Create the release using the file
+        gh release create "${VERSION}" \
+          --title "${VERSION} - ESI ${ESI_VERSION}" \
+          --notes-file /tmp/release-body.md \
+          --latest
+        
+        echo "Successfully created GitHub release: ${VERSION}"
 
     - name: Create workflow summary
       if: always()
