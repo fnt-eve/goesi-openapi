@@ -15692,6 +15692,10 @@ paths:
       - Status
       x-cache-age: 30
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: status
+        max-tokens: 600
+        window-size: 15m
   /ui/autopilot/waypoint:
     post:
       description: Set a solar system as autopilot waypoint
