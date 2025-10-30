@@ -3422,6 +3422,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /characters/{character_id}/implants:
     get:
       description: Return implants on the active clone of a character
@@ -9002,6 +9006,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /corporations/{corporation_id}/icons:
     get:
       description: Get the icon urls for a corporation
@@ -13525,6 +13533,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /fw/leaderboards/characters:
     get:
       description: |-
@@ -13605,6 +13617,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /fw/leaderboards/corporations:
     get:
       description: |-
@@ -13685,6 +13701,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /fw/stats:
     get:
       description: |-
@@ -13765,6 +13785,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /fw/systems:
     get:
       description: An overview of the current ownership of faction warfare solar systems
@@ -13843,6 +13867,10 @@ paths:
       - Faction Warfare
       x-cache-age: 1800
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /fw/wars:
     get:
       description: |-
@@ -13923,6 +13951,10 @@ paths:
       tags:
       - Faction Warfare
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: factional-warfare
+        max-tokens: 150
+        window-size: 15m
   /incursions:
     get:
       description: Return a list of current incursions
@@ -14001,6 +14033,10 @@ paths:
       - Incursions
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: incursion
+        max-tokens: 150
+        window-size: 15m
   /industry/facilities:
     get:
       description: Return a list of industry facilities
@@ -14237,6 +14273,10 @@ paths:
       - Insurance
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: insurance
+        max-tokens: 150
+        window-size: 15m
   /killmails/{killmail_id}/{killmail_hash}:
     get:
       description: Return a single killmail from its ID and hash
@@ -15458,6 +15498,10 @@ paths:
       - Sovereignty
       x-cache-age: 5
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: sovereignty
+        max-tokens: 600
+        window-size: 15m
   /sovereignty/map:
     get:
       description: Shows sovereignty information for solar systems
@@ -15536,6 +15580,10 @@ paths:
       - Sovereignty
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: sovereignty
+        max-tokens: 600
+        window-size: 15m
   /sovereignty/structures:
     get:
       description: Shows sovereignty data for structures.
@@ -15614,6 +15662,10 @@ paths:
       - Sovereignty
       x-cache-age: 120
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: sovereignty
+        max-tokens: 600
+        window-size: 15m
   /status:
     get:
       description: EVE Server status
