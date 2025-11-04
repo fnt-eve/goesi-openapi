@@ -1838,6 +1838,10 @@ paths:
       - Clones
       x-cache-age: 120
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-location
+        max-tokens: 1200
+        window-size: 15m
   /characters/{character_id}/contacts:
     delete:
       description: Bulk delete contacts
@@ -2967,6 +2971,10 @@ paths:
       - Character
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-location
+        max-tokens: 1200
+        window-size: 15m
   /characters/{character_id}/fittings:
     get:
       description: Return fittings of a character
@@ -3826,6 +3834,10 @@ paths:
       - Location
       x-cache-age: 5
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-location
+        max-tokens: 1200
+        window-size: 15m
   /characters/{character_id}/loyalty/points:
     get:
       description: Return a list of loyalty points for all corporations the character
@@ -5244,6 +5256,10 @@ paths:
       - Location
       x-cache-age: 60
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-location
+        max-tokens: 1200
+        window-size: 15m
   /characters/{character_id}/orders:
     get:
       description: List open market orders placed by a character
@@ -6030,6 +6046,10 @@ paths:
       - Location
       x-cache-age: 5
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-location
+        max-tokens: 1200
+        window-size: 15m
   /characters/{character_id}/skillqueue:
     get:
       description: List the configured skill queue for the given character
