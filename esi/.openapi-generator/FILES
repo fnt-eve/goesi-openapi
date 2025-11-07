@@ -291,6 +291,8 @@ docs/MetaAPI.md
 docs/MetaChangelog.md
 docs/MetaChangelogEntry.md
 docs/MetaCompatibilityDates.md
+docs/MetaStatus.md
+docs/MetaStatusRoutestatus.md
 docs/MineMaterial.md
 docs/PlanetaryInteractionAPI.md
 docs/PostCharactersCharacterIdFittingsRequest.md
@@ -607,6 +609,8 @@ model_markets_structures_structure_id_get_inner.go
 model_meta_changelog.go
 model_meta_changelog_entry.go
 model_meta_compatibility_dates.go
+model_meta_status.go
+model_meta_status_routestatus.go
 model_mine_material.go
 model_post_characters_character_id_fittings_request.go
 model_post_characters_character_id_fittings_request_items_inner.go

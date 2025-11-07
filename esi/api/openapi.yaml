@@ -8,7 +8,7 @@ info:
     url: https://developers.eveonline.com/license-agreement
   termsOfService: https://support.eveonline.com/hc/en-us/articles/8414770561948-EVE-Online-Terms-of-Service
   title: EVE Stable Infrastructure (ESI) - tranquility
-  version: 2025-09-30
+  version: 2025-11-06
 servers:
 - url: https://esi.evetech.net
 tags:
@@ -84,7 +84,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -170,7 +170,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -266,7 +266,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -362,7 +362,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -451,7 +451,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -540,7 +540,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -617,7 +617,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -716,7 +716,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -804,7 +804,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -903,7 +903,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1001,7 +1001,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1104,7 +1104,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1205,7 +1205,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1304,7 +1304,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1412,7 +1412,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1510,7 +1510,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1607,7 +1607,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1707,7 +1707,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1796,7 +1796,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1902,7 +1902,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -1995,7 +1995,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2121,7 +2121,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2251,7 +2251,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2347,7 +2347,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2448,7 +2448,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2553,7 +2553,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2651,7 +2651,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2741,7 +2741,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2828,7 +2828,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -2929,7 +2929,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3022,7 +3022,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3114,7 +3114,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3221,7 +3221,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3309,7 +3309,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3405,7 +3405,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3497,7 +3497,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3595,7 +3595,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3694,7 +3694,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3743,6 +3743,10 @@ paths:
       - Killmails
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-killmail
+        max-tokens: 30
+        window-size: 15m
   /characters/{character_id}/location:
     get:
       description: "Information about the characters current location. Returns the\
@@ -3792,7 +3796,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -3886,7 +3890,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4000,7 +4004,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4088,7 +4092,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4183,7 +4187,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4271,7 +4275,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4374,7 +4378,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4458,7 +4462,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4556,7 +4560,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4648,7 +4652,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4745,7 +4749,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4835,7 +4839,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -4935,7 +4939,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5031,7 +5035,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5125,7 +5129,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5214,7 +5218,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5307,7 +5311,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5407,7 +5411,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5503,7 +5507,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5604,7 +5608,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5696,7 +5700,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5781,7 +5785,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -5913,7 +5917,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6004,7 +6008,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6097,7 +6101,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6186,7 +6190,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6276,7 +6280,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6365,7 +6369,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6454,7 +6458,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6553,7 +6557,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6659,7 +6663,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6759,7 +6763,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6869,7 +6873,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -6979,7 +6983,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7083,7 +7087,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7192,7 +7196,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7309,7 +7313,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7402,7 +7406,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7487,7 +7491,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7574,7 +7578,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7670,7 +7674,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7770,7 +7774,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7875,7 +7879,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -7988,7 +7992,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8096,7 +8100,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8192,7 +8196,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8292,7 +8296,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8402,7 +8406,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8517,7 +8521,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8622,7 +8626,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8721,7 +8725,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8820,7 +8824,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -8911,7 +8915,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9005,7 +9009,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9097,7 +9101,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9203,7 +9207,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9311,7 +9315,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9360,6 +9364,10 @@ paths:
       - Killmails
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-killmail
+        max-tokens: 30
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/medals:
@@ -9419,7 +9427,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9525,7 +9533,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9624,7 +9632,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9713,7 +9721,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9804,7 +9812,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9896,7 +9904,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -9997,7 +10005,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10107,7 +10115,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10257,7 +10265,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10371,7 +10379,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10492,7 +10500,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10631,7 +10639,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10731,7 +10739,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10831,7 +10839,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -10939,7 +10947,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11048,7 +11056,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11154,7 +11162,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11270,7 +11278,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11372,7 +11380,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11472,7 +11480,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11563,7 +11571,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11675,7 +11683,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11793,7 +11801,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11880,7 +11888,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -11969,7 +11977,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12065,7 +12073,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12145,7 +12153,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12234,7 +12242,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12320,7 +12328,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12413,7 +12421,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12508,7 +12516,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12604,7 +12612,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12708,7 +12716,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12805,7 +12813,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -12909,7 +12917,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13006,7 +13014,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13101,7 +13109,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13196,7 +13204,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13299,7 +13307,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13396,7 +13404,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13500,7 +13508,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13587,7 +13595,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13671,7 +13679,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13755,7 +13763,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13839,7 +13847,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -13920,7 +13928,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14005,7 +14013,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14086,7 +14094,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14168,7 +14176,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14250,7 +14258,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14332,7 +14340,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14433,7 +14441,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14472,6 +14480,10 @@ paths:
       - Killmails
       x-cache-age: 2592000
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: killmail
+        max-tokens: 3600
+        window-size: 15m
   /loyalty/stores/{corporation_id}/offers:
     get:
       description: |-
@@ -14522,7 +14534,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14602,7 +14614,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14691,7 +14703,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14770,7 +14782,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14867,7 +14879,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -14976,7 +14988,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15095,7 +15107,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15200,7 +15212,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15285,7 +15297,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15369,7 +15381,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15414,6 +15426,90 @@ paths:
       tags:
       - Meta
       x-compatibility-date: 2020-01-01
+  /meta/status:
+    get:
+      description: Get the health status of each API route.
+      operationId: GetMetaStatus
+      parameters:
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2025-11-06
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MetaStatus"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+      summary: Get health status
+      tags:
+      - Meta
+      x-compatibility-date: 2025-11-06
   /route/{origin_system_id}/{destination_system_id}:
     post:
       description: Calculate the systems between the given origin and destination.
@@ -15469,7 +15565,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15559,7 +15655,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15641,7 +15737,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15723,7 +15819,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15805,7 +15901,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -15916,7 +16012,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16005,7 +16101,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16095,7 +16191,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16185,7 +16281,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16266,7 +16362,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16355,7 +16451,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16445,7 +16541,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16525,7 +16621,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16607,7 +16703,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16696,7 +16792,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16778,7 +16874,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16866,7 +16962,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -16948,7 +17044,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17030,7 +17126,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17118,7 +17214,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17208,7 +17304,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17304,7 +17400,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17386,7 +17482,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17490,7 +17586,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17569,7 +17665,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17670,7 +17766,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17750,7 +17846,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17832,7 +17928,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -17920,7 +18016,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18008,7 +18104,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18097,7 +18193,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18185,7 +18281,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18273,7 +18369,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18361,7 +18457,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18449,7 +18545,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18532,7 +18628,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18612,7 +18708,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18693,7 +18789,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18781,7 +18877,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18873,7 +18969,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -18969,7 +19065,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -19057,7 +19153,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -19096,6 +19192,10 @@ paths:
       - Wars
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: killmail
+        max-tokens: 3600
+        window-size: 15m
   /wars/{war_id}:
     get:
       description: Return details about a war
@@ -19144,7 +19244,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -19183,6 +19283,10 @@ paths:
       - Wars
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: killmail
+        max-tokens: 3600
+        window-size: 15m
   /wars/{war_id}/killmails:
     get:
       description: Return a list of kills related to a war
@@ -19241,7 +19345,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-09-30
+          - 2025-11-06
           format: date
           type: string
         style: simple
@@ -19287,6 +19391,10 @@ paths:
       - Wars
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: killmail
+        max-tokens: 3600
+        window-size: 15m
 components:
   headers:
     CacheControl:
@@ -19353,7 +19461,7 @@ components:
       required: true
       schema:
         enum:
-        - 2025-09-30
+        - 2025-11-06
         format: date
         type: string
       style: simple
@@ -22459,6 +22567,66 @@ components:
           type: array
       required:
       - compatibility_dates
+      type: object
+    MetaStatus:
+      example:
+        routes:
+        - path: path
+          method: GET
+          status: Unknown
+        - path: path
+          method: GET
+          status: Unknown
+      properties:
+        routes:
+          description: List of all API routes and their health status
+          items:
+            $ref: "#/components/schemas/MetaStatusRoutestatus"
+          type: array
+      required:
+      - routes
+      type: object
+    MetaStatusRoutestatus:
+      example:
+        path: path
+        method: GET
+        status: Unknown
+      properties:
+        method:
+          description: Route's HTTP method
+          enum:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          type: string
+          x-enum-descriptions:
+          - ""
+          - ""
+          - ""
+          - ""
+        path:
+          description: Route's HTTP path
+          type: string
+        status:
+          description: Route's health status
+          enum:
+          - Unknown
+          - OK
+          - Degraded
+          - Down
+          - Recovering
+          type: string
+          x-enum-descriptions:
+          - Unknown status
+          - Route is working as expected
+          - "Route is working, but with degraded performance"
+          - Route is not working
+          - Route is recovering
+      required:
+      - method
+      - path
+      - status
       type: object
     RegionID:
       example: 10000001
