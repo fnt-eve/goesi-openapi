@@ -315,6 +315,10 @@ paths:
       - Contacts
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: alliance-social
+        max-tokens: 300
+        window-size: 15m
   /alliances/{alliance_id}/contacts/labels:
     get:
       description: Return custom labels for an alliance's contacts
@@ -404,6 +408,10 @@ paths:
       - Contacts
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: alliance-social
+        max-tokens: 300
+        window-size: 15m
   /alliances/{alliance_id}/corporations:
     get:
       description: List all current member corporations of an alliance
@@ -7136,6 +7144,10 @@ paths:
       - Industry
       x-cache-age: 1800
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-industry
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Station_Manager
   /corporation/{corporation_id}/mining/observers:
@@ -7245,6 +7257,10 @@ paths:
       - Industry
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-industry
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Accountant
   /corporation/{corporation_id}/mining/observers/{observer_id}:
@@ -7362,6 +7378,10 @@ paths:
       - Industry
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-industry
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Accountant
   /corporations/npccorps:
@@ -8041,6 +8061,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-industry
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/contacts:
@@ -8149,6 +8173,10 @@ paths:
       - Contacts
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-social
+        max-tokens: 300
+        window-size: 15m
   /corporations/{corporation_id}/contacts/labels:
     get:
       description: Return custom labels for a corporation's contacts
@@ -8238,6 +8266,10 @@ paths:
       - Contacts
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-social
+        max-tokens: 300
+        window-size: 15m
   /corporations/{corporation_id}/containers/logs:
     get:
       description: Returns logs recorded in the past seven days from all audit log
@@ -8455,6 +8487,10 @@ paths:
       - Contracts
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-contract
+        max-tokens: 600
+        window-size: 15m
   /corporations/{corporation_id}/contracts/{contract_id}/bids:
     get:
       description: Lists bids on a particular auction contract
@@ -8570,6 +8606,10 @@ paths:
       - Contracts
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-contract
+        max-tokens: 600
+        window-size: 15m
   /corporations/{corporation_id}/contracts/{contract_id}/items:
     get:
       description: Lists items of a particular contract
@@ -8668,6 +8708,10 @@ paths:
       - Contracts
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-contract
+        max-tokens: 600
+        window-size: 15m
   /corporations/{corporation_id}/customs_offices:
     get:
       description: List customs offices owned by a corporation
@@ -8774,6 +8818,10 @@ paths:
       - Planetary Interaction
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-industry
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/divisions:
@@ -8866,6 +8914,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-wallet
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/facilities:
@@ -9256,6 +9308,10 @@ paths:
       - Industry
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-industry
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Factory_Manager
   /corporations/{corporation_id}/killmails/recent:
@@ -9476,6 +9532,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-detail
+        max-tokens: 300
+        window-size: 15m
   /corporations/{corporation_id}/medals/issued:
     get:
       description: Returns medals issued by a corporation
@@ -9582,6 +9642,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-detail
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/members:
@@ -9674,6 +9738,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
   /corporations/{corporation_id}/members/limit:
     get:
       description: "Return a corporation's member limit, not including CEO himself"
@@ -9763,6 +9831,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/members/titles:
@@ -9854,6 +9926,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/membertracking:
@@ -9946,6 +10022,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/orders:
@@ -10781,6 +10861,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
   /corporations/{corporation_id}/roles/history:
     get:
       description: "Return how roles have changed for a coporation's members, up to\
@@ -10888,6 +10972,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/shareholders:
@@ -10996,6 +11084,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-detail
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/standings:
@@ -11105,6 +11197,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-member
+        max-tokens: 300
+        window-size: 15m
   /corporations/{corporation_id}/starbases:
     get:
       description: Returns list of corporation starbases (POSes)
@@ -11522,6 +11618,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-detail
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/wallets:
@@ -11613,6 +11713,10 @@ paths:
       - Wallet
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-wallet
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Accountant
       - Junior_Accountant
@@ -11732,6 +11836,10 @@ paths:
       - Wallet
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-wallet
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Accountant
       - Junior_Accountant
@@ -11843,6 +11951,10 @@ paths:
       - Wallet
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-wallet
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Accountant
       - Junior_Accountant
