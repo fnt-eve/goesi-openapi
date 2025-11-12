@@ -15728,6 +15728,10 @@ paths:
       tags:
       - Routes
       x-compatibility-date: 2025-09-30
+      x-rate-limit:
+        group: routes
+        max-tokens: 3600
+        window-size: 15m
   /sovereignty/campaigns:
     get:
       description: Shows sovereignty data for campaigns.
