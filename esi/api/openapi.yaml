@@ -24447,6 +24447,7 @@ components:
           - CorpseBay
           - Deliveries
           - DroneBay
+          - ExpeditionHold
           - FighterBay
           - FighterTube0
           - FighterTube1
@@ -27175,6 +27176,7 @@ components:
           - DroneBay
           - DustBattle
           - DustDatabank
+          - ExpeditionHold
           - FighterBay
           - FighterTube0
           - FighterTube1
@@ -27343,6 +27345,7 @@ components:
           - DroneBay
           - DustBattle
           - DustDatabank
+          - ExpeditionHold
           - FighterBay
           - FighterTube0
           - FighterTube1
@@ -27586,6 +27589,7 @@ components:
           - DroneBay
           - DustBattle
           - DustDatabank
+          - ExpeditionHold
           - FighterBay
           - FighterTube0
           - FighterTube1
