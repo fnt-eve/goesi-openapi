@@ -616,6 +616,7 @@ Authentication schemes defined for the API:
  - **esi-characters.read_contacts.v1**: esi-characters.read_contacts.v1
  - **esi-characters.read_corporation_roles.v1**: esi-characters.read_corporation_roles.v1
  - **esi-characters.read_fatigue.v1**: esi-characters.read_fatigue.v1
+ - **esi-characters.read_freelance_jobs.v1**: esi-characters.read_freelance_jobs.v1
  - **esi-characters.read_fw_stats.v1**: esi-characters.read_fw_stats.v1
  - **esi-characters.read_loyalty.v1**: esi-characters.read_loyalty.v1
  - **esi-characters.read_medals.v1**: esi-characters.read_medals.v1
@@ -633,6 +634,7 @@ Authentication schemes defined for the API:
  - **esi-corporations.read_corporation_membership.v1**: esi-corporations.read_corporation_membership.v1
  - **esi-corporations.read_divisions.v1**: esi-corporations.read_divisions.v1
  - **esi-corporations.read_facilities.v1**: esi-corporations.read_facilities.v1
+ - **esi-corporations.read_freelance_jobs.v1**: esi-corporations.read_freelance_jobs.v1
  - **esi-corporations.read_fw_stats.v1**: esi-corporations.read_fw_stats.v1
  - **esi-corporations.read_medals.v1**: esi-corporations.read_medals.v1
  - **esi-corporations.read_projects.v1**: esi-corporations.read_projects.v1
