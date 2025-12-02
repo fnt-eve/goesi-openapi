@@ -964,6 +964,10 @@ paths:
       - Assets
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-asset
+        max-tokens: 1800
+        window-size: 15m
   /characters/{character_id}/assets/locations:
     post:
       description: "Return locations for a set of item ids, which you can get from\
@@ -1067,6 +1071,10 @@ paths:
       tags:
       - Assets
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-asset
+        max-tokens: 1800
+        window-size: 15m
   /characters/{character_id}/assets/names:
     post:
       description: "Return names for a set of item ids, which you can get from character\
@@ -1170,6 +1178,10 @@ paths:
       tags:
       - Assets
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: char-asset
+        max-tokens: 1800
+        window-size: 15m
   /characters/{character_id}/attributes:
     get:
       description: Return attributes of a character
@@ -7911,6 +7923,10 @@ paths:
       - Assets
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-asset
+        max-tokens: 1800
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/assets/locations:
@@ -8016,6 +8032,10 @@ paths:
       tags:
       - Assets
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-asset
+        max-tokens: 1800
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/assets/names:
@@ -8121,6 +8141,10 @@ paths:
       tags:
       - Assets
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-asset
+        max-tokens: 1800
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/blueprints:
