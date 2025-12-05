@@ -10587,6 +10587,10 @@ paths:
       x-cache-age: 31536000
       x-compatibility-date: 2025-08-26
       x-pagination: cursor
+      x-rate-limit:
+        group: corp-project
+        max-tokens: 600
+        window-size: 15m
   /corporations/{corporation_id}/projects/{project_id}:
     get:
       description: Get the details of a corporation project.
@@ -10700,6 +10704,10 @@ paths:
       - Corporation Projects
       x-cache-age: 600
       x-compatibility-date: 2025-08-26
+      x-rate-limit:
+        group: corp-project
+        max-tokens: 600
+        window-size: 15m
   /corporations/{corporation_id}/projects/{project_id}/contribution/{character_id}:
     get:
       description: Show your contribution to a corporation project.
@@ -10821,6 +10829,10 @@ paths:
       - Corporation Projects
       x-cache-age: 600
       x-compatibility-date: 2025-08-26
+      x-rate-limit:
+        group: corp-project
+        max-tokens: 600
+        window-size: 15m
   /corporations/{corporation_id}/projects/{project_id}/contributors:
     get:
       description: Listing of all contributors to a corporation project.
@@ -10961,6 +10973,10 @@ paths:
       x-cache-age: 31536000
       x-compatibility-date: 2025-08-26
       x-pagination: cursor
+      x-rate-limit:
+        group: corp-project
+        max-tokens: 600
+        window-size: 15m
       x-required-roles:
       - Project_Manager
   /corporations/{corporation_id}/roles:
@@ -15646,6 +15662,10 @@ paths:
       tags:
       - Meta
       x-compatibility-date: 2025-09-26
+      x-rate-limit:
+        group: meta
+        max-tokens: 150
+        window-size: 15m
   /meta/compatibility-dates:
     get:
       description: Get a list of compatibility dates.
@@ -15730,6 +15750,10 @@ paths:
       tags:
       - Meta
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: meta
+        max-tokens: 150
+        window-size: 15m
   /meta/status:
     get:
       description: Get the health status of each API route.
@@ -15814,6 +15838,10 @@ paths:
       tags:
       - Meta
       x-compatibility-date: 2025-11-06
+      x-rate-limit:
+        group: meta
+        max-tokens: 150
+        window-size: 15m
   /route/{origin_system_id}/{destination_system_id}:
     post:
       description: Calculate the systems between the given origin and destination.
