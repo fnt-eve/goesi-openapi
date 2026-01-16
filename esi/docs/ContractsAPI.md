@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## GetCharactersCharacterIdContracts
 
-> []CharactersCharacterIdContractsGetInner GetCharactersCharacterIdContracts(ctx, characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdContractsGetInner GetCharactersCharacterIdContracts(ctx, characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get contracts
 
@@ -44,10 +44,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetCharactersCharacterIdContracts(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetCharactersCharacterIdContracts(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetCharactersCharacterIdContracts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -78,6 +79,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -99,7 +101,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdContractsContractIdBids
 
-> []CharactersCharacterIdContractsContractIdBidsGetInner GetCharactersCharacterIdContractsContractIdBids(ctx, characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdContractsContractIdBidsGetInner GetCharactersCharacterIdContractsContractIdBids(ctx, characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get contract bids
 
@@ -125,10 +127,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetCharactersCharacterIdContractsContractIdBids(context.Background(), characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetCharactersCharacterIdContractsContractIdBids(context.Background(), characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetCharactersCharacterIdContractsContractIdBids``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -160,6 +163,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -181,7 +185,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdContractsContractIdItems
 
-> []CharactersCharacterIdContractsContractIdItemsGetInner GetCharactersCharacterIdContractsContractIdItems(ctx, characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdContractsContractIdItemsGetInner GetCharactersCharacterIdContractsContractIdItems(ctx, characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get contract items
 
@@ -207,10 +211,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetCharactersCharacterIdContractsContractIdItems(context.Background(), characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetCharactersCharacterIdContractsContractIdItems(context.Background(), characterId, contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetCharactersCharacterIdContractsContractIdItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -242,6 +247,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -263,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## GetContractsPublicBidsContractId
 
-> []ContractsPublicBidsContractIdGetInner GetContractsPublicBidsContractId(ctx, contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []ContractsPublicBidsContractIdGetInner GetContractsPublicBidsContractId(ctx, contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get public contract bids
 
@@ -289,10 +295,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetContractsPublicBidsContractId(context.Background(), contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetContractsPublicBidsContractId(context.Background(), contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetContractsPublicBidsContractId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -323,6 +330,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -344,7 +352,7 @@ No authorization required
 
 ## GetContractsPublicItemsContractId
 
-> []ContractsPublicItemsContractIdGetInner GetContractsPublicItemsContractId(ctx, contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []ContractsPublicItemsContractIdGetInner GetContractsPublicItemsContractId(ctx, contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get public contract items
 
@@ -370,10 +378,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetContractsPublicItemsContractId(context.Background(), contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetContractsPublicItemsContractId(context.Background(), contractId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetContractsPublicItemsContractId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -404,6 +413,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -425,7 +435,7 @@ No authorization required
 
 ## GetContractsPublicRegionId
 
-> []ContractsPublicRegionIdGetInner GetContractsPublicRegionId(ctx, regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []ContractsPublicRegionIdGetInner GetContractsPublicRegionId(ctx, regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get public contracts
 
@@ -451,10 +461,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetContractsPublicRegionId(context.Background(), regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetContractsPublicRegionId(context.Background(), regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetContractsPublicRegionId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -485,6 +496,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -506,7 +518,7 @@ No authorization required
 
 ## GetCorporationsCorporationIdContracts
 
-> []CorporationsCorporationIdContractsGetInner GetCorporationsCorporationIdContracts(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CorporationsCorporationIdContractsGetInner GetCorporationsCorporationIdContracts(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get corporation contracts
 
@@ -532,10 +544,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetCorporationsCorporationIdContracts(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetCorporationsCorporationIdContracts(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetCorporationsCorporationIdContracts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -566,6 +579,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -587,7 +601,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsCorporationIdContractsContractIdBids
 
-> []CharactersCharacterIdContractsContractIdBidsGetInner GetCorporationsCorporationIdContractsContractIdBids(ctx, contractId, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdContractsContractIdBidsGetInner GetCorporationsCorporationIdContractsContractIdBids(ctx, contractId, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get corporation contract bids
 
@@ -614,10 +628,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetCorporationsCorporationIdContractsContractIdBids(context.Background(), contractId, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetCorporationsCorporationIdContractsContractIdBids(context.Background(), contractId, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetCorporationsCorporationIdContractsContractIdBids``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -650,6 +665,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -671,7 +687,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsCorporationIdContractsContractIdItems
 
-> []CharactersCharacterIdContractsContractIdItemsGetInner GetCorporationsCorporationIdContractsContractIdItems(ctx, contractId, corporationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdContractsContractIdItemsGetInner GetCorporationsCorporationIdContractsContractIdItems(ctx, contractId, corporationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get corporation contract items
 
@@ -697,10 +713,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContractsAPI.GetCorporationsCorporationIdContractsContractIdItems(context.Background(), contractId, corporationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.ContractsAPI.GetCorporationsCorporationIdContractsContractIdItems(context.Background(), contractId, corporationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContractsAPI.GetCorporationsCorporationIdContractsContractIdItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -732,6 +749,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

@@ -46,6 +46,7 @@ type ApiGetStatusRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -69,6 +70,12 @@ func (r ApiGetStatusRequest) IfNoneMatch(ifNoneMatch string) ApiGetStatusRequest
 // The tenant ID for the request.
 func (r ApiGetStatusRequest) XTenant(xTenant string) ApiGetStatusRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetStatusRequest) IfModifiedSince(ifModifiedSince string) ApiGetStatusRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -145,6 +152,9 @@ func (a *StatusAPIService) GetStatusExecute(r ApiGetStatusRequest) (*StatusGet, 
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

@@ -66,6 +66,7 @@ type ApiGetCharactersCharacterIdLoyaltyPointsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -89,6 +90,12 @@ func (r ApiGetCharactersCharacterIdLoyaltyPointsRequest) IfNoneMatch(ifNoneMatch
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdLoyaltyPointsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdLoyaltyPointsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdLoyaltyPointsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdLoyaltyPointsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -169,6 +176,9 @@ func (a *LoyaltyAPIService) GetCharactersCharacterIdLoyaltyPointsExecute(r ApiGe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -222,6 +232,7 @@ type ApiGetLoyaltyStoresCorporationIdOffersRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -245,6 +256,12 @@ func (r ApiGetLoyaltyStoresCorporationIdOffersRequest) IfNoneMatch(ifNoneMatch s
 // The tenant ID for the request.
 func (r ApiGetLoyaltyStoresCorporationIdOffersRequest) XTenant(xTenant string) ApiGetLoyaltyStoresCorporationIdOffersRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetLoyaltyStoresCorporationIdOffersRequest) IfModifiedSince(ifModifiedSince string) ApiGetLoyaltyStoresCorporationIdOffersRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -326,6 +343,9 @@ func (a *LoyaltyAPIService) GetLoyaltyStoresCorporationIdOffersExecute(r ApiGetL
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

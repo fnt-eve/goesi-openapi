@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## PostUiAutopilotWaypoint
 
-> PostUiAutopilotWaypoint(ctx).AddToBeginning(addToBeginning).ClearOtherWaypoints(clearOtherWaypoints).DestinationId(destinationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> PostUiAutopilotWaypoint(ctx).AddToBeginning(addToBeginning).ClearOtherWaypoints(clearOtherWaypoints).DestinationId(destinationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Set Autopilot Waypoint
 
@@ -41,10 +41,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserInterfaceAPI.PostUiAutopilotWaypoint(context.Background()).AddToBeginning(addToBeginning).ClearOtherWaypoints(clearOtherWaypoints).DestinationId(destinationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	r, err := apiClient.UserInterfaceAPI.PostUiAutopilotWaypoint(context.Background()).AddToBeginning(addToBeginning).ClearOtherWaypoints(clearOtherWaypoints).DestinationId(destinationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserInterfaceAPI.PostUiAutopilotWaypoint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -91,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## PostUiOpenwindowContract
 
-> PostUiOpenwindowContract(ctx).ContractId(contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> PostUiOpenwindowContract(ctx).ContractId(contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Open Contract Window
 
@@ -116,10 +118,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowContract(context.Background()).ContractId(contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowContract(context.Background()).ContractId(contractId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserInterfaceAPI.PostUiOpenwindowContract``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -143,6 +146,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -164,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## PostUiOpenwindowInformation
 
-> PostUiOpenwindowInformation(ctx).TargetId(targetId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> PostUiOpenwindowInformation(ctx).TargetId(targetId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Open Information Window
 
@@ -189,10 +193,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowInformation(context.Background()).TargetId(targetId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowInformation(context.Background()).TargetId(targetId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserInterfaceAPI.PostUiOpenwindowInformation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -216,6 +221,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -237,7 +243,7 @@ Name | Type | Description  | Notes
 
 ## PostUiOpenwindowMarketdetails
 
-> PostUiOpenwindowMarketdetails(ctx).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> PostUiOpenwindowMarketdetails(ctx).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Open Market Details
 
@@ -262,10 +268,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowMarketdetails(context.Background()).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowMarketdetails(context.Background()).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserInterfaceAPI.PostUiOpenwindowMarketdetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -289,6 +296,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -310,7 +318,7 @@ Name | Type | Description  | Notes
 
 ## PostUiOpenwindowNewmail
 
-> PostUiOpenwindowNewmail(ctx).XCompatibilityDate(xCompatibilityDate).PostUiOpenwindowNewmailRequest(postUiOpenwindowNewmailRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> PostUiOpenwindowNewmail(ctx).XCompatibilityDate(xCompatibilityDate).PostUiOpenwindowNewmailRequest(postUiOpenwindowNewmailRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Open New Mail Window
 
@@ -335,10 +343,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowNewmail(context.Background()).XCompatibilityDate(xCompatibilityDate).PostUiOpenwindowNewmailRequest(postUiOpenwindowNewmailRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	r, err := apiClient.UserInterfaceAPI.PostUiOpenwindowNewmail(context.Background()).XCompatibilityDate(xCompatibilityDate).PostUiOpenwindowNewmailRequest(postUiOpenwindowNewmailRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserInterfaceAPI.PostUiOpenwindowNewmail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -362,6 +371,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

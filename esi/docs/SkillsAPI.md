@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetCharactersCharacterIdAttributes
 
-> CharactersCharacterIdAttributesGet GetCharactersCharacterIdAttributes(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CharactersCharacterIdAttributesGet GetCharactersCharacterIdAttributes(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character attributes
 
@@ -37,10 +37,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SkillsAPI.GetCharactersCharacterIdAttributes(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.SkillsAPI.GetCharactersCharacterIdAttributes(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SkillsAPI.GetCharactersCharacterIdAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -91,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdSkillqueue
 
-> []CharactersCharacterIdSkillqueueGetInner GetCharactersCharacterIdSkillqueue(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdSkillqueueGetInner GetCharactersCharacterIdSkillqueue(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character's skill queue
 
@@ -116,10 +118,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SkillsAPI.GetCharactersCharacterIdSkillqueue(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.SkillsAPI.GetCharactersCharacterIdSkillqueue(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SkillsAPI.GetCharactersCharacterIdSkillqueue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -149,6 +152,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -170,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdSkills
 
-> CharactersCharacterIdSkillsGet GetCharactersCharacterIdSkills(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CharactersCharacterIdSkillsGet GetCharactersCharacterIdSkills(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character skills
 
@@ -195,10 +199,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SkillsAPI.GetCharactersCharacterIdSkills(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.SkillsAPI.GetCharactersCharacterIdSkills(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SkillsAPI.GetCharactersCharacterIdSkills``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,6 +233,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

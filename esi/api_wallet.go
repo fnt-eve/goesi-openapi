@@ -126,6 +126,7 @@ type ApiGetCharactersCharacterIdWalletRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -149,6 +150,12 @@ func (r ApiGetCharactersCharacterIdWalletRequest) IfNoneMatch(ifNoneMatch string
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdWalletRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdWalletRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdWalletRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdWalletRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -229,6 +236,9 @@ func (a *WalletAPIService) GetCharactersCharacterIdWalletExecute(r ApiGetCharact
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -283,6 +293,7 @@ type ApiGetCharactersCharacterIdWalletJournalRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -311,6 +322,12 @@ func (r ApiGetCharactersCharacterIdWalletJournalRequest) IfNoneMatch(ifNoneMatch
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdWalletJournalRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdWalletJournalRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdWalletJournalRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdWalletJournalRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -394,6 +411,9 @@ func (a *WalletAPIService) GetCharactersCharacterIdWalletJournalExecute(r ApiGet
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -448,6 +468,7 @@ type ApiGetCharactersCharacterIdWalletTransactionsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -476,6 +497,12 @@ func (r ApiGetCharactersCharacterIdWalletTransactionsRequest) IfNoneMatch(ifNone
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdWalletTransactionsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdWalletTransactionsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdWalletTransactionsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdWalletTransactionsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -559,6 +586,9 @@ func (a *WalletAPIService) GetCharactersCharacterIdWalletTransactionsExecute(r A
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -612,6 +642,7 @@ type ApiGetCorporationsCorporationIdWalletsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -635,6 +666,12 @@ func (r ApiGetCorporationsCorporationIdWalletsRequest) IfNoneMatch(ifNoneMatch s
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdWalletsRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdWalletsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdWalletsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdWalletsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -715,6 +752,9 @@ func (a *WalletAPIService) GetCorporationsCorporationIdWalletsExecute(r ApiGetCo
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -770,6 +810,7 @@ type ApiGetCorporationsCorporationIdWalletsDivisionJournalRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -798,6 +839,12 @@ func (r ApiGetCorporationsCorporationIdWalletsDivisionJournalRequest) IfNoneMatc
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdWalletsDivisionJournalRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdWalletsDivisionJournalRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdWalletsDivisionJournalRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdWalletsDivisionJournalRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -884,6 +931,9 @@ func (a *WalletAPIService) GetCorporationsCorporationIdWalletsDivisionJournalExe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -939,6 +989,7 @@ type ApiGetCorporationsCorporationIdWalletsDivisionTransactionsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -967,6 +1018,12 @@ func (r ApiGetCorporationsCorporationIdWalletsDivisionTransactionsRequest) IfNon
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdWalletsDivisionTransactionsRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdWalletsDivisionTransactionsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdWalletsDivisionTransactionsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdWalletsDivisionTransactionsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1052,6 +1109,9 @@ func (a *WalletAPIService) GetCorporationsCorporationIdWalletsDivisionTransactio
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

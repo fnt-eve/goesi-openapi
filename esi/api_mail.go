@@ -172,6 +172,7 @@ type ApiDeleteCharactersCharacterIdMailLabelsLabelIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -195,6 +196,12 @@ func (r ApiDeleteCharactersCharacterIdMailLabelsLabelIdRequest) IfNoneMatch(ifNo
 // The tenant ID for the request.
 func (r ApiDeleteCharactersCharacterIdMailLabelsLabelIdRequest) XTenant(xTenant string) ApiDeleteCharactersCharacterIdMailLabelsLabelIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiDeleteCharactersCharacterIdMailLabelsLabelIdRequest) IfModifiedSince(ifModifiedSince string) ApiDeleteCharactersCharacterIdMailLabelsLabelIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -276,6 +283,9 @@ func (a *MailAPIService) DeleteCharactersCharacterIdMailLabelsLabelIdExecute(r A
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -321,6 +331,7 @@ type ApiDeleteCharactersCharacterIdMailMailIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -344,6 +355,12 @@ func (r ApiDeleteCharactersCharacterIdMailMailIdRequest) IfNoneMatch(ifNoneMatch
 // The tenant ID for the request.
 func (r ApiDeleteCharactersCharacterIdMailMailIdRequest) XTenant(xTenant string) ApiDeleteCharactersCharacterIdMailMailIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiDeleteCharactersCharacterIdMailMailIdRequest) IfModifiedSince(ifModifiedSince string) ApiDeleteCharactersCharacterIdMailMailIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -425,6 +442,9 @@ func (a *MailAPIService) DeleteCharactersCharacterIdMailMailIdExecute(r ApiDelet
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -471,6 +491,7 @@ type ApiGetCharactersCharacterIdMailRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -504,6 +525,12 @@ func (r ApiGetCharactersCharacterIdMailRequest) IfNoneMatch(ifNoneMatch string) 
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdMailRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdMailRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdMailRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdMailRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -598,6 +625,9 @@ func (a *MailAPIService) GetCharactersCharacterIdMailExecute(r ApiGetCharactersC
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -651,6 +681,7 @@ type ApiGetCharactersCharacterIdMailLabelsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -674,6 +705,12 @@ func (r ApiGetCharactersCharacterIdMailLabelsRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdMailLabelsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdMailLabelsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdMailLabelsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdMailLabelsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -754,6 +791,9 @@ func (a *MailAPIService) GetCharactersCharacterIdMailLabelsExecute(r ApiGetChara
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -807,6 +847,7 @@ type ApiGetCharactersCharacterIdMailListsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -830,6 +871,12 @@ func (r ApiGetCharactersCharacterIdMailListsRequest) IfNoneMatch(ifNoneMatch str
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdMailListsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdMailListsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdMailListsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdMailListsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -910,6 +957,9 @@ func (a *MailAPIService) GetCharactersCharacterIdMailListsExecute(r ApiGetCharac
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -964,6 +1014,7 @@ type ApiGetCharactersCharacterIdMailMailIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -987,6 +1038,12 @@ func (r ApiGetCharactersCharacterIdMailMailIdRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdMailMailIdRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdMailMailIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdMailMailIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdMailMailIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1070,6 +1127,9 @@ func (a *MailAPIService) GetCharactersCharacterIdMailMailIdExecute(r ApiGetChara
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1124,6 +1184,7 @@ type ApiPostCharactersCharacterIdMailRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1152,6 +1213,12 @@ func (r ApiPostCharactersCharacterIdMailRequest) IfNoneMatch(ifNoneMatch string)
 // The tenant ID for the request.
 func (r ApiPostCharactersCharacterIdMailRequest) XTenant(xTenant string) ApiPostCharactersCharacterIdMailRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostCharactersCharacterIdMailRequest) IfModifiedSince(ifModifiedSince string) ApiPostCharactersCharacterIdMailRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1235,6 +1302,9 @@ func (a *MailAPIService) PostCharactersCharacterIdMailExecute(r ApiPostCharacter
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.postCharactersCharacterIdMailRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1291,6 +1361,7 @@ type ApiPostCharactersCharacterIdMailLabelsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1319,6 +1390,12 @@ func (r ApiPostCharactersCharacterIdMailLabelsRequest) IfNoneMatch(ifNoneMatch s
 // The tenant ID for the request.
 func (r ApiPostCharactersCharacterIdMailLabelsRequest) XTenant(xTenant string) ApiPostCharactersCharacterIdMailLabelsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostCharactersCharacterIdMailLabelsRequest) IfModifiedSince(ifModifiedSince string) ApiPostCharactersCharacterIdMailLabelsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1402,6 +1479,9 @@ func (a *MailAPIService) PostCharactersCharacterIdMailLabelsExecute(r ApiPostCha
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.postCharactersCharacterIdMailLabelsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1459,6 +1539,7 @@ type ApiPutCharactersCharacterIdMailMailIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1487,6 +1568,12 @@ func (r ApiPutCharactersCharacterIdMailMailIdRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiPutCharactersCharacterIdMailMailIdRequest) XTenant(xTenant string) ApiPutCharactersCharacterIdMailMailIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPutCharactersCharacterIdMailMailIdRequest) IfModifiedSince(ifModifiedSince string) ApiPutCharactersCharacterIdMailMailIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1570,6 +1657,9 @@ func (a *MailAPIService) PutCharactersCharacterIdMailMailIdExecute(r ApiPutChara
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.putCharactersCharacterIdMailMailIdRequest

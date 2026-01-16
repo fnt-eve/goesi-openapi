@@ -95,6 +95,7 @@ type ApiGetCharactersCharacterIdPlanetsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -118,6 +119,12 @@ func (r ApiGetCharactersCharacterIdPlanetsRequest) IfNoneMatch(ifNoneMatch strin
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdPlanetsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdPlanetsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdPlanetsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdPlanetsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -198,6 +205,9 @@ func (a *PlanetaryInteractionAPIService) GetCharactersCharacterIdPlanetsExecute(
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -252,6 +262,7 @@ type ApiGetCharactersCharacterIdPlanetsPlanetIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -275,6 +286,12 @@ func (r ApiGetCharactersCharacterIdPlanetsPlanetIdRequest) IfNoneMatch(ifNoneMat
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdPlanetsPlanetIdRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdPlanetsPlanetIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdPlanetsPlanetIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdPlanetsPlanetIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -358,6 +375,9 @@ func (a *PlanetaryInteractionAPIService) GetCharactersCharacterIdPlanetsPlanetId
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -412,6 +432,7 @@ type ApiGetCorporationsCorporationIdCustomsOfficesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -440,6 +461,12 @@ func (r ApiGetCorporationsCorporationIdCustomsOfficesRequest) IfNoneMatch(ifNone
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdCustomsOfficesRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdCustomsOfficesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdCustomsOfficesRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdCustomsOfficesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -523,6 +550,9 @@ func (a *PlanetaryInteractionAPIService) GetCorporationsCorporationIdCustomsOffi
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -576,6 +606,7 @@ type ApiGetUniverseSchematicsSchematicIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -599,6 +630,12 @@ func (r ApiGetUniverseSchematicsSchematicIdRequest) IfNoneMatch(ifNoneMatch stri
 // The tenant ID for the request.
 func (r ApiGetUniverseSchematicsSchematicIdRequest) XTenant(xTenant string) ApiGetUniverseSchematicsSchematicIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseSchematicsSchematicIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseSchematicsSchematicIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -678,6 +715,9 @@ func (a *PlanetaryInteractionAPIService) GetUniverseSchematicsSchematicIdExecute
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

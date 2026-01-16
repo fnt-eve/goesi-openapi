@@ -117,6 +117,7 @@ type ApiGetDogmaAttributesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -140,6 +141,12 @@ func (r ApiGetDogmaAttributesRequest) IfNoneMatch(ifNoneMatch string) ApiGetDogm
 // The tenant ID for the request.
 func (r ApiGetDogmaAttributesRequest) XTenant(xTenant string) ApiGetDogmaAttributesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetDogmaAttributesRequest) IfModifiedSince(ifModifiedSince string) ApiGetDogmaAttributesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -219,6 +226,9 @@ func (a *DogmaAPIService) GetDogmaAttributesExecute(r ApiGetDogmaAttributesReque
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -272,6 +282,7 @@ type ApiGetDogmaAttributesAttributeIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -295,6 +306,12 @@ func (r ApiGetDogmaAttributesAttributeIdRequest) IfNoneMatch(ifNoneMatch string)
 // The tenant ID for the request.
 func (r ApiGetDogmaAttributesAttributeIdRequest) XTenant(xTenant string) ApiGetDogmaAttributesAttributeIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetDogmaAttributesAttributeIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetDogmaAttributesAttributeIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -377,6 +394,9 @@ func (a *DogmaAPIService) GetDogmaAttributesAttributeIdExecute(r ApiGetDogmaAttr
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -431,6 +451,7 @@ type ApiGetDogmaDynamicItemsTypeIdItemIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -454,6 +475,12 @@ func (r ApiGetDogmaDynamicItemsTypeIdItemIdRequest) IfNoneMatch(ifNoneMatch stri
 // The tenant ID for the request.
 func (r ApiGetDogmaDynamicItemsTypeIdItemIdRequest) XTenant(xTenant string) ApiGetDogmaDynamicItemsTypeIdItemIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetDogmaDynamicItemsTypeIdItemIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetDogmaDynamicItemsTypeIdItemIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -539,6 +566,9 @@ func (a *DogmaAPIService) GetDogmaDynamicItemsTypeIdItemIdExecute(r ApiGetDogmaD
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,6 +621,7 @@ type ApiGetDogmaEffectsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -614,6 +645,12 @@ func (r ApiGetDogmaEffectsRequest) IfNoneMatch(ifNoneMatch string) ApiGetDogmaEf
 // The tenant ID for the request.
 func (r ApiGetDogmaEffectsRequest) XTenant(xTenant string) ApiGetDogmaEffectsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetDogmaEffectsRequest) IfModifiedSince(ifModifiedSince string) ApiGetDogmaEffectsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -693,6 +730,9 @@ func (a *DogmaAPIService) GetDogmaEffectsExecute(r ApiGetDogmaEffectsRequest) ([
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -746,6 +786,7 @@ type ApiGetDogmaEffectsEffectIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -769,6 +810,12 @@ func (r ApiGetDogmaEffectsEffectIdRequest) IfNoneMatch(ifNoneMatch string) ApiGe
 // The tenant ID for the request.
 func (r ApiGetDogmaEffectsEffectIdRequest) XTenant(xTenant string) ApiGetDogmaEffectsEffectIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetDogmaEffectsEffectIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetDogmaEffectsEffectIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -850,6 +897,9 @@ func (a *DogmaAPIService) GetDogmaEffectsEffectIdExecute(r ApiGetDogmaEffectsEff
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

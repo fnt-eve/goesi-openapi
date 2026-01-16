@@ -52,6 +52,7 @@ type ApiPostRouteRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -80,6 +81,12 @@ func (r ApiPostRouteRequest) IfNoneMatch(ifNoneMatch string) ApiPostRouteRequest
 // The tenant ID for the request.
 func (r ApiPostRouteRequest) XTenant(xTenant string) ApiPostRouteRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostRouteRequest) IfModifiedSince(ifModifiedSince string) ApiPostRouteRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -165,6 +172,9 @@ func (a *RoutesAPIService) PostRouteExecute(r ApiPostRouteRequest) (*Route, *htt
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.routeRequestBody

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## GetCharactersFreelanceJobsListing
 
-> CharactersFreelanceJobsListing GetCharactersFreelanceJobsListing(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CharactersFreelanceJobsListing GetCharactersFreelanceJobsListing(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List character freelance jobs
 
@@ -40,10 +40,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FreelanceJobsAPI.GetCharactersFreelanceJobsListing(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.FreelanceJobsAPI.GetCharactersFreelanceJobsListing(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreelanceJobsAPI.GetCharactersFreelanceJobsListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -73,6 +74,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -94,7 +96,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersFreelanceJobsParticipation
 
-> CharactersFreelanceJobsParticipation GetCharactersFreelanceJobsParticipation(ctx, characterId, jobId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CharactersFreelanceJobsParticipation GetCharactersFreelanceJobsParticipation(ctx, characterId, jobId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character freelance job participation
 
@@ -120,10 +122,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FreelanceJobsAPI.GetCharactersFreelanceJobsParticipation(context.Background(), characterId, jobId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.FreelanceJobsAPI.GetCharactersFreelanceJobsParticipation(context.Background(), characterId, jobId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreelanceJobsAPI.GetCharactersFreelanceJobsParticipation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -155,6 +158,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -176,7 +180,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsFreelanceJobsListing
 
-> CorporationsFreelanceJobsListing GetCorporationsFreelanceJobsListing(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CorporationsFreelanceJobsListing GetCorporationsFreelanceJobsListing(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List corporation freelance jobs
 
@@ -204,10 +208,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FreelanceJobsAPI.GetCorporationsFreelanceJobsListing(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.FreelanceJobsAPI.GetCorporationsFreelanceJobsListing(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreelanceJobsAPI.GetCorporationsFreelanceJobsListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,6 +245,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -261,7 +267,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsFreelanceJobsParticipants
 
-> CorporationsFreelanceJobsParticipants GetCorporationsFreelanceJobsParticipants(ctx, corporationId, jobId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CorporationsFreelanceJobsParticipants GetCorporationsFreelanceJobsParticipants(ctx, corporationId, jobId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List participants of a freelance job
 
@@ -290,10 +296,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FreelanceJobsAPI.GetCorporationsFreelanceJobsParticipants(context.Background(), corporationId, jobId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.FreelanceJobsAPI.GetCorporationsFreelanceJobsParticipants(context.Background(), corporationId, jobId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreelanceJobsAPI.GetCorporationsFreelanceJobsParticipants``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -328,6 +335,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -349,7 +357,7 @@ Name | Type | Description  | Notes
 
 ## GetFreelanceJobsDetail
 
-> FreelanceJobsDetail GetFreelanceJobsDetail(ctx, jobId).XCompatibilityDate(xCompatibilityDate).IfModifiedSince(ifModifiedSince).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> FreelanceJobsDetail GetFreelanceJobsDetail(ctx, jobId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get freelance job details
 
@@ -371,14 +379,14 @@ import (
 func main() {
 	jobId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The ID of the freelance job
 	xCompatibilityDate := time.Now() // string | The compatibility date for the request.
-	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FreelanceJobsAPI.GetFreelanceJobsDetail(context.Background(), jobId).XCompatibilityDate(xCompatibilityDate).IfModifiedSince(ifModifiedSince).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.FreelanceJobsAPI.GetFreelanceJobsDetail(context.Background(), jobId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreelanceJobsAPI.GetFreelanceJobsDetail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -405,10 +413,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xCompatibilityDate** | **string** | The compatibility date for the request. | 
- **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -430,7 +438,7 @@ No authorization required
 
 ## GetFreelanceJobsListing
 
-> FreelanceJobsListing GetFreelanceJobsListing(ctx).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).CorporationId(corporationId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> FreelanceJobsListing GetFreelanceJobsListing(ctx).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).CorporationId(corporationId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List freelance jobs
 
@@ -458,10 +466,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FreelanceJobsAPI.GetFreelanceJobsListing(context.Background()).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).CorporationId(corporationId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.FreelanceJobsAPI.GetFreelanceJobsListing(context.Background()).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).CorporationId(corporationId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreelanceJobsAPI.GetFreelanceJobsListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -490,6 +499,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

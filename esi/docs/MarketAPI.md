@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## GetCharactersCharacterIdOrders
 
-> []CharactersCharacterIdOrdersGetInner GetCharactersCharacterIdOrders(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdOrdersGetInner GetCharactersCharacterIdOrders(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List open orders from a character
 
@@ -45,10 +45,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetCharactersCharacterIdOrders(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetCharactersCharacterIdOrders(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetCharactersCharacterIdOrders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -78,6 +79,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -99,7 +101,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdOrdersHistory
 
-> []CharactersCharacterIdOrdersHistoryGetInner GetCharactersCharacterIdOrdersHistory(ctx, characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdOrdersHistoryGetInner GetCharactersCharacterIdOrdersHistory(ctx, characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List historical orders by a character
 
@@ -125,10 +127,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetCharactersCharacterIdOrdersHistory(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetCharactersCharacterIdOrdersHistory(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetCharactersCharacterIdOrdersHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -159,6 +162,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -180,7 +184,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsCorporationIdOrders
 
-> []CorporationsCorporationIdOrdersGetInner GetCorporationsCorporationIdOrders(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CorporationsCorporationIdOrdersGetInner GetCorporationsCorporationIdOrders(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List open orders from a corporation
 
@@ -206,10 +210,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetCorporationsCorporationIdOrders(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetCorporationsCorporationIdOrders(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetCorporationsCorporationIdOrders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,6 +245,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -261,7 +267,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsCorporationIdOrdersHistory
 
-> []CorporationsCorporationIdOrdersHistoryGetInner GetCorporationsCorporationIdOrdersHistory(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CorporationsCorporationIdOrdersHistoryGetInner GetCorporationsCorporationIdOrdersHistory(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List historical orders from a corporation
 
@@ -287,10 +293,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetCorporationsCorporationIdOrdersHistory(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetCorporationsCorporationIdOrdersHistory(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetCorporationsCorporationIdOrdersHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -321,6 +328,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -342,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## GetMarketsGroups
 
-> []int64 GetMarketsGroups(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []int64 GetMarketsGroups(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get item groups
 
@@ -366,10 +374,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsGroups(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsGroups(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsGroups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -394,6 +403,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -415,7 +425,7 @@ No authorization required
 
 ## GetMarketsGroupsMarketGroupId
 
-> MarketsGroupsMarketGroupIdGet GetMarketsGroupsMarketGroupId(ctx, marketGroupId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> MarketsGroupsMarketGroupIdGet GetMarketsGroupsMarketGroupId(ctx, marketGroupId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get item group information
 
@@ -440,10 +450,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsGroupsMarketGroupId(context.Background(), marketGroupId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsGroupsMarketGroupId(context.Background(), marketGroupId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsGroupsMarketGroupId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -473,6 +484,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -494,7 +506,7 @@ No authorization required
 
 ## GetMarketsPrices
 
-> []MarketsPricesGetInner GetMarketsPrices(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []MarketsPricesGetInner GetMarketsPrices(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List market prices
 
@@ -518,10 +530,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsPrices(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsPrices(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsPrices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -546,6 +559,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -567,7 +581,7 @@ No authorization required
 
 ## GetMarketsRegionIdHistory
 
-> []MarketsRegionIdHistoryGetInner GetMarketsRegionIdHistory(ctx, regionId).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []MarketsRegionIdHistoryGetInner GetMarketsRegionIdHistory(ctx, regionId).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List historical market statistics in a region
 
@@ -593,10 +607,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsRegionIdHistory(context.Background(), regionId).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsRegionIdHistory(context.Background(), regionId).TypeId(typeId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsRegionIdHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -627,6 +642,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -648,7 +664,7 @@ No authorization required
 
 ## GetMarketsRegionIdOrders
 
-> []MarketsRegionIdOrdersGetInner GetMarketsRegionIdOrders(ctx, regionId).OrderType(orderType).XCompatibilityDate(xCompatibilityDate).Page(page).TypeId(typeId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []MarketsRegionIdOrdersGetInner GetMarketsRegionIdOrders(ctx, regionId).OrderType(orderType).XCompatibilityDate(xCompatibilityDate).Page(page).TypeId(typeId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List orders in a region
 
@@ -676,10 +692,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsRegionIdOrders(context.Background(), regionId).OrderType(orderType).XCompatibilityDate(xCompatibilityDate).Page(page).TypeId(typeId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsRegionIdOrders(context.Background(), regionId).OrderType(orderType).XCompatibilityDate(xCompatibilityDate).Page(page).TypeId(typeId).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsRegionIdOrders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -712,6 +729,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -733,7 +751,7 @@ No authorization required
 
 ## GetMarketsRegionIdTypes
 
-> []int64 GetMarketsRegionIdTypes(ctx, regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []int64 GetMarketsRegionIdTypes(ctx, regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List type IDs relevant to a market
 
@@ -759,10 +777,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsRegionIdTypes(context.Background(), regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsRegionIdTypes(context.Background(), regionId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsRegionIdTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -793,6 +812,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -814,7 +834,7 @@ No authorization required
 
 ## GetMarketsStructuresStructureId
 
-> []MarketsStructuresStructureIdGetInner GetMarketsStructuresStructureId(ctx, structureId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []MarketsStructuresStructureIdGetInner GetMarketsStructuresStructureId(ctx, structureId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List orders in a structure
 
@@ -840,10 +860,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MarketAPI.GetMarketsStructuresStructureId(context.Background(), structureId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.MarketAPI.GetMarketsStructuresStructureId(context.Background(), structureId).XCompatibilityDate(xCompatibilityDate).Page(page).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MarketAPI.GetMarketsStructuresStructureId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -874,6 +895,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

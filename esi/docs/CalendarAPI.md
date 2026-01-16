@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetCharactersCharacterIdCalendar
 
-> []CharactersCharacterIdCalendarGetInner GetCharactersCharacterIdCalendar(ctx, characterId).XCompatibilityDate(xCompatibilityDate).FromEvent(fromEvent).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdCalendarGetInner GetCharactersCharacterIdCalendar(ctx, characterId).XCompatibilityDate(xCompatibilityDate).FromEvent(fromEvent).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List calendar event summaries
 
@@ -39,10 +39,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CalendarAPI.GetCharactersCharacterIdCalendar(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).FromEvent(fromEvent).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CalendarAPI.GetCharactersCharacterIdCalendar(context.Background(), characterId).XCompatibilityDate(xCompatibilityDate).FromEvent(fromEvent).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CalendarAPI.GetCharactersCharacterIdCalendar``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -73,6 +74,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -94,7 +96,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdCalendarEventId
 
-> CharactersCharacterIdCalendarEventIdGet GetCharactersCharacterIdCalendarEventId(ctx, characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CharactersCharacterIdCalendarEventIdGet GetCharactersCharacterIdCalendarEventId(ctx, characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get an event
 
@@ -120,10 +122,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CalendarAPI.GetCharactersCharacterIdCalendarEventId(context.Background(), characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CalendarAPI.GetCharactersCharacterIdCalendarEventId(context.Background(), characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CalendarAPI.GetCharactersCharacterIdCalendarEventId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -155,6 +158,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -176,7 +180,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdCalendarEventIdAttendees
 
-> []CharactersCharacterIdCalendarEventIdAttendeesGetInner GetCharactersCharacterIdCalendarEventIdAttendees(ctx, characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> []CharactersCharacterIdCalendarEventIdAttendeesGetInner GetCharactersCharacterIdCalendarEventIdAttendees(ctx, characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get attendees
 
@@ -202,10 +206,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CalendarAPI.GetCharactersCharacterIdCalendarEventIdAttendees(context.Background(), characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CalendarAPI.GetCharactersCharacterIdCalendarEventIdAttendees(context.Background(), characterId, eventId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CalendarAPI.GetCharactersCharacterIdCalendarEventIdAttendees``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -237,6 +242,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -258,7 +264,7 @@ Name | Type | Description  | Notes
 
 ## PutCharactersCharacterIdCalendarEventId
 
-> PutCharactersCharacterIdCalendarEventId(ctx, characterId, eventId).XCompatibilityDate(xCompatibilityDate).PutCharactersCharacterIdCalendarEventIdRequest(putCharactersCharacterIdCalendarEventIdRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> PutCharactersCharacterIdCalendarEventId(ctx, characterId, eventId).XCompatibilityDate(xCompatibilityDate).PutCharactersCharacterIdCalendarEventIdRequest(putCharactersCharacterIdCalendarEventIdRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Respond to an event
 
@@ -285,10 +291,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CalendarAPI.PutCharactersCharacterIdCalendarEventId(context.Background(), characterId, eventId).XCompatibilityDate(xCompatibilityDate).PutCharactersCharacterIdCalendarEventIdRequest(putCharactersCharacterIdCalendarEventIdRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	r, err := apiClient.CalendarAPI.PutCharactersCharacterIdCalendarEventId(context.Background(), characterId, eventId).XCompatibilityDate(xCompatibilityDate).PutCharactersCharacterIdCalendarEventIdRequest(putCharactersCharacterIdCalendarEventIdRequest).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CalendarAPI.PutCharactersCharacterIdCalendarEventId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,6 +326,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

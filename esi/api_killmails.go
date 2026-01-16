@@ -81,6 +81,7 @@ type ApiGetCharactersCharacterIdKillmailsRecentRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -109,6 +110,12 @@ func (r ApiGetCharactersCharacterIdKillmailsRecentRequest) IfNoneMatch(ifNoneMat
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdKillmailsRecentRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdKillmailsRecentRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdKillmailsRecentRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdKillmailsRecentRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -192,6 +199,9 @@ func (a *KillmailsAPIService) GetCharactersCharacterIdKillmailsRecentExecute(r A
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -246,6 +256,7 @@ type ApiGetCorporationsCorporationIdKillmailsRecentRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -274,6 +285,12 @@ func (r ApiGetCorporationsCorporationIdKillmailsRecentRequest) IfNoneMatch(ifNon
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdKillmailsRecentRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdKillmailsRecentRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdKillmailsRecentRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdKillmailsRecentRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -357,6 +374,9 @@ func (a *KillmailsAPIService) GetCorporationsCorporationIdKillmailsRecentExecute
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -411,6 +431,7 @@ type ApiGetKillmailsKillmailIdKillmailHashRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -434,6 +455,12 @@ func (r ApiGetKillmailsKillmailIdKillmailHashRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiGetKillmailsKillmailIdKillmailHashRequest) XTenant(xTenant string) ApiGetKillmailsKillmailIdKillmailHashRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetKillmailsKillmailIdKillmailHashRequest) IfModifiedSince(ifModifiedSince string) ApiGetKillmailsKillmailIdKillmailHashRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -516,6 +543,9 @@ func (a *KillmailsAPIService) GetKillmailsKillmailIdKillmailHashExecute(r ApiGet
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

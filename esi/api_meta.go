@@ -74,6 +74,7 @@ type ApiGetMetaChangelogRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -97,6 +98,12 @@ func (r ApiGetMetaChangelogRequest) IfNoneMatch(ifNoneMatch string) ApiGetMetaCh
 // The tenant ID for the request.
 func (r ApiGetMetaChangelogRequest) XTenant(xTenant string) ApiGetMetaChangelogRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetMetaChangelogRequest) IfModifiedSince(ifModifiedSince string) ApiGetMetaChangelogRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -174,6 +181,9 @@ func (a *MetaAPIService) GetMetaChangelogExecute(r ApiGetMetaChangelogRequest) (
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -226,6 +236,7 @@ type ApiGetMetaCompatibilityDatesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -249,6 +260,12 @@ func (r ApiGetMetaCompatibilityDatesRequest) IfNoneMatch(ifNoneMatch string) Api
 // The tenant ID for the request.
 func (r ApiGetMetaCompatibilityDatesRequest) XTenant(xTenant string) ApiGetMetaCompatibilityDatesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetMetaCompatibilityDatesRequest) IfModifiedSince(ifModifiedSince string) ApiGetMetaCompatibilityDatesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -326,6 +343,9 @@ func (a *MetaAPIService) GetMetaCompatibilityDatesExecute(r ApiGetMetaCompatibil
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -378,6 +398,7 @@ type ApiGetMetaStatusRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -401,6 +422,12 @@ func (r ApiGetMetaStatusRequest) IfNoneMatch(ifNoneMatch string) ApiGetMetaStatu
 // The tenant ID for the request.
 func (r ApiGetMetaStatusRequest) XTenant(xTenant string) ApiGetMetaStatusRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetMetaStatusRequest) IfModifiedSince(ifModifiedSince string) ApiGetMetaStatusRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -477,6 +504,9 @@ func (a *MetaAPIService) GetMetaStatusExecute(r ApiGetMetaStatusRequest) (*MetaS
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

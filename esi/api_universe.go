@@ -515,6 +515,7 @@ type ApiGetUniverseAncestriesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -538,6 +539,12 @@ func (r ApiGetUniverseAncestriesRequest) IfNoneMatch(ifNoneMatch string) ApiGetU
 // The tenant ID for the request.
 func (r ApiGetUniverseAncestriesRequest) XTenant(xTenant string) ApiGetUniverseAncestriesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseAncestriesRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseAncestriesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -617,6 +624,9 @@ func (a *UniverseAPIService) GetUniverseAncestriesExecute(r ApiGetUniverseAncest
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -670,6 +680,7 @@ type ApiGetUniverseAsteroidBeltsAsteroidBeltIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -693,6 +704,12 @@ func (r ApiGetUniverseAsteroidBeltsAsteroidBeltIdRequest) IfNoneMatch(ifNoneMatc
 // The tenant ID for the request.
 func (r ApiGetUniverseAsteroidBeltsAsteroidBeltIdRequest) XTenant(xTenant string) ApiGetUniverseAsteroidBeltsAsteroidBeltIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseAsteroidBeltsAsteroidBeltIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseAsteroidBeltsAsteroidBeltIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -775,6 +792,9 @@ func (a *UniverseAPIService) GetUniverseAsteroidBeltsAsteroidBeltIdExecute(r Api
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -827,6 +847,7 @@ type ApiGetUniverseBloodlinesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -850,6 +871,12 @@ func (r ApiGetUniverseBloodlinesRequest) IfNoneMatch(ifNoneMatch string) ApiGetU
 // The tenant ID for the request.
 func (r ApiGetUniverseBloodlinesRequest) XTenant(xTenant string) ApiGetUniverseBloodlinesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseBloodlinesRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseBloodlinesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -929,6 +956,9 @@ func (a *UniverseAPIService) GetUniverseBloodlinesExecute(r ApiGetUniverseBloodl
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -981,6 +1011,7 @@ type ApiGetUniverseCategoriesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1004,6 +1035,12 @@ func (r ApiGetUniverseCategoriesRequest) IfNoneMatch(ifNoneMatch string) ApiGetU
 // The tenant ID for the request.
 func (r ApiGetUniverseCategoriesRequest) XTenant(xTenant string) ApiGetUniverseCategoriesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseCategoriesRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseCategoriesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1083,6 +1120,9 @@ func (a *UniverseAPIService) GetUniverseCategoriesExecute(r ApiGetUniverseCatego
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1136,6 +1176,7 @@ type ApiGetUniverseCategoriesCategoryIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1159,6 +1200,12 @@ func (r ApiGetUniverseCategoriesCategoryIdRequest) IfNoneMatch(ifNoneMatch strin
 // The tenant ID for the request.
 func (r ApiGetUniverseCategoriesCategoryIdRequest) XTenant(xTenant string) ApiGetUniverseCategoriesCategoryIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseCategoriesCategoryIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseCategoriesCategoryIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1241,6 +1288,9 @@ func (a *UniverseAPIService) GetUniverseCategoriesCategoryIdExecute(r ApiGetUniv
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1293,6 +1343,7 @@ type ApiGetUniverseConstellationsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1316,6 +1367,12 @@ func (r ApiGetUniverseConstellationsRequest) IfNoneMatch(ifNoneMatch string) Api
 // The tenant ID for the request.
 func (r ApiGetUniverseConstellationsRequest) XTenant(xTenant string) ApiGetUniverseConstellationsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseConstellationsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseConstellationsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1395,6 +1452,9 @@ func (a *UniverseAPIService) GetUniverseConstellationsExecute(r ApiGetUniverseCo
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1448,6 +1508,7 @@ type ApiGetUniverseConstellationsConstellationIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1471,6 +1532,12 @@ func (r ApiGetUniverseConstellationsConstellationIdRequest) IfNoneMatch(ifNoneMa
 // The tenant ID for the request.
 func (r ApiGetUniverseConstellationsConstellationIdRequest) XTenant(xTenant string) ApiGetUniverseConstellationsConstellationIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseConstellationsConstellationIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseConstellationsConstellationIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1553,6 +1620,9 @@ func (a *UniverseAPIService) GetUniverseConstellationsConstellationIdExecute(r A
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1605,6 +1675,7 @@ type ApiGetUniverseFactionsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1628,6 +1699,12 @@ func (r ApiGetUniverseFactionsRequest) IfNoneMatch(ifNoneMatch string) ApiGetUni
 // The tenant ID for the request.
 func (r ApiGetUniverseFactionsRequest) XTenant(xTenant string) ApiGetUniverseFactionsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseFactionsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseFactionsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1707,6 +1784,9 @@ func (a *UniverseAPIService) GetUniverseFactionsExecute(r ApiGetUniverseFactions
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1759,6 +1839,7 @@ type ApiGetUniverseGraphicsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1782,6 +1863,12 @@ func (r ApiGetUniverseGraphicsRequest) IfNoneMatch(ifNoneMatch string) ApiGetUni
 // The tenant ID for the request.
 func (r ApiGetUniverseGraphicsRequest) XTenant(xTenant string) ApiGetUniverseGraphicsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseGraphicsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseGraphicsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1861,6 +1948,9 @@ func (a *UniverseAPIService) GetUniverseGraphicsExecute(r ApiGetUniverseGraphics
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1914,6 +2004,7 @@ type ApiGetUniverseGraphicsGraphicIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1937,6 +2028,12 @@ func (r ApiGetUniverseGraphicsGraphicIdRequest) IfNoneMatch(ifNoneMatch string) 
 // The tenant ID for the request.
 func (r ApiGetUniverseGraphicsGraphicIdRequest) XTenant(xTenant string) ApiGetUniverseGraphicsGraphicIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseGraphicsGraphicIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseGraphicsGraphicIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2019,6 +2116,9 @@ func (a *UniverseAPIService) GetUniverseGraphicsGraphicIdExecute(r ApiGetUnivers
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2072,6 +2172,7 @@ type ApiGetUniverseGroupsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2100,6 +2201,12 @@ func (r ApiGetUniverseGroupsRequest) IfNoneMatch(ifNoneMatch string) ApiGetUnive
 // The tenant ID for the request.
 func (r ApiGetUniverseGroupsRequest) XTenant(xTenant string) ApiGetUniverseGroupsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseGroupsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseGroupsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2182,6 +2289,9 @@ func (a *UniverseAPIService) GetUniverseGroupsExecute(r ApiGetUniverseGroupsRequ
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2235,6 +2345,7 @@ type ApiGetUniverseGroupsGroupIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2258,6 +2369,12 @@ func (r ApiGetUniverseGroupsGroupIdRequest) IfNoneMatch(ifNoneMatch string) ApiG
 // The tenant ID for the request.
 func (r ApiGetUniverseGroupsGroupIdRequest) XTenant(xTenant string) ApiGetUniverseGroupsGroupIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseGroupsGroupIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseGroupsGroupIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2340,6 +2457,9 @@ func (a *UniverseAPIService) GetUniverseGroupsGroupIdExecute(r ApiGetUniverseGro
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2393,6 +2513,7 @@ type ApiGetUniverseMoonsMoonIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2416,6 +2537,12 @@ func (r ApiGetUniverseMoonsMoonIdRequest) IfNoneMatch(ifNoneMatch string) ApiGet
 // The tenant ID for the request.
 func (r ApiGetUniverseMoonsMoonIdRequest) XTenant(xTenant string) ApiGetUniverseMoonsMoonIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseMoonsMoonIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseMoonsMoonIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2498,6 +2625,9 @@ func (a *UniverseAPIService) GetUniverseMoonsMoonIdExecute(r ApiGetUniverseMoons
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2551,6 +2681,7 @@ type ApiGetUniversePlanetsPlanetIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2574,6 +2705,12 @@ func (r ApiGetUniversePlanetsPlanetIdRequest) IfNoneMatch(ifNoneMatch string) Ap
 // The tenant ID for the request.
 func (r ApiGetUniversePlanetsPlanetIdRequest) XTenant(xTenant string) ApiGetUniversePlanetsPlanetIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniversePlanetsPlanetIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniversePlanetsPlanetIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2656,6 +2793,9 @@ func (a *UniverseAPIService) GetUniversePlanetsPlanetIdExecute(r ApiGetUniverseP
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2708,6 +2848,7 @@ type ApiGetUniverseRacesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2731,6 +2872,12 @@ func (r ApiGetUniverseRacesRequest) IfNoneMatch(ifNoneMatch string) ApiGetUniver
 // The tenant ID for the request.
 func (r ApiGetUniverseRacesRequest) XTenant(xTenant string) ApiGetUniverseRacesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseRacesRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseRacesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2810,6 +2957,9 @@ func (a *UniverseAPIService) GetUniverseRacesExecute(r ApiGetUniverseRacesReques
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2862,6 +3012,7 @@ type ApiGetUniverseRegionsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2885,6 +3036,12 @@ func (r ApiGetUniverseRegionsRequest) IfNoneMatch(ifNoneMatch string) ApiGetUniv
 // The tenant ID for the request.
 func (r ApiGetUniverseRegionsRequest) XTenant(xTenant string) ApiGetUniverseRegionsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseRegionsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseRegionsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2964,6 +3121,9 @@ func (a *UniverseAPIService) GetUniverseRegionsExecute(r ApiGetUniverseRegionsRe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3017,6 +3177,7 @@ type ApiGetUniverseRegionsRegionIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3040,6 +3201,12 @@ func (r ApiGetUniverseRegionsRegionIdRequest) IfNoneMatch(ifNoneMatch string) Ap
 // The tenant ID for the request.
 func (r ApiGetUniverseRegionsRegionIdRequest) XTenant(xTenant string) ApiGetUniverseRegionsRegionIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseRegionsRegionIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseRegionsRegionIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -3122,6 +3289,9 @@ func (a *UniverseAPIService) GetUniverseRegionsRegionIdExecute(r ApiGetUniverseR
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3175,6 +3345,7 @@ type ApiGetUniverseStargatesStargateIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3198,6 +3369,12 @@ func (r ApiGetUniverseStargatesStargateIdRequest) IfNoneMatch(ifNoneMatch string
 // The tenant ID for the request.
 func (r ApiGetUniverseStargatesStargateIdRequest) XTenant(xTenant string) ApiGetUniverseStargatesStargateIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseStargatesStargateIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseStargatesStargateIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -3280,6 +3457,9 @@ func (a *UniverseAPIService) GetUniverseStargatesStargateIdExecute(r ApiGetUnive
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3333,6 +3513,7 @@ type ApiGetUniverseStarsStarIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3356,6 +3537,12 @@ func (r ApiGetUniverseStarsStarIdRequest) IfNoneMatch(ifNoneMatch string) ApiGet
 // The tenant ID for the request.
 func (r ApiGetUniverseStarsStarIdRequest) XTenant(xTenant string) ApiGetUniverseStarsStarIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseStarsStarIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseStarsStarIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -3438,6 +3625,9 @@ func (a *UniverseAPIService) GetUniverseStarsStarIdExecute(r ApiGetUniverseStars
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3491,6 +3681,7 @@ type ApiGetUniverseStationsStationIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3514,6 +3705,12 @@ func (r ApiGetUniverseStationsStationIdRequest) IfNoneMatch(ifNoneMatch string) 
 // The tenant ID for the request.
 func (r ApiGetUniverseStationsStationIdRequest) XTenant(xTenant string) ApiGetUniverseStationsStationIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseStationsStationIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseStationsStationIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -3596,6 +3793,9 @@ func (a *UniverseAPIService) GetUniverseStationsStationIdExecute(r ApiGetUnivers
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3649,6 +3849,7 @@ type ApiGetUniverseStructuresRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3677,6 +3878,12 @@ func (r ApiGetUniverseStructuresRequest) IfNoneMatch(ifNoneMatch string) ApiGetU
 // The tenant ID for the request.
 func (r ApiGetUniverseStructuresRequest) XTenant(xTenant string) ApiGetUniverseStructuresRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseStructuresRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseStructuresRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -3757,6 +3964,9 @@ func (a *UniverseAPIService) GetUniverseStructuresExecute(r ApiGetUniverseStruct
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3810,6 +4020,7 @@ type ApiGetUniverseStructuresStructureIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3833,6 +4044,12 @@ func (r ApiGetUniverseStructuresStructureIdRequest) IfNoneMatch(ifNoneMatch stri
 // The tenant ID for the request.
 func (r ApiGetUniverseStructuresStructureIdRequest) XTenant(xTenant string) ApiGetUniverseStructuresStructureIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseStructuresStructureIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseStructuresStructureIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -3913,6 +4130,9 @@ func (a *UniverseAPIService) GetUniverseStructuresStructureIdExecute(r ApiGetUni
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3965,6 +4185,7 @@ type ApiGetUniverseSystemJumpsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -3988,6 +4209,12 @@ func (r ApiGetUniverseSystemJumpsRequest) IfNoneMatch(ifNoneMatch string) ApiGet
 // The tenant ID for the request.
 func (r ApiGetUniverseSystemJumpsRequest) XTenant(xTenant string) ApiGetUniverseSystemJumpsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseSystemJumpsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseSystemJumpsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -4065,6 +4292,9 @@ func (a *UniverseAPIService) GetUniverseSystemJumpsExecute(r ApiGetUniverseSyste
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4117,6 +4347,7 @@ type ApiGetUniverseSystemKillsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -4140,6 +4371,12 @@ func (r ApiGetUniverseSystemKillsRequest) IfNoneMatch(ifNoneMatch string) ApiGet
 // The tenant ID for the request.
 func (r ApiGetUniverseSystemKillsRequest) XTenant(xTenant string) ApiGetUniverseSystemKillsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseSystemKillsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseSystemKillsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -4217,6 +4454,9 @@ func (a *UniverseAPIService) GetUniverseSystemKillsExecute(r ApiGetUniverseSyste
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4269,6 +4509,7 @@ type ApiGetUniverseSystemsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -4292,6 +4533,12 @@ func (r ApiGetUniverseSystemsRequest) IfNoneMatch(ifNoneMatch string) ApiGetUniv
 // The tenant ID for the request.
 func (r ApiGetUniverseSystemsRequest) XTenant(xTenant string) ApiGetUniverseSystemsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseSystemsRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseSystemsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -4371,6 +4618,9 @@ func (a *UniverseAPIService) GetUniverseSystemsExecute(r ApiGetUniverseSystemsRe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4424,6 +4674,7 @@ type ApiGetUniverseSystemsSystemIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -4447,6 +4698,12 @@ func (r ApiGetUniverseSystemsSystemIdRequest) IfNoneMatch(ifNoneMatch string) Ap
 // The tenant ID for the request.
 func (r ApiGetUniverseSystemsSystemIdRequest) XTenant(xTenant string) ApiGetUniverseSystemsSystemIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseSystemsSystemIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseSystemsSystemIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -4529,6 +4786,9 @@ func (a *UniverseAPIService) GetUniverseSystemsSystemIdExecute(r ApiGetUniverseS
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4582,6 +4842,7 @@ type ApiGetUniverseTypesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -4610,6 +4871,12 @@ func (r ApiGetUniverseTypesRequest) IfNoneMatch(ifNoneMatch string) ApiGetUniver
 // The tenant ID for the request.
 func (r ApiGetUniverseTypesRequest) XTenant(xTenant string) ApiGetUniverseTypesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseTypesRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseTypesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -4692,6 +4959,9 @@ func (a *UniverseAPIService) GetUniverseTypesExecute(r ApiGetUniverseTypesReques
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4745,6 +5015,7 @@ type ApiGetUniverseTypesTypeIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -4768,6 +5039,12 @@ func (r ApiGetUniverseTypesTypeIdRequest) IfNoneMatch(ifNoneMatch string) ApiGet
 // The tenant ID for the request.
 func (r ApiGetUniverseTypesTypeIdRequest) XTenant(xTenant string) ApiGetUniverseTypesTypeIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetUniverseTypesTypeIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetUniverseTypesTypeIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -4850,6 +5127,9 @@ func (a *UniverseAPIService) GetUniverseTypesTypeIdExecute(r ApiGetUniverseTypes
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4903,6 +5183,7 @@ type ApiPostUniverseIdsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -4931,6 +5212,12 @@ func (r ApiPostUniverseIdsRequest) IfNoneMatch(ifNoneMatch string) ApiPostUniver
 // The tenant ID for the request.
 func (r ApiPostUniverseIdsRequest) XTenant(xTenant string) ApiPostUniverseIdsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUniverseIdsRequest) IfModifiedSince(ifModifiedSince string) ApiPostUniverseIdsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -5017,6 +5304,9 @@ func (a *UniverseAPIService) PostUniverseIdsExecute(r ApiPostUniverseIdsRequest)
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5072,6 +5362,7 @@ type ApiPostUniverseNamesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -5100,6 +5391,12 @@ func (r ApiPostUniverseNamesRequest) IfNoneMatch(ifNoneMatch string) ApiPostUniv
 // The tenant ID for the request.
 func (r ApiPostUniverseNamesRequest) XTenant(xTenant string) ApiPostUniverseNamesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUniverseNamesRequest) IfModifiedSince(ifModifiedSince string) ApiPostUniverseNamesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -5185,6 +5482,9 @@ func (a *UniverseAPIService) PostUniverseNamesExecute(r ApiPostUniverseNamesRequ
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.requestBody

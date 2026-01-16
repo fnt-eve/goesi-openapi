@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetCorporationsProjectsContribution
 
-> CorporationsProjectsContribution GetCorporationsProjectsContribution(ctx, corporationId, projectId, characterId).XCompatibilityDate(xCompatibilityDate).IfModifiedSince(ifModifiedSince).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CorporationsProjectsContribution GetCorporationsProjectsContribution(ctx, corporationId, projectId, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get your project contribution
 
@@ -37,14 +37,14 @@ func main() {
 	projectId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The ID of the project
 	characterId := int64(789) // int64 | The ID of the character
 	xCompatibilityDate := time.Now() // string | The compatibility date for the request.
-	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsContribution(context.Background(), corporationId, projectId, characterId).XCompatibilityDate(xCompatibilityDate).IfModifiedSince(ifModifiedSince).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsContribution(context.Background(), corporationId, projectId, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CorporationProjectsAPI.GetCorporationsProjectsContribution``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -75,10 +75,10 @@ Name | Type | Description  | Notes
 
 
  **xCompatibilityDate** | **string** | The compatibility date for the request. | 
- **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsProjectsContributors
 
-> CorporationsProjectsContributors GetCorporationsProjectsContributors(ctx, corporationId, projectId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CorporationsProjectsContributors GetCorporationsProjectsContributors(ctx, corporationId, projectId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List project contributors
 
@@ -129,10 +129,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsContributors(context.Background(), corporationId, projectId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsContributors(context.Background(), corporationId, projectId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CorporationProjectsAPI.GetCorporationsProjectsContributors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,6 +168,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -188,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsProjectsDetail
 
-> CorporationsProjectsDetail GetCorporationsProjectsDetail(ctx, corporationId, projectId).XCompatibilityDate(xCompatibilityDate).IfModifiedSince(ifModifiedSince).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CorporationsProjectsDetail GetCorporationsProjectsDetail(ctx, corporationId, projectId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get project details
 
@@ -211,14 +213,14 @@ func main() {
 	corporationId := int64(789) // int64 | The ID of the corporation
 	projectId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The ID of the project
 	xCompatibilityDate := time.Now() // string | The compatibility date for the request.
-	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsDetail(context.Background(), corporationId, projectId).XCompatibilityDate(xCompatibilityDate).IfModifiedSince(ifModifiedSince).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsDetail(context.Background(), corporationId, projectId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CorporationProjectsAPI.GetCorporationsProjectsDetail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -247,10 +249,10 @@ Name | Type | Description  | Notes
 
 
  **xCompatibilityDate** | **string** | The compatibility date for the request. | 
- **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 
@@ -272,7 +274,7 @@ Name | Type | Description  | Notes
 
 ## GetCorporationsProjectsListing
 
-> CorporationsProjectsListing GetCorporationsProjectsListing(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).State(state).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+> CorporationsProjectsListing GetCorporationsProjectsListing(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).State(state).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 List corporation projects
 
@@ -301,10 +303,11 @@ func main() {
 	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
 	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
 	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsListing(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).State(state).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).Execute()
+	resp, r, err := apiClient.CorporationProjectsAPI.GetCorporationsProjectsListing(context.Background(), corporationId).XCompatibilityDate(xCompatibilityDate).After(after).Before(before).Limit(limit).State(state).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CorporationProjectsAPI.GetCorporationsProjectsListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -338,6 +341,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
  **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
  **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
 
 ### Return type
 

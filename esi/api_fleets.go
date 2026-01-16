@@ -244,6 +244,7 @@ type ApiDeleteFleetsFleetIdMembersMemberIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -267,6 +268,12 @@ func (r ApiDeleteFleetsFleetIdMembersMemberIdRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiDeleteFleetsFleetIdMembersMemberIdRequest) XTenant(xTenant string) ApiDeleteFleetsFleetIdMembersMemberIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiDeleteFleetsFleetIdMembersMemberIdRequest) IfModifiedSince(ifModifiedSince string) ApiDeleteFleetsFleetIdMembersMemberIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -348,6 +355,9 @@ func (a *FleetsAPIService) DeleteFleetsFleetIdMembersMemberIdExecute(r ApiDelete
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -393,6 +403,7 @@ type ApiDeleteFleetsFleetIdSquadsSquadIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -416,6 +427,12 @@ func (r ApiDeleteFleetsFleetIdSquadsSquadIdRequest) IfNoneMatch(ifNoneMatch stri
 // The tenant ID for the request.
 func (r ApiDeleteFleetsFleetIdSquadsSquadIdRequest) XTenant(xTenant string) ApiDeleteFleetsFleetIdSquadsSquadIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiDeleteFleetsFleetIdSquadsSquadIdRequest) IfModifiedSince(ifModifiedSince string) ApiDeleteFleetsFleetIdSquadsSquadIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -497,6 +514,9 @@ func (a *FleetsAPIService) DeleteFleetsFleetIdSquadsSquadIdExecute(r ApiDeleteFl
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -542,6 +562,7 @@ type ApiDeleteFleetsFleetIdWingsWingIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -565,6 +586,12 @@ func (r ApiDeleteFleetsFleetIdWingsWingIdRequest) IfNoneMatch(ifNoneMatch string
 // The tenant ID for the request.
 func (r ApiDeleteFleetsFleetIdWingsWingIdRequest) XTenant(xTenant string) ApiDeleteFleetsFleetIdWingsWingIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiDeleteFleetsFleetIdWingsWingIdRequest) IfModifiedSince(ifModifiedSince string) ApiDeleteFleetsFleetIdWingsWingIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -646,6 +673,9 @@ func (a *FleetsAPIService) DeleteFleetsFleetIdWingsWingIdExecute(r ApiDeleteFlee
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -690,6 +720,7 @@ type ApiGetCharactersCharacterIdFleetRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -713,6 +744,12 @@ func (r ApiGetCharactersCharacterIdFleetRequest) IfNoneMatch(ifNoneMatch string)
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdFleetRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdFleetRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdFleetRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdFleetRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -793,6 +830,9 @@ func (a *FleetsAPIService) GetCharactersCharacterIdFleetExecute(r ApiGetCharacte
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -846,6 +886,7 @@ type ApiGetFleetsFleetIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -869,6 +910,12 @@ func (r ApiGetFleetsFleetIdRequest) IfNoneMatch(ifNoneMatch string) ApiGetFleets
 // The tenant ID for the request.
 func (r ApiGetFleetsFleetIdRequest) XTenant(xTenant string) ApiGetFleetsFleetIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFleetsFleetIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetFleetsFleetIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -949,6 +996,9 @@ func (a *FleetsAPIService) GetFleetsFleetIdExecute(r ApiGetFleetsFleetIdRequest)
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1002,6 +1052,7 @@ type ApiGetFleetsFleetIdMembersRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1025,6 +1076,12 @@ func (r ApiGetFleetsFleetIdMembersRequest) IfNoneMatch(ifNoneMatch string) ApiGe
 // The tenant ID for the request.
 func (r ApiGetFleetsFleetIdMembersRequest) XTenant(xTenant string) ApiGetFleetsFleetIdMembersRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFleetsFleetIdMembersRequest) IfModifiedSince(ifModifiedSince string) ApiGetFleetsFleetIdMembersRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1105,6 +1162,9 @@ func (a *FleetsAPIService) GetFleetsFleetIdMembersExecute(r ApiGetFleetsFleetIdM
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1158,6 +1218,7 @@ type ApiGetFleetsFleetIdWingsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1181,6 +1242,12 @@ func (r ApiGetFleetsFleetIdWingsRequest) IfNoneMatch(ifNoneMatch string) ApiGetF
 // The tenant ID for the request.
 func (r ApiGetFleetsFleetIdWingsRequest) XTenant(xTenant string) ApiGetFleetsFleetIdWingsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFleetsFleetIdWingsRequest) IfModifiedSince(ifModifiedSince string) ApiGetFleetsFleetIdWingsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1261,6 +1328,9 @@ func (a *FleetsAPIService) GetFleetsFleetIdWingsExecute(r ApiGetFleetsFleetIdWin
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1315,6 +1385,7 @@ type ApiPostFleetsFleetIdMembersRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1343,6 +1414,12 @@ func (r ApiPostFleetsFleetIdMembersRequest) IfNoneMatch(ifNoneMatch string) ApiP
 // The tenant ID for the request.
 func (r ApiPostFleetsFleetIdMembersRequest) XTenant(xTenant string) ApiPostFleetsFleetIdMembersRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostFleetsFleetIdMembersRequest) IfModifiedSince(ifModifiedSince string) ApiPostFleetsFleetIdMembersRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1424,6 +1501,9 @@ func (a *FleetsAPIService) PostFleetsFleetIdMembersExecute(r ApiPostFleetsFleetI
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.postFleetsFleetIdMembersRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1470,6 +1550,7 @@ type ApiPostFleetsFleetIdWingsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1493,6 +1574,12 @@ func (r ApiPostFleetsFleetIdWingsRequest) IfNoneMatch(ifNoneMatch string) ApiPos
 // The tenant ID for the request.
 func (r ApiPostFleetsFleetIdWingsRequest) XTenant(xTenant string) ApiPostFleetsFleetIdWingsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostFleetsFleetIdWingsRequest) IfModifiedSince(ifModifiedSince string) ApiPostFleetsFleetIdWingsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1573,6 +1660,9 @@ func (a *FleetsAPIService) PostFleetsFleetIdWingsExecute(r ApiPostFleetsFleetIdW
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1627,6 +1717,7 @@ type ApiPostFleetsFleetIdWingsWingIdSquadsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1650,6 +1741,12 @@ func (r ApiPostFleetsFleetIdWingsWingIdSquadsRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiPostFleetsFleetIdWingsWingIdSquadsRequest) XTenant(xTenant string) ApiPostFleetsFleetIdWingsWingIdSquadsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostFleetsFleetIdWingsWingIdSquadsRequest) IfModifiedSince(ifModifiedSince string) ApiPostFleetsFleetIdWingsWingIdSquadsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1733,6 +1830,9 @@ func (a *FleetsAPIService) PostFleetsFleetIdWingsWingIdSquadsExecute(r ApiPostFl
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1787,6 +1887,7 @@ type ApiPutFleetsFleetIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1815,6 +1916,12 @@ func (r ApiPutFleetsFleetIdRequest) IfNoneMatch(ifNoneMatch string) ApiPutFleets
 // The tenant ID for the request.
 func (r ApiPutFleetsFleetIdRequest) XTenant(xTenant string) ApiPutFleetsFleetIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPutFleetsFleetIdRequest) IfModifiedSince(ifModifiedSince string) ApiPutFleetsFleetIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1896,6 +2003,9 @@ func (a *FleetsAPIService) PutFleetsFleetIdExecute(r ApiPutFleetsFleetIdRequest)
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.putFleetsFleetIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1944,6 +2054,7 @@ type ApiPutFleetsFleetIdMembersMemberIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1972,6 +2083,12 @@ func (r ApiPutFleetsFleetIdMembersMemberIdRequest) IfNoneMatch(ifNoneMatch strin
 // The tenant ID for the request.
 func (r ApiPutFleetsFleetIdMembersMemberIdRequest) XTenant(xTenant string) ApiPutFleetsFleetIdMembersMemberIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPutFleetsFleetIdMembersMemberIdRequest) IfModifiedSince(ifModifiedSince string) ApiPutFleetsFleetIdMembersMemberIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2056,6 +2173,9 @@ func (a *FleetsAPIService) PutFleetsFleetIdMembersMemberIdExecute(r ApiPutFleets
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.putFleetsFleetIdMembersMemberIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -2104,6 +2224,7 @@ type ApiPutFleetsFleetIdSquadsSquadIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2132,6 +2253,12 @@ func (r ApiPutFleetsFleetIdSquadsSquadIdRequest) IfNoneMatch(ifNoneMatch string)
 // The tenant ID for the request.
 func (r ApiPutFleetsFleetIdSquadsSquadIdRequest) XTenant(xTenant string) ApiPutFleetsFleetIdSquadsSquadIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPutFleetsFleetIdSquadsSquadIdRequest) IfModifiedSince(ifModifiedSince string) ApiPutFleetsFleetIdSquadsSquadIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2216,6 +2343,9 @@ func (a *FleetsAPIService) PutFleetsFleetIdSquadsSquadIdExecute(r ApiPutFleetsFl
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	// body params
 	localVarPostBody = r.putFleetsFleetIdSquadsSquadIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -2264,6 +2394,7 @@ type ApiPutFleetsFleetIdWingsWingIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -2292,6 +2423,12 @@ func (r ApiPutFleetsFleetIdWingsWingIdRequest) IfNoneMatch(ifNoneMatch string) A
 // The tenant ID for the request.
 func (r ApiPutFleetsFleetIdWingsWingIdRequest) XTenant(xTenant string) ApiPutFleetsFleetIdWingsWingIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPutFleetsFleetIdWingsWingIdRequest) IfModifiedSince(ifModifiedSince string) ApiPutFleetsFleetIdWingsWingIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -2375,6 +2512,9 @@ func (a *FleetsAPIService) PutFleetsFleetIdWingsWingIdExecute(r ApiPutFleetsFlee
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.putFleetsFleetIdSquadsSquadIdRequest

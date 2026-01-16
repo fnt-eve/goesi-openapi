@@ -99,6 +99,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -183,6 +192,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -279,6 +297,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -381,6 +408,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -474,6 +510,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -563,6 +608,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -638,6 +692,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -739,6 +802,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -825,6 +897,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -930,6 +1011,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1030,6 +1120,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -1139,6 +1238,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1244,6 +1352,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1345,6 +1462,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -1459,6 +1585,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1561,6 +1696,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1660,6 +1804,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -1766,6 +1919,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -1857,6 +2019,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -1965,6 +2136,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Contacts deleted
@@ -2060,6 +2240,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -2190,6 +2379,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -2326,6 +2524,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -2424,6 +2631,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -2529,6 +2745,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -2640,6 +2865,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2742,6 +2976,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2836,6 +3079,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -2921,6 +3173,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -3028,6 +3289,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3121,6 +3391,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3211,6 +3490,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -3320,6 +3608,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Fitting deleted
@@ -3406,6 +3703,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -3501,6 +3807,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3534,6 +3849,7 @@ paths:
       summary: List character freelance jobs
       tags:
       - Freelance Jobs
+      x-cache-age: 60
       x-compatibility-date: 2025-12-16
       x-rate-limit:
         group: char-freelance-job
@@ -3608,6 +3924,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -3641,6 +3966,7 @@ paths:
       summary: Get character freelance job participation
       tags:
       - Freelance Jobs
+      x-cache-age: 60
       x-compatibility-date: 2025-12-16
       x-rate-limit:
         group: char-freelance-job
@@ -3708,6 +4034,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -3800,6 +4135,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -3902,6 +4246,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -4007,6 +4360,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4109,6 +4471,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4201,6 +4572,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -4321,6 +4701,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4411,6 +4800,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -4512,6 +4910,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4602,6 +5009,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -4711,6 +5127,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Label deleted
@@ -4797,6 +5222,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -4901,6 +5335,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Mail deleted
@@ -4995,6 +5438,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -5098,6 +5550,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -5190,6 +5651,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -5296,6 +5766,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -5396,6 +5875,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -5488,6 +5976,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -5583,6 +6080,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -5674,6 +6180,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -5776,6 +6291,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -5870,6 +6394,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -5977,6 +6510,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6073,6 +6615,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6160,6 +6711,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -6298,6 +6858,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6387,6 +6956,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -6482,6 +7060,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6573,6 +7160,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -6669,6 +7265,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6762,6 +7367,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -6853,6 +7467,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -6956,6 +7579,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -7068,6 +7700,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7170,6 +7811,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -7282,6 +7932,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7392,6 +8051,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7494,6 +8162,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -7607,6 +8284,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -7730,6 +8416,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7827,6 +8522,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7910,6 +8614,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -7997,6 +8710,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -8093,6 +8815,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -8197,6 +8928,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -8306,6 +9046,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -8425,6 +9174,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8537,6 +9295,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8635,6 +9402,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -8739,6 +9515,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -8849,6 +9634,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -8970,6 +9764,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9079,6 +9882,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9180,6 +9992,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -9285,6 +10106,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9378,6 +10208,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -9506,6 +10345,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9539,7 +10387,6 @@ paths:
       summary: List corporation freelance jobs
       tags:
       - Freelance Jobs
-      x-cache-age: 31536000
       x-compatibility-date: 2025-12-16
       x-pagination: cursor
       x-rate-limit:
@@ -9652,6 +10499,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -9685,7 +10541,6 @@ paths:
       summary: List participants of a freelance job
       tags:
       - Freelance Jobs
-      x-cache-age: 31536000
       x-compatibility-date: 2025-12-16
       x-pagination: cursor
       x-rate-limit:
@@ -9756,6 +10611,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -9848,6 +10712,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -9954,6 +10827,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -10068,6 +10950,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10180,6 +11071,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10290,6 +11190,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10393,6 +11302,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10484,6 +11402,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -10581,6 +11508,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10675,6 +11611,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -10780,6 +11725,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -10890,6 +11844,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -11042,6 +12005,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -11075,7 +12047,6 @@ paths:
       summary: List corporation projects
       tags:
       - Corporation Projects
-      x-cache-age: 31536000
       x-compatibility-date: 2025-08-26
       x-pagination: cursor
       x-rate-limit:
@@ -11087,15 +12058,6 @@ paths:
       description: Get the details of a corporation project.
       operationId: GetCorporationsProjectsDetail
       parameters:
-      - description: The date the resource was last modified. A 304 will be returned
-          if the resource has not been modified since this date.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
       - description: The ID of the corporation
         explode: false
         in: path
@@ -11160,6 +12122,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -11193,7 +12164,7 @@ paths:
       summary: Get project details
       tags:
       - Corporation Projects
-      x-cache-age: 600
+      x-cache-age: 60
       x-compatibility-date: 2025-08-26
       x-rate-limit:
         group: corp-project
@@ -11204,15 +12175,6 @@ paths:
       description: Show your contribution to a corporation project.
       operationId: GetCorporationsProjectsContribution
       parameters:
-      - description: The date the resource was last modified. A 304 will be returned
-          if the resource has not been modified since this date.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
       - description: The ID of the corporation
         explode: false
         in: path
@@ -11285,6 +12247,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -11318,7 +12289,7 @@ paths:
       summary: Get your project contribution
       tags:
       - Corporation Projects
-      x-cache-age: 600
+      x-cache-age: 60
       x-compatibility-date: 2025-08-26
       x-rate-limit:
         group: corp-project
@@ -11428,6 +12399,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -11461,7 +12441,6 @@ paths:
       summary: List project contributors
       tags:
       - Corporation Projects
-      x-cache-age: 31536000
       x-compatibility-date: 2025-08-26
       x-pagination: cursor
       x-rate-limit:
@@ -11530,6 +12509,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -11634,6 +12622,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -11746,6 +12743,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -11861,6 +12867,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -11969,6 +12984,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -12087,6 +13111,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12189,6 +13222,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12289,6 +13331,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12382,6 +13433,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -12498,6 +13558,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -12622,6 +13691,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12713,6 +13791,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12800,6 +13887,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -12898,6 +13994,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12976,6 +14081,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -13067,6 +14181,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -13151,6 +14274,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -13244,6 +14376,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -13341,6 +14482,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -13435,6 +14585,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -13541,6 +14700,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Fleet member kicked
@@ -13636,6 +14804,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -13742,6 +14919,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Squad deleted
@@ -13839,6 +15025,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -13934,6 +15129,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -14027,6 +15231,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -14132,6 +15345,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Wing deleted
@@ -14227,6 +15449,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -14331,6 +15562,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -14460,6 +15700,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -14490,7 +15739,6 @@ paths:
       summary: List freelance jobs
       tags:
       - Freelance Jobs
-      x-cache-age: 31536000
       x-compatibility-date: 2025-12-16
       x-pagination: cursor
       x-rate-limit:
@@ -14509,15 +15757,6 @@ paths:
         - A freelance job manager for the corporation that owns the job.
       operationId: GetFreelanceJobsDetail
       parameters:
-      - description: The date the resource was last modified. A 304 will be returned
-          if the resource has not been modified since this date.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
       - description: The ID of the freelance job
         explode: false
         in: path
@@ -14574,6 +15813,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -14604,6 +15852,7 @@ paths:
       summary: Get freelance job details
       tags:
       - Freelance Jobs
+      x-cache-age: 60
       x-compatibility-date: 2025-12-16
       x-rate-limit:
         group: freelance-job
@@ -14663,6 +15912,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -14749,6 +16007,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -14831,6 +16098,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -14917,6 +16193,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -14996,6 +16281,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -15083,6 +16377,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -15162,6 +16465,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -15246,6 +16558,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -15328,6 +16649,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -15408,6 +16738,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -15511,6 +16850,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -15604,6 +16952,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -15682,6 +17039,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -15773,6 +17139,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -15850,6 +17225,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -15947,6 +17331,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -16056,6 +17449,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -16177,6 +17579,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -16282,6 +17693,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -16365,6 +17785,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -16455,6 +17884,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -16541,6 +17979,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -16647,6 +18094,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -16741,6 +18197,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -16821,6 +18286,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -16905,6 +18379,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -16985,6 +18468,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -17098,6 +18590,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Open window request received
@@ -17185,6 +18686,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -17277,6 +18787,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Open window request received
@@ -17367,6 +18886,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "204":
           description: Open window request received
@@ -17446,6 +18974,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -17535,6 +19072,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -17627,6 +19173,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -17705,6 +19260,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -17787,6 +19351,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -17878,6 +19451,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -17958,6 +19540,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -18048,6 +19639,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -18130,6 +19730,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -18210,6 +19819,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -18300,6 +19918,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -18388,6 +20015,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -18486,6 +20122,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -18566,6 +20211,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -18672,6 +20326,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -18749,6 +20412,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       requestBody:
@@ -18852,6 +20524,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -18930,6 +20611,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19012,6 +20702,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19102,6 +20801,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -19188,6 +20896,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19279,6 +20996,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -19365,6 +21091,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19455,6 +21190,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -19541,6 +21285,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19631,6 +21384,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -19714,6 +21476,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -19792,6 +21563,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19873,6 +21653,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -19961,6 +21750,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -20053,6 +21851,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -20151,6 +21958,15 @@ paths:
           default: tranquility
           type: string
         style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -20237,6 +22053,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -20328,6 +22153,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:
@@ -20429,6 +22263,15 @@ paths:
         required: false
         schema:
           default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
           type: string
         style: simple
       responses:

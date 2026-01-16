@@ -78,6 +78,7 @@ type ApiGetWarsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -106,6 +107,12 @@ func (r ApiGetWarsRequest) IfNoneMatch(ifNoneMatch string) ApiGetWarsRequest {
 // The tenant ID for the request.
 func (r ApiGetWarsRequest) XTenant(xTenant string) ApiGetWarsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetWarsRequest) IfModifiedSince(ifModifiedSince string) ApiGetWarsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -186,6 +193,9 @@ func (a *WarsAPIService) GetWarsExecute(r ApiGetWarsRequest) ([]int64, *http.Res
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -239,6 +249,7 @@ type ApiGetWarsWarIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -262,6 +273,12 @@ func (r ApiGetWarsWarIdRequest) IfNoneMatch(ifNoneMatch string) ApiGetWarsWarIdR
 // The tenant ID for the request.
 func (r ApiGetWarsWarIdRequest) XTenant(xTenant string) ApiGetWarsWarIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetWarsWarIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetWarsWarIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -342,6 +359,9 @@ func (a *WarsAPIService) GetWarsWarIdExecute(r ApiGetWarsWarIdRequest) (*WarsWar
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -396,6 +416,7 @@ type ApiGetWarsWarIdKillmailsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -424,6 +445,12 @@ func (r ApiGetWarsWarIdKillmailsRequest) IfNoneMatch(ifNoneMatch string) ApiGetW
 // The tenant ID for the request.
 func (r ApiGetWarsWarIdKillmailsRequest) XTenant(xTenant string) ApiGetWarsWarIdKillmailsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetWarsWarIdKillmailsRequest) IfModifiedSince(ifModifiedSince string) ApiGetWarsWarIdKillmailsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -506,6 +533,9 @@ func (a *WarsAPIService) GetWarsWarIdKillmailsExecute(r ApiGetWarsWarIdKillmails
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

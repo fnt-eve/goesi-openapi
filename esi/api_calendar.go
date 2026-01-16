@@ -97,6 +97,7 @@ type ApiGetCharactersCharacterIdCalendarRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -125,6 +126,12 @@ func (r ApiGetCharactersCharacterIdCalendarRequest) IfNoneMatch(ifNoneMatch stri
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdCalendarRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdCalendarRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdCalendarRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdCalendarRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -208,6 +215,9 @@ func (a *CalendarAPIService) GetCharactersCharacterIdCalendarExecute(r ApiGetCha
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -262,6 +272,7 @@ type ApiGetCharactersCharacterIdCalendarEventIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -285,6 +296,12 @@ func (r ApiGetCharactersCharacterIdCalendarEventIdRequest) IfNoneMatch(ifNoneMat
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdCalendarEventIdRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdCalendarEventIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdCalendarEventIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdCalendarEventIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -368,6 +385,9 @@ func (a *CalendarAPIService) GetCharactersCharacterIdCalendarEventIdExecute(r Ap
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -422,6 +442,7 @@ type ApiGetCharactersCharacterIdCalendarEventIdAttendeesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -445,6 +466,12 @@ func (r ApiGetCharactersCharacterIdCalendarEventIdAttendeesRequest) IfNoneMatch(
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdCalendarEventIdAttendeesRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdCalendarEventIdAttendeesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdCalendarEventIdAttendeesRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdCalendarEventIdAttendeesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -528,6 +555,9 @@ func (a *CalendarAPIService) GetCharactersCharacterIdCalendarEventIdAttendeesExe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -583,6 +613,7 @@ type ApiPutCharactersCharacterIdCalendarEventIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -611,6 +642,12 @@ func (r ApiPutCharactersCharacterIdCalendarEventIdRequest) IfNoneMatch(ifNoneMat
 // The tenant ID for the request.
 func (r ApiPutCharactersCharacterIdCalendarEventIdRequest) XTenant(xTenant string) ApiPutCharactersCharacterIdCalendarEventIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPutCharactersCharacterIdCalendarEventIdRequest) IfModifiedSince(ifModifiedSince string) ApiPutCharactersCharacterIdCalendarEventIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -694,6 +731,9 @@ func (a *CalendarAPIService) PutCharactersCharacterIdCalendarEventIdExecute(r Ap
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.putCharactersCharacterIdCalendarEventIdRequest

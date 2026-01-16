@@ -100,6 +100,7 @@ type ApiPostUiAutopilotWaypointRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 func (r ApiPostUiAutopilotWaypointRequest) AddToBeginning(addToBeginning bool) ApiPostUiAutopilotWaypointRequest {
@@ -138,6 +139,12 @@ func (r ApiPostUiAutopilotWaypointRequest) IfNoneMatch(ifNoneMatch string) ApiPo
 // The tenant ID for the request.
 func (r ApiPostUiAutopilotWaypointRequest) XTenant(xTenant string) ApiPostUiAutopilotWaypointRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUiAutopilotWaypointRequest) IfModifiedSince(ifModifiedSince string) ApiPostUiAutopilotWaypointRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -225,6 +232,9 @@ func (a *UserInterfaceAPIService) PostUiAutopilotWaypointExecute(r ApiPostUiAuto
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -269,6 +279,7 @@ type ApiPostUiOpenwindowContractRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 func (r ApiPostUiOpenwindowContractRequest) ContractId(contractId int64) ApiPostUiOpenwindowContractRequest {
@@ -297,6 +308,12 @@ func (r ApiPostUiOpenwindowContractRequest) IfNoneMatch(ifNoneMatch string) ApiP
 // The tenant ID for the request.
 func (r ApiPostUiOpenwindowContractRequest) XTenant(xTenant string) ApiPostUiOpenwindowContractRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUiOpenwindowContractRequest) IfModifiedSince(ifModifiedSince string) ApiPostUiOpenwindowContractRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -376,6 +393,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowContractExecute(r ApiPostUiOpe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -420,6 +440,7 @@ type ApiPostUiOpenwindowInformationRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 func (r ApiPostUiOpenwindowInformationRequest) TargetId(targetId int64) ApiPostUiOpenwindowInformationRequest {
@@ -448,6 +469,12 @@ func (r ApiPostUiOpenwindowInformationRequest) IfNoneMatch(ifNoneMatch string) A
 // The tenant ID for the request.
 func (r ApiPostUiOpenwindowInformationRequest) XTenant(xTenant string) ApiPostUiOpenwindowInformationRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUiOpenwindowInformationRequest) IfModifiedSince(ifModifiedSince string) ApiPostUiOpenwindowInformationRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -527,6 +554,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowInformationExecute(r ApiPostUi
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -571,6 +601,7 @@ type ApiPostUiOpenwindowMarketdetailsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 func (r ApiPostUiOpenwindowMarketdetailsRequest) TypeId(typeId int64) ApiPostUiOpenwindowMarketdetailsRequest {
@@ -599,6 +630,12 @@ func (r ApiPostUiOpenwindowMarketdetailsRequest) IfNoneMatch(ifNoneMatch string)
 // The tenant ID for the request.
 func (r ApiPostUiOpenwindowMarketdetailsRequest) XTenant(xTenant string) ApiPostUiOpenwindowMarketdetailsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUiOpenwindowMarketdetailsRequest) IfModifiedSince(ifModifiedSince string) ApiPostUiOpenwindowMarketdetailsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -678,6 +715,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowMarketdetailsExecute(r ApiPost
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -722,6 +762,7 @@ type ApiPostUiOpenwindowNewmailRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -750,6 +791,12 @@ func (r ApiPostUiOpenwindowNewmailRequest) IfNoneMatch(ifNoneMatch string) ApiPo
 // The tenant ID for the request.
 func (r ApiPostUiOpenwindowNewmailRequest) XTenant(xTenant string) ApiPostUiOpenwindowNewmailRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostUiOpenwindowNewmailRequest) IfModifiedSince(ifModifiedSince string) ApiPostUiOpenwindowNewmailRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -827,6 +874,9 @@ func (a *UserInterfaceAPIService) PostUiOpenwindowNewmailExecute(r ApiPostUiOpen
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.postUiOpenwindowNewmailRequest

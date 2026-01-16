@@ -74,6 +74,7 @@ type ApiGetSovereigntyCampaignsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -97,6 +98,12 @@ func (r ApiGetSovereigntyCampaignsRequest) IfNoneMatch(ifNoneMatch string) ApiGe
 // The tenant ID for the request.
 func (r ApiGetSovereigntyCampaignsRequest) XTenant(xTenant string) ApiGetSovereigntyCampaignsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetSovereigntyCampaignsRequest) IfModifiedSince(ifModifiedSince string) ApiGetSovereigntyCampaignsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -174,6 +181,9 @@ func (a *SovereigntyAPIService) GetSovereigntyCampaignsExecute(r ApiGetSovereign
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -226,6 +236,7 @@ type ApiGetSovereigntyMapRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -249,6 +260,12 @@ func (r ApiGetSovereigntyMapRequest) IfNoneMatch(ifNoneMatch string) ApiGetSover
 // The tenant ID for the request.
 func (r ApiGetSovereigntyMapRequest) XTenant(xTenant string) ApiGetSovereigntyMapRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetSovereigntyMapRequest) IfModifiedSince(ifModifiedSince string) ApiGetSovereigntyMapRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -326,6 +343,9 @@ func (a *SovereigntyAPIService) GetSovereigntyMapExecute(r ApiGetSovereigntyMapR
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -378,6 +398,7 @@ type ApiGetSovereigntyStructuresRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -401,6 +422,12 @@ func (r ApiGetSovereigntyStructuresRequest) IfNoneMatch(ifNoneMatch string) ApiG
 // The tenant ID for the request.
 func (r ApiGetSovereigntyStructuresRequest) XTenant(xTenant string) ApiGetSovereigntyStructuresRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetSovereigntyStructuresRequest) IfModifiedSince(ifModifiedSince string) ApiGetSovereigntyStructuresRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -477,6 +504,9 @@ func (a *SovereigntyAPIService) GetSovereigntyStructuresExecute(r ApiGetSovereig
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

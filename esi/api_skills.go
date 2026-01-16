@@ -79,6 +79,7 @@ type ApiGetCharactersCharacterIdAttributesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -102,6 +103,12 @@ func (r ApiGetCharactersCharacterIdAttributesRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdAttributesRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdAttributesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdAttributesRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdAttributesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -182,6 +189,9 @@ func (a *SkillsAPIService) GetCharactersCharacterIdAttributesExecute(r ApiGetCha
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -235,6 +245,7 @@ type ApiGetCharactersCharacterIdSkillqueueRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -258,6 +269,12 @@ func (r ApiGetCharactersCharacterIdSkillqueueRequest) IfNoneMatch(ifNoneMatch st
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdSkillqueueRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdSkillqueueRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdSkillqueueRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdSkillqueueRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -338,6 +355,9 @@ func (a *SkillsAPIService) GetCharactersCharacterIdSkillqueueExecute(r ApiGetCha
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -391,6 +411,7 @@ type ApiGetCharactersCharacterIdSkillsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -414,6 +435,12 @@ func (r ApiGetCharactersCharacterIdSkillsRequest) IfNoneMatch(ifNoneMatch string
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdSkillsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdSkillsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdSkillsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdSkillsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -493,6 +520,9 @@ func (a *SkillsAPIService) GetCharactersCharacterIdSkillsExecute(r ApiGetCharact
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

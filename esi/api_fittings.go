@@ -80,6 +80,7 @@ type ApiDeleteCharactersCharacterIdFittingsFittingIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -103,6 +104,12 @@ func (r ApiDeleteCharactersCharacterIdFittingsFittingIdRequest) IfNoneMatch(ifNo
 // The tenant ID for the request.
 func (r ApiDeleteCharactersCharacterIdFittingsFittingIdRequest) XTenant(xTenant string) ApiDeleteCharactersCharacterIdFittingsFittingIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiDeleteCharactersCharacterIdFittingsFittingIdRequest) IfModifiedSince(ifModifiedSince string) ApiDeleteCharactersCharacterIdFittingsFittingIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -184,6 +191,9 @@ func (a *FittingsAPIService) DeleteCharactersCharacterIdFittingsFittingIdExecute
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -228,6 +238,7 @@ type ApiGetCharactersCharacterIdFittingsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -251,6 +262,12 @@ func (r ApiGetCharactersCharacterIdFittingsRequest) IfNoneMatch(ifNoneMatch stri
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdFittingsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdFittingsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdFittingsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdFittingsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -331,6 +348,9 @@ func (a *FittingsAPIService) GetCharactersCharacterIdFittingsExecute(r ApiGetCha
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -385,6 +405,7 @@ type ApiPostCharactersCharacterIdFittingsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -413,6 +434,12 @@ func (r ApiPostCharactersCharacterIdFittingsRequest) IfNoneMatch(ifNoneMatch str
 // The tenant ID for the request.
 func (r ApiPostCharactersCharacterIdFittingsRequest) XTenant(xTenant string) ApiPostCharactersCharacterIdFittingsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiPostCharactersCharacterIdFittingsRequest) IfModifiedSince(ifModifiedSince string) ApiPostCharactersCharacterIdFittingsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -495,6 +522,9 @@ func (a *FittingsAPIService) PostCharactersCharacterIdFittingsExecute(r ApiPostC
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.postCharactersCharacterIdFittingsRequest

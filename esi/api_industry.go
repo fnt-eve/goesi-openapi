@@ -154,6 +154,7 @@ type ApiGetCharactersCharacterIdIndustryJobsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -182,6 +183,12 @@ func (r ApiGetCharactersCharacterIdIndustryJobsRequest) IfNoneMatch(ifNoneMatch 
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdIndustryJobsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdIndustryJobsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdIndustryJobsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdIndustryJobsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -265,6 +272,9 @@ func (a *IndustryAPIService) GetCharactersCharacterIdIndustryJobsExecute(r ApiGe
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -319,6 +329,7 @@ type ApiGetCharactersCharacterIdMiningRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -347,6 +358,12 @@ func (r ApiGetCharactersCharacterIdMiningRequest) IfNoneMatch(ifNoneMatch string
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdMiningRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdMiningRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdMiningRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdMiningRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -430,6 +447,9 @@ func (a *IndustryAPIService) GetCharactersCharacterIdMiningExecute(r ApiGetChara
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -484,6 +504,7 @@ type ApiGetCorporationCorporationIdMiningExtractionsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -512,6 +533,12 @@ func (r ApiGetCorporationCorporationIdMiningExtractionsRequest) IfNoneMatch(ifNo
 // The tenant ID for the request.
 func (r ApiGetCorporationCorporationIdMiningExtractionsRequest) XTenant(xTenant string) ApiGetCorporationCorporationIdMiningExtractionsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationCorporationIdMiningExtractionsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationCorporationIdMiningExtractionsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -595,6 +622,9 @@ func (a *IndustryAPIService) GetCorporationCorporationIdMiningExtractionsExecute
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -649,6 +679,7 @@ type ApiGetCorporationCorporationIdMiningObserversRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -677,6 +708,12 @@ func (r ApiGetCorporationCorporationIdMiningObserversRequest) IfNoneMatch(ifNone
 // The tenant ID for the request.
 func (r ApiGetCorporationCorporationIdMiningObserversRequest) XTenant(xTenant string) ApiGetCorporationCorporationIdMiningObserversRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationCorporationIdMiningObserversRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationCorporationIdMiningObserversRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -760,6 +797,9 @@ func (a *IndustryAPIService) GetCorporationCorporationIdMiningObserversExecute(r
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -815,6 +855,7 @@ type ApiGetCorporationCorporationIdMiningObserversObserverIdRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -843,6 +884,12 @@ func (r ApiGetCorporationCorporationIdMiningObserversObserverIdRequest) IfNoneMa
 // The tenant ID for the request.
 func (r ApiGetCorporationCorporationIdMiningObserversObserverIdRequest) XTenant(xTenant string) ApiGetCorporationCorporationIdMiningObserversObserverIdRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationCorporationIdMiningObserversObserverIdRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationCorporationIdMiningObserversObserverIdRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -929,6 +976,9 @@ func (a *IndustryAPIService) GetCorporationCorporationIdMiningObserversObserverI
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -984,6 +1034,7 @@ type ApiGetCorporationsCorporationIdIndustryJobsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1017,6 +1068,12 @@ func (r ApiGetCorporationsCorporationIdIndustryJobsRequest) IfNoneMatch(ifNoneMa
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdIndustryJobsRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdIndustryJobsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdIndustryJobsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdIndustryJobsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1106,6 +1163,9 @@ func (a *IndustryAPIService) GetCorporationsCorporationIdIndustryJobsExecute(r A
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1158,6 +1218,7 @@ type ApiGetIndustryFacilitiesRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1181,6 +1242,12 @@ func (r ApiGetIndustryFacilitiesRequest) IfNoneMatch(ifNoneMatch string) ApiGetI
 // The tenant ID for the request.
 func (r ApiGetIndustryFacilitiesRequest) XTenant(xTenant string) ApiGetIndustryFacilitiesRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetIndustryFacilitiesRequest) IfModifiedSince(ifModifiedSince string) ApiGetIndustryFacilitiesRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1258,6 +1325,9 @@ func (a *IndustryAPIService) GetIndustryFacilitiesExecute(r ApiGetIndustryFacili
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1310,6 +1380,7 @@ type ApiGetIndustrySystemsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1333,6 +1404,12 @@ func (r ApiGetIndustrySystemsRequest) IfNoneMatch(ifNoneMatch string) ApiGetIndu
 // The tenant ID for the request.
 func (r ApiGetIndustrySystemsRequest) XTenant(xTenant string) ApiGetIndustrySystemsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetIndustrySystemsRequest) IfModifiedSince(ifModifiedSince string) ApiGetIndustrySystemsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1409,6 +1486,9 @@ func (a *IndustryAPIService) GetIndustrySystemsExecute(r ApiGetIndustrySystemsRe
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

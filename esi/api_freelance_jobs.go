@@ -131,6 +131,7 @@ type ApiGetCharactersFreelanceJobsListingRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -154,6 +155,12 @@ func (r ApiGetCharactersFreelanceJobsListingRequest) IfNoneMatch(ifNoneMatch str
 // The tenant ID for the request.
 func (r ApiGetCharactersFreelanceJobsListingRequest) XTenant(xTenant string) ApiGetCharactersFreelanceJobsListingRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersFreelanceJobsListingRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersFreelanceJobsListingRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -234,6 +241,9 @@ func (a *FreelanceJobsAPIService) GetCharactersFreelanceJobsListingExecute(r Api
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -288,6 +298,7 @@ type ApiGetCharactersFreelanceJobsParticipationRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -311,6 +322,12 @@ func (r ApiGetCharactersFreelanceJobsParticipationRequest) IfNoneMatch(ifNoneMat
 // The tenant ID for the request.
 func (r ApiGetCharactersFreelanceJobsParticipationRequest) XTenant(xTenant string) ApiGetCharactersFreelanceJobsParticipationRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersFreelanceJobsParticipationRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersFreelanceJobsParticipationRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -394,6 +411,9 @@ func (a *FreelanceJobsAPIService) GetCharactersFreelanceJobsParticipationExecute
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -450,6 +470,7 @@ type ApiGetCorporationsFreelanceJobsListingRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -491,6 +512,12 @@ func (r ApiGetCorporationsFreelanceJobsListingRequest) IfNoneMatch(ifNoneMatch s
 // The tenant ID for the request.
 func (r ApiGetCorporationsFreelanceJobsListingRequest) XTenant(xTenant string) ApiGetCorporationsFreelanceJobsListingRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsFreelanceJobsListingRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsFreelanceJobsListingRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -583,6 +610,9 @@ func (a *FreelanceJobsAPIService) GetCorporationsFreelanceJobsListingExecute(r A
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -640,6 +670,7 @@ type ApiGetCorporationsFreelanceJobsParticipantsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -681,6 +712,12 @@ func (r ApiGetCorporationsFreelanceJobsParticipantsRequest) IfNoneMatch(ifNoneMa
 // The tenant ID for the request.
 func (r ApiGetCorporationsFreelanceJobsParticipantsRequest) XTenant(xTenant string) ApiGetCorporationsFreelanceJobsParticipantsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsFreelanceJobsParticipantsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsFreelanceJobsParticipantsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -776,6 +813,9 @@ func (a *FreelanceJobsAPIService) GetCorporationsFreelanceJobsParticipantsExecut
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -826,21 +866,15 @@ type ApiGetFreelanceJobsDetailRequest struct {
 	ApiService FreelanceJobsAPI
 	jobId string
 	xCompatibilityDate *string
-	ifModifiedSince *string
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
 func (r ApiGetFreelanceJobsDetailRequest) XCompatibilityDate(xCompatibilityDate string) ApiGetFreelanceJobsDetailRequest {
 	r.xCompatibilityDate = &xCompatibilityDate
-	return r
-}
-
-// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
-func (r ApiGetFreelanceJobsDetailRequest) IfModifiedSince(ifModifiedSince string) ApiGetFreelanceJobsDetailRequest {
-	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -859,6 +893,12 @@ func (r ApiGetFreelanceJobsDetailRequest) IfNoneMatch(ifNoneMatch string) ApiGet
 // The tenant ID for the request.
 func (r ApiGetFreelanceJobsDetailRequest) XTenant(xTenant string) ApiGetFreelanceJobsDetailRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFreelanceJobsDetailRequest) IfModifiedSince(ifModifiedSince string) ApiGetFreelanceJobsDetailRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -935,9 +975,6 @@ func (a *FreelanceJobsAPIService) GetFreelanceJobsDetailExecute(r ApiGetFreelanc
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
-	}
 	if r.acceptLanguage != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Language", r.acceptLanguage, "simple", "")
 	}
@@ -947,6 +984,9 @@ func (a *FreelanceJobsAPIService) GetFreelanceJobsDetailExecute(r ApiGetFreelanc
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1004,6 +1044,7 @@ type ApiGetFreelanceJobsListingRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1051,6 +1092,12 @@ func (r ApiGetFreelanceJobsListingRequest) IfNoneMatch(ifNoneMatch string) ApiGe
 // The tenant ID for the request.
 func (r ApiGetFreelanceJobsListingRequest) XTenant(xTenant string) ApiGetFreelanceJobsListingRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFreelanceJobsListingRequest) IfModifiedSince(ifModifiedSince string) ApiGetFreelanceJobsListingRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1142,6 +1189,9 @@ func (a *FreelanceJobsAPIService) GetFreelanceJobsListingExecute(r ApiGetFreelan
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

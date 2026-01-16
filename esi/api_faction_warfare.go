@@ -162,6 +162,7 @@ type ApiGetCharactersCharacterIdFwStatsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -185,6 +186,12 @@ func (r ApiGetCharactersCharacterIdFwStatsRequest) IfNoneMatch(ifNoneMatch strin
 // The tenant ID for the request.
 func (r ApiGetCharactersCharacterIdFwStatsRequest) XTenant(xTenant string) ApiGetCharactersCharacterIdFwStatsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCharactersCharacterIdFwStatsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCharactersCharacterIdFwStatsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -267,6 +274,9 @@ func (a *FactionWarfareAPIService) GetCharactersCharacterIdFwStatsExecute(r ApiG
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -320,6 +330,7 @@ type ApiGetCorporationsCorporationIdFwStatsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -343,6 +354,12 @@ func (r ApiGetCorporationsCorporationIdFwStatsRequest) IfNoneMatch(ifNoneMatch s
 // The tenant ID for the request.
 func (r ApiGetCorporationsCorporationIdFwStatsRequest) XTenant(xTenant string) ApiGetCorporationsCorporationIdFwStatsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetCorporationsCorporationIdFwStatsRequest) IfModifiedSince(ifModifiedSince string) ApiGetCorporationsCorporationIdFwStatsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -425,6 +442,9 @@ func (a *FactionWarfareAPIService) GetCorporationsCorporationIdFwStatsExecute(r 
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -477,6 +497,7 @@ type ApiGetFwLeaderboardsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -500,6 +521,12 @@ func (r ApiGetFwLeaderboardsRequest) IfNoneMatch(ifNoneMatch string) ApiGetFwLea
 // The tenant ID for the request.
 func (r ApiGetFwLeaderboardsRequest) XTenant(xTenant string) ApiGetFwLeaderboardsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFwLeaderboardsRequest) IfModifiedSince(ifModifiedSince string) ApiGetFwLeaderboardsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -579,6 +606,9 @@ func (a *FactionWarfareAPIService) GetFwLeaderboardsExecute(r ApiGetFwLeaderboar
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -631,6 +661,7 @@ type ApiGetFwLeaderboardsCharactersRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -654,6 +685,12 @@ func (r ApiGetFwLeaderboardsCharactersRequest) IfNoneMatch(ifNoneMatch string) A
 // The tenant ID for the request.
 func (r ApiGetFwLeaderboardsCharactersRequest) XTenant(xTenant string) ApiGetFwLeaderboardsCharactersRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFwLeaderboardsCharactersRequest) IfModifiedSince(ifModifiedSince string) ApiGetFwLeaderboardsCharactersRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -733,6 +770,9 @@ func (a *FactionWarfareAPIService) GetFwLeaderboardsCharactersExecute(r ApiGetFw
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -785,6 +825,7 @@ type ApiGetFwLeaderboardsCorporationsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -808,6 +849,12 @@ func (r ApiGetFwLeaderboardsCorporationsRequest) IfNoneMatch(ifNoneMatch string)
 // The tenant ID for the request.
 func (r ApiGetFwLeaderboardsCorporationsRequest) XTenant(xTenant string) ApiGetFwLeaderboardsCorporationsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFwLeaderboardsCorporationsRequest) IfModifiedSince(ifModifiedSince string) ApiGetFwLeaderboardsCorporationsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -887,6 +934,9 @@ func (a *FactionWarfareAPIService) GetFwLeaderboardsCorporationsExecute(r ApiGet
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -939,6 +989,7 @@ type ApiGetFwStatsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -962,6 +1013,12 @@ func (r ApiGetFwStatsRequest) IfNoneMatch(ifNoneMatch string) ApiGetFwStatsReque
 // The tenant ID for the request.
 func (r ApiGetFwStatsRequest) XTenant(xTenant string) ApiGetFwStatsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFwStatsRequest) IfModifiedSince(ifModifiedSince string) ApiGetFwStatsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1041,6 +1098,9 @@ func (a *FactionWarfareAPIService) GetFwStatsExecute(r ApiGetFwStatsRequest) ([]
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1093,6 +1153,7 @@ type ApiGetFwSystemsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1116,6 +1177,12 @@ func (r ApiGetFwSystemsRequest) IfNoneMatch(ifNoneMatch string) ApiGetFwSystemsR
 // The tenant ID for the request.
 func (r ApiGetFwSystemsRequest) XTenant(xTenant string) ApiGetFwSystemsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFwSystemsRequest) IfModifiedSince(ifModifiedSince string) ApiGetFwSystemsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1193,6 +1260,9 @@ func (a *FactionWarfareAPIService) GetFwSystemsExecute(r ApiGetFwSystemsRequest)
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
 	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1245,6 +1315,7 @@ type ApiGetFwWarsRequest struct {
 	acceptLanguage *string
 	ifNoneMatch *string
 	xTenant *string
+	ifModifiedSince *string
 }
 
 // The compatibility date for the request.
@@ -1268,6 +1339,12 @@ func (r ApiGetFwWarsRequest) IfNoneMatch(ifNoneMatch string) ApiGetFwWarsRequest
 // The tenant ID for the request.
 func (r ApiGetFwWarsRequest) XTenant(xTenant string) ApiGetFwWarsRequest {
 	r.xTenant = &xTenant
+	return r
+}
+
+// The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date.
+func (r ApiGetFwWarsRequest) IfModifiedSince(ifModifiedSince string) ApiGetFwWarsRequest {
+	r.ifModifiedSince = &ifModifiedSince
 	return r
 }
 
@@ -1346,6 +1423,9 @@ func (a *FactionWarfareAPIService) GetFwWarsExecute(r ApiGetFwWarsRequest) ([]Fw
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Compatibility-Date", r.xCompatibilityDate, "simple", "")
 	if r.xTenant != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "X-Tenant", r.xTenant, "simple", "")
+	}
+	if r.ifModifiedSince != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
