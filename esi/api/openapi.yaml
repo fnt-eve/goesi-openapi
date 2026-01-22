@@ -3836,13 +3836,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-characters.read_freelance_jobs.v1
@@ -3953,13 +3946,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-characters.read_freelance_jobs.v1
@@ -10374,13 +10360,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-corporations.read_freelance_jobs.v1
@@ -10528,13 +10507,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-corporations.read_freelance_jobs.v1
@@ -12034,13 +12006,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-corporations.read_projects.v1
@@ -12151,13 +12116,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-corporations.read_projects.v1
@@ -12276,13 +12234,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-corporations.read_projects.v1
@@ -12428,13 +12379,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       security:
       - OAuth2:
         - esi-corporations.read_projects.v1
@@ -15729,13 +15673,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       summary: List freelance jobs
       tags:
       - Freelance Jobs
@@ -15842,13 +15779,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       summary: Get freelance job details
       tags:
       - Freelance Jobs
@@ -17816,13 +17746,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       summary: Get changelog
       tags:
       - Meta
@@ -17913,13 +17836,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       summary: Get compatibility dates
       tags:
       - Meta
@@ -18010,13 +17926,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       summary: Get health status
       tags:
       - Meta
@@ -18129,13 +18038,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
       summary: Get route between two systems
       tags:
       - Routes
