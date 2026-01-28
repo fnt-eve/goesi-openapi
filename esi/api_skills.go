@@ -40,7 +40,10 @@ type SkillsAPI interface {
 	/*
 	GetCharactersCharacterIdSkillqueue Get character's skill queue
 
-	List the configured skill queue for the given character
+	List the configured skill queue for the given character.
+
+Entries that have their finish time in the past are completed, but aren't updated in the "/skills" route
+yet. This will happen the next time the character logs in.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param characterId The ID of the character
@@ -49,13 +52,17 @@ type SkillsAPI interface {
 	GetCharactersCharacterIdSkillqueue(ctx context.Context, characterId int64) ApiGetCharactersCharacterIdSkillqueueRequest
 
 	// GetCharactersCharacterIdSkillqueueExecute executes the request
-	//  @return []CharactersCharacterIdSkillqueueGetInner
-	GetCharactersCharacterIdSkillqueueExecute(r ApiGetCharactersCharacterIdSkillqueueRequest) ([]CharactersCharacterIdSkillqueueGetInner, *http.Response, error)
+	//  @return []CharactersSkillqueueSkill
+	GetCharactersCharacterIdSkillqueueExecute(r ApiGetCharactersCharacterIdSkillqueueRequest) ([]CharactersSkillqueueSkill, *http.Response, error)
 
 	/*
 	GetCharactersCharacterIdSkills Get character skills
 
-	List all trained skills for the given character
+	List all trained skills for the given character.
+
+Skills returned by this route can be out-of-date if the character hasn't logged in since one or more skills
+completed training. Use the /skillqueue route to check for skills that completed training. Entries that are
+in the past need to be applied on top of this list to get an accurate view of the character's current skills.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param characterId The ID of the character
@@ -64,8 +71,8 @@ type SkillsAPI interface {
 	GetCharactersCharacterIdSkills(ctx context.Context, characterId int64) ApiGetCharactersCharacterIdSkillsRequest
 
 	// GetCharactersCharacterIdSkillsExecute executes the request
-	//  @return CharactersCharacterIdSkillsGet
-	GetCharactersCharacterIdSkillsExecute(r ApiGetCharactersCharacterIdSkillsRequest) (*CharactersCharacterIdSkillsGet, *http.Response, error)
+	//  @return CharactersSkills
+	GetCharactersCharacterIdSkillsExecute(r ApiGetCharactersCharacterIdSkillsRequest) (*CharactersSkills, *http.Response, error)
 }
 
 // SkillsAPIService SkillsAPI service
@@ -278,14 +285,17 @@ func (r ApiGetCharactersCharacterIdSkillqueueRequest) IfModifiedSince(ifModified
 	return r
 }
 
-func (r ApiGetCharactersCharacterIdSkillqueueRequest) Execute() ([]CharactersCharacterIdSkillqueueGetInner, *http.Response, error) {
+func (r ApiGetCharactersCharacterIdSkillqueueRequest) Execute() ([]CharactersSkillqueueSkill, *http.Response, error) {
 	return r.ApiService.GetCharactersCharacterIdSkillqueueExecute(r)
 }
 
 /*
 GetCharactersCharacterIdSkillqueue Get character's skill queue
 
-List the configured skill queue for the given character
+List the configured skill queue for the given character.
+
+Entries that have their finish time in the past are completed, but aren't updated in the "/skills" route
+yet. This will happen the next time the character logs in.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param characterId The ID of the character
@@ -300,13 +310,13 @@ func (a *SkillsAPIService) GetCharactersCharacterIdSkillqueue(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return []CharactersCharacterIdSkillqueueGetInner
-func (a *SkillsAPIService) GetCharactersCharacterIdSkillqueueExecute(r ApiGetCharactersCharacterIdSkillqueueRequest) ([]CharactersCharacterIdSkillqueueGetInner, *http.Response, error) {
+//  @return []CharactersSkillqueueSkill
+func (a *SkillsAPIService) GetCharactersCharacterIdSkillqueueExecute(r ApiGetCharactersCharacterIdSkillqueueRequest) ([]CharactersSkillqueueSkill, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []CharactersCharacterIdSkillqueueGetInner
+		localVarReturnValue  []CharactersSkillqueueSkill
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkillsAPIService.GetCharactersCharacterIdSkillqueue")
@@ -444,14 +454,18 @@ func (r ApiGetCharactersCharacterIdSkillsRequest) IfModifiedSince(ifModifiedSinc
 	return r
 }
 
-func (r ApiGetCharactersCharacterIdSkillsRequest) Execute() (*CharactersCharacterIdSkillsGet, *http.Response, error) {
+func (r ApiGetCharactersCharacterIdSkillsRequest) Execute() (*CharactersSkills, *http.Response, error) {
 	return r.ApiService.GetCharactersCharacterIdSkillsExecute(r)
 }
 
 /*
 GetCharactersCharacterIdSkills Get character skills
 
-List all trained skills for the given character
+List all trained skills for the given character.
+
+Skills returned by this route can be out-of-date if the character hasn't logged in since one or more skills
+completed training. Use the /skillqueue route to check for skills that completed training. Entries that are
+in the past need to be applied on top of this list to get an accurate view of the character's current skills.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param characterId The ID of the character
@@ -466,13 +480,13 @@ func (a *SkillsAPIService) GetCharactersCharacterIdSkills(ctx context.Context, c
 }
 
 // Execute executes the request
-//  @return CharactersCharacterIdSkillsGet
-func (a *SkillsAPIService) GetCharactersCharacterIdSkillsExecute(r ApiGetCharactersCharacterIdSkillsRequest) (*CharactersCharacterIdSkillsGet, *http.Response, error) {
+//  @return CharactersSkills
+func (a *SkillsAPIService) GetCharactersCharacterIdSkillsExecute(r ApiGetCharactersCharacterIdSkillsRequest) (*CharactersSkills, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CharactersCharacterIdSkillsGet
+		localVarReturnValue  *CharactersSkills
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkillsAPIService.GetCharactersCharacterIdSkills")

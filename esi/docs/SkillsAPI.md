@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdSkillqueue
 
-> []CharactersCharacterIdSkillqueueGetInner GetCharactersCharacterIdSkillqueue(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> []CharactersSkillqueueSkill GetCharactersCharacterIdSkillqueue(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character's skill queue
 
@@ -127,7 +127,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SkillsAPI.GetCharactersCharacterIdSkillqueue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCharactersCharacterIdSkillqueue`: []CharactersCharacterIdSkillqueueGetInner
+	// response from `GetCharactersCharacterIdSkillqueue`: []CharactersSkillqueueSkill
 	fmt.Fprintf(os.Stdout, "Response from `SkillsAPI.GetCharactersCharacterIdSkillqueue`: %v\n", resp)
 }
 ```
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CharactersCharacterIdSkillqueueGetInner**](CharactersCharacterIdSkillqueueGetInner.md)
+[**[]CharactersSkillqueueSkill**](CharactersSkillqueueSkill.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdSkills
 
-> CharactersCharacterIdSkillsGet GetCharactersCharacterIdSkills(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> CharactersSkills GetCharactersCharacterIdSkills(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character skills
 
@@ -208,7 +208,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SkillsAPI.GetCharactersCharacterIdSkills``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCharactersCharacterIdSkills`: CharactersCharacterIdSkillsGet
+	// response from `GetCharactersCharacterIdSkills`: CharactersSkills
 	fmt.Fprintf(os.Stdout, "Response from `SkillsAPI.GetCharactersCharacterIdSkills`: %v\n", resp)
 }
 ```
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CharactersCharacterIdSkillsGet**](CharactersCharacterIdSkillsGet.md)
+[**CharactersSkills**](CharactersSkills.md)
 
 ### Authorization
 

@@ -6987,7 +6987,11 @@ paths:
         window-size: 15m
   /characters/{character_id}/skillqueue:
     get:
-      description: List the configured skill queue for the given character
+      description: |-
+        List the configured skill queue for the given character.
+
+        Entries that have their finish time in the past are completed, but aren't updated in the "/skills" route
+        yet. This will happen the next time the character logs in.
       operationId: GetCharactersCharacterIdSkillqueue
       parameters:
       - description: The ID of the character
@@ -7060,7 +7064,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CharactersCharacterIdSkillqueueGet"
+                items:
+                  $ref: "#/components/schemas/CharactersSkillqueueSkill"
+                type: array
           description: OK
           headers:
             Cache-Control:
@@ -7081,7 +7087,8 @@ paths:
       summary: Get character's skill queue
       tags:
       - Skills
-      x-cache-age: 120
+      x-cache-age: 60
+      x-cache-mode: event-based
       x-compatibility-date: 2020-01-01
       x-rate-limit:
         group: char-detail
@@ -7089,7 +7096,12 @@ paths:
         window-size: 15m
   /characters/{character_id}/skills:
     get:
-      description: List all trained skills for the given character
+      description: |-
+        List all trained skills for the given character.
+
+        Skills returned by this route can be out-of-date if the character hasn't logged in since one or more skills
+        completed training. Use the /skillqueue route to check for skills that completed training. Entries that are
+        in the past need to be applied on top of this list to get an accurate view of the character's current skills.
       operationId: GetCharactersCharacterIdSkills
       parameters:
       - description: The ID of the character
@@ -7162,7 +7174,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CharactersCharacterIdSkillsGet"
+                $ref: "#/components/schemas/CharactersSkills"
           description: OK
           headers:
             Cache-Control:
@@ -7183,7 +7195,8 @@ paths:
       summary: Get character skills
       tags:
       - Skills
-      x-cache-age: 120
+      x-cache-age: 60
+      x-cache-mode: event-based
       x-compatibility-date: 2020-01-01
       x-rate-limit:
         group: char-detail
@@ -23467,39 +23480,6 @@ components:
       - ship_name
       - ship_type_id
       type: object
-    CharactersCharacterIdSkillqueueGet:
-      items:
-        $ref: "#/components/schemas/CharactersCharacterIdSkillqueueGet_inner"
-      type: array
-    CharactersCharacterIdSkillsGet:
-      example:
-        skills:
-        - trained_skill_level: 5
-          active_skill_level: 0
-          skill_id: 6
-          skillpoints_in_skill: 1
-        - trained_skill_level: 5
-          active_skill_level: 0
-          skill_id: 6
-          skillpoints_in_skill: 1
-        unallocated_sp: 2
-        total_sp: 5
-      properties:
-        skills:
-          items:
-            $ref: "#/components/schemas/CharactersCharacterIdSkillsGet_skills_inner"
-          type: array
-        total_sp:
-          format: int64
-          type: integer
-        unallocated_sp:
-          description: Skill points available to be assigned
-          format: int64
-          type: integer
-      required:
-      - skills
-      - total_sp
-      type: object
     CharactersCharacterIdStandingsGet:
       items:
         $ref: "#/components/schemas/CharactersCharacterIdStandingsGet_inner"
@@ -23588,6 +23568,116 @@ components:
       - contributed
       - last_modified
       - state
+      type: object
+    CharactersSkillqueueSkill:
+      example:
+        queue_position: 5
+        finish_date: 2000-01-23T04:56:07.000+00:00
+        level_end_sp: 6
+        level_start_sp: 1
+        finished_level: 0
+        skill_id: 587
+        training_start_sp: 5
+        start_date: 2000-01-23T04:56:07.000+00:00
+      properties:
+        finish_date:
+          description: The date the skill training will finish
+          format: date-time
+          type: string
+        finished_level:
+          description: The level the skill is training for
+          format: int64
+          type: integer
+        level_end_sp:
+          description: The Skill Points at the end of the level
+          format: int64
+          type: integer
+        level_start_sp:
+          description: The Skill Points at the start of the level
+          format: int64
+          type: integer
+        queue_position:
+          description: The position of the skill in the queue
+          format: int64
+          type: integer
+        skill_id:
+          example: 587
+          format: int64
+          type: integer
+          x-common-model: "true"
+        start_date:
+          description: The date the skill training will start/continue
+          format: date-time
+          type: string
+        training_start_sp:
+          description: The Skill Points at the start of training
+          format: int64
+          type: integer
+      required:
+      - finished_level
+      - queue_position
+      - skill_id
+      type: object
+    CharactersSkills:
+      example:
+        skills:
+        - trained_skill_level: 5
+          active_skill_level: 0
+          skill_id: 6
+          skillpoints_in_skill: 1
+        - trained_skill_level: 5
+          active_skill_level: 0
+          skill_id: 6
+          skillpoints_in_skill: 1
+        unallocated_sp: 2
+        total_sp: 5
+      properties:
+        skills:
+          description: The trained skills
+          items:
+            $ref: "#/components/schemas/CharactersSkillsSkill"
+          type: array
+        total_sp:
+          description: The total Skill Points spent on skills
+          format: int64
+          type: integer
+        unallocated_sp:
+          description: The amount of unallocated Skill Points
+          format: int64
+          type: integer
+      required:
+      - skills
+      - total_sp
+      type: object
+    CharactersSkillsSkill:
+      example:
+        trained_skill_level: 5
+        active_skill_level: 0
+        skill_id: 6
+        skillpoints_in_skill: 1
+      properties:
+        active_skill_level:
+          description: The active skill level (can differ from trained due to alpha
+            status and/or active expert systems)
+          format: int64
+          type: integer
+        skill_id:
+          description: The Type ID of the skill
+          format: int64
+          type: integer
+        skillpoints_in_skill:
+          description: The amount of Skill Points in the skill
+          format: int64
+          type: integer
+        trained_skill_level:
+          description: The trained skill level
+          format: int64
+          type: integer
+      required:
+      - active_skill_level
+      - skill_id
+      - skillpoints_in_skill
+      - trained_skill_level
       type: object
     CompatibilityDate:
       example: 2025-08-26
@@ -29684,76 +29774,6 @@ components:
       - quantity
       - route_id
       - source_pin_id
-      type: object
-    CharactersCharacterIdSkillqueueGet_inner:
-      example:
-        queue_position: 5
-        finish_date: 2000-01-23T04:56:07.000+00:00
-        level_end_sp: 6
-        level_start_sp: 1
-        finished_level: 0
-        skill_id: 5
-        training_start_sp: 2
-        start_date: 2000-01-23T04:56:07.000+00:00
-      properties:
-        finish_date:
-          description: Date on which training of the skill will complete. Omitted
-            if the skill queue is paused.
-          format: date-time
-          type: string
-        finished_level:
-          format: int64
-          type: integer
-        level_end_sp:
-          format: int64
-          type: integer
-        level_start_sp:
-          description: Amount of SP that was in the skill when it started training
-            it's current level. Used to calculate % of current level complete.
-          format: int64
-          type: integer
-        queue_position:
-          format: int64
-          type: integer
-        skill_id:
-          format: int64
-          type: integer
-        start_date:
-          format: date-time
-          type: string
-        training_start_sp:
-          format: int64
-          type: integer
-      required:
-      - finished_level
-      - queue_position
-      - skill_id
-      type: object
-    CharactersCharacterIdSkillsGet_skills_inner:
-      description: skill object
-      example:
-        trained_skill_level: 5
-        active_skill_level: 0
-        skill_id: 6
-        skillpoints_in_skill: 1
-      properties:
-        active_skill_level:
-          format: int64
-          type: integer
-        skill_id:
-          format: int64
-          type: integer
-        skillpoints_in_skill:
-          format: int64
-          type: integer
-        trained_skill_level:
-          format: int64
-          type: integer
-      required:
-      - active_skill_level
-      - skill_id
-      - skillpoints_in_skill
-      - trained_skill_level
       type: object
     CharactersCharacterIdStandingsGet_inner:
       example:
