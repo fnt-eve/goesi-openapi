@@ -22415,6 +22415,11 @@ components:
       format: int64
       type: integer
       x-common-model: "true"
+    BloodlineID:
+      example: 1
+      format: int64
+      type: integer
+      x-common-model: "true"
     CharacterID:
       example: 90000001
       format: int64
@@ -26258,6 +26263,11 @@ components:
       - path
       - status
       type: object
+    RaceID:
+      example: 1
+      format: int64
+      type: integer
+      x-common-model: "true"
     RegionID:
       example: 10000001
       format: int64
