@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ## GetCharactersCharacterId
 
-> CharactersCharacterIdGet GetCharactersCharacterId(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> CharactersDetail GetCharactersCharacterId(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character's public information
 
@@ -57,7 +57,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CharacterAPI.GetCharactersCharacterId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCharactersCharacterId`: CharactersCharacterIdGet
+	// response from `GetCharactersCharacterId`: CharactersDetail
 	fmt.Fprintf(os.Stdout, "Response from `CharacterAPI.GetCharactersCharacterId`: %v\n", resp)
 }
 ```
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CharactersCharacterIdGet**](CharactersCharacterIdGet.md)
+[**CharactersDetail**](CharactersDetail.md)
 
 ### Authorization
 

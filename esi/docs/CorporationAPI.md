@@ -4,7 +4,7 @@ All URIs are relative to *https://esi.evetech.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCorporationsCorporationId**](CorporationAPI.md#GetCorporationsCorporationId) | **Get** /corporations/{corporation_id} | Get corporation information
+[**GetCorporationsCorporationId**](CorporationAPI.md#GetCorporationsCorporationId) | **Get** /corporations/{corporation_id} | Get corporation&#39;s public information
 [**GetCorporationsCorporationIdAlliancehistory**](CorporationAPI.md#GetCorporationsCorporationIdAlliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory | Get alliance history
 [**GetCorporationsCorporationIdBlueprints**](CorporationAPI.md#GetCorporationsCorporationIdBlueprints) | **Get** /corporations/{corporation_id}/blueprints | Get corporation blueprints
 [**GetCorporationsCorporationIdContainersLogs**](CorporationAPI.md#GetCorporationsCorporationIdContainersLogs) | **Get** /corporations/{corporation_id}/containers/logs | Get all corporation ALSC logs
@@ -31,9 +31,9 @@ Method | HTTP request | Description
 
 ## GetCorporationsCorporationId
 
-> CorporationsCorporationIdGet GetCorporationsCorporationId(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> CorporationsDetail GetCorporationsCorporationId(ctx, corporationId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
-Get corporation information
+Get corporation's public information
 
 
 
@@ -65,7 +65,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CorporationAPI.GetCorporationsCorporationId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCorporationsCorporationId`: CorporationsCorporationIdGet
+	// response from `GetCorporationsCorporationId`: CorporationsDetail
 	fmt.Fprintf(os.Stdout, "Response from `CorporationAPI.GetCorporationsCorporationId`: %v\n", resp)
 }
 ```
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CorporationsCorporationIdGet**](CorporationsCorporationIdGet.md)
+[**CorporationsDetail**](CorporationsDetail.md)
 
 ### Authorization
 

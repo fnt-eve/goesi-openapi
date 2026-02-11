@@ -5,7 +5,7 @@ All URIs are relative to *https://esi.evetech.net*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAlliances**](AllianceAPI.md#GetAlliances) | **Get** /alliances | List all alliances
-[**GetAlliancesAllianceId**](AllianceAPI.md#GetAlliancesAllianceId) | **Get** /alliances/{alliance_id} | Get alliance information
+[**GetAlliancesAllianceId**](AllianceAPI.md#GetAlliancesAllianceId) | **Get** /alliances/{alliance_id} | Get alliance&#39;s public information
 [**GetAlliancesAllianceIdCorporations**](AllianceAPI.md#GetAlliancesAllianceIdCorporations) | **Get** /alliances/{alliance_id}/corporations | List alliance&#39;s corporations
 [**GetAlliancesAllianceIdIcons**](AllianceAPI.md#GetAlliancesAllianceIdIcons) | **Get** /alliances/{alliance_id}/icons | Get alliance icon
 
@@ -88,9 +88,9 @@ No authorization required
 
 ## GetAlliancesAllianceId
 
-> AlliancesAllianceIdGet GetAlliancesAllianceId(ctx, allianceId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> AllianceDetail GetAlliancesAllianceId(ctx, allianceId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
-Get alliance information
+Get alliance's public information
 
 
 
@@ -122,7 +122,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AllianceAPI.GetAlliancesAllianceId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlliancesAllianceId`: AlliancesAllianceIdGet
+	// response from `GetAlliancesAllianceId`: AllianceDetail
 	fmt.Fprintf(os.Stdout, "Response from `AllianceAPI.GetAlliancesAllianceId`: %v\n", resp)
 }
 ```
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AlliancesAllianceIdGet**](AlliancesAllianceIdGet.md)
+[**AllianceDetail**](AllianceDetail.md)
 
 ### Authorization
 

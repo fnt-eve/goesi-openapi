@@ -34,8 +34,8 @@ type CharacterAPI interface {
 	GetCharactersCharacterId(ctx context.Context, characterId int64) ApiGetCharactersCharacterIdRequest
 
 	// GetCharactersCharacterIdExecute executes the request
-	//  @return CharactersCharacterIdGet
-	GetCharactersCharacterIdExecute(r ApiGetCharactersCharacterIdRequest) (*CharactersCharacterIdGet, *http.Response, error)
+	//  @return CharactersDetail
+	GetCharactersCharacterIdExecute(r ApiGetCharactersCharacterIdRequest) (*CharactersDetail, *http.Response, error)
 
 	/*
 	GetCharactersCharacterIdAgentsResearch Get agents research
@@ -278,7 +278,7 @@ func (r ApiGetCharactersCharacterIdRequest) IfModifiedSince(ifModifiedSince stri
 	return r
 }
 
-func (r ApiGetCharactersCharacterIdRequest) Execute() (*CharactersCharacterIdGet, *http.Response, error) {
+func (r ApiGetCharactersCharacterIdRequest) Execute() (*CharactersDetail, *http.Response, error) {
 	return r.ApiService.GetCharactersCharacterIdExecute(r)
 }
 
@@ -300,13 +300,13 @@ func (a *CharacterAPIService) GetCharactersCharacterId(ctx context.Context, char
 }
 
 // Execute executes the request
-//  @return CharactersCharacterIdGet
-func (a *CharacterAPIService) GetCharactersCharacterIdExecute(r ApiGetCharactersCharacterIdRequest) (*CharactersCharacterIdGet, *http.Response, error) {
+//  @return CharactersDetail
+func (a *CharacterAPIService) GetCharactersCharacterIdExecute(r ApiGetCharactersCharacterIdRequest) (*CharactersDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CharactersCharacterIdGet
+		localVarReturnValue  *CharactersDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CharacterAPIService.GetCharactersCharacterId")

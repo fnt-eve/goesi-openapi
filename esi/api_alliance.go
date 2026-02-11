@@ -37,7 +37,7 @@ type AllianceAPI interface {
 	GetAlliancesExecute(r ApiGetAlliancesRequest) ([]int64, *http.Response, error)
 
 	/*
-	GetAlliancesAllianceId Get alliance information
+	GetAlliancesAllianceId Get alliance's public information
 
 	Public information about an alliance
 
@@ -48,8 +48,8 @@ type AllianceAPI interface {
 	GetAlliancesAllianceId(ctx context.Context, allianceId int64) ApiGetAlliancesAllianceIdRequest
 
 	// GetAlliancesAllianceIdExecute executes the request
-	//  @return AlliancesAllianceIdGet
-	GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AlliancesAllianceIdGet, *http.Response, error)
+	//  @return AllianceDetail
+	GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AllianceDetail, *http.Response, error)
 
 	/*
 	GetAlliancesAllianceIdCorporations List alliance's corporations
@@ -290,12 +290,12 @@ func (r ApiGetAlliancesAllianceIdRequest) IfModifiedSince(ifModifiedSince string
 	return r
 }
 
-func (r ApiGetAlliancesAllianceIdRequest) Execute() (*AlliancesAllianceIdGet, *http.Response, error) {
+func (r ApiGetAlliancesAllianceIdRequest) Execute() (*AllianceDetail, *http.Response, error) {
 	return r.ApiService.GetAlliancesAllianceIdExecute(r)
 }
 
 /*
-GetAlliancesAllianceId Get alliance information
+GetAlliancesAllianceId Get alliance's public information
 
 Public information about an alliance
 
@@ -312,13 +312,13 @@ func (a *AllianceAPIService) GetAlliancesAllianceId(ctx context.Context, allianc
 }
 
 // Execute executes the request
-//  @return AlliancesAllianceIdGet
-func (a *AllianceAPIService) GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AlliancesAllianceIdGet, *http.Response, error) {
+//  @return AllianceDetail
+func (a *AllianceAPIService) GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AllianceDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AlliancesAllianceIdGet
+		localVarReturnValue  *AllianceDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AllianceAPIService.GetAlliancesAllianceId")

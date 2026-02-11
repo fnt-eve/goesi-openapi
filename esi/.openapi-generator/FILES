@@ -38,10 +38,10 @@ api_wars.go
 client.go
 configuration.go
 docs/AllianceAPI.md
+docs/AllianceDetail.md
 docs/AllianceId.md
 docs/AlliancesAllianceIdContactsGetInner.md
 docs/AlliancesAllianceIdContactsLabelsGetInner.md
-docs/AlliancesAllianceIdGet.md
 docs/AlliancesAllianceIdIconsGet.md
 docs/AssetsAPI.md
 docs/Boolean.md
@@ -76,7 +76,6 @@ docs/CharactersCharacterIdFleetGet.md
 docs/CharactersCharacterIdFwStatsGet.md
 docs/CharactersCharacterIdFwStatsGetKills.md
 docs/CharactersCharacterIdFwStatsGetVictoryPoints.md
-docs/CharactersCharacterIdGet.md
 docs/CharactersCharacterIdIndustryJobsGetInner.md
 docs/CharactersCharacterIdKillmailsRecentGetInner.md
 docs/CharactersCharacterIdLocationGet.md
@@ -111,6 +110,7 @@ docs/CharactersCharacterIdStandingsGetInner.md
 docs/CharactersCharacterIdTitlesGetInner.md
 docs/CharactersCharacterIdWalletJournalGetInner.md
 docs/CharactersCharacterIdWalletTransactionsGetInner.md
+docs/CharactersDetail.md
 docs/CharactersFreelanceJobsListing.md
 docs/CharactersFreelanceJobsParticipation.md
 docs/CharactersSkillqueueSkill.md
@@ -144,7 +144,6 @@ docs/CorporationsCorporationIdFacilitiesGetInner.md
 docs/CorporationsCorporationIdFwStatsGet.md
 docs/CorporationsCorporationIdFwStatsGetKills.md
 docs/CorporationsCorporationIdFwStatsGetVictoryPoints.md
-docs/CorporationsCorporationIdGet.md
 docs/CorporationsCorporationIdIconsGet.md
 docs/CorporationsCorporationIdIndustryJobsGetInner.md
 docs/CorporationsCorporationIdMedalsGetInner.md
@@ -165,6 +164,7 @@ docs/CorporationsCorporationIdTitlesGetInner.md
 docs/CorporationsCorporationIdWalletsDivisionJournalGetInner.md
 docs/CorporationsCorporationIdWalletsDivisionTransactionsGetInner.md
 docs/CorporationsCorporationIdWalletsGetInner.md
+docs/CorporationsDetail.md
 docs/CorporationsFreelanceJobsListing.md
 docs/CorporationsFreelanceJobsParticipants.md
 docs/CorporationsFreelanceJobsParticipantsParticipant.md
@@ -407,10 +407,10 @@ docs/WarsWarIdGetAggressor.md
 docs/WarsWarIdGetAlliesInner.md
 docs/WarsWarIdGetDefender.md
 git_push.sh
+model_alliance_detail.go
 model_alliance_id.go
 model_alliances_alliance_id_contacts_get_inner.go
 model_alliances_alliance_id_contacts_labels_get_inner.go
-model_alliances_alliance_id_get.go
 model_alliances_alliance_id_icons_get.go
 model_boolean.go
 model_capture_fw_complex.go
@@ -442,7 +442,6 @@ model_characters_character_id_fleet_get.go
 model_characters_character_id_fw_stats_get.go
 model_characters_character_id_fw_stats_get_kills.go
 model_characters_character_id_fw_stats_get_victory_points.go
-model_characters_character_id_get.go
 model_characters_character_id_industry_jobs_get_inner.go
 model_characters_character_id_killmails_recent_get_inner.go
 model_characters_character_id_location_get.go
@@ -477,6 +476,7 @@ model_characters_character_id_standings_get_inner.go
 model_characters_character_id_titles_get_inner.go
 model_characters_character_id_wallet_journal_get_inner.go
 model_characters_character_id_wallet_transactions_get_inner.go
+model_characters_detail.go
 model_characters_freelance_jobs_listing.go
 model_characters_freelance_jobs_participation.go
 model_characters_skillqueue_skill.go
@@ -505,7 +505,6 @@ model_corporations_corporation_id_facilities_get_inner.go
 model_corporations_corporation_id_fw_stats_get.go
 model_corporations_corporation_id_fw_stats_get_kills.go
 model_corporations_corporation_id_fw_stats_get_victory_points.go
-model_corporations_corporation_id_get.go
 model_corporations_corporation_id_icons_get.go
 model_corporations_corporation_id_industry_jobs_get_inner.go
 model_corporations_corporation_id_medals_get_inner.go
@@ -526,6 +525,7 @@ model_corporations_corporation_id_titles_get_inner.go
 model_corporations_corporation_id_wallets_division_journal_get_inner.go
 model_corporations_corporation_id_wallets_division_transactions_get_inner.go
 model_corporations_corporation_id_wallets_get_inner.go
+model_corporations_detail.go
 model_corporations_freelance_jobs_listing.go
 model_corporations_freelance_jobs_participants.go
 model_corporations_freelance_jobs_participants_participant.go

@@ -23,7 +23,7 @@ import (
 type CorporationAPI interface {
 
 	/*
-	GetCorporationsCorporationId Get corporation information
+	GetCorporationsCorporationId Get corporation's public information
 
 	Public information about a corporation
 
@@ -34,8 +34,8 @@ type CorporationAPI interface {
 	GetCorporationsCorporationId(ctx context.Context, corporationId int64) ApiGetCorporationsCorporationIdRequest
 
 	// GetCorporationsCorporationIdExecute executes the request
-	//  @return CorporationsCorporationIdGet
-	GetCorporationsCorporationIdExecute(r ApiGetCorporationsCorporationIdRequest) (*CorporationsCorporationIdGet, *http.Response, error)
+	//  @return CorporationsDetail
+	GetCorporationsCorporationIdExecute(r ApiGetCorporationsCorporationIdRequest) (*CorporationsDetail, *http.Response, error)
 
 	/*
 	GetCorporationsCorporationIdAlliancehistory Get alliance history
@@ -399,12 +399,12 @@ func (r ApiGetCorporationsCorporationIdRequest) IfModifiedSince(ifModifiedSince 
 	return r
 }
 
-func (r ApiGetCorporationsCorporationIdRequest) Execute() (*CorporationsCorporationIdGet, *http.Response, error) {
+func (r ApiGetCorporationsCorporationIdRequest) Execute() (*CorporationsDetail, *http.Response, error) {
 	return r.ApiService.GetCorporationsCorporationIdExecute(r)
 }
 
 /*
-GetCorporationsCorporationId Get corporation information
+GetCorporationsCorporationId Get corporation's public information
 
 Public information about a corporation
 
@@ -421,13 +421,13 @@ func (a *CorporationAPIService) GetCorporationsCorporationId(ctx context.Context
 }
 
 // Execute executes the request
-//  @return CorporationsCorporationIdGet
-func (a *CorporationAPIService) GetCorporationsCorporationIdExecute(r ApiGetCorporationsCorporationIdRequest) (*CorporationsCorporationIdGet, *http.Response, error) {
+//  @return CorporationsDetail
+func (a *CorporationAPIService) GetCorporationsCorporationIdExecute(r ApiGetCorporationsCorporationIdRequest) (*CorporationsDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CorporationsCorporationIdGet
+		localVarReturnValue  *CorporationsDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorporationAPIService.GetCorporationsCorporationId")

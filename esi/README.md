@@ -81,7 +81,7 @@ All URIs are relative to *https://esi.evetech.net*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AllianceAPI* | [**GetAlliances**](docs/AllianceAPI.md#getalliances) | **Get** /alliances | List all alliances
-*AllianceAPI* | [**GetAlliancesAllianceId**](docs/AllianceAPI.md#getalliancesallianceid) | **Get** /alliances/{alliance_id} | Get alliance information
+*AllianceAPI* | [**GetAlliancesAllianceId**](docs/AllianceAPI.md#getalliancesallianceid) | **Get** /alliances/{alliance_id} | Get alliance&#39;s public information
 *AllianceAPI* | [**GetAlliancesAllianceIdCorporations**](docs/AllianceAPI.md#getalliancesallianceidcorporations) | **Get** /alliances/{alliance_id}/corporations | List alliance&#39;s corporations
 *AllianceAPI* | [**GetAlliancesAllianceIdIcons**](docs/AllianceAPI.md#getalliancesallianceidicons) | **Get** /alliances/{alliance_id}/icons | Get alliance icon
 *AssetsAPI* | [**GetCharactersCharacterIdAssets**](docs/AssetsAPI.md#getcharacterscharacteridassets) | **Get** /characters/{character_id}/assets | Get character assets
@@ -128,7 +128,7 @@ Class | Method | HTTP request | Description
 *ContractsAPI* | [**GetCorporationsCorporationIdContracts**](docs/ContractsAPI.md#getcorporationscorporationidcontracts) | **Get** /corporations/{corporation_id}/contracts | Get corporation contracts
 *ContractsAPI* | [**GetCorporationsCorporationIdContractsContractIdBids**](docs/ContractsAPI.md#getcorporationscorporationidcontractscontractidbids) | **Get** /corporations/{corporation_id}/contracts/{contract_id}/bids | Get corporation contract bids
 *ContractsAPI* | [**GetCorporationsCorporationIdContractsContractIdItems**](docs/ContractsAPI.md#getcorporationscorporationidcontractscontractiditems) | **Get** /corporations/{corporation_id}/contracts/{contract_id}/items | Get corporation contract items
-*CorporationAPI* | [**GetCorporationsCorporationId**](docs/CorporationAPI.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id} | Get corporation information
+*CorporationAPI* | [**GetCorporationsCorporationId**](docs/CorporationAPI.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id} | Get corporation&#39;s public information
 *CorporationAPI* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationAPI.md#getcorporationscorporationidalliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory | Get alliance history
 *CorporationAPI* | [**GetCorporationsCorporationIdBlueprints**](docs/CorporationAPI.md#getcorporationscorporationidblueprints) | **Get** /corporations/{corporation_id}/blueprints | Get corporation blueprints
 *CorporationAPI* | [**GetCorporationsCorporationIdContainersLogs**](docs/CorporationAPI.md#getcorporationscorporationidcontainerslogs) | **Get** /corporations/{corporation_id}/containers/logs | Get all corporation ALSC logs
@@ -292,10 +292,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AllianceDetail](docs/AllianceDetail.md)
  - [AllianceId](docs/AllianceId.md)
  - [AlliancesAllianceIdContactsGetInner](docs/AlliancesAllianceIdContactsGetInner.md)
  - [AlliancesAllianceIdContactsLabelsGetInner](docs/AlliancesAllianceIdContactsLabelsGetInner.md)
- - [AlliancesAllianceIdGet](docs/AlliancesAllianceIdGet.md)
  - [AlliancesAllianceIdIconsGet](docs/AlliancesAllianceIdIconsGet.md)
  - [Boolean](docs/Boolean.md)
  - [CaptureFwComplex](docs/CaptureFwComplex.md)
@@ -327,7 +327,6 @@ Class | Method | HTTP request | Description
  - [CharactersCharacterIdFwStatsGet](docs/CharactersCharacterIdFwStatsGet.md)
  - [CharactersCharacterIdFwStatsGetKills](docs/CharactersCharacterIdFwStatsGetKills.md)
  - [CharactersCharacterIdFwStatsGetVictoryPoints](docs/CharactersCharacterIdFwStatsGetVictoryPoints.md)
- - [CharactersCharacterIdGet](docs/CharactersCharacterIdGet.md)
  - [CharactersCharacterIdIndustryJobsGetInner](docs/CharactersCharacterIdIndustryJobsGetInner.md)
  - [CharactersCharacterIdKillmailsRecentGetInner](docs/CharactersCharacterIdKillmailsRecentGetInner.md)
  - [CharactersCharacterIdLocationGet](docs/CharactersCharacterIdLocationGet.md)
@@ -362,6 +361,7 @@ Class | Method | HTTP request | Description
  - [CharactersCharacterIdTitlesGetInner](docs/CharactersCharacterIdTitlesGetInner.md)
  - [CharactersCharacterIdWalletJournalGetInner](docs/CharactersCharacterIdWalletJournalGetInner.md)
  - [CharactersCharacterIdWalletTransactionsGetInner](docs/CharactersCharacterIdWalletTransactionsGetInner.md)
+ - [CharactersDetail](docs/CharactersDetail.md)
  - [CharactersFreelanceJobsListing](docs/CharactersFreelanceJobsListing.md)
  - [CharactersFreelanceJobsParticipation](docs/CharactersFreelanceJobsParticipation.md)
  - [CharactersSkillqueueSkill](docs/CharactersSkillqueueSkill.md)
@@ -390,7 +390,6 @@ Class | Method | HTTP request | Description
  - [CorporationsCorporationIdFwStatsGet](docs/CorporationsCorporationIdFwStatsGet.md)
  - [CorporationsCorporationIdFwStatsGetKills](docs/CorporationsCorporationIdFwStatsGetKills.md)
  - [CorporationsCorporationIdFwStatsGetVictoryPoints](docs/CorporationsCorporationIdFwStatsGetVictoryPoints.md)
- - [CorporationsCorporationIdGet](docs/CorporationsCorporationIdGet.md)
  - [CorporationsCorporationIdIconsGet](docs/CorporationsCorporationIdIconsGet.md)
  - [CorporationsCorporationIdIndustryJobsGetInner](docs/CorporationsCorporationIdIndustryJobsGetInner.md)
  - [CorporationsCorporationIdMedalsGetInner](docs/CorporationsCorporationIdMedalsGetInner.md)
@@ -411,6 +410,7 @@ Class | Method | HTTP request | Description
  - [CorporationsCorporationIdWalletsDivisionJournalGetInner](docs/CorporationsCorporationIdWalletsDivisionJournalGetInner.md)
  - [CorporationsCorporationIdWalletsDivisionTransactionsGetInner](docs/CorporationsCorporationIdWalletsDivisionTransactionsGetInner.md)
  - [CorporationsCorporationIdWalletsGetInner](docs/CorporationsCorporationIdWalletsGetInner.md)
+ - [CorporationsDetail](docs/CorporationsDetail.md)
  - [CorporationsFreelanceJobsListing](docs/CorporationsFreelanceJobsListing.md)
  - [CorporationsFreelanceJobsParticipants](docs/CorporationsFreelanceJobsParticipants.md)
  - [CorporationsFreelanceJobsParticipantsParticipant](docs/CorporationsFreelanceJobsParticipantsParticipant.md)

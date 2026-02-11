@@ -208,7 +208,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AlliancesAllianceIdGet"
+                $ref: "#/components/schemas/AllianceDetail"
           description: OK
           headers:
             Cache-Control:
@@ -223,10 +223,11 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-      summary: Get alliance information
+      summary: Get alliance's public information
       tags:
       - Alliance
       x-cache-age: 3600
+      x-cache-mode: ttl-based
       x-compatibility-date: 2020-01-01
   /alliances/{alliance_id}/contacts:
     get:
@@ -816,7 +817,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CharactersCharacterIdGet"
+                $ref: "#/components/schemas/CharactersDetail"
           description: OK
           headers:
             Cache-Control:
@@ -834,7 +835,8 @@ paths:
       summary: Get character's public information
       tags:
       - Character
-      x-cache-age: 604800
+      x-cache-age: 86400
+      x-cache-mode: ttl-based
       x-compatibility-date: 2020-01-01
   /characters/{character_id}/agents_research:
     get:
@@ -8629,7 +8631,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CorporationsCorporationIdGet"
+                $ref: "#/components/schemas/CorporationsDetail"
           description: OK
           headers:
             Cache-Control:
@@ -8644,10 +8646,11 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-      summary: Get corporation information
+      summary: Get corporation's public information
       tags:
       - Corporation
       x-cache-age: 3600
+      x-cache-mode: ttl-based
       x-compatibility-date: 2020-01-01
   /corporations/{corporation_id}/alliancehistory:
     get:
@@ -22327,6 +22330,53 @@ components:
         type: string
       style: simple
   schemas:
+    AllianceDetail:
+      example:
+        ticker: ticker
+        creator_corporation_id: 98777771
+        creator_id: 90000001
+        name: name
+        faction_id: 500002
+        date_founded: 2000-01-23T04:56:07.000+00:00
+        executor_corporation_id: 98777771
+      properties:
+        creator_corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+        creator_id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        date_founded:
+          description: Alliance's founding date
+          format: date-time
+          type: string
+        executor_corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+        faction_id:
+          example: 500002
+          format: int64
+          type: integer
+          x-common-model: "true"
+        name:
+          description: Alliance's name
+          type: string
+        ticker:
+          description: Alliance's ticker
+          type: string
+      required:
+      - creator_corporation_id
+      - creator_id
+      - date_founded
+      - name
+      - ticker
+      type: object
     AllianceID:
       example: 99000001
       format: int64
@@ -22346,49 +22396,6 @@ components:
         type: integer
       type: array
       uniqueItems: true
-    AlliancesAllianceIdGet:
-      example:
-        ticker: ticker
-        creator_corporation_id: 0
-        creator_id: 6
-        name: name
-        faction_id: 5
-        date_founded: 2000-01-23T04:56:07.000+00:00
-        executor_corporation_id: 1
-      properties:
-        creator_corporation_id:
-          description: ID of the corporation that created the alliance
-          format: int64
-          type: integer
-        creator_id:
-          description: ID of the character that created the alliance
-          format: int64
-          type: integer
-        date_founded:
-          format: date-time
-          type: string
-        executor_corporation_id:
-          description: "the executor corporation ID, if this alliance is not closed"
-          format: int64
-          type: integer
-        faction_id:
-          description: "Faction ID this alliance is fighting for, if this alliance\
-            \ is enlisted in factional warfare"
-          format: int64
-          type: integer
-        name:
-          description: the full name of the alliance
-          type: string
-        ticker:
-          description: the short name of the alliance
-          type: string
-      required:
-      - creator_corporation_id
-      - creator_id
-      - date_founded
-      - name
-      - ticker
-      type: object
     AlliancesAllianceIdIconsGet:
       example:
         px64x64: px64x64
@@ -22751,66 +22758,6 @@ components:
       required:
       - kills
       - victory_points
-      type: object
-    CharactersCharacterIdGet:
-      example:
-        birthday: 2000-01-23T04:56:07.000+00:00
-        alliance_id: 0
-        corporation_id: 1
-        security_status: 2.3021358869347655
-        gender: female
-        race_id: 5
-        name: name
-        description: description
-        faction_id: 5
-        title: title
-        bloodline_id: 6
-      properties:
-        alliance_id:
-          description: The character's alliance ID
-          format: int64
-          type: integer
-        birthday:
-          description: Creation date of the character
-          format: date-time
-          type: string
-        bloodline_id:
-          format: int64
-          type: integer
-        corporation_id:
-          description: The character's corporation ID
-          format: int64
-          type: integer
-        description:
-          type: string
-        faction_id:
-          description: "ID of the faction the character is fighting for, if the character\
-            \ is enlisted in Factional Warfare"
-          format: int64
-          type: integer
-        gender:
-          enum:
-          - female
-          - male
-          type: string
-        name:
-          type: string
-        race_id:
-          format: int64
-          type: integer
-        security_status:
-          format: double
-          type: number
-        title:
-          description: The individual title of the character
-          type: string
-      required:
-      - birthday
-      - bloodline_id
-      - corporation_id
-      - gender
-      - name
-      - race_id
       type: object
     CharactersCharacterIdImplantsGet:
       items:
@@ -23507,6 +23454,79 @@ components:
       items:
         $ref: "#/components/schemas/CharactersCharacterIdWalletTransactionsGet_inner"
       type: array
+    CharactersDetail:
+      example:
+        birthday: 2000-01-23T04:56:07.000+00:00
+        alliance_id: 99000001
+        corporation_id: 98777771
+        security_status: 0.8008281904610115
+        gender: male
+        race_id: 1
+        name: name
+        description: description
+        faction_id: 500002
+        title: title
+        bloodline_id: 1
+      properties:
+        alliance_id:
+          example: 99000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        birthday:
+          description: Character's creation date
+          format: date-time
+          type: string
+        bloodline_id:
+          example: 1
+          format: int64
+          type: integer
+          x-common-model: "true"
+        corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+        description:
+          description: Character's description (biography)
+          type: string
+        faction_id:
+          example: 500002
+          format: int64
+          type: integer
+          x-common-model: "true"
+        gender:
+          description: Character's gender
+          enum:
+          - male
+          - female
+          type: string
+          x-enum-descriptions:
+          - Male
+          - Female
+        name:
+          description: Character's name
+          type: string
+        race_id:
+          example: 1
+          format: int64
+          type: integer
+          x-common-model: "true"
+        security_status:
+          description: Character's security status
+          format: double
+          type: number
+        title:
+          description: Character's corporation title
+          type: string
+      required:
+      - birthday
+      - bloodline_id
+      - corporation_id
+      - gender
+      - name
+      - race_id
+      type: object
     CharactersFreelanceJobsListing:
       example:
         freelance_jobs:
@@ -23834,71 +23854,6 @@ components:
       - kills
       - victory_points
       type: object
-    CorporationsCorporationIdGet:
-      example:
-        ticker: ticker
-        description: description
-        faction_id: 5
-        home_station_id: 5
-        tax_rate: 9.301444243932576
-        url: url
-        shares: 7
-        alliance_id: 0
-        creator_id: 1
-        name: name
-        war_eligible: true
-        date_founded: 2000-01-23T04:56:07.000+00:00
-        member_count: 2
-        ceo_id: 6
-      properties:
-        alliance_id:
-          description: "ID of the alliance that corporation is a member of, if any"
-          format: int64
-          type: integer
-        ceo_id:
-          format: int64
-          type: integer
-        creator_id:
-          format: int64
-          type: integer
-        date_founded:
-          format: date-time
-          type: string
-        description:
-          type: string
-        faction_id:
-          format: int64
-          type: integer
-        home_station_id:
-          format: int64
-          type: integer
-        member_count:
-          format: int64
-          type: integer
-        name:
-          description: the full name of the corporation
-          type: string
-        shares:
-          format: int64
-          type: integer
-        tax_rate:
-          format: double
-          type: number
-        ticker:
-          description: the short name of the corporation
-          type: string
-        url:
-          type: string
-        war_eligible:
-          type: boolean
-      required:
-      - ceo_id
-      - creator_id
-      - member_count
-      - name
-      - tax_rate
-      - ticker
-      type: object
     CorporationsCorporationIdIconsGet:
       example:
         px256x256: px256x256
@@ -24109,6 +24064,87 @@ components:
       items:
         $ref: "#/components/schemas/CorporationsCorporationIdWalletsGet_inner"
       type: array
+    CorporationsDetail:
+      example:
+        ticker: ticker
+        description: description
+        faction_id: 500002
+        home_station_id: 60000001
+        tax_rate: 1.4658129805029452
+        url: url
+        shares: 6
+        alliance_id: 99000001
+        creator_id: 90000001
+        name: name
+        war_eligible: true
+        date_founded: 2000-01-23T04:56:07.000+00:00
+        member_count: 0
+        ceo_id: 90000001
+      properties:
+        alliance_id:
+          example: 99000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        ceo_id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        creator_id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        date_founded:
+          description: Corporation's founding date
+          format: date-time
+          type: string
+        description:
+          description: Corporation's description
+          type: string
+        faction_id:
+          example: 500002
+          format: int64
+          type: integer
+          x-common-model: "true"
+        home_station_id:
+          example: 60000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        member_count:
+          description: Corporation's member count
+          format: int64
+          type: integer
+        name:
+          description: Corporation's name
+          type: string
+        shares:
+          description: Corporation's shares
+          format: int64
+          type: integer
+        tax_rate:
+          description: Corporation's tax rate
+          format: double
+          type: number
+        ticker:
+          description: Corporation's short name
+          type: string
+        url:
+          description: Corporation's URL
+          type: string
+        war_eligible:
+          description: Corporation's war eligible
+          type: boolean
+      required:
+      - ceo_id
+      - creator_id
+      - member_count
+      - name
+      - tax_rate
+      - ticker
+      type: object
     CorporationsFreelanceJobsListing:
       example:
         cursor:
