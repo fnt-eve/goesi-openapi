@@ -3845,6 +3845,7 @@ paths:
       tags:
       - Freelance Jobs
       x-cache-age: 60
+      x-cache-mode: no-cache
       x-compatibility-date: 2025-12-16
       x-rate-limit:
         group: char-freelance-job
@@ -3955,6 +3956,7 @@ paths:
       tags:
       - Freelance Jobs
       x-cache-age: 60
+      x-cache-mode: no-cache
       x-compatibility-date: 2025-12-16
       x-rate-limit:
         group: char-freelance-job
@@ -10382,6 +10384,7 @@ paths:
       summary: List corporation freelance jobs
       tags:
       - Freelance Jobs
+      x-cache-age: 0
       x-compatibility-date: 2025-12-16
       x-pagination: cursor
       x-rate-limit:
@@ -10529,6 +10532,7 @@ paths:
       summary: List participants of a freelance job
       tags:
       - Freelance Jobs
+      x-cache-age: 0
       x-compatibility-date: 2025-12-16
       x-pagination: cursor
       x-rate-limit:
@@ -12028,6 +12032,7 @@ paths:
       summary: List corporation projects
       tags:
       - Corporation Projects
+      x-cache-age: 0
       x-compatibility-date: 2025-08-26
       x-pagination: cursor
       x-rate-limit:
@@ -12139,6 +12144,7 @@ paths:
       tags:
       - Corporation Projects
       x-cache-age: 60
+      x-cache-mode: no-cache
       x-compatibility-date: 2025-08-26
       x-rate-limit:
         group: corp-project
@@ -12257,6 +12263,7 @@ paths:
       tags:
       - Corporation Projects
       x-cache-age: 60
+      x-cache-mode: no-cache
       x-compatibility-date: 2025-08-26
       x-rate-limit:
         group: corp-project
@@ -12401,6 +12408,7 @@ paths:
       summary: List project contributors
       tags:
       - Corporation Projects
+      x-cache-age: 0
       x-compatibility-date: 2025-08-26
       x-pagination: cursor
       x-rate-limit:
@@ -15692,6 +15700,7 @@ paths:
       summary: List freelance jobs
       tags:
       - Freelance Jobs
+      x-cache-age: 0
       x-compatibility-date: 2025-12-16
       x-pagination: cursor
       x-rate-limit:
@@ -15799,6 +15808,7 @@ paths:
       tags:
       - Freelance Jobs
       x-cache-age: 60
+      x-cache-mode: no-cache
       x-compatibility-date: 2025-12-16
       x-rate-limit:
         group: freelance-job
@@ -17566,6 +17576,10 @@ paths:
       - Market
       x-cache-age: 300
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: market-order
+        max-tokens: 12000
+        window-size: 15m
   /markets/{region_id}/types:
     get:
       description: "Return a list of type IDs that have active orders in the region,\
