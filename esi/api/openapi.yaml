@@ -25169,6 +25169,11 @@ components:
         format: int64
         type: integer
       type: array
+    DungeonID:
+      example: 33
+      format: int64
+      type: integer
+      x-common-model: "true"
     Error:
       example:
         details:
@@ -26313,6 +26318,11 @@ components:
       - path
       - status
       type: object
+    PlanetID:
+      example: 40000002
+      format: int64
+      type: integer
+      x-common-model: "true"
     RaceID:
       example: 1
       format: int64
