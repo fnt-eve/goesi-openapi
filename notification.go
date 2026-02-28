@@ -663,6 +663,35 @@ type MadeWarMutual struct {
 	EnemyID int64 `yaml:"enemyID"`
 }
 
+type MercenaryDenAttacked struct {
+	AggressorAllianceName    string  `yaml:"aggressorAllianceName"`
+	AggressorCharacterID     int64   `yaml:"aggressorCharacterID"`
+	AggressorCorporationName string  `yaml:"aggressorCorporationName"`
+	ArmorPercentage          float64 `yaml:"armorPercentage"`
+	HullPercentage           float64 `yaml:"hullPercentage"`
+	ItemID                   int64   `yaml:"itemID"`
+	MercenaryDenShowInfoData []any   `yaml:"mercenaryDenShowInfoData"`
+	PlanetID                 int64   `yaml:"planetID"`
+	PlanetShowInfoData       []any   `yaml:"planetShowInfoData"`
+	ShieldPercentage         float64 `yaml:"shieldPercentage"`
+	SolarSystemID            int64   `yaml:"solarsystemID"`
+	TypeID                   int64   `yaml:"typeID"`
+}
+
+type MercenaryDenReinforced struct {
+	AggressorAllianceName    string `yaml:"aggressorAllianceName"`
+	AggressorCharacterID     int64  `yaml:"aggressorCharacterID"`
+	AggressorCorporationName string `yaml:"aggressorCorporationName"`
+	ItemID                   int64  `yaml:"itemID"`
+	MercenaryDenShowInfoData []any  `yaml:"mercenaryDenShowInfoData"`
+	PlanetID                 int64  `yaml:"planetID"`
+	PlanetShowInfoData       []any  `yaml:"planetShowInfoData"`
+	SolarSystemID            int64  `yaml:"solarsystemID"`
+	TimestampEntered         int64  `yaml:"timestampEntered"`
+	TimestampExited          int64  `yaml:"timestampExited"`
+	TypeID                   int64  `yaml:"typeID"`
+}
+
 type MercOfferedNegotiationMsg struct {
 	AggressorID int64   `yaml:"aggressorID"`
 	DefenderID  int64   `yaml:"defenderID"`
