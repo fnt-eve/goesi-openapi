@@ -227,7 +227,7 @@ paths:
       tags:
       - Alliance
       x-cache-age: 3600
-      x-cache-mode: ttl-based
+      x-cache-mode: event-based
       x-compatibility-date: 2020-01-01
   /alliances/{alliance_id}/contacts:
     get:
@@ -836,7 +836,7 @@ paths:
       tags:
       - Character
       x-cache-age: 86400
-      x-cache-mode: ttl-based
+      x-cache-mode: event-based
       x-compatibility-date: 2020-01-01
   /characters/{character_id}/agents_research:
     get:
@@ -8652,7 +8652,7 @@ paths:
       tags:
       - Corporation
       x-cache-age: 3600
-      x-cache-mode: ttl-based
+      x-cache-mode: event-based
       x-compatibility-date: 2020-01-01
   /corporations/{corporation_id}/alliancehistory:
     get:
