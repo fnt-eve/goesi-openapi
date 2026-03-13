@@ -641,6 +641,8 @@ Authentication schemes defined for the API:
 - **Flow**: accessCode
 - **Authorization URL**: https://login.eveonline.com/v2/oauth/authorize
 - **Scopes**: 
+ - **esi-access.read_lists.v1**: esi-access.read_lists.v1
+ - **esi-activities.read_character.v1**: esi-activities.read_character.v1
  - **esi-alliances.read_contacts.v1**: esi-alliances.read_contacts.v1
  - **esi-assets.read_assets.v1**: esi-assets.read_assets.v1
  - **esi-assets.read_corporation_assets.v1**: esi-assets.read_corporation_assets.v1
@@ -702,6 +704,8 @@ Authentication schemes defined for the API:
  - **esi-search.search_structures.v1**: esi-search.search_structures.v1
  - **esi-skills.read_skillqueue.v1**: esi-skills.read_skillqueue.v1
  - **esi-skills.read_skills.v1**: esi-skills.read_skills.v1
+ - **esi-structures.read_character.v1**: esi-structures.read_character.v1
+ - **esi-structures.read_corporation.v1**: esi-structures.read_corporation.v1
  - **esi-ui.open_window.v1**: esi-ui.open_window.v1
  - **esi-ui.write_waypoint.v1**: esi-ui.write_waypoint.v1
  - **esi-universe.read_structures.v1**: esi-universe.read_structures.v1
