@@ -21,12 +21,10 @@ var _ MappedNullable = &Error{}
 
 // Error struct for Error
 type Error struct {
-	// List of individual issues.
+	// List of individual error details.
 	Details []ErrorDetail `json:"details,omitempty"`
 	// Error message.
 	Error string `json:"error"`
-	// HTTP status code.
-	Status int64 `json:"status"`
 }
 
 type _Error Error
@@ -35,10 +33,9 @@ type _Error Error
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewError(error_ string, status int64) *Error {
+func NewError(error_ string) *Error {
 	this := Error{}
 	this.Error = error_
-	this.Status = status
 	return &this
 }
 
@@ -106,30 +103,6 @@ func (o *Error) SetError(v string) {
 	o.Error = v
 }
 
-// GetStatus returns the Status field value
-func (o *Error) GetStatus() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value
-// and a boolean to check if the value has been set.
-func (o *Error) GetStatusOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Status, true
-}
-
-// SetStatus sets field value
-func (o *Error) SetStatus(v int64) {
-	o.Status = v
-}
-
 func (o Error) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -144,7 +117,6 @@ func (o Error) ToMap() (map[string]interface{}, error) {
 		toSerialize["details"] = o.Details
 	}
 	toSerialize["error"] = o.Error
-	toSerialize["status"] = o.Status
 	return toSerialize, nil
 }
 
@@ -154,7 +126,6 @@ func (o *Error) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"error",
-		"status",
 	}
 
 	allProperties := make(map[string]interface{})

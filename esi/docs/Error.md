@@ -4,15 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Details** | Pointer to [**[]ErrorDetail**](ErrorDetail.md) | List of individual issues. | [optional] 
+**Details** | Pointer to [**[]ErrorDetail**](ErrorDetail.md) | List of individual error details. | [optional] 
 **Error** | **string** | Error message. | 
-**Status** | **int64** | HTTP status code. | 
 
 ## Methods
 
 ### NewError
 
-`func NewError(error_ string, status int64, ) *Error`
+`func NewError(error_ string, ) *Error`
 
 NewError instantiates a new Error object
 This constructor will assign default values to properties that have it defined,
@@ -70,26 +69,6 @@ and a boolean to check if the value has been set.
 `func (o *Error) SetError(v string)`
 
 SetError sets Error field to given value.
-
-
-### GetStatus
-
-`func (o *Error) GetStatus() int64`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *Error) GetStatusOk() (*int64, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *Error) SetStatus(v int64)`
-
-SetStatus sets Status field to given value.
 
 
 

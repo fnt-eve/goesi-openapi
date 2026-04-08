@@ -25180,6 +25180,7 @@ components:
       type: integer
       x-common-model: "true"
     Error:
+      additionalProperties: false
       example:
         details:
         - location: location
@@ -25189,25 +25190,20 @@ components:
           message: message
           value: ""
         error: error
-        status: 6
       properties:
         details:
-          description: List of individual issues.
+          description: List of individual error details.
           items:
             $ref: "#/components/schemas/ErrorDetail"
           type: array
         error:
           description: Error message.
           type: string
-        status:
-          description: HTTP status code.
-          format: int64
-          type: integer
       required:
       - error
-      - status
       type: object
     ErrorDetail:
+      additionalProperties: false
       example:
         location: location
         message: message
