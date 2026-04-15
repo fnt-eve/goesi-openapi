@@ -17779,6 +17779,7 @@ paths:
       summary: Get changelog
       tags:
       - Meta
+      x-cache-age: 0
       x-compatibility-date: 2025-09-26
       x-rate-limit:
         group: meta
@@ -17869,6 +17870,7 @@ paths:
       summary: Get compatibility dates
       tags:
       - Meta
+      x-cache-age: 0
       x-compatibility-date: 2020-01-01
       x-rate-limit:
         group: meta
@@ -17959,6 +17961,7 @@ paths:
       summary: Get health status
       tags:
       - Meta
+      x-cache-age: 0
       x-compatibility-date: 2025-11-06
       x-rate-limit:
         group: meta
@@ -18071,6 +18074,7 @@ paths:
       summary: Get route between two systems
       tags:
       - Routes
+      x-cache-age: 0
       x-compatibility-date: 2025-09-30
       x-rate-limit:
         group: routes
