@@ -25184,7 +25184,6 @@ components:
       type: integer
       x-common-model: "true"
     Error:
-      additionalProperties: false
       example:
         details:
         - location: location
@@ -25207,7 +25206,6 @@ components:
       - error
       type: object
     ErrorDetail:
-      additionalProperties: false
       example:
         location: location
         message: message
