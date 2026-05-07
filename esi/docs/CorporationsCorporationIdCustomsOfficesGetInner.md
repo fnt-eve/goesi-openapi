@@ -14,10 +14,11 @@ Name | Type | Description | Notes
 **NeutralStandingTaxRate** | Pointer to **float64** |  | [optional] 
 **OfficeId** | **int64** | unique ID of this customs office | 
 **ReinforceExitEnd** | **int64** |  | 
-**ReinforceExitStart** | **int64** | Together with reinforce_exit_end, marks a 2-hour period where this customs office could exit reinforcement mode during the day after initial attack | 
+**ReinforceExitStart** | **int64** | Together with reinforce_exit_end, marks a 2-hour or 6-hour (depending on the office type) period where this customs office could exit reinforcement mode during the day after initial attack | 
 **StandingLevel** | Pointer to **string** | Access is allowed only for entities with this level of standing or better | [optional] 
 **SystemId** | **int64** | ID of the solar system this customs office is located in | 
 **TerribleStandingTaxRate** | Pointer to **float64** |  | [optional] 
+**TypeId** | Pointer to **int64** | ID of the type of this customs office | [optional] 
 
 ## Methods
 
@@ -357,6 +358,31 @@ SetTerribleStandingTaxRate sets TerribleStandingTaxRate field to given value.
 `func (o *CorporationsCorporationIdCustomsOfficesGetInner) HasTerribleStandingTaxRate() bool`
 
 HasTerribleStandingTaxRate returns a boolean if a field has been set.
+
+### GetTypeId
+
+`func (o *CorporationsCorporationIdCustomsOfficesGetInner) GetTypeId() int64`
+
+GetTypeId returns the TypeId field if non-nil, zero value otherwise.
+
+### GetTypeIdOk
+
+`func (o *CorporationsCorporationIdCustomsOfficesGetInner) GetTypeIdOk() (*int64, bool)`
+
+GetTypeIdOk returns a tuple with the TypeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTypeId
+
+`func (o *CorporationsCorporationIdCustomsOfficesGetInner) SetTypeId(v int64)`
+
+SetTypeId sets TypeId field to given value.
+
+### HasTypeId
+
+`func (o *CorporationsCorporationIdCustomsOfficesGetInner) HasTypeId() bool`
+
+HasTypeId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -31233,6 +31233,7 @@ components:
         neutral_standing_tax_rate: 2.3021358869347655
         standing_level: bad
         system_id: 2
+        type_id: 7
         terrible_standing_tax_rate: 4.145608029883936
         alliance_tax_rate: 0.8008281904610115
         reinforce_exit_start: 3
@@ -31280,9 +31281,9 @@ components:
           format: int64
           type: integer
         reinforce_exit_start:
-          description: "Together with reinforce_exit_end, marks a 2-hour period where\
-            \ this customs office could exit reinforcement mode during the day after\
-            \ initial attack"
+          description: "Together with reinforce_exit_end, marks a 2-hour or 6-hour\
+            \ (depending on the office type) period where this customs office could\
+            \ exit reinforcement mode during the day after initial attack"
           format: int64
           type: integer
         standing_level:
@@ -31302,6 +31303,10 @@ components:
         terrible_standing_tax_rate:
           format: double
           type: number
+        type_id:
+          description: ID of the type of this customs office
+          format: int64
+          type: integer
       required:
       - allow_access_with_standings
       - allow_alliance_access

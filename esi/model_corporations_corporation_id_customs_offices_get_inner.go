@@ -35,13 +35,15 @@ type CorporationsCorporationIdCustomsOfficesGetInner struct {
 	// unique ID of this customs office
 	OfficeId int64 `json:"office_id"`
 	ReinforceExitEnd int64 `json:"reinforce_exit_end"`
-	// Together with reinforce_exit_end, marks a 2-hour period where this customs office could exit reinforcement mode during the day after initial attack
+	// Together with reinforce_exit_end, marks a 2-hour or 6-hour (depending on the office type) period where this customs office could exit reinforcement mode during the day after initial attack
 	ReinforceExitStart int64 `json:"reinforce_exit_start"`
 	// Access is allowed only for entities with this level of standing or better
 	StandingLevel *string `json:"standing_level,omitempty"`
 	// ID of the solar system this customs office is located in
 	SystemId int64 `json:"system_id"`
 	TerribleStandingTaxRate *float64 `json:"terrible_standing_tax_rate,omitempty"`
+	// ID of the type of this customs office
+	TypeId *int64 `json:"type_id,omitempty"`
 }
 
 type _CorporationsCorporationIdCustomsOfficesGetInner CorporationsCorporationIdCustomsOfficesGetInner
@@ -469,6 +471,38 @@ func (o *CorporationsCorporationIdCustomsOfficesGetInner) SetTerribleStandingTax
 	o.TerribleStandingTaxRate = &v
 }
 
+// GetTypeId returns the TypeId field value if set, zero value otherwise.
+func (o *CorporationsCorporationIdCustomsOfficesGetInner) GetTypeId() int64 {
+	if o == nil || IsNil(o.TypeId) {
+		var ret int64
+		return ret
+	}
+	return *o.TypeId
+}
+
+// GetTypeIdOk returns a tuple with the TypeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CorporationsCorporationIdCustomsOfficesGetInner) GetTypeIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.TypeId) {
+		return nil, false
+	}
+	return o.TypeId, true
+}
+
+// HasTypeId returns a boolean if a field has been set.
+func (o *CorporationsCorporationIdCustomsOfficesGetInner) HasTypeId() bool {
+	if o != nil && !IsNil(o.TypeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
+func (o *CorporationsCorporationIdCustomsOfficesGetInner) SetTypeId(v int64) {
+	o.TypeId = &v
+}
+
 func (o CorporationsCorporationIdCustomsOfficesGetInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -508,6 +542,9 @@ func (o CorporationsCorporationIdCustomsOfficesGetInner) ToMap() (map[string]int
 	toSerialize["system_id"] = o.SystemId
 	if !IsNil(o.TerribleStandingTaxRate) {
 		toSerialize["terrible_standing_tax_rate"] = o.TerribleStandingTaxRate
+	}
+	if !IsNil(o.TypeId) {
+		toSerialize["type_id"] = o.TypeId
 	}
 	return toSerialize, nil
 }
