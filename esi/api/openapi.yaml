@@ -9565,6 +9565,10 @@ paths:
       - Corporation
       x-cache-age: 600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/contracts:
@@ -10251,6 +10255,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Factory_Manager
   /corporations/{corporation_id}/freelance-jobs:
@@ -12998,6 +13006,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/starbases/{starbase_id}:
@@ -13116,6 +13128,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Director
   /corporations/{corporation_id}/structures:
@@ -13236,6 +13252,10 @@ paths:
       - Corporation
       x-cache-age: 3600
       x-compatibility-date: 2020-01-01
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
       x-required-roles:
       - Station_Manager
   /corporations/{corporation_id}/titles:
