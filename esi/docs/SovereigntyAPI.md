@@ -5,8 +5,7 @@ All URIs are relative to *https://esi.evetech.net*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetSovereigntyCampaigns**](SovereigntyAPI.md#GetSovereigntyCampaigns) | **Get** /sovereignty/campaigns | List sovereignty campaigns
-[**GetSovereigntyMap**](SovereigntyAPI.md#GetSovereigntyMap) | **Get** /sovereignty/map | List sovereignty of systems
-[**GetSovereigntyStructures**](SovereigntyAPI.md#GetSovereigntyStructures) | **Get** /sovereignty/structures | List sovereignty structures
+[**GetSovereigntySystems**](SovereigntyAPI.md#GetSovereigntySystems) | **Get** /sovereignty/systems | List sovereignty details for K-space systems
 
 
 
@@ -85,86 +84,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetSovereigntyMap
+## GetSovereigntySystems
 
-> []SovereigntyMapGetInner GetSovereigntyMap(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> SovereigntySystems GetSovereigntySystems(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
-List sovereignty of systems
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-    "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	xCompatibilityDate := time.Now() // string | The compatibility date for the request.
-	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
-	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
-	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
-	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SovereigntyAPI.GetSovereigntyMap(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SovereigntyAPI.GetSovereigntyMap``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetSovereigntyMap`: []SovereigntyMapGetInner
-	fmt.Fprintf(os.Stdout, "Response from `SovereigntyAPI.GetSovereigntyMap`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSovereigntyMapRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xCompatibilityDate** | **string** | The compatibility date for the request. | 
- **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
- **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
- **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
- **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
-
-### Return type
-
-[**[]SovereigntyMapGetInner**](SovereigntyMapGetInner.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetSovereigntyStructures
-
-> []SovereigntyStructuresGetInner GetSovereigntyStructures(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
-
-List sovereignty structures
+List sovereignty details for K-space systems
 
 
 
@@ -190,13 +114,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SovereigntyAPI.GetSovereigntyStructures(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+	resp, r, err := apiClient.SovereigntyAPI.GetSovereigntySystems(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SovereigntyAPI.GetSovereigntyStructures``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SovereigntyAPI.GetSovereigntySystems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSovereigntyStructures`: []SovereigntyStructuresGetInner
-	fmt.Fprintf(os.Stdout, "Response from `SovereigntyAPI.GetSovereigntyStructures`: %v\n", resp)
+	// response from `GetSovereigntySystems`: SovereigntySystems
+	fmt.Fprintf(os.Stdout, "Response from `SovereigntyAPI.GetSovereigntySystems`: %v\n", resp)
 }
 ```
 
@@ -206,7 +130,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSovereigntyStructuresRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSovereigntySystemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -219,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]SovereigntyStructuresGetInner**](SovereigntyStructuresGetInner.md)
+[**SovereigntySystems**](SovereigntySystems.md)
 
 ### Authorization
 

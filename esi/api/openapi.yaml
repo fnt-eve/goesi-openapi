@@ -8,10 +8,12 @@ info:
     url: https://developers.eveonline.com/license-agreement
   termsOfService: https://support.eveonline.com/hc/en-us/articles/8414770561948-EVE-Online-Terms-of-Service
   title: EVE Spring Inebriation (ESI) - tranquility
-  version: 2025-12-16
+  version: 2026-05-19
 servers:
 - url: https://esi.evetech.net
 tags:
+- name: Access List
+- name: Activities
 - name: Alliance
 - name: Assets
 - name: Calendar
@@ -41,6 +43,7 @@ tags:
 - name: Skills
 - name: Sovereignty
 - name: Status
+- name: Structures
 - name: Universe
 - name: User Interface
 - name: Wallet
@@ -85,7 +88,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -180,7 +183,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -286,7 +289,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -395,7 +398,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -497,7 +500,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -595,7 +598,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -681,7 +684,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -789,7 +792,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -838,6 +841,220 @@ paths:
       x-cache-age: 86400
       x-cache-mode: event-based
       x-compatibility-date: 2020-01-01
+  /characters/{character_id}/access-lists:
+    get:
+      description: Lists all Access Lists the character is Manager or Admin of.
+      operationId: GetCharactersAccessListsListing
+      parameters:
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharactersAccessListsListing"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-access.read_lists.v1
+      summary: List Access Lists
+      tags:
+      - Access List
+      x-cache-age: 300
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: char-access
+        max-tokens: 600
+        window-size: 15m
+  /characters/{character_id}/access-lists/{access_list_id}:
+    get:
+      description: Get the details of an Access List.
+      operationId: GetCharactersAccessListsDetail
+      parameters:
+      - description: The ID of the Access List
+        explode: false
+        in: path
+        name: access_list_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/AccessListID"
+        style: simple
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharactersAccessListsDetail"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-access.read_lists.v1
+      summary: Get Access List details
+      tags:
+      - Access List
+      x-cache-age: 300
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: char-access
+        max-tokens: 600
+        window-size: 15m
   /characters/{character_id}/agents_research:
     get:
       description: "Return a list of agents research information for a character.\
@@ -887,7 +1104,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -999,7 +1216,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1110,7 +1327,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1226,7 +1443,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1340,7 +1557,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1452,7 +1669,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1573,7 +1790,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1684,7 +1901,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1794,7 +2011,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -1907,7 +2124,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2009,7 +2226,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2124,7 +2341,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2230,7 +2447,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2369,7 +2586,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2512,7 +2729,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2621,7 +2838,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2735,7 +2952,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2853,7 +3070,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -2964,7 +3181,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3067,7 +3284,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3163,7 +3380,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3277,7 +3494,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3379,7 +3596,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3480,7 +3697,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3596,7 +3813,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3693,7 +3910,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3795,7 +4012,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -3906,7 +4123,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4012,7 +4229,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4113,7 +4330,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4224,7 +4441,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4336,7 +4553,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4447,7 +4664,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4550,7 +4767,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4677,7 +4894,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4778,7 +4995,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4886,7 +5103,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -4987,7 +5204,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5103,7 +5320,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5200,7 +5417,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5311,7 +5528,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5416,7 +5633,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5526,7 +5743,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5629,7 +5846,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5683,6 +5900,220 @@ paths:
       x-rate-limit:
         group: char-detail
         max-tokens: 600
+        window-size: 15m
+  /characters/{character_id}/mercenary-tactical-operations:
+    get:
+      description: Listing of all Mercenary Tactical Operations for the character.
+      operationId: GetCharactersMercenaryTacticalOperationsListing
+      parameters:
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharactersMercenaryTacticalOperationsListing"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-activities.read_character.v1
+      summary: List Mercenary Tactical Operations
+      tags:
+      - Activities
+      x-cache-age: 300
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: char-activity
+        max-tokens: 150
+        window-size: 15m
+  /characters/{character_id}/mercenary-tactical-operations/{operation_id}:
+    get:
+      description: Get the details of a Mercenary Tactical Operation.
+      operationId: GetCharactersMercenaryTacticalOperationsDetail
+      parameters:
+      - description: The ID of the operation
+        explode: false
+        in: path
+        name: operation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/UUID"
+        style: simple
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharactersMercenaryTacticalOperationsDetail"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-activities.read_character.v1
+      summary: Get Mercenary Tactical Operation details
+      tags:
+      - Activities
+      x-cache-age: 300
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: char-activity
+        max-tokens: 150
         window-size: 15m
   /characters/{character_id}/mining:
     get:
@@ -5742,7 +6173,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5851,7 +6282,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -5954,7 +6385,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6056,7 +6487,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6158,7 +6589,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6267,7 +6698,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6372,7 +6803,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6486,7 +6917,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6591,7 +7022,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6689,7 +7120,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6834,7 +7265,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -6934,7 +7365,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7040,7 +7471,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7150,7 +7581,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7254,7 +7685,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7309,6 +7740,220 @@ paths:
         group: char-social
         max-tokens: 600
         window-size: 15m
+  /characters/{character_id}/structures/mercenary-dens:
+    get:
+      description: Listing of all Mercenary Dens.
+      operationId: GetCharactersStructuresMercenaryDensListing
+      parameters:
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharactersStructuresMercenaryDensListing"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-structures.read_character.v1
+      summary: List Mercenary Dens
+      tags:
+      - Structures
+      x-cache-age: 3600
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: char-structure
+        max-tokens: 30
+        window-size: 15m
+  /characters/{character_id}/structures/mercenary-dens/{mercenary_den_id}:
+    get:
+      description: Get the details of a Mercenary Den.
+      operationId: GetCharactersStructuresMercenaryDensDetail
+      parameters:
+      - description: The ID of the Mercenary Den
+        explode: false
+        in: path
+        name: mercenary_den_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/ItemID"
+        style: simple
+      - description: The ID of the character
+        explode: false
+        in: path
+        name: character_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CharacterID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetail"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-structures.read_character.v1
+      summary: Get Mercenary Den details
+      tags:
+      - Structures
+      x-cache-age: 3600
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: char-structure
+        max-tokens: 30
+        window-size: 15m
   /characters/{character_id}/titles:
     get:
       description: Returns a character's titles
@@ -7356,7 +8001,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7458,7 +8103,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7570,7 +8215,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7689,7 +8334,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7802,7 +8447,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -7921,7 +8566,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8040,7 +8685,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8153,7 +8798,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8275,7 +8920,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8405,7 +9050,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8511,7 +9156,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8605,7 +9250,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8702,7 +9347,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8807,7 +9452,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -8920,7 +9565,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9038,7 +9683,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9164,7 +9809,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9285,7 +9930,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9394,7 +10039,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9507,7 +10152,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9630,7 +10275,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9758,7 +10403,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9876,7 +10521,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -9988,7 +10633,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10100,7 +10745,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10204,7 +10849,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10343,7 +10988,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10491,7 +11136,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10599,7 +11244,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10700,7 +11345,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10815,7 +11460,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -10936,7 +11581,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11057,7 +11702,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11176,7 +11821,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11288,7 +11933,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11390,7 +12035,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11494,7 +12139,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11599,7 +12244,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11713,7 +12358,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11832,7 +12477,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -11991,7 +12636,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12102,7 +12747,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12221,7 +12866,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12367,7 +13012,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12473,7 +13118,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12586,7 +13231,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12707,7 +13352,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12829,7 +13474,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -12948,7 +13593,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13077,7 +13722,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13192,7 +13837,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13258,6 +13903,440 @@ paths:
         window-size: 15m
       x-required-roles:
       - Station_Manager
+  /corporations/{corporation_id}/structures/skyhooks:
+    get:
+      description: Listing of all Skyhooks.
+      operationId: GetCorporationsStructuresSkyhooksListing
+      parameters:
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsStructuresSkyhooksListing"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-structures.read_corporation.v1
+      summary: List Skyhooks
+      tags:
+      - Structures
+      x-cache-age: 3600
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
+      x-required-roles:
+      - Station_Manager
+  /corporations/{corporation_id}/structures/skyhooks/{skyhook_id}:
+    get:
+      description: Get the details of a Skyhook.
+      operationId: GetCorporationsStructuresSkyhooksDetail
+      parameters:
+      - description: The ID of the Skyhook
+        explode: false
+        in: path
+        name: skyhook_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/ItemID"
+        style: simple
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsStructuresSkyhooksDetail"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-structures.read_corporation.v1
+      summary: Get Skyhook details
+      tags:
+      - Structures
+      x-cache-age: 3600
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
+      x-required-roles:
+      - Station_Manager
+  /corporations/{corporation_id}/structures/sovereignty-hubs:
+    get:
+      description: Listing of all Sovereignty Hubs.
+      operationId: GetCorporationsStructuresSovereigntyHubsListing
+      parameters:
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsListing"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-structures.read_corporation.v1
+      summary: List Sovereignty Hubs
+      tags:
+      - Structures
+      x-cache-age: 3600
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
+  /corporations/{corporation_id}/structures/sovereignty-hubs/{sovereignty_hub_id}:
+    get:
+      description: Get the details of a Sovereignty Hub.
+      operationId: GetCorporationsStructuresSovereigntyHubsDetail
+      parameters:
+      - description: The ID of the Sovereignty Hub
+        explode: false
+        in: path
+        name: sovereignty_hub_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/ItemID"
+        style: simple
+      - description: The ID of the corporation
+        explode: false
+        in: path
+        name: corporation_id
+        required: true
+        schema:
+          $ref: "#/components/schemas/CorporationID"
+        style: simple
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetail"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      security:
+      - OAuth2:
+        - esi-structures.read_corporation.v1
+      summary: Get Sovereignty Hub details
+      tags:
+      - Structures
+      x-cache-age: 3600
+      x-cache-mode: event-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: corp-structure
+        max-tokens: 300
+        window-size: 15m
+      x-required-roles:
+      - Station_Manager
   /corporations/{corporation_id}/titles:
     get:
       description: Returns a corporation's titles
@@ -13305,7 +14384,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13409,7 +14488,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13534,7 +14613,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13665,7 +14744,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13765,7 +14844,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13863,7 +14942,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -13968,7 +15047,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14057,7 +15136,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14155,7 +15234,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14250,7 +15329,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14352,7 +15431,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14456,7 +15535,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14561,7 +15640,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14674,7 +15753,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14780,7 +15859,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14893,7 +15972,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -14999,7 +16078,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15103,7 +16182,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15207,7 +16286,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15319,7 +16398,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15425,7 +16504,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15538,7 +16617,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15674,7 +16753,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15781,7 +16860,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15876,7 +16955,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -15969,7 +17048,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16062,7 +17141,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16155,7 +17234,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16245,7 +17324,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16339,7 +17418,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16429,7 +17508,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16520,7 +17599,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16611,7 +17690,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16702,7 +17781,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16812,7 +17891,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -16914,7 +17993,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17003,7 +18082,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17101,7 +18180,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17189,7 +18268,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17295,7 +18374,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17413,7 +18492,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17541,7 +18620,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17659,7 +18738,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17753,7 +18832,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17844,7 +18923,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -17935,7 +19014,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18042,7 +19121,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18100,6 +19179,98 @@ paths:
         group: routes
         max-tokens: 3600
         window-size: 15m
+  /skyhooks/raidable:
+    get:
+      description: Listing of all Skyhooks that currently or will shortly be raidable.
+      operationId: GetSkyhooksRaidable
+      parameters:
+      - description: The language to use for the response.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: en
+          enum:
+          - en
+          - de
+          - fr
+          - ja
+          - ru
+          - zh
+          - ko
+          - es
+          type: string
+        style: simple
+      - description: The ETag of the previous request. A 304 will be returned if this
+          matches the current ETag.
+        explode: false
+        in: header
+        name: If-None-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: The compatibility date for the request.
+        explode: false
+        in: header
+        name: X-Compatibility-Date
+        required: true
+        schema:
+          enum:
+          - 2026-05-19
+          format: date
+          type: string
+        style: simple
+      - description: The tenant ID for the request.
+        example: ""
+        explode: false
+        in: header
+        name: X-Tenant
+        required: false
+        schema:
+          default: tranquility
+          type: string
+        style: simple
+      - description: The date the resource was last modified. A 304 will be returned
+          if the resource has not been modified since this date.
+        explode: false
+        in: header
+        name: If-Modified-Since
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SkyhooksRaidable"
+          description: OK
+          headers:
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Last-Modified:
+              $ref: "#/components/headers/LastModified"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Error
+      summary: List (upcoming) raidable Skyhooks
+      tags:
+      - Activities
+      x-cache-age: 300
+      x-cache-mode: ttl-based
+      x-compatibility-date: 2026-05-19
+      x-rate-limit:
+        group: activity
+        max-tokens: 30
+        window-size: 15m
   /sovereignty/campaigns:
     get:
       description: Shows sovereignty data for campaigns.
@@ -18139,7 +19310,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18191,10 +19362,10 @@ paths:
         group: sovereignty
         max-tokens: 600
         window-size: 15m
-  /sovereignty/map:
+  /sovereignty/systems:
     get:
-      description: Shows sovereignty information for solar systems
-      operationId: GetSovereigntyMap
+      description: Listing of sovereignty details for all K-space systems in New Eden.
+      operationId: GetSovereigntySystems
       parameters:
       - description: The language to use for the response.
         explode: false
@@ -18230,7 +19401,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18258,7 +19429,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SovereigntyMapGet"
+                $ref: "#/components/schemas/SovereigntySystems"
           description: OK
           headers:
             Cache-Control:
@@ -18273,102 +19444,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
           description: Error
-      summary: List sovereignty of systems
+      summary: List sovereignty details for K-space systems
       tags:
       - Sovereignty
-      x-cache-age: 3600
-      x-compatibility-date: 2020-01-01
-      x-rate-limit:
-        group: sovereignty
-        max-tokens: 600
-        window-size: 15m
-  /sovereignty/structures:
-    get:
-      description: Shows sovereignty data for structures.
-      operationId: GetSovereigntyStructures
-      parameters:
-      - description: The language to use for the response.
-        explode: false
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: en
-          enum:
-          - en
-          - de
-          - fr
-          - ja
-          - ru
-          - zh
-          - ko
-          - es
-          type: string
-        style: simple
-      - description: The ETag of the previous request. A 304 will be returned if this
-          matches the current ETag.
-        explode: false
-        in: header
-        name: If-None-Match
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: The compatibility date for the request.
-        explode: false
-        in: header
-        name: X-Compatibility-Date
-        required: true
-        schema:
-          enum:
-          - 2025-12-16
-          format: date
-          type: string
-        style: simple
-      - description: The tenant ID for the request.
-        example: ""
-        explode: false
-        in: header
-        name: X-Tenant
-        required: false
-        schema:
-          default: tranquility
-          type: string
-        style: simple
-      - description: The date the resource was last modified. A 304 will be returned
-          if the resource has not been modified since this date.
-        explode: false
-        in: header
-        name: If-Modified-Since
-        required: false
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/SovereigntyStructuresGet"
-          description: OK
-          headers:
-            Cache-Control:
-              $ref: "#/components/headers/CacheControl"
-            ETag:
-              $ref: "#/components/headers/ETag"
-            Last-Modified:
-              $ref: "#/components/headers/LastModified"
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Error
-      summary: List sovereignty structures
-      tags:
-      - Sovereignty
-      x-cache-age: 120
-      x-compatibility-date: 2020-01-01
+      x-cache-age: 300
+      x-cache-mode: ttl-based
+      x-compatibility-date: 2026-05-19
       x-rate-limit:
         group: sovereignty
         max-tokens: 600
@@ -18412,7 +19493,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18532,7 +19613,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18630,7 +19711,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18729,7 +19810,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18828,7 +19909,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -18918,7 +19999,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19016,7 +20097,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19115,7 +20196,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19204,7 +20285,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19295,7 +20376,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19393,7 +20474,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19484,7 +20565,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19581,7 +20662,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19672,7 +20753,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19763,7 +20844,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19860,7 +20941,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -19959,7 +21040,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20064,7 +21145,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20155,7 +21236,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20268,7 +21349,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20356,7 +21437,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20466,7 +21547,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20555,7 +21636,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20646,7 +21727,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20743,7 +21824,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20840,7 +21921,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -20938,7 +22019,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21035,7 +22116,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21132,7 +22213,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21229,7 +22310,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21326,7 +22407,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21418,7 +22499,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21507,7 +22588,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21597,7 +22678,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21694,7 +22775,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21795,7 +22876,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21900,7 +22981,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -21997,7 +23078,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -22097,7 +23178,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -22207,7 +23288,7 @@ paths:
         required: true
         schema:
           enum:
-          - 2025-12-16
+          - 2026-05-19
           format: date
           type: string
         style: simple
@@ -22332,7 +23413,7 @@ components:
       required: true
       schema:
         enum:
-        - 2025-12-16
+        - 2026-05-19
         format: date
         type: string
       style: simple
@@ -22475,6 +23556,204 @@ components:
       format: int64
       type: integer
       x-common-model: "true"
+    CharactersAccessListsDetail:
+      example:
+        name: name
+        description: description
+        id: 1
+        membership:
+          characters:
+          - access: Unspecified
+            character_id: 90000001
+          - access: Unspecified
+            character_id: 90000001
+          allow_everyone: true
+          alliances:
+          - alliance_id: 99000001
+            access: Unspecified
+          - alliance_id: 99000001
+            access: Unspecified
+          corporations:
+          - access: Unspecified
+            corporation_id: 98777771
+          - access: Unspecified
+            corporation_id: 98777771
+      properties:
+        description:
+          description: The Access List's description
+          type: string
+        id:
+          example: 1
+          format: int64
+          type: integer
+          x-common-model: "true"
+        membership:
+          $ref: "#/components/schemas/CharactersAccessListsDetailMembership"
+        name:
+          description: The Access List's name
+          type: string
+      required:
+      - description
+      - id
+      - membership
+      - name
+      type: object
+    CharactersAccessListsDetailAllianceentry:
+      example:
+        alliance_id: 99000001
+        access: Unspecified
+      properties:
+        access:
+          description: Alliance's access
+          enum:
+          - Unspecified
+          - Allowed
+          - Blocked
+          - Manager
+          - Admin
+          type: string
+          x-enum-descriptions:
+          - An unspecified access
+          - Member is allowed
+          - Member is blocked
+          - Member is a manager (characters only)
+          - Member is an admin (characters only)
+        alliance_id:
+          example: 99000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - access
+      - alliance_id
+      type: object
+    CharactersAccessListsDetailCharacterentry:
+      example:
+        access: Unspecified
+        character_id: 90000001
+      properties:
+        access:
+          description: Character's access
+          enum:
+          - Unspecified
+          - Allowed
+          - Blocked
+          - Manager
+          - Admin
+          type: string
+          x-enum-descriptions:
+          - An unspecified access
+          - Member is allowed
+          - Member is blocked
+          - Member is a manager (characters only)
+          - Member is an admin (characters only)
+        character_id:
+          example: 90000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - access
+      - character_id
+      type: object
+    CharactersAccessListsDetailCorporationentry:
+      example:
+        access: Unspecified
+        corporation_id: 98777771
+      properties:
+        access:
+          description: Corporation's access
+          enum:
+          - Unspecified
+          - Allowed
+          - Blocked
+          - Manager
+          - Admin
+          type: string
+          x-enum-descriptions:
+          - An unspecified access
+          - Member is allowed
+          - Member is blocked
+          - Member is a manager (characters only)
+          - Member is an admin (characters only)
+        corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - access
+      - corporation_id
+      type: object
+    CharactersAccessListsDetailMembership:
+      example:
+        characters:
+        - access: Unspecified
+          character_id: 90000001
+        - access: Unspecified
+          character_id: 90000001
+        allow_everyone: true
+        alliances:
+        - alliance_id: 99000001
+          access: Unspecified
+        - alliance_id: 99000001
+          access: Unspecified
+        corporations:
+        - access: Unspecified
+          corporation_id: 98777771
+        - access: Unspecified
+          corporation_id: 98777771
+      properties:
+        alliances:
+          description: Alliances in the Access List
+          items:
+            $ref: "#/components/schemas/CharactersAccessListsDetailAllianceentry"
+          type: array
+        allow_everyone:
+          description: Whether everyone is allowed unless blocked
+          type: boolean
+        characters:
+          description: Characters in the Access List
+          items:
+            $ref: "#/components/schemas/CharactersAccessListsDetailCharacterentry"
+          type: array
+        corporations:
+          description: Corporations in the Access List
+          items:
+            $ref: "#/components/schemas/CharactersAccessListsDetailCorporationentry"
+          type: array
+      required:
+      - alliances
+      - allow_everyone
+      - characters
+      - corporations
+      type: object
+    CharactersAccessListsListing:
+      example:
+        access_lists:
+        - id: 1
+        - id: 1
+      properties:
+        access_lists:
+          description: List of Access Lists
+          items:
+            $ref: "#/components/schemas/CharactersAccessListsListingAccesslist"
+          type: array
+      required:
+      - access_lists
+      type: object
+    CharactersAccessListsListingAccesslist:
+      example:
+        id: 1
+      properties:
+        id:
+          example: 1
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - id
+      type: object
     CharactersAffiliationPost:
       items:
         $ref: "#/components/schemas/CharactersAffiliationPost_inner"
@@ -23637,6 +24916,93 @@ components:
       - last_modified
       - state
       type: object
+    CharactersMercenaryTacticalOperationsDetail:
+      example:
+        dungeon_type_id: 12367
+        expires: 2026-02-23T12:00:00Z
+        id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+        state: Unspecified
+        mercenary_den_id: 1000000000001
+      properties:
+        dungeon_type_id:
+          example: 12367
+          format: int64
+          type: integer
+          x-common-model: "true"
+        expires:
+          description: Moment the operation will expire
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+        id:
+          example: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          format: uuid
+          type: string
+          x-common-model: "true"
+        mercenary_den_id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        state:
+          description: Operation's state
+          enum:
+          - Unspecified
+          - Available
+          - Started
+          - Completed
+          - Expired
+          - Removed
+          type: string
+          x-enum-descriptions:
+          - An unspecified state
+          - Not started yet
+          - Started
+          - Completed
+          - Expired
+          - Removed (e.g. mercenary den removed)
+      required:
+      - dungeon_type_id
+      - expires
+      - id
+      - mercenary_den_id
+      - state
+      type: object
+    CharactersMercenaryTacticalOperationsListing:
+      example:
+        operations:
+        - id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          mercenary_den_id: 1000000000001
+        - id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          mercenary_den_id: 1000000000001
+      properties:
+        operations:
+          description: List of available operations
+          items:
+            $ref: "#/components/schemas/CharactersMercenaryTacticalOperationsListingOperation"
+          type: array
+      required:
+      - operations
+      type: object
+    CharactersMercenaryTacticalOperationsListingOperation:
+      example:
+        id: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+        mercenary_den_id: 1000000000001
+      properties:
+        id:
+          example: 3868eaed-8278-4cb7-9709-7d7de9c20dc7
+          format: uuid
+          type: string
+          x-common-model: "true"
+        mercenary_den_id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - id
+      - mercenary_den_id
+      type: object
     CharactersSkillqueueSkill:
       example:
         queue_position: 5
@@ -23746,6 +25112,230 @@ components:
       - skill_id
       - skillpoints_in_skill
       - trained_skill_level
+      type: object
+    CharactersStructuresMercenaryDensDetail:
+      example:
+        type_id: 587
+        skyhook:
+          corporation_id: 98777771
+          planet_id: 40000002
+          id: 1000000000001
+        reinforcement_timer:
+          end: 2000-01-23T04:56:07.000+00:00
+        evolution:
+          development:
+            amount: 50
+            level: Unspecified
+          anarchy:
+            amount: 0
+            level: Unspecified
+        id: 1000000000001
+        state: Unspecified
+        infomorphs:
+          amount: 100
+      properties:
+        evolution:
+          $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetailEvolution"
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        infomorphs:
+          $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetailInfomorphs"
+        reinforcement_timer:
+          $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetailReinforcementtimer"
+        skyhook:
+          $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetailSkyhook"
+        state:
+          description: Mercenary Den's state
+          enum:
+          - Unspecified
+          - Running
+          - Paused
+          - Disabled
+          type: string
+          x-enum-descriptions:
+          - An unspecified state
+          - Running
+          - Paused (e.g. the Mercenary Den is reinforced)
+          - Disabled (e.g. the character no longer has the skills to operate the Mercenary
+            Den)
+        type_id:
+          example: 587
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - evolution
+      - id
+      - infomorphs
+      - skyhook
+      - state
+      - type_id
+      type: object
+    CharactersStructuresMercenaryDensDetailEvolution:
+      example:
+        development:
+          amount: 50
+          level: Unspecified
+        anarchy:
+          amount: 0
+          level: Unspecified
+      properties:
+        anarchy:
+          $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetailEvolutionanarchy"
+        development:
+          $ref: "#/components/schemas/CharactersStructuresMercenaryDensDetailEvolutiondevelopment"
+      required:
+      - anarchy
+      - development
+      type: object
+    CharactersStructuresMercenaryDensDetailEvolutionanarchy:
+      example:
+        amount: 0
+        level: Unspecified
+      properties:
+        amount:
+          description: Anarchy's cumulative amount (0-100)
+          example: 0
+          format: int64
+          type: integer
+        level:
+          description: Anarchy's level
+          enum:
+          - Unspecified
+          - Level0
+          - Level1
+          - Level2
+          - Level3
+          - Level4
+          type: string
+          x-enum-descriptions:
+          - An unspecified level
+          - Level 0
+          - Level 1
+          - Level 2
+          - Level 3
+          - Level 4
+      required:
+      - amount
+      - level
+      type: object
+    CharactersStructuresMercenaryDensDetailEvolutiondevelopment:
+      example:
+        amount: 50
+        level: Unspecified
+      properties:
+        amount:
+          description: Development's cumulative amount (0-100)
+          example: 50
+          format: int64
+          type: integer
+        level:
+          description: Development's level
+          enum:
+          - Unspecified
+          - Level0
+          - Level1
+          - Level2
+          - Level3
+          - Level4
+          type: string
+          x-enum-descriptions:
+          - An unspecified level
+          - Level 0
+          - Level 1
+          - Level 2
+          - Level 3
+          - Level 4
+      required:
+      - amount
+      - level
+      type: object
+    CharactersStructuresMercenaryDensDetailInfomorphs:
+      example:
+        amount: 100
+      properties:
+        amount:
+          description: Amount of infomorphs
+          example: 100
+          format: int64
+          type: integer
+      required:
+      - amount
+      type: object
+    CharactersStructuresMercenaryDensDetailReinforcementtimer:
+      example:
+        end: 2000-01-23T04:56:07.000+00:00
+      properties:
+        end:
+          description: The time when the reinforcement timer will end
+          format: date-time
+          type: string
+      required:
+      - end
+      type: object
+    CharactersStructuresMercenaryDensDetailSkyhook:
+      example:
+        corporation_id: 98777771
+        planet_id: 40000002
+        id: 1000000000001
+      properties:
+        corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        planet_id:
+          example: 40000002
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - corporation_id
+      - id
+      - planet_id
+      type: object
+    CharactersStructuresMercenaryDensListing:
+      example:
+        mercenary_dens:
+        - planet_id: 40000002
+          id: 1000000000001
+        - planet_id: 40000002
+          id: 1000000000001
+      properties:
+        mercenary_dens:
+          description: List of Mercenary Dens
+          items:
+            $ref: "#/components/schemas/CharactersStructuresMercenaryDensListingMercenaryden"
+          type: array
+      required:
+      - mercenary_dens
+      type: object
+    CharactersStructuresMercenaryDensListingMercenaryden:
+      example:
+        planet_id: 40000002
+        id: 1000000000001
+      properties:
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        planet_id:
+          example: 40000002
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - id
+      - planet_id
       type: object
     CompatibilityDate:
       example: 2025-08-26
@@ -24996,6 +26586,562 @@ components:
           type: array
       required:
       - projects
+      type: object
+    CorporationsStructuresSkyhooksDetail:
+      example:
+        theft_vulnerability:
+          start: 2026-02-23T12:00:00Z
+          end: 2026-02-23T16:00:00Z
+        is_active: true
+        planet_id: 40000002
+        reinforcement_timer:
+          end: 2026-02-23T16:00:00Z
+        effective_workforce: 1000
+        id: 1000000000001
+        state: Unspecified
+        reagents:
+        - unsecured_stock: 300
+          last_cycle: 2026-02-23T12:00:00Z
+          type_id: 587
+          secured_stock: 1000
+        - unsecured_stock: 300
+          last_cycle: 2026-02-23T12:00:00Z
+          type_id: 587
+          secured_stock: 1000
+      properties:
+        effective_workforce:
+          description: Skyhook's effective workforce; this can differ from the Skyhook's
+            normal workforce due to the influence of an attached Mercenary Den
+          example: 1000
+          format: int64
+          type: integer
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        is_active:
+          description: Whether the Skyhook is active and producing workforce/power/reagents
+          type: boolean
+        planet_id:
+          example: 40000002
+          format: int64
+          type: integer
+          x-common-model: "true"
+        reagents:
+          description: Skyhook's reagents
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSkyhooksDetailReagent"
+          type: array
+        reinforcement_timer:
+          $ref: "#/components/schemas/CorporationsStructuresSkyhooksDetailReinforcementtimer"
+        state:
+          description: Skyhook's state
+          enum:
+          - Unspecified
+          - ShieldVulnerable
+          - ArmorReinforced
+          - ArmorVulnerable
+          - HullReinforced
+          - HullVulnerable
+          type: string
+          x-enum-descriptions:
+          - An unspecified state
+          - Skyhook is vulnerable to shield damage
+          - Skyhook is reinforced against armor damage
+          - Skyhook is vulnerable to armor damage
+          - Skyhook is reinforced against hull damage
+          - Skyhook is vulnerable to hull damage
+        theft_vulnerability:
+          $ref: "#/components/schemas/CorporationsStructuresSkyhooksDetailTheftvulnerability"
+      required:
+      - id
+      - is_active
+      - planet_id
+      - state
+      type: object
+    CorporationsStructuresSkyhooksDetailReagent:
+      example:
+        unsecured_stock: 300
+        last_cycle: 2026-02-23T12:00:00Z
+        type_id: 587
+        secured_stock: 1000
+      properties:
+        last_cycle:
+          description: Moment the 'SecureStock'/'UnsecuredStock' value had its last
+            cycle; use SDE to calculate the current values
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+        secured_stock:
+          description: Secured stock of the reagent
+          example: 1000
+          format: int64
+          type: integer
+        type_id:
+          example: 587
+          format: int64
+          type: integer
+          x-common-model: "true"
+        unsecured_stock:
+          description: Unsecured stock of the reagent
+          example: 300
+          format: int64
+          type: integer
+      required:
+      - last_cycle
+      - secured_stock
+      - type_id
+      - unsecured_stock
+      type: object
+    CorporationsStructuresSkyhooksDetailReinforcementtimer:
+      example:
+        end: 2026-02-23T16:00:00Z
+      properties:
+        end:
+          description: The time when the reinforcement timer will end
+          example: 2026-02-23T16:00:00Z
+          format: date-time
+          type: string
+      required:
+      - end
+      type: object
+    CorporationsStructuresSkyhooksDetailTheftvulnerability:
+      example:
+        start: 2026-02-23T12:00:00Z
+        end: 2026-02-23T16:00:00Z
+      properties:
+        end:
+          description: End time of the theft vulnerability window
+          example: 2026-02-23T16:00:00Z
+          format: date-time
+          type: string
+        start:
+          description: Start time of the theft vulnerability window
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+      required:
+      - end
+      - start
+      type: object
+    CorporationsStructuresSkyhooksListing:
+      example:
+        skyhooks:
+        - planet_id: 40000002
+          id: 1000000000001
+        - planet_id: 40000002
+          id: 1000000000001
+      properties:
+        skyhooks:
+          description: List of Skyhooks
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSkyhooksListingSkyhook"
+          type: array
+      required:
+      - skyhooks
+      type: object
+    CorporationsStructuresSkyhooksListingSkyhook:
+      example:
+        planet_id: 40000002
+        id: 1000000000001
+      properties:
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        planet_id:
+          example: 40000002
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - id
+      - planet_id
+      type: object
+    CorporationsStructuresSovereigntyHubsDetail:
+      example:
+        workforce_transport:
+          configuration:
+            import:
+              sources:
+              - solar_system_id: 30000001
+              - solar_system_id: 30000001
+          state:
+            import:
+              sources:
+              - amount: 1000
+                solar_system_id: 30000001
+              - amount: 1000
+                solar_system_id: 30000001
+        resources:
+          workforce:
+            available: 1000
+            allocated: 100
+          power:
+            available: 1000
+            allocated: 100
+        fuel_access_list_id: 1
+        solar_system_id: 30000001
+        id: 1000000000001
+        vulnerability_window:
+          start: 2026-02-23T12:00:00Z
+          end: 2026-02-23T16:00:00Z
+        upgrades:
+        - type_id: 587
+          power_state: Unspecified
+        - type_id: 587
+          power_state: Unspecified
+        reagent_bay:
+          last_updated: 2026-02-23T12:00:00Z
+          reagents:
+          - amount: 1000
+            type_id: 587
+            burning_per_hour: 10
+          - amount: 1000
+            type_id: 587
+            burning_per_hour: 10
+      properties:
+        fuel_access_list_id:
+          example: 1
+          format: int64
+          type: integer
+          x-common-model: "true"
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        reagent_bay:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailReagentbay"
+        resources:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailResources"
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        upgrades:
+          description: Sovereignty Hub's installed upgrades
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailUpgrade"
+          type: array
+        vulnerability_window:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailVulnerabilitywindow"
+        workforce_transport:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransport"
+      required:
+      - id
+      - reagent_bay
+      - resources
+      - solar_system_id
+      - upgrades
+      - workforce_transport
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailReagent:
+      example:
+        amount: 1000
+        type_id: 587
+        burning_per_hour: 10
+      properties:
+        amount:
+          description: Amount of reagent in the bay
+          example: 1000
+          format: int64
+          type: integer
+        burning_per_hour:
+          description: Amount of reagent burning per hour
+          example: 10
+          format: int64
+          type: integer
+        type_id:
+          example: 587
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - amount
+      - burning_per_hour
+      - type_id
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailReagentbay:
+      example:
+        last_updated: 2026-02-23T12:00:00Z
+        reagents:
+        - amount: 1000
+          type_id: 587
+          burning_per_hour: 10
+        - amount: 1000
+          type_id: 587
+          burning_per_hour: 10
+      properties:
+        last_updated:
+          description: Moment the 'amount' value was last updated; use 'burning_per_hour'
+            to calculate the current value
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+        reagents:
+          description: Sovereignty Hub's reagents
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailReagent"
+          type: array
+      required:
+      - last_updated
+      - reagents
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailResourcepower:
+      example:
+        available: 1000
+        allocated: 100
+      properties:
+        allocated:
+          description: Allocated power
+          example: 100
+          format: int64
+          type: integer
+        available:
+          description: Available power
+          example: 1000
+          format: int64
+          type: integer
+      required:
+      - allocated
+      - available
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailResources:
+      example:
+        workforce:
+          available: 1000
+          allocated: 100
+        power:
+          available: 1000
+          allocated: 100
+      properties:
+        power:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailResourcepower"
+        workforce:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailResourceworkforce"
+      required:
+      - power
+      - workforce
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailResourceworkforce:
+      example:
+        available: 1000
+        allocated: 100
+      properties:
+        allocated:
+          description: Allocated workforce
+          example: 100
+          format: int64
+          type: integer
+        available:
+          description: Available workforce
+          example: 1000
+          format: int64
+          type: integer
+      required:
+      - allocated
+      - available
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransport:
+      example:
+        configuration:
+          import:
+            sources:
+            - solar_system_id: 30000001
+            - solar_system_id: 30000001
+        state:
+          import:
+            sources:
+            - amount: 1000
+              solar_system_id: 30000001
+            - amount: 1000
+              solar_system_id: 30000001
+      properties:
+        configuration:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransport_configuration"
+        state:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransport_state"
+      required:
+      - configuration
+      - state
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransportconfigurationexport:
+      properties:
+        amount:
+          description: Amount to be exported
+          example: 1000
+          format: int64
+          type: integer
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - amount
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransportconfigurationimport:
+      example:
+        sources:
+        - solar_system_id: 30000001
+        - solar_system_id: 30000001
+      properties:
+        sources:
+          description: Sources
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransportconfigurationsource"
+          type: array
+      required:
+      - sources
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransportconfigurationsource:
+      example:
+        solar_system_id: 30000001
+      properties:
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - solar_system_id
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransportstateexport:
+      properties:
+        amount:
+          description: Amount exported
+          example: 1000
+          format: int64
+          type: integer
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransportstateimport:
+      example:
+        sources:
+        - amount: 1000
+          solar_system_id: 30000001
+        - amount: 1000
+          solar_system_id: 30000001
+      properties:
+        sources:
+          description: Sources
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransportstateimportsource"
+          type: array
+      required:
+      - sources
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransportstateimportsource:
+      example:
+        amount: 1000
+        solar_system_id: 30000001
+      properties:
+        amount:
+          description: Amount imported
+          example: 1000
+          format: int64
+          type: integer
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - amount
+      - solar_system_id
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailUpgrade:
+      example:
+        type_id: 587
+        power_state: Unspecified
+      properties:
+        power_state:
+          description: Upgrade's power state
+          enum:
+          - Unspecified
+          - Online
+          - Offline
+          - Low
+          - Pending
+          type: string
+          x-enum-descriptions:
+          - An unspecified power state
+          - Online
+          - Offline
+          - Not enough fuel/power/workforce
+          - Waiting for startup cost to be available
+        type_id:
+          example: 587
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - power_state
+      - type_id
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailVulnerabilitywindow:
+      example:
+        start: 2026-02-23T12:00:00Z
+        end: 2026-02-23T16:00:00Z
+      properties:
+        end:
+          description: "End time of the vulnerability window; if in the past, the\
+            \ Sovereignty Hub is in overtime"
+          example: 2026-02-23T16:00:00Z
+          format: date-time
+          type: string
+        start:
+          description: "Start time of the vulnerability window; if in the past, the\
+            \ Sovereignty Hub is vulnerable right now"
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+      required:
+      - end
+      - start
+      type: object
+    CorporationsStructuresSovereigntyHubsListing:
+      example:
+        sovereignty_hubs:
+        - solar_system_id: 30000001
+          id: 1000000000001
+        - solar_system_id: 30000001
+          id: 1000000000001
+      properties:
+        sovereignty_hubs:
+          description: List of Sovereignty Hubs
+          items:
+            $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsListingSovereigntyhub"
+          type: array
+      required:
+      - sovereignty_hubs
+      type: object
+    CorporationsStructuresSovereigntyHubsListingSovereigntyhub:
+      example:
+        solar_system_id: 30000001
+        id: 1000000000001
+      properties:
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - id
+      - solar_system_id
       type: object
     Cursor:
       example:
@@ -26457,6 +28603,72 @@ components:
       format: int64
       type: integer
       x-common-model: "true"
+    SkyhooksRaidable:
+      example:
+        skyhooks:
+        - theft_vulnerability:
+            start: 2026-02-23T12:00:00Z
+            end: 2026-02-23T16:00:00Z
+          planet_id: 40000002
+          solar_system_id: 30000001
+        - theft_vulnerability:
+            start: 2026-02-23T12:00:00Z
+            end: 2026-02-23T16:00:00Z
+          planet_id: 40000002
+          solar_system_id: 30000001
+      properties:
+        skyhooks:
+          description: List of (upcoming) raidable Skyhooks
+          items:
+            $ref: "#/components/schemas/SkyhooksRaidableVulnerableskyhook"
+          type: array
+      required:
+      - skyhooks
+      type: object
+    SkyhooksRaidableTheftvulnerability:
+      example:
+        start: 2026-02-23T12:00:00Z
+        end: 2026-02-23T16:00:00Z
+      properties:
+        end:
+          description: End time of the theft vulnerability window
+          example: 2026-02-23T16:00:00Z
+          format: date-time
+          type: string
+        start:
+          description: Start time of the theft vulnerability window
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+      required:
+      - end
+      - start
+      type: object
+    SkyhooksRaidableVulnerableskyhook:
+      example:
+        theft_vulnerability:
+          start: 2026-02-23T12:00:00Z
+          end: 2026-02-23T16:00:00Z
+        planet_id: 40000002
+        solar_system_id: 30000001
+      properties:
+        planet_id:
+          example: 40000002
+          format: int64
+          type: integer
+          x-common-model: "true"
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        theft_vulnerability:
+          $ref: "#/components/schemas/SkyhooksRaidableTheftvulnerability"
+      required:
+      - planet_id
+      - solar_system_id
+      - theft_vulnerability
+      type: object
     SolarSystemID:
       example: 30000001
       format: int64
@@ -26466,14 +28678,147 @@ components:
       items:
         $ref: "#/components/schemas/SovereigntyCampaignsGet_inner"
       type: array
-    SovereigntyMapGet:
-      items:
-        $ref: "#/components/schemas/SovereigntyMapGet_inner"
-      type: array
-    SovereigntyStructuresGet:
-      items:
-        $ref: "#/components/schemas/SovereigntyStructuresGet_inner"
-      type: array
+    SovereigntySystems:
+      example:
+        solar_systems:
+        - claim:
+            faction:
+              faction_id: 500002
+          solar_system_id: 30000001
+        - claim:
+            faction:
+              faction_id: 500002
+          solar_system_id: 30000001
+      properties:
+        solar_systems:
+          description: List of solar systems and their sovereignty owners
+          items:
+            $ref: "#/components/schemas/SovereigntySystemsSolarsystem"
+          type: array
+      required:
+      - solar_systems
+      type: object
+    SovereigntySystemsAlliance:
+      properties:
+        alliance_id:
+          example: 99000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        claimed_since:
+          description: Time the claim was made
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+        corporation_id:
+          example: 98777771
+          format: int64
+          type: integer
+          x-common-model: "true"
+        development:
+          $ref: "#/components/schemas/SovereigntySystemsDevelopment"
+        is_capital_system:
+          description: Whether the system is the capital system of the alliance
+          example: false
+          type: boolean
+        sovereignty_hub:
+          $ref: "#/components/schemas/SovereigntySystemsSovereigntyhub"
+      required:
+      - alliance_id
+      - claimed_since
+      - corporation_id
+      - development
+      - is_capital_system
+      - sovereignty_hub
+      type: object
+    SovereigntySystemsDevelopment:
+      properties:
+        activity_defense_multiplier:
+          description: Current Activity Defense Multiplier
+          example: 1.2
+          format: double
+          type: number
+        industrial_level:
+          description: Industrial level (0-5) of this solar system
+          example: 0
+          format: int64
+          type: integer
+        military_level:
+          description: Military level (0-5) of this solar system
+          example: 3
+          format: int64
+          type: integer
+        strategic_level:
+          description: Strategic level (0-5) of this solar system
+          example: 5
+          format: int64
+          type: integer
+      required:
+      - activity_defense_multiplier
+      - industrial_level
+      - military_level
+      - strategic_level
+      type: object
+    SovereigntySystemsFaction:
+      example:
+        faction_id: 500002
+      properties:
+        faction_id:
+          example: 500002
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - faction_id
+      type: object
+    SovereigntySystemsSolarsystem:
+      example:
+        claim:
+          faction:
+            faction_id: 500002
+        solar_system_id: 30000001
+      properties:
+        claim:
+          $ref: "#/components/schemas/SovereigntySystemsSolarsystem_claim"
+        solar_system_id:
+          example: 30000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+      required:
+      - claim
+      - solar_system_id
+      type: object
+    SovereigntySystemsSovereigntyhub:
+      properties:
+        id:
+          example: 1000000000001
+          format: int64
+          type: integer
+          x-common-model: "true"
+        vulnerability_window:
+          $ref: "#/components/schemas/SovereigntySystemsVulnerabilitywindow"
+      required:
+      - id
+      type: object
+    SovereigntySystemsVulnerabilitywindow:
+      properties:
+        end:
+          description: "End time of the vulnerability window; if in the past, the\
+            \ Sovereignty Hub is in overtime"
+          example: 2026-02-23T16:00:00Z
+          format: date-time
+          type: string
+        start:
+          description: "Start time of the vulnerability window; if in the past, the\
+            \ Sovereignty Hub is vulnerable right now"
+          example: 2026-02-23T12:00:00Z
+          format: date-time
+          type: string
+      required:
+      - end
+      - start
+      type: object
     StationID:
       example: 60000001
       format: int64
@@ -33932,6 +36277,70 @@ components:
       oneOf:
       - $ref: "#/components/schemas/type_id"
       - $ref: "#/components/schemas/group_id_1"
+    import:
+      example:
+        import:
+          sources:
+          - solar_system_id: 30000001
+          - solar_system_id: 30000001
+      properties:
+        import:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransportconfigurationimport"
+      title: import
+      type: object
+    export:
+      properties:
+        export:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransportconfigurationexport"
+      title: export
+      type: object
+    transit:
+      properties:
+        transit:
+          description: Workforce is requested to be brought to transit
+          nullable: true
+          type: boolean
+      title: transit
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransport_configuration:
+      description: Configured workforce transport
+      oneOf:
+      - $ref: "#/components/schemas/import"
+      - $ref: "#/components/schemas/export"
+      - $ref: "#/components/schemas/transit"
+    import_1:
+      example:
+        import:
+          sources:
+          - amount: 1000
+            solar_system_id: 30000001
+          - amount: 1000
+            solar_system_id: 30000001
+      properties:
+        import:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransportstateimport"
+      title: import
+      type: object
+    export_1:
+      properties:
+        export:
+          $ref: "#/components/schemas/CorporationsStructuresSovereigntyHubsDetailTransportstateexport"
+      title: export
+      type: object
+    transit_1:
+      properties:
+        transit:
+          description: Workforce is being brought to transit
+          nullable: true
+          type: boolean
+      title: transit
+      type: object
+    CorporationsStructuresSovereigntyHubsDetailTransport_state:
+      description: Current state of the workforce transport
+      oneOf:
+      - $ref: "#/components/schemas/import_1"
+      - $ref: "#/components/schemas/export_1"
+      - $ref: "#/components/schemas/transit_1"
     DogmaDynamicItemsTypeIdItemIdGet_dogma_attributes_inner:
       description: dogma_attribute object
       example:
@@ -35562,78 +37971,34 @@ components:
       - start_time
       - structure_id
       type: object
-    SovereigntyMapGet_inner:
+    faction:
       example:
-        alliance_id: 0
-        corporation_id: 6
-        system_id: 5
-        faction_id: 1
+        faction:
+          faction_id: 500002
       properties:
-        alliance_id:
-          format: int64
-          type: integer
-        corporation_id:
-          format: int64
-          type: integer
-        faction_id:
-          format: int64
-          type: integer
-        system_id:
-          format: int64
-          type: integer
-      required:
-      - system_id
+        faction:
+          $ref: "#/components/schemas/SovereigntySystemsFaction"
+      title: faction
       type: object
-    SovereigntyStructuresGet_inner:
-      example:
-        structure_type_id: 5
-        alliance_id: 0
-        vulnerable_start_time: 2000-01-23T04:56:07.000+00:00
-        vulnerable_end_time: 2000-01-23T04:56:07.000+00:00
-        vulnerability_occupancy_level: 5.637376656633329
-        solar_system_id: 6
-        structure_id: 1
+    alliance:
       properties:
-        alliance_id:
-          description: |
-            The alliance that owns the structure.
-          format: int64
-          type: integer
-        solar_system_id:
-          description: |
-            Solar system in which the structure is located.
-          format: int64
-          type: integer
-        structure_id:
-          description: Unique item ID for this structure.
-          format: int64
-          type: integer
-        structure_type_id:
-          description: |
-            A reference to the type of structure this is.
-          format: int64
-          type: integer
-        vulnerability_occupancy_level:
-          description: |
-            The occupancy level for the next or current vulnerability window. This takes into account all development indexes and capital system bonuses. Also known as Activity Defense Multiplier from in the client. It increases the time that attackers must spend using their entosis links on the structure.
-          format: double
-          type: number
-        vulnerable_end_time:
-          description: |
-            The time at which the next or current vulnerability window ends. At the end of a vulnerability window the next window is recalculated and locked in along with the vulnerabilityOccupancyLevel. If the structure is not in 100% entosis control of the defender, it will go in to 'overtime' and stay vulnerable for as long as that situation persists. Only once the defenders have 100% entosis control and has the vulnerableEndTime passed does the vulnerability interval expire and a new one is calculated.
-          format: date-time
-          type: string
-        vulnerable_start_time:
-          description: |
-            The next time at which the structure will become vulnerable. Or the start time of the current window if current time is between this and vulnerableEndTime.
-          format: date-time
-          type: string
-      required:
-      - alliance_id
-      - solar_system_id
-      - structure_id
-      - structure_type_id
+        alliance:
+          $ref: "#/components/schemas/SovereigntySystemsAlliance"
+      title: alliance
       type: object
+    unclaimed:
+      properties:
+        unclaimed:
+          description: Solar system is unclaimed
+          type: boolean
+      title: unclaimed
+      type: object
+    SovereigntySystemsSolarsystem_claim:
+      description: Claim on this solar system
+      oneOf:
+      - $ref: "#/components/schemas/faction"
+      - $ref: "#/components/schemas/alliance"
+      - $ref: "#/components/schemas/unclaimed"
     UniverseAncestriesGet_inner:
       example:
         short_description: short_description
