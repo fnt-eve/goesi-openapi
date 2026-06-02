@@ -18878,7 +18878,8 @@ paths:
       summary: Get changelog
       tags:
       - Meta
-      x-cache-age: 0
+      x-cache-age: 600
+      x-cache-mode: not-cached
       x-compatibility-date: 2025-09-26
       x-rate-limit:
         group: meta
@@ -18969,7 +18970,8 @@ paths:
       summary: Get compatibility dates
       tags:
       - Meta
-      x-cache-age: 0
+      x-cache-age: 600
+      x-cache-mode: not-cached
       x-compatibility-date: 2020-01-01
       x-rate-limit:
         group: meta
@@ -24781,7 +24783,7 @@ components:
         birthday: 2000-01-23T04:56:07.000+00:00
         alliance_id: 99000001
         corporation_id: 98777771
-        security_status: 0.8008281904610115
+        security_status: 5
         gender: male
         race_id: 1
         name: name
@@ -24836,6 +24838,7 @@ components:
           x-common-model: "true"
         security_status:
           description: Character's security status
+          example: 5
           format: double
           type: number
         title:
@@ -31587,16 +31590,22 @@ components:
           - EntosisCaptureStarted
           - ExpertSystemExpired
           - ExpertSystemExpiryImminent
+          - FWAllianceKickCeoIndividualStandingWarning
           - FWAllianceKickMsg
+          - FWAllianceKickedCeoIndividualStanding
           - FWAllianceWarningMsg
           - FWCharKickMsg
           - FWCharRankGainMsg
           - FWCharRankLossMsg
           - FWCharWarningMsg
+          - FWCharacterKickFromCorpIndividualStandingWarning
+          - FWCharacterKickedFromCorpIndividualStanding
           - FWCorpJoinMsg
           - FWCorpKickMsg
           - FWCorpLeaveMsg
           - FWCorpWarningMsg
+          - FWCorporationKickCeoIndividualStandingWarning
+          - FWCorporationKickedCeoIndividualStanding
           - FacWarCorpJoinRequestMsg
           - FacWarCorpJoinWithdrawMsg
           - FacWarCorpLeaveRequestMsg
@@ -31606,6 +31615,7 @@ components:
           - FacWarLPDisqualifiedKill
           - FacWarLPPayoutEvent
           - FacWarLPPayoutKill
+          - FreelanceProjectACLDeleted
           - FreelanceProjectClosed
           - FreelanceProjectCompleted
           - FreelanceProjectCreated
@@ -32330,6 +32340,8 @@ components:
             transaction types will populate different attributes."'
           enum:
           - acceleration_gate_fee
+          - achievement_category_milestone_reward
+          - achievement_milestone_reward
           - advertisement_listing_fee
           - agent_donation
           - agent_location_services
@@ -32338,6 +32350,7 @@ components:
           - agent_mission_collateral_refunded
           - agent_mission_reward
           - agent_mission_reward_corporation_tax
+          - agent_mission_security_tax
           - agent_mission_time_bonus_reward
           - agent_mission_time_bonus_reward_corporation_tax
           - agent_security_services
@@ -32355,6 +32368,7 @@ components:
           - bounty_reimbursement
           - bounty_surcharge
           - brokers_fee
+          - campaign_objective_isk_reward
           - clone_activation
           - clone_transfer
           - contraband_fine
@@ -32426,6 +32440,7 @@ components:
           - gm_cash_transfer
           - gm_plex_fee_refund
           - industry_job_tax
+          - industry_security_tax
           - infrastructure_hub_maintenance
           - inheritance
           - insurance
@@ -32440,6 +32455,7 @@ components:
           - market_escrow
           - market_fine_paid
           - market_provider_tax
+          - market_security_tax
           - market_transaction
           - medal_creation
           - medal_issued
@@ -32448,6 +32464,7 @@ components:
           - mission_cost
           - mission_expiration
           - mission_reward
+          - npc_bounty_security_tax
           - office_rental_fee
           - operation_bonus
           - opportunity_reward
@@ -35763,6 +35780,8 @@ components:
             \ at the following file to see string->int mappings: https://github.com/ccpgames/eve-glue/blob/master/eve_glue/wallet_journal_ref.py\""
           enum:
           - acceleration_gate_fee
+          - achievement_category_milestone_reward
+          - achievement_milestone_reward
           - advertisement_listing_fee
           - agent_donation
           - agent_location_services
@@ -35771,6 +35790,7 @@ components:
           - agent_mission_collateral_refunded
           - agent_mission_reward
           - agent_mission_reward_corporation_tax
+          - agent_mission_security_tax
           - agent_mission_time_bonus_reward
           - agent_mission_time_bonus_reward_corporation_tax
           - agent_security_services
@@ -35788,6 +35808,7 @@ components:
           - bounty_reimbursement
           - bounty_surcharge
           - brokers_fee
+          - campaign_objective_isk_reward
           - clone_activation
           - clone_transfer
           - contraband_fine
@@ -35859,6 +35880,7 @@ components:
           - gm_cash_transfer
           - gm_plex_fee_refund
           - industry_job_tax
+          - industry_security_tax
           - infrastructure_hub_maintenance
           - inheritance
           - insurance
@@ -35873,6 +35895,7 @@ components:
           - market_escrow
           - market_fine_paid
           - market_provider_tax
+          - market_security_tax
           - market_transaction
           - medal_creation
           - medal_issued
@@ -35881,6 +35904,7 @@ components:
           - mission_cost
           - mission_expiration
           - mission_reward
+          - npc_bounty_security_tax
           - office_rental_fee
           - operation_bonus
           - opportunity_reward
