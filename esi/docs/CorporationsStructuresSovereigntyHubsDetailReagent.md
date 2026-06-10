@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **int64** | Amount of reagent in the bay | 
+**Amount** | **int64** | Amount of reagent in the bay at the time of &#39;last_updated&#39; | 
 **BurningPerHour** | **int64** | Amount of reagent burning per hour | 
 **TypeId** | **int64** |  | 
 

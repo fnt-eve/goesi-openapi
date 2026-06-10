@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LastCycle** | **time.Time** | Moment the &#39;SecureStock&#39;/&#39;UnsecuredStock&#39; value had its last cycle; use SDE to calculate the current values | 
-**SecuredStock** | **int64** | Secured stock of the reagent | 
+**SecuredStock** | **int64** | Secured stock of the reagent at the time of &#39;last_cycle&#39; | 
 **TypeId** | **int64** |  | 
-**UnsecuredStock** | **int64** | Unsecured stock of the reagent | 
+**UnsecuredStock** | **int64** | Unsecured stock of the reagent at the time of &#39;last_cycle&#39; | 
 
 ## Methods
 

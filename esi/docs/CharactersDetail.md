@@ -4,23 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AchievementScore** | **int64** | Character&#39;s achievement score | 
 **AllianceId** | Pointer to **int64** |  | [optional] 
 **Birthday** | **time.Time** | Character&#39;s creation date | 
 **BloodlineId** | **int64** |  | 
+**CharacterTitleId** | Pointer to **string** |  | [optional] 
 **CorporationId** | **int64** |  | 
+**CorporationTitle** | Pointer to **string** | Character&#39;s corporation title | [optional] 
 **Description** | Pointer to **string** | Character&#39;s description (biography) | [optional] 
 **FactionId** | Pointer to **int64** |  | [optional] 
 **Gender** | **string** | Character&#39;s gender | 
 **Name** | **string** | Character&#39;s name | 
 **RaceId** | **int64** |  | 
 **SecurityStatus** | Pointer to **float64** | Character&#39;s security status | [optional] 
-**Title** | Pointer to **string** | Character&#39;s corporation title | [optional] 
 
 ## Methods
 
 ### NewCharactersDetail
 
-`func NewCharactersDetail(birthday time.Time, bloodlineId int64, corporationId int64, gender string, name string, raceId int64, ) *CharactersDetail`
+`func NewCharactersDetail(achievementScore int64, birthday time.Time, bloodlineId int64, corporationId int64, gender string, name string, raceId int64, ) *CharactersDetail`
 
 NewCharactersDetail instantiates a new CharactersDetail object
 This constructor will assign default values to properties that have it defined,
@@ -34,6 +36,26 @@ will change when the set of required properties is changed
 NewCharactersDetailWithDefaults instantiates a new CharactersDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAchievementScore
+
+`func (o *CharactersDetail) GetAchievementScore() int64`
+
+GetAchievementScore returns the AchievementScore field if non-nil, zero value otherwise.
+
+### GetAchievementScoreOk
+
+`func (o *CharactersDetail) GetAchievementScoreOk() (*int64, bool)`
+
+GetAchievementScoreOk returns a tuple with the AchievementScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAchievementScore
+
+`func (o *CharactersDetail) SetAchievementScore(v int64)`
+
+SetAchievementScore sets AchievementScore field to given value.
+
 
 ### GetAllianceId
 
@@ -100,6 +122,31 @@ and a boolean to check if the value has been set.
 SetBloodlineId sets BloodlineId field to given value.
 
 
+### GetCharacterTitleId
+
+`func (o *CharactersDetail) GetCharacterTitleId() string`
+
+GetCharacterTitleId returns the CharacterTitleId field if non-nil, zero value otherwise.
+
+### GetCharacterTitleIdOk
+
+`func (o *CharactersDetail) GetCharacterTitleIdOk() (*string, bool)`
+
+GetCharacterTitleIdOk returns a tuple with the CharacterTitleId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCharacterTitleId
+
+`func (o *CharactersDetail) SetCharacterTitleId(v string)`
+
+SetCharacterTitleId sets CharacterTitleId field to given value.
+
+### HasCharacterTitleId
+
+`func (o *CharactersDetail) HasCharacterTitleId() bool`
+
+HasCharacterTitleId returns a boolean if a field has been set.
+
 ### GetCorporationId
 
 `func (o *CharactersDetail) GetCorporationId() int64`
@@ -119,6 +166,31 @@ and a boolean to check if the value has been set.
 
 SetCorporationId sets CorporationId field to given value.
 
+
+### GetCorporationTitle
+
+`func (o *CharactersDetail) GetCorporationTitle() string`
+
+GetCorporationTitle returns the CorporationTitle field if non-nil, zero value otherwise.
+
+### GetCorporationTitleOk
+
+`func (o *CharactersDetail) GetCorporationTitleOk() (*string, bool)`
+
+GetCorporationTitleOk returns a tuple with the CorporationTitle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCorporationTitle
+
+`func (o *CharactersDetail) SetCorporationTitle(v string)`
+
+SetCorporationTitle sets CorporationTitle field to given value.
+
+### HasCorporationTitle
+
+`func (o *CharactersDetail) HasCorporationTitle() bool`
+
+HasCorporationTitle returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -254,31 +326,6 @@ SetSecurityStatus sets SecurityStatus field to given value.
 `func (o *CharactersDetail) HasSecurityStatus() bool`
 
 HasSecurityStatus returns a boolean if a field has been set.
-
-### GetTitle
-
-`func (o *CharactersDetail) GetTitle() string`
-
-GetTitle returns the Title field if non-nil, zero value otherwise.
-
-### GetTitleOk
-
-`func (o *CharactersDetail) GetTitleOk() (*string, bool)`
-
-GetTitleOk returns a tuple with the Title field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTitle
-
-`func (o *CharactersDetail) SetTitle(v string)`
-
-SetTitle sets Title field to given value.
-
-### HasTitle
-
-`func (o *CharactersDetail) HasTitle() bool`
-
-HasTitle returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
