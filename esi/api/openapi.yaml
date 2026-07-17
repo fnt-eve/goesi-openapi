@@ -7,7 +7,7 @@ info:
     name: EVE Developer License
     url: https://developers.eveonline.com/license-agreement
   termsOfService: https://support.eveonline.com/hc/en-us/articles/8414770561948-EVE-Online-Terms-of-Service
-  title: EVE Spring Inebriation (ESI) - tranquility
+  title: EVE Swagger Incineration (ESI) - tranquility
   version: 2026-06-09
 servers:
 - url: https://esi.evetech.net
