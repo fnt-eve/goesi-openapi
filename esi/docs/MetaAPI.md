@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetMetaChangelog**](MetaAPI.md#GetMetaChangelog) | **Get** /meta/changelog | Get changelog
 [**GetMetaCompatibilityDates**](MetaAPI.md#GetMetaCompatibilityDates) | **Get** /meta/compatibility-dates | Get compatibility dates
+[**GetMetaName**](MetaAPI.md#GetMetaName) | **Get** /meta/name | Get the name of ESI
 [**GetMetaStatus**](MetaAPI.md#GetMetaStatus) | **Get** /meta/status | Get health status
 
 
@@ -145,6 +146,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MetaCompatibilityDates**](MetaCompatibilityDates.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMetaName
+
+> MetaName GetMetaName(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+
+Get the name of ESI
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	xCompatibilityDate := time.Now() // string | The compatibility date for the request.
+	acceptLanguage := "acceptLanguage_example" // string | The language to use for the response. (optional) (default to "en")
+	ifNoneMatch := "ifNoneMatch_example" // string | The ETag of the previous request. A 304 will be returned if this matches the current ETag. (optional)
+	xTenant := "xTenant_example" // string | The tenant ID for the request. (optional) (default to "tranquility")
+	ifModifiedSince := "ifModifiedSince_example" // string | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaAPI.GetMetaName(context.Background()).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaName``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMetaName`: MetaName
+	fmt.Fprintf(os.Stdout, "Response from `MetaAPI.GetMetaName`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMetaNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xCompatibilityDate** | **string** | The compatibility date for the request. | 
+ **acceptLanguage** | **string** | The language to use for the response. | [default to &quot;en&quot;]
+ **ifNoneMatch** | **string** | The ETag of the previous request. A 304 will be returned if this matches the current ETag. | 
+ **xTenant** | **string** | The tenant ID for the request. | [default to &quot;tranquility&quot;]
+ **ifModifiedSince** | **string** | The date the resource was last modified. A 304 will be returned if the resource has not been modified since this date. | 
+
+### Return type
+
+[**MetaName**](MetaName.md)
 
 ### Authorization
 

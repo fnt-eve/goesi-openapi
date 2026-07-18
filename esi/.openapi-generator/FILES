@@ -375,6 +375,8 @@ docs/MetaAPI.md
 docs/MetaChangelog.md
 docs/MetaChangelogEntry.md
 docs/MetaCompatibilityDates.md
+docs/MetaName.md
+docs/MetaNameEntry.md
 docs/MetaStatus.md
 docs/MetaStatusRoutestatus.md
 docs/MineMaterial.md
@@ -786,6 +788,8 @@ model_matcher.go
 model_meta_changelog.go
 model_meta_changelog_entry.go
 model_meta_compatibility_dates.go
+model_meta_name.go
+model_meta_name_entry.go
 model_meta_status.go
 model_meta_status_routestatus.go
 model_mine_material.go
