@@ -5,25 +5,29 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllianceId** | Pointer to **int64** |  | [optional] 
-**CeoId** | **int64** |  | 
-**CreatorId** | **int64** |  | 
+**CeoId** | Pointer to **int64** |  | [optional] 
+**CreatorId** | Pointer to **int64** |  | [optional] 
 **DateFounded** | Pointer to **time.Time** | Corporation&#39;s founding date | [optional] 
-**Description** | Pointer to **string** | Corporation&#39;s description | [optional] 
-**FactionId** | Pointer to **int64** |  | [optional] 
-**HomeStationId** | Pointer to **int64** |  | [optional] 
+**Description** | **string** | Corporation&#39;s description | 
+**EnlistedFactionId** | Pointer to **int64** |  | [optional] 
+**FriendlyFire** | **string** | Corporation&#39;s friendly fire status | 
+**HomeStationId** | **int64** |  | 
 **MemberCount** | **int64** | Corporation&#39;s member count | 
 **Name** | **string** | Corporation&#39;s name | 
-**Shares** | Pointer to **int64** | Corporation&#39;s shares | [optional] 
-**TaxRate** | **float64** | Corporation&#39;s tax rate | 
+**Palette** | Pointer to [**CorporationsDetailPalette**](CorporationsDetailPalette.md) |  | [optional] 
+**Shares** | **int64** | Corporation&#39;s shares | 
+**State** | **string** | Corporation&#39;s state | 
+**TaxRates** | [**CorporationsDetailTaxrates**](CorporationsDetailTaxrates.md) |  | 
 **Ticker** | **string** | Corporation&#39;s short name | 
+**Type** | **string** | Corporation&#39;s type | 
 **Url** | Pointer to **string** | Corporation&#39;s URL | [optional] 
-**WarEligible** | Pointer to **bool** | Corporation&#39;s war eligible | [optional] 
+**WarEligible** | **bool** | Corporation&#39;s war eligible | 
 
 ## Methods
 
 ### NewCorporationsDetail
 
-`func NewCorporationsDetail(ceoId int64, creatorId int64, memberCount int64, name string, taxRate float64, ticker string, ) *CorporationsDetail`
+`func NewCorporationsDetail(description string, friendlyFire string, homeStationId int64, memberCount int64, name string, shares int64, state string, taxRates CorporationsDetailTaxrates, ticker string, type_ string, warEligible bool, ) *CorporationsDetail`
 
 NewCorporationsDetail instantiates a new CorporationsDetail object
 This constructor will assign default values to properties that have it defined,
@@ -82,6 +86,11 @@ and a boolean to check if the value has been set.
 
 SetCeoId sets CeoId field to given value.
 
+### HasCeoId
+
+`func (o *CorporationsDetail) HasCeoId() bool`
+
+HasCeoId returns a boolean if a field has been set.
 
 ### GetCreatorId
 
@@ -102,6 +111,11 @@ and a boolean to check if the value has been set.
 
 SetCreatorId sets CreatorId field to given value.
 
+### HasCreatorId
+
+`func (o *CorporationsDetail) HasCreatorId() bool`
+
+HasCreatorId returns a boolean if a field has been set.
 
 ### GetDateFounded
 
@@ -147,36 +161,51 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
-### HasDescription
 
-`func (o *CorporationsDetail) HasDescription() bool`
+### GetEnlistedFactionId
 
-HasDescription returns a boolean if a field has been set.
+`func (o *CorporationsDetail) GetEnlistedFactionId() int64`
 
-### GetFactionId
+GetEnlistedFactionId returns the EnlistedFactionId field if non-nil, zero value otherwise.
 
-`func (o *CorporationsDetail) GetFactionId() int64`
+### GetEnlistedFactionIdOk
 
-GetFactionId returns the FactionId field if non-nil, zero value otherwise.
+`func (o *CorporationsDetail) GetEnlistedFactionIdOk() (*int64, bool)`
 
-### GetFactionIdOk
-
-`func (o *CorporationsDetail) GetFactionIdOk() (*int64, bool)`
-
-GetFactionIdOk returns a tuple with the FactionId field if it's non-nil, zero value otherwise
+GetEnlistedFactionIdOk returns a tuple with the EnlistedFactionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFactionId
+### SetEnlistedFactionId
 
-`func (o *CorporationsDetail) SetFactionId(v int64)`
+`func (o *CorporationsDetail) SetEnlistedFactionId(v int64)`
 
-SetFactionId sets FactionId field to given value.
+SetEnlistedFactionId sets EnlistedFactionId field to given value.
 
-### HasFactionId
+### HasEnlistedFactionId
 
-`func (o *CorporationsDetail) HasFactionId() bool`
+`func (o *CorporationsDetail) HasEnlistedFactionId() bool`
 
-HasFactionId returns a boolean if a field has been set.
+HasEnlistedFactionId returns a boolean if a field has been set.
+
+### GetFriendlyFire
+
+`func (o *CorporationsDetail) GetFriendlyFire() string`
+
+GetFriendlyFire returns the FriendlyFire field if non-nil, zero value otherwise.
+
+### GetFriendlyFireOk
+
+`func (o *CorporationsDetail) GetFriendlyFireOk() (*string, bool)`
+
+GetFriendlyFireOk returns a tuple with the FriendlyFire field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFriendlyFire
+
+`func (o *CorporationsDetail) SetFriendlyFire(v string)`
+
+SetFriendlyFire sets FriendlyFire field to given value.
+
 
 ### GetHomeStationId
 
@@ -197,11 +226,6 @@ and a boolean to check if the value has been set.
 
 SetHomeStationId sets HomeStationId field to given value.
 
-### HasHomeStationId
-
-`func (o *CorporationsDetail) HasHomeStationId() bool`
-
-HasHomeStationId returns a boolean if a field has been set.
 
 ### GetMemberCount
 
@@ -243,6 +267,31 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
+### GetPalette
+
+`func (o *CorporationsDetail) GetPalette() CorporationsDetailPalette`
+
+GetPalette returns the Palette field if non-nil, zero value otherwise.
+
+### GetPaletteOk
+
+`func (o *CorporationsDetail) GetPaletteOk() (*CorporationsDetailPalette, bool)`
+
+GetPaletteOk returns a tuple with the Palette field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPalette
+
+`func (o *CorporationsDetail) SetPalette(v CorporationsDetailPalette)`
+
+SetPalette sets Palette field to given value.
+
+### HasPalette
+
+`func (o *CorporationsDetail) HasPalette() bool`
+
+HasPalette returns a boolean if a field has been set.
+
 ### GetShares
 
 `func (o *CorporationsDetail) GetShares() int64`
@@ -262,30 +311,45 @@ and a boolean to check if the value has been set.
 
 SetShares sets Shares field to given value.
 
-### HasShares
 
-`func (o *CorporationsDetail) HasShares() bool`
+### GetState
 
-HasShares returns a boolean if a field has been set.
+`func (o *CorporationsDetail) GetState() string`
 
-### GetTaxRate
+GetState returns the State field if non-nil, zero value otherwise.
 
-`func (o *CorporationsDetail) GetTaxRate() float64`
+### GetStateOk
 
-GetTaxRate returns the TaxRate field if non-nil, zero value otherwise.
+`func (o *CorporationsDetail) GetStateOk() (*string, bool)`
 
-### GetTaxRateOk
-
-`func (o *CorporationsDetail) GetTaxRateOk() (*float64, bool)`
-
-GetTaxRateOk returns a tuple with the TaxRate field if it's non-nil, zero value otherwise
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxRate
+### SetState
 
-`func (o *CorporationsDetail) SetTaxRate(v float64)`
+`func (o *CorporationsDetail) SetState(v string)`
 
-SetTaxRate sets TaxRate field to given value.
+SetState sets State field to given value.
+
+
+### GetTaxRates
+
+`func (o *CorporationsDetail) GetTaxRates() CorporationsDetailTaxrates`
+
+GetTaxRates returns the TaxRates field if non-nil, zero value otherwise.
+
+### GetTaxRatesOk
+
+`func (o *CorporationsDetail) GetTaxRatesOk() (*CorporationsDetailTaxrates, bool)`
+
+GetTaxRatesOk returns a tuple with the TaxRates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxRates
+
+`func (o *CorporationsDetail) SetTaxRates(v CorporationsDetailTaxrates)`
+
+SetTaxRates sets TaxRates field to given value.
 
 
 ### GetTicker
@@ -306,6 +370,26 @@ and a boolean to check if the value has been set.
 `func (o *CorporationsDetail) SetTicker(v string)`
 
 SetTicker sets Ticker field to given value.
+
+
+### GetType
+
+`func (o *CorporationsDetail) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *CorporationsDetail) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *CorporationsDetail) SetType(v string)`
+
+SetType sets Type field to given value.
 
 
 ### GetUrl
@@ -352,11 +436,6 @@ and a boolean to check if the value has been set.
 
 SetWarEligible sets WarEligible field to given value.
 
-### HasWarEligible
-
-`func (o *CorporationsDetail) HasWarEligible() bool`
-
-HasWarEligible returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
