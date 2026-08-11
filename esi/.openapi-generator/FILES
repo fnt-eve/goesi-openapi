@@ -27,6 +27,7 @@ api_loyalty.go
 api_mail.go
 api_market.go
 api_meta.go
+api_military_campaigns.go
 api_planetary_interaction.go
 api_routes.go
 api_search.go
@@ -129,6 +130,9 @@ docs/CharactersFreelanceJobsParticipation.md
 docs/CharactersMercenaryTacticalOperationsDetail.md
 docs/CharactersMercenaryTacticalOperationsListing.md
 docs/CharactersMercenaryTacticalOperationsListingOperation.md
+docs/CharactersMilitaryCampaignsObjectivesListing.md
+docs/CharactersMilitaryCampaignsObjectivesParticipation.md
+docs/CharactersMilitaryCampaignsObjectivesParticipationCharacterobjective.md
 docs/CharactersSkillqueueSkill.md
 docs/CharactersSkills.md
 docs/CharactersSkillsSkill.md
@@ -381,6 +385,14 @@ docs/MetaName.md
 docs/MetaNameEntry.md
 docs/MetaStatus.md
 docs/MetaStatusRoutestatus.md
+docs/MilitaryCampaignsAPI.md
+docs/MilitaryCampaignsDetail.md
+docs/MilitaryCampaignsDetailCampaign.md
+docs/MilitaryCampaignsListing.md
+docs/MilitaryCampaignsObjectivesDetail.md
+docs/MilitaryCampaignsObjectivesDetailObjective.md
+docs/MilitaryCampaignsObjectivesDetailParticipants.md
+docs/MilitaryCampaignsObjectivesListing.md
 docs/MineMaterial.md
 docs/ModelImport.md
 docs/Options.md
@@ -425,8 +437,8 @@ docs/SovereigntySystemsSolarsystemClaim.md
 docs/SovereigntySystemsSovereigntyhub.md
 docs/SovereigntySystemsVulnerabilitywindow.md
 docs/StationId.md
+docs/Status.md
 docs/StatusAPI.md
-docs/StatusGet.md
 docs/StructureId.md
 docs/StructuresAPI.md
 docs/Transit.md
@@ -562,6 +574,9 @@ model_characters_freelance_jobs_participation.go
 model_characters_mercenary_tactical_operations_detail.go
 model_characters_mercenary_tactical_operations_listing.go
 model_characters_mercenary_tactical_operations_listing_operation.go
+model_characters_military_campaigns_objectives_listing.go
+model_characters_military_campaigns_objectives_participation.go
+model_characters_military_campaigns_objectives_participation_characterobjective.go
 model_characters_skillqueue_skill.go
 model_characters_skills.go
 model_characters_skills_skill.go
@@ -796,6 +811,13 @@ model_meta_name.go
 model_meta_name_entry.go
 model_meta_status.go
 model_meta_status_routestatus.go
+model_military_campaigns_detail.go
+model_military_campaigns_detail_campaign.go
+model_military_campaigns_listing.go
+model_military_campaigns_objectives_detail.go
+model_military_campaigns_objectives_detail_objective.go
+model_military_campaigns_objectives_detail_participants.go
+model_military_campaigns_objectives_listing.go
 model_mine_material.go
 model_options.go
 model_post_characters_character_id_fittings_request.go
@@ -834,7 +856,7 @@ model_sovereignty_systems_solarsystem_claim.go
 model_sovereignty_systems_sovereigntyhub.go
 model_sovereignty_systems_vulnerabilitywindow.go
 model_station_id.go
-model_status_get.go
+model_status.go
 model_structure_id.go
 model_transit.go
 model_transit_1.go

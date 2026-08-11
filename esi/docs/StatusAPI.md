@@ -4,15 +4,15 @@ All URIs are relative to *https://esi.evetech.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetStatus**](StatusAPI.md#GetStatus) | **Get** /status | Retrieve the uptime and player counts
+[**GetStatus**](StatusAPI.md#GetStatus) | **Get** /status | Get the server&#39;s status
 
 
 
 ## GetStatus
 
-> StatusGet GetStatus(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> Status GetStatus(ctx).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
-Retrieve the uptime and player counts
+Get the server's status
 
 
 
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `StatusAPI.GetStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetStatus`: StatusGet
+	// response from `GetStatus`: Status
 	fmt.Fprintf(os.Stdout, "Response from `StatusAPI.GetStatus`: %v\n", resp)
 }
 ```
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StatusGet**](StatusGet.md)
+[**Status**](Status.md)
 
 ### Authorization
 

@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Details** | Pointer to [**[]ErrorDetail**](ErrorDetail.md) | List of individual error details. | [optional] 
+**Details** | Pointer to [**[]ErrorDetail**](ErrorDetail.md) | List of individual issues. | [optional] 
 **Error** | **string** | Error message. | 
+**Status** | Pointer to **int64** | HTTP status code. | [optional] 
 
 ## Methods
 
@@ -70,6 +71,31 @@ and a boolean to check if the value has been set.
 
 SetError sets Error field to given value.
 
+
+### GetStatus
+
+`func (o *Error) GetStatus() int64`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *Error) GetStatusOk() (*int64, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *Error) SetStatus(v int64)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *Error) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
