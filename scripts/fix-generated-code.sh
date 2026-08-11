@@ -63,15 +63,6 @@ fi
 # Remove any generated test files
 find ${CLIENT_DIR}/ -name "*_test.go" -type f -delete 2>/dev/null || true
 
-# Add test ignores to .openapi-generator-ignore if not already present
-if ! grep -q "test/" ${CLIENT_DIR}/.openapi-generator-ignore; then
-    echo "Adding test ignores to .openapi-generator-ignore..."
-    echo "" >> ${CLIENT_DIR}/.openapi-generator-ignore
-    echo "# Ignore test files and directories" >> ${CLIENT_DIR}/.openapi-generator-ignore
-    echo "test/" >> ${CLIENT_DIR}/.openapi-generator-ignore
-    echo "*_test.go" >> ${CLIENT_DIR}/.openapi-generator-ignore
-fi
-
 echo "Generated code has been fixed!"
 echo "X-Compatibility-Date will now automatically use configuration value: $COMPAT_DATE"
-echo "Test files and directories have been cleaned up and ignored for future generations"
+echo "Test files and directories have been cleaned up"
