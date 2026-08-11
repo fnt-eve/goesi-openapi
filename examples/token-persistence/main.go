@@ -44,7 +44,9 @@ func main() {
 	fmt.Print("Enter the authorization code from the callback: ")
 
 	var code string
-	fmt.Scanln(&code)
+	if _, err := fmt.Scanln(&code); err != nil {
+		log.Fatalf("Failed to read authorization code: %v", err)
+	}
 
 	// Step 3: Exchange code for token
 	token, claims, err := config.Exchange(ctx, code, state, state)
@@ -68,7 +70,7 @@ func main() {
 	fmt.Println("\nToken serialized to JSON (ready to store in database/file)")
 	fmt.Printf("JSON length: %d bytes\n", len(tokenJSON))
 
-	var storedTokenJSON string = tokenJSON // Simulating storage
+	storedTokenJSON := tokenJSON // Simulating storage
 
 	// Step 5: Deserialize token from storage
 	restoredToken, err := goesi.TokenFromJSON(storedTokenJSON)

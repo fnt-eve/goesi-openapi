@@ -47,7 +47,9 @@ func main() {
 	fmt.Print("Enter the authorization code from the callback: ")
 
 	var code string
-	fmt.Scanln(&code)
+	if _, err := fmt.Scanln(&code); err != nil {
+		log.Fatalf("Failed to read authorization code: %v", err)
+	}
 
 	// Step 3: Exchange authorization code for access token
 	token, claims, err := config.Exchange(ctx, code, state, state)

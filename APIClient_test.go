@@ -120,7 +120,7 @@ func TestNewESIClientWithOptions_EmptyUserAgent(t *testing.T) {
 }
 
 func mockKeyFunc() jwt.Keyfunc {
-	return func(token *jwt.Token) (interface{}, error) {
+	return func(_ *jwt.Token) (interface{}, error) {
 		return []byte("test-secret"), nil
 	}
 }

@@ -287,11 +287,11 @@ func (c *Config) parseTokenInfo(accessToken string) (*ESIJWTClaims, error) {
 
 // TokenToJSON helper function to convert a token to a storable format.
 func TokenToJSON(token *oauth2.Token) (string, error) {
-	if d, err := json.Marshal(token); err != nil {
+	d, err := json.Marshal(token)
+	if err != nil {
 		return "", err
-	} else {
-		return string(d), nil
 	}
+	return string(d), nil
 }
 
 // TokenFromJSON helper function to convert stored JSON to a token.
