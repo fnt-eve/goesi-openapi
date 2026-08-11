@@ -19,21 +19,14 @@ const (
 EOL
 
 # Extract scopes and append to the Go file
-jq -r '.components.securitySchemes.OAuth2.flows.authorizationCode.scopes | keys[]' ${SPEC_FILE} | while read scope; do
-    # Create a constant name from the scope string
-    # Remove esi- prefix, split on dots, dashes, and underscores, then capitalize each part
-    const_name=$(echo ${scope} | sed 's/^esi-//' | sed 's/[._-]/ /g' | awk '{
+jq -r '.components.securitySchemes.OAuth2.flows.authorizationCode.scopes | keys[]' ${SPEC_FILE} | while read -r scope; do
+    # Create a constant name from the scope string.
+    # ESI uses two naming styles: "esi-wallet.read_character_wallet.v1" and
+    # "esi.activity.char:read", so the prefix and the separators both vary.
+    const_name=$(echo "${scope}" | sed -E 's/^esi[.:_-]//; s/[.:_-]/ /g' | awk '{
         result = ""
-        for(i=1; i<=NF; i++) {
-            word = $i
-            # Handle version numbers specially (v1 -> V1)
-            if(word ~ /^v[0-9]+$/) {
-                word = toupper(substr(word, 1, 1)) substr(word, 2)
-            } else {
-                # Capitalize first letter, keep rest as is
-                word = toupper(substr(word, 1, 1)) substr(word, 2)
-            }
-            result = result word
+        for (i = 1; i <= NF; i++) {
+            result = result toupper(substr($i, 1, 1)) substr($i, 2)
         }
         print result
     }')
@@ -42,5 +35,7 @@ done
 
 # End the constants section
 echo ")" >> ${OUTPUT_FILE}
+
+gofmt -w ${OUTPUT_FILE}
 
 echo "Successfully generated ${OUTPUT_FILE}."
