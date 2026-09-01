@@ -25,7 +25,7 @@ type LocationAPI interface {
 	/*
 	GetCharactersCharacterIdLocation Get character location
 
-	Information about the characters current location. Returns the current solar system id, and also the current station or structure ID if applicable
+	Get the current location of a character, including the station or structure it is docked in.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param characterId The ID of the character
@@ -34,13 +34,13 @@ type LocationAPI interface {
 	GetCharactersCharacterIdLocation(ctx context.Context, characterId int64) ApiGetCharactersCharacterIdLocationRequest
 
 	// GetCharactersCharacterIdLocationExecute executes the request
-	//  @return CharactersCharacterIdLocationGet
-	GetCharactersCharacterIdLocationExecute(r ApiGetCharactersCharacterIdLocationRequest) (*CharactersCharacterIdLocationGet, *http.Response, error)
+	//  @return CharactersLocation
+	GetCharactersCharacterIdLocationExecute(r ApiGetCharactersCharacterIdLocationRequest) (*CharactersLocation, *http.Response, error)
 
 	/*
 	GetCharactersCharacterIdOnline Get character online
 
-	Checks if the character is currently online
+	Get whether a character is online, and its login statistics.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param characterId The ID of the character
@@ -49,13 +49,13 @@ type LocationAPI interface {
 	GetCharactersCharacterIdOnline(ctx context.Context, characterId int64) ApiGetCharactersCharacterIdOnlineRequest
 
 	// GetCharactersCharacterIdOnlineExecute executes the request
-	//  @return CharactersCharacterIdOnlineGet
-	GetCharactersCharacterIdOnlineExecute(r ApiGetCharactersCharacterIdOnlineRequest) (*CharactersCharacterIdOnlineGet, *http.Response, error)
+	//  @return CharactersOnline
+	GetCharactersCharacterIdOnlineExecute(r ApiGetCharactersCharacterIdOnlineRequest) (*CharactersOnline, *http.Response, error)
 
 	/*
 	GetCharactersCharacterIdShip Get current ship
 
-	Get the current ship type, name and id
+	Get the ship a character is currently in.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param characterId The ID of the character
@@ -64,8 +64,8 @@ type LocationAPI interface {
 	GetCharactersCharacterIdShip(ctx context.Context, characterId int64) ApiGetCharactersCharacterIdShipRequest
 
 	// GetCharactersCharacterIdShipExecute executes the request
-	//  @return CharactersCharacterIdShipGet
-	GetCharactersCharacterIdShipExecute(r ApiGetCharactersCharacterIdShipRequest) (*CharactersCharacterIdShipGet, *http.Response, error)
+	//  @return CharactersShip
+	GetCharactersCharacterIdShipExecute(r ApiGetCharactersCharacterIdShipRequest) (*CharactersShip, *http.Response, error)
 }
 
 // LocationAPIService LocationAPI service
@@ -112,14 +112,14 @@ func (r ApiGetCharactersCharacterIdLocationRequest) IfModifiedSince(ifModifiedSi
 	return r
 }
 
-func (r ApiGetCharactersCharacterIdLocationRequest) Execute() (*CharactersCharacterIdLocationGet, *http.Response, error) {
+func (r ApiGetCharactersCharacterIdLocationRequest) Execute() (*CharactersLocation, *http.Response, error) {
 	return r.ApiService.GetCharactersCharacterIdLocationExecute(r)
 }
 
 /*
 GetCharactersCharacterIdLocation Get character location
 
-Information about the characters current location. Returns the current solar system id, and also the current station or structure ID if applicable
+Get the current location of a character, including the station or structure it is docked in.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param characterId The ID of the character
@@ -134,13 +134,13 @@ func (a *LocationAPIService) GetCharactersCharacterIdLocation(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return CharactersCharacterIdLocationGet
-func (a *LocationAPIService) GetCharactersCharacterIdLocationExecute(r ApiGetCharactersCharacterIdLocationRequest) (*CharactersCharacterIdLocationGet, *http.Response, error) {
+//  @return CharactersLocation
+func (a *LocationAPIService) GetCharactersCharacterIdLocationExecute(r ApiGetCharactersCharacterIdLocationRequest) (*CharactersLocation, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CharactersCharacterIdLocationGet
+		localVarReturnValue  *CharactersLocation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.GetCharactersCharacterIdLocation")
@@ -278,14 +278,14 @@ func (r ApiGetCharactersCharacterIdOnlineRequest) IfModifiedSince(ifModifiedSinc
 	return r
 }
 
-func (r ApiGetCharactersCharacterIdOnlineRequest) Execute() (*CharactersCharacterIdOnlineGet, *http.Response, error) {
+func (r ApiGetCharactersCharacterIdOnlineRequest) Execute() (*CharactersOnline, *http.Response, error) {
 	return r.ApiService.GetCharactersCharacterIdOnlineExecute(r)
 }
 
 /*
 GetCharactersCharacterIdOnline Get character online
 
-Checks if the character is currently online
+Get whether a character is online, and its login statistics.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param characterId The ID of the character
@@ -300,13 +300,13 @@ func (a *LocationAPIService) GetCharactersCharacterIdOnline(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return CharactersCharacterIdOnlineGet
-func (a *LocationAPIService) GetCharactersCharacterIdOnlineExecute(r ApiGetCharactersCharacterIdOnlineRequest) (*CharactersCharacterIdOnlineGet, *http.Response, error) {
+//  @return CharactersOnline
+func (a *LocationAPIService) GetCharactersCharacterIdOnlineExecute(r ApiGetCharactersCharacterIdOnlineRequest) (*CharactersOnline, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CharactersCharacterIdOnlineGet
+		localVarReturnValue  *CharactersOnline
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.GetCharactersCharacterIdOnline")
@@ -444,14 +444,14 @@ func (r ApiGetCharactersCharacterIdShipRequest) IfModifiedSince(ifModifiedSince 
 	return r
 }
 
-func (r ApiGetCharactersCharacterIdShipRequest) Execute() (*CharactersCharacterIdShipGet, *http.Response, error) {
+func (r ApiGetCharactersCharacterIdShipRequest) Execute() (*CharactersShip, *http.Response, error) {
 	return r.ApiService.GetCharactersCharacterIdShipExecute(r)
 }
 
 /*
 GetCharactersCharacterIdShip Get current ship
 
-Get the current ship type, name and id
+Get the ship a character is currently in.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param characterId The ID of the character
@@ -466,13 +466,13 @@ func (a *LocationAPIService) GetCharactersCharacterIdShip(ctx context.Context, c
 }
 
 // Execute executes the request
-//  @return CharactersCharacterIdShipGet
-func (a *LocationAPIService) GetCharactersCharacterIdShipExecute(r ApiGetCharactersCharacterIdShipRequest) (*CharactersCharacterIdShipGet, *http.Response, error) {
+//  @return CharactersShip
+func (a *LocationAPIService) GetCharactersCharacterIdShipExecute(r ApiGetCharactersCharacterIdShipRequest) (*CharactersShip, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CharactersCharacterIdShipGet
+		localVarReturnValue  *CharactersShip
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.GetCharactersCharacterIdShip")

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetCharactersCharacterIdLocation
 
-> CharactersCharacterIdLocationGet GetCharactersCharacterIdLocation(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> CharactersLocation GetCharactersCharacterIdLocation(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character location
 
@@ -46,7 +46,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.GetCharactersCharacterIdLocation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCharactersCharacterIdLocation`: CharactersCharacterIdLocationGet
+	// response from `GetCharactersCharacterIdLocation`: CharactersLocation
 	fmt.Fprintf(os.Stdout, "Response from `LocationAPI.GetCharactersCharacterIdLocation`: %v\n", resp)
 }
 ```
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CharactersCharacterIdLocationGet**](CharactersCharacterIdLocationGet.md)
+[**CharactersLocation**](CharactersLocation.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdOnline
 
-> CharactersCharacterIdOnlineGet GetCharactersCharacterIdOnline(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> CharactersOnline GetCharactersCharacterIdOnline(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get character online
 
@@ -127,7 +127,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.GetCharactersCharacterIdOnline``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCharactersCharacterIdOnline`: CharactersCharacterIdOnlineGet
+	// response from `GetCharactersCharacterIdOnline`: CharactersOnline
 	fmt.Fprintf(os.Stdout, "Response from `LocationAPI.GetCharactersCharacterIdOnline`: %v\n", resp)
 }
 ```
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CharactersCharacterIdOnlineGet**](CharactersCharacterIdOnlineGet.md)
+[**CharactersOnline**](CharactersOnline.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## GetCharactersCharacterIdShip
 
-> CharactersCharacterIdShipGet GetCharactersCharacterIdShip(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> CharactersShip GetCharactersCharacterIdShip(ctx, characterId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get current ship
 
@@ -208,7 +208,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.GetCharactersCharacterIdShip``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCharactersCharacterIdShip`: CharactersCharacterIdShipGet
+	// response from `GetCharactersCharacterIdShip`: CharactersShip
 	fmt.Fprintf(os.Stdout, "Response from `LocationAPI.GetCharactersCharacterIdShip`: %v\n", resp)
 }
 ```
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CharactersCharacterIdShipGet**](CharactersCharacterIdShipGet.md)
+[**CharactersShip**](CharactersShip.md)
 
 ### Authorization
 

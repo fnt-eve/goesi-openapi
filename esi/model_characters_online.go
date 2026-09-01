@@ -17,43 +17,43 @@ import (
 	"fmt"
 )
 
-// checks if the CharactersCharacterIdOnlineGet type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CharactersCharacterIdOnlineGet{}
+// checks if the CharactersOnline type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CharactersOnline{}
 
-// CharactersCharacterIdOnlineGet struct for CharactersCharacterIdOnlineGet
-type CharactersCharacterIdOnlineGet struct {
-	// Timestamp of the last login
+// CharactersOnline struct for CharactersOnline
+type CharactersOnline struct {
+	// When the character last logged in
 	LastLogin *time.Time `json:"last_login,omitempty"`
-	// Timestamp of the last logout
+	// When the character last logged out
 	LastLogout *time.Time `json:"last_logout,omitempty"`
-	// Total number of times the character has logged in
+	// Total logins (all-time)
 	Logins *int64 `json:"logins,omitempty"`
-	// If the character is online
+	// Whether the character is online
 	Online bool `json:"online"`
 }
 
-type _CharactersCharacterIdOnlineGet CharactersCharacterIdOnlineGet
+type _CharactersOnline CharactersOnline
 
-// NewCharactersCharacterIdOnlineGet instantiates a new CharactersCharacterIdOnlineGet object
+// NewCharactersOnline instantiates a new CharactersOnline object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCharactersCharacterIdOnlineGet(online bool) *CharactersCharacterIdOnlineGet {
-	this := CharactersCharacterIdOnlineGet{}
+func NewCharactersOnline(online bool) *CharactersOnline {
+	this := CharactersOnline{}
 	this.Online = online
 	return &this
 }
 
-// NewCharactersCharacterIdOnlineGetWithDefaults instantiates a new CharactersCharacterIdOnlineGet object
+// NewCharactersOnlineWithDefaults instantiates a new CharactersOnline object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCharactersCharacterIdOnlineGetWithDefaults() *CharactersCharacterIdOnlineGet {
-	this := CharactersCharacterIdOnlineGet{}
+func NewCharactersOnlineWithDefaults() *CharactersOnline {
+	this := CharactersOnline{}
 	return &this
 }
 
 // GetLastLogin returns the LastLogin field value if set, zero value otherwise.
-func (o *CharactersCharacterIdOnlineGet) GetLastLogin() time.Time {
+func (o *CharactersOnline) GetLastLogin() time.Time {
 	if o == nil || IsNil(o.LastLogin) {
 		var ret time.Time
 		return ret
@@ -63,7 +63,7 @@ func (o *CharactersCharacterIdOnlineGet) GetLastLogin() time.Time {
 
 // GetLastLoginOk returns a tuple with the LastLogin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdOnlineGet) GetLastLoginOk() (*time.Time, bool) {
+func (o *CharactersOnline) GetLastLoginOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.LastLogin) {
 		return nil, false
 	}
@@ -71,7 +71,7 @@ func (o *CharactersCharacterIdOnlineGet) GetLastLoginOk() (*time.Time, bool) {
 }
 
 // HasLastLogin returns a boolean if a field has been set.
-func (o *CharactersCharacterIdOnlineGet) HasLastLogin() bool {
+func (o *CharactersOnline) HasLastLogin() bool {
 	if o != nil && !IsNil(o.LastLogin) {
 		return true
 	}
@@ -80,12 +80,12 @@ func (o *CharactersCharacterIdOnlineGet) HasLastLogin() bool {
 }
 
 // SetLastLogin gets a reference to the given time.Time and assigns it to the LastLogin field.
-func (o *CharactersCharacterIdOnlineGet) SetLastLogin(v time.Time) {
+func (o *CharactersOnline) SetLastLogin(v time.Time) {
 	o.LastLogin = &v
 }
 
 // GetLastLogout returns the LastLogout field value if set, zero value otherwise.
-func (o *CharactersCharacterIdOnlineGet) GetLastLogout() time.Time {
+func (o *CharactersOnline) GetLastLogout() time.Time {
 	if o == nil || IsNil(o.LastLogout) {
 		var ret time.Time
 		return ret
@@ -95,7 +95,7 @@ func (o *CharactersCharacterIdOnlineGet) GetLastLogout() time.Time {
 
 // GetLastLogoutOk returns a tuple with the LastLogout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdOnlineGet) GetLastLogoutOk() (*time.Time, bool) {
+func (o *CharactersOnline) GetLastLogoutOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.LastLogout) {
 		return nil, false
 	}
@@ -103,7 +103,7 @@ func (o *CharactersCharacterIdOnlineGet) GetLastLogoutOk() (*time.Time, bool) {
 }
 
 // HasLastLogout returns a boolean if a field has been set.
-func (o *CharactersCharacterIdOnlineGet) HasLastLogout() bool {
+func (o *CharactersOnline) HasLastLogout() bool {
 	if o != nil && !IsNil(o.LastLogout) {
 		return true
 	}
@@ -112,12 +112,12 @@ func (o *CharactersCharacterIdOnlineGet) HasLastLogout() bool {
 }
 
 // SetLastLogout gets a reference to the given time.Time and assigns it to the LastLogout field.
-func (o *CharactersCharacterIdOnlineGet) SetLastLogout(v time.Time) {
+func (o *CharactersOnline) SetLastLogout(v time.Time) {
 	o.LastLogout = &v
 }
 
 // GetLogins returns the Logins field value if set, zero value otherwise.
-func (o *CharactersCharacterIdOnlineGet) GetLogins() int64 {
+func (o *CharactersOnline) GetLogins() int64 {
 	if o == nil || IsNil(o.Logins) {
 		var ret int64
 		return ret
@@ -127,7 +127,7 @@ func (o *CharactersCharacterIdOnlineGet) GetLogins() int64 {
 
 // GetLoginsOk returns a tuple with the Logins field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdOnlineGet) GetLoginsOk() (*int64, bool) {
+func (o *CharactersOnline) GetLoginsOk() (*int64, bool) {
 	if o == nil || IsNil(o.Logins) {
 		return nil, false
 	}
@@ -135,7 +135,7 @@ func (o *CharactersCharacterIdOnlineGet) GetLoginsOk() (*int64, bool) {
 }
 
 // HasLogins returns a boolean if a field has been set.
-func (o *CharactersCharacterIdOnlineGet) HasLogins() bool {
+func (o *CharactersOnline) HasLogins() bool {
 	if o != nil && !IsNil(o.Logins) {
 		return true
 	}
@@ -144,12 +144,12 @@ func (o *CharactersCharacterIdOnlineGet) HasLogins() bool {
 }
 
 // SetLogins gets a reference to the given int64 and assigns it to the Logins field.
-func (o *CharactersCharacterIdOnlineGet) SetLogins(v int64) {
+func (o *CharactersOnline) SetLogins(v int64) {
 	o.Logins = &v
 }
 
 // GetOnline returns the Online field value
-func (o *CharactersCharacterIdOnlineGet) GetOnline() bool {
+func (o *CharactersOnline) GetOnline() bool {
 	if o == nil {
 		var ret bool
 		return ret
@@ -160,7 +160,7 @@ func (o *CharactersCharacterIdOnlineGet) GetOnline() bool {
 
 // GetOnlineOk returns a tuple with the Online field value
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdOnlineGet) GetOnlineOk() (*bool, bool) {
+func (o *CharactersOnline) GetOnlineOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,11 +168,11 @@ func (o *CharactersCharacterIdOnlineGet) GetOnlineOk() (*bool, bool) {
 }
 
 // SetOnline sets field value
-func (o *CharactersCharacterIdOnlineGet) SetOnline(v bool) {
+func (o *CharactersOnline) SetOnline(v bool) {
 	o.Online = v
 }
 
-func (o CharactersCharacterIdOnlineGet) MarshalJSON() ([]byte, error) {
+func (o CharactersOnline) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -180,7 +180,7 @@ func (o CharactersCharacterIdOnlineGet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o CharactersCharacterIdOnlineGet) ToMap() (map[string]interface{}, error) {
+func (o CharactersOnline) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.LastLogin) {
 		toSerialize["last_login"] = o.LastLogin
@@ -195,7 +195,7 @@ func (o CharactersCharacterIdOnlineGet) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 
-func (o *CharactersCharacterIdOnlineGet) UnmarshalJSON(data []byte) (err error) {
+func (o *CharactersOnline) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -217,53 +217,53 @@ func (o *CharactersCharacterIdOnlineGet) UnmarshalJSON(data []byte) (err error) 
 		}
 	}
 
-	varCharactersCharacterIdOnlineGet := _CharactersCharacterIdOnlineGet{}
+	varCharactersOnline := _CharactersOnline{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCharactersCharacterIdOnlineGet)
+	err = decoder.Decode(&varCharactersOnline)
 
 	if err != nil {
 		return err
 	}
 
-	*o = CharactersCharacterIdOnlineGet(varCharactersCharacterIdOnlineGet)
+	*o = CharactersOnline(varCharactersOnline)
 
 	return err
 }
 
-type NullableCharactersCharacterIdOnlineGet struct {
-	value *CharactersCharacterIdOnlineGet
+type NullableCharactersOnline struct {
+	value *CharactersOnline
 	isSet bool
 }
 
-func (v NullableCharactersCharacterIdOnlineGet) Get() *CharactersCharacterIdOnlineGet {
+func (v NullableCharactersOnline) Get() *CharactersOnline {
 	return v.value
 }
 
-func (v *NullableCharactersCharacterIdOnlineGet) Set(val *CharactersCharacterIdOnlineGet) {
+func (v *NullableCharactersOnline) Set(val *CharactersOnline) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCharactersCharacterIdOnlineGet) IsSet() bool {
+func (v NullableCharactersOnline) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCharactersCharacterIdOnlineGet) Unset() {
+func (v *NullableCharactersOnline) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCharactersCharacterIdOnlineGet(val *CharactersCharacterIdOnlineGet) *NullableCharactersCharacterIdOnlineGet {
-	return &NullableCharactersCharacterIdOnlineGet{value: val, isSet: true}
+func NewNullableCharactersOnline(val *CharactersOnline) *NullableCharactersOnline {
+	return &NullableCharactersOnline{value: val, isSet: true}
 }
 
-func (v NullableCharactersCharacterIdOnlineGet) MarshalJSON() ([]byte, error) {
+func (v NullableCharactersOnline) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCharactersCharacterIdOnlineGet) UnmarshalJSON(src []byte) error {
+func (v *NullableCharactersOnline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -16,41 +16,41 @@ import (
 	"fmt"
 )
 
-// checks if the CharactersCharacterIdShipGet type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CharactersCharacterIdShipGet{}
+// checks if the CharactersShip type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CharactersShip{}
 
-// CharactersCharacterIdShipGet struct for CharactersCharacterIdShipGet
-type CharactersCharacterIdShipGet struct {
-	// Item id's are unique to a ship and persist until it is repackaged. This value can be used to track repeated uses of a ship, or detect when a pilot changes into a different instance of the same ship type.
+// CharactersShip struct for CharactersShip
+type CharactersShip struct {
 	ShipItemId int64 `json:"ship_item_id"`
+	// Name of this ship
 	ShipName string `json:"ship_name"`
 	ShipTypeId int64 `json:"ship_type_id"`
 }
 
-type _CharactersCharacterIdShipGet CharactersCharacterIdShipGet
+type _CharactersShip CharactersShip
 
-// NewCharactersCharacterIdShipGet instantiates a new CharactersCharacterIdShipGet object
+// NewCharactersShip instantiates a new CharactersShip object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCharactersCharacterIdShipGet(shipItemId int64, shipName string, shipTypeId int64) *CharactersCharacterIdShipGet {
-	this := CharactersCharacterIdShipGet{}
+func NewCharactersShip(shipItemId int64, shipName string, shipTypeId int64) *CharactersShip {
+	this := CharactersShip{}
 	this.ShipItemId = shipItemId
 	this.ShipName = shipName
 	this.ShipTypeId = shipTypeId
 	return &this
 }
 
-// NewCharactersCharacterIdShipGetWithDefaults instantiates a new CharactersCharacterIdShipGet object
+// NewCharactersShipWithDefaults instantiates a new CharactersShip object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCharactersCharacterIdShipGetWithDefaults() *CharactersCharacterIdShipGet {
-	this := CharactersCharacterIdShipGet{}
+func NewCharactersShipWithDefaults() *CharactersShip {
+	this := CharactersShip{}
 	return &this
 }
 
 // GetShipItemId returns the ShipItemId field value
-func (o *CharactersCharacterIdShipGet) GetShipItemId() int64 {
+func (o *CharactersShip) GetShipItemId() int64 {
 	if o == nil {
 		var ret int64
 		return ret
@@ -61,7 +61,7 @@ func (o *CharactersCharacterIdShipGet) GetShipItemId() int64 {
 
 // GetShipItemIdOk returns a tuple with the ShipItemId field value
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdShipGet) GetShipItemIdOk() (*int64, bool) {
+func (o *CharactersShip) GetShipItemIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,12 +69,12 @@ func (o *CharactersCharacterIdShipGet) GetShipItemIdOk() (*int64, bool) {
 }
 
 // SetShipItemId sets field value
-func (o *CharactersCharacterIdShipGet) SetShipItemId(v int64) {
+func (o *CharactersShip) SetShipItemId(v int64) {
 	o.ShipItemId = v
 }
 
 // GetShipName returns the ShipName field value
-func (o *CharactersCharacterIdShipGet) GetShipName() string {
+func (o *CharactersShip) GetShipName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *CharactersCharacterIdShipGet) GetShipName() string {
 
 // GetShipNameOk returns a tuple with the ShipName field value
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdShipGet) GetShipNameOk() (*string, bool) {
+func (o *CharactersShip) GetShipNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,12 +93,12 @@ func (o *CharactersCharacterIdShipGet) GetShipNameOk() (*string, bool) {
 }
 
 // SetShipName sets field value
-func (o *CharactersCharacterIdShipGet) SetShipName(v string) {
+func (o *CharactersShip) SetShipName(v string) {
 	o.ShipName = v
 }
 
 // GetShipTypeId returns the ShipTypeId field value
-func (o *CharactersCharacterIdShipGet) GetShipTypeId() int64 {
+func (o *CharactersShip) GetShipTypeId() int64 {
 	if o == nil {
 		var ret int64
 		return ret
@@ -109,7 +109,7 @@ func (o *CharactersCharacterIdShipGet) GetShipTypeId() int64 {
 
 // GetShipTypeIdOk returns a tuple with the ShipTypeId field value
 // and a boolean to check if the value has been set.
-func (o *CharactersCharacterIdShipGet) GetShipTypeIdOk() (*int64, bool) {
+func (o *CharactersShip) GetShipTypeIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -117,11 +117,11 @@ func (o *CharactersCharacterIdShipGet) GetShipTypeIdOk() (*int64, bool) {
 }
 
 // SetShipTypeId sets field value
-func (o *CharactersCharacterIdShipGet) SetShipTypeId(v int64) {
+func (o *CharactersShip) SetShipTypeId(v int64) {
 	o.ShipTypeId = v
 }
 
-func (o CharactersCharacterIdShipGet) MarshalJSON() ([]byte, error) {
+func (o CharactersShip) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -129,7 +129,7 @@ func (o CharactersCharacterIdShipGet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o CharactersCharacterIdShipGet) ToMap() (map[string]interface{}, error) {
+func (o CharactersShip) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ship_item_id"] = o.ShipItemId
 	toSerialize["ship_name"] = o.ShipName
@@ -137,7 +137,7 @@ func (o CharactersCharacterIdShipGet) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *CharactersCharacterIdShipGet) UnmarshalJSON(data []byte) (err error) {
+func (o *CharactersShip) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -161,53 +161,53 @@ func (o *CharactersCharacterIdShipGet) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varCharactersCharacterIdShipGet := _CharactersCharacterIdShipGet{}
+	varCharactersShip := _CharactersShip{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCharactersCharacterIdShipGet)
+	err = decoder.Decode(&varCharactersShip)
 
 	if err != nil {
 		return err
 	}
 
-	*o = CharactersCharacterIdShipGet(varCharactersCharacterIdShipGet)
+	*o = CharactersShip(varCharactersShip)
 
 	return err
 }
 
-type NullableCharactersCharacterIdShipGet struct {
-	value *CharactersCharacterIdShipGet
+type NullableCharactersShip struct {
+	value *CharactersShip
 	isSet bool
 }
 
-func (v NullableCharactersCharacterIdShipGet) Get() *CharactersCharacterIdShipGet {
+func (v NullableCharactersShip) Get() *CharactersShip {
 	return v.value
 }
 
-func (v *NullableCharactersCharacterIdShipGet) Set(val *CharactersCharacterIdShipGet) {
+func (v *NullableCharactersShip) Set(val *CharactersShip) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCharactersCharacterIdShipGet) IsSet() bool {
+func (v NullableCharactersShip) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCharactersCharacterIdShipGet) Unset() {
+func (v *NullableCharactersShip) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCharactersCharacterIdShipGet(val *CharactersCharacterIdShipGet) *NullableCharactersCharacterIdShipGet {
-	return &NullableCharactersCharacterIdShipGet{value: val, isSet: true}
+func NewNullableCharactersShip(val *CharactersShip) *NullableCharactersShip {
+	return &NullableCharactersShip{value: val, isSet: true}
 }
 
-func (v NullableCharactersCharacterIdShipGet) MarshalJSON() ([]byte, error) {
+func (v NullableCharactersShip) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCharactersCharacterIdShipGet) UnmarshalJSON(src []byte) error {
+func (v *NullableCharactersShip) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

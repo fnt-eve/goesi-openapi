@@ -1,4 +1,4 @@
-# CharactersCharacterIdLocationGet
+# CharactersLocation
 
 ## Properties
 
@@ -10,90 +10,90 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewCharactersCharacterIdLocationGet
+### NewCharactersLocation
 
-`func NewCharactersCharacterIdLocationGet(solarSystemId int64, ) *CharactersCharacterIdLocationGet`
+`func NewCharactersLocation(solarSystemId int64, ) *CharactersLocation`
 
-NewCharactersCharacterIdLocationGet instantiates a new CharactersCharacterIdLocationGet object
+NewCharactersLocation instantiates a new CharactersLocation object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCharactersCharacterIdLocationGetWithDefaults
+### NewCharactersLocationWithDefaults
 
-`func NewCharactersCharacterIdLocationGetWithDefaults() *CharactersCharacterIdLocationGet`
+`func NewCharactersLocationWithDefaults() *CharactersLocation`
 
-NewCharactersCharacterIdLocationGetWithDefaults instantiates a new CharactersCharacterIdLocationGet object
+NewCharactersLocationWithDefaults instantiates a new CharactersLocation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetSolarSystemId
 
-`func (o *CharactersCharacterIdLocationGet) GetSolarSystemId() int64`
+`func (o *CharactersLocation) GetSolarSystemId() int64`
 
 GetSolarSystemId returns the SolarSystemId field if non-nil, zero value otherwise.
 
 ### GetSolarSystemIdOk
 
-`func (o *CharactersCharacterIdLocationGet) GetSolarSystemIdOk() (*int64, bool)`
+`func (o *CharactersLocation) GetSolarSystemIdOk() (*int64, bool)`
 
 GetSolarSystemIdOk returns a tuple with the SolarSystemId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSolarSystemId
 
-`func (o *CharactersCharacterIdLocationGet) SetSolarSystemId(v int64)`
+`func (o *CharactersLocation) SetSolarSystemId(v int64)`
 
 SetSolarSystemId sets SolarSystemId field to given value.
 
 
 ### GetStationId
 
-`func (o *CharactersCharacterIdLocationGet) GetStationId() int64`
+`func (o *CharactersLocation) GetStationId() int64`
 
 GetStationId returns the StationId field if non-nil, zero value otherwise.
 
 ### GetStationIdOk
 
-`func (o *CharactersCharacterIdLocationGet) GetStationIdOk() (*int64, bool)`
+`func (o *CharactersLocation) GetStationIdOk() (*int64, bool)`
 
 GetStationIdOk returns a tuple with the StationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStationId
 
-`func (o *CharactersCharacterIdLocationGet) SetStationId(v int64)`
+`func (o *CharactersLocation) SetStationId(v int64)`
 
 SetStationId sets StationId field to given value.
 
 ### HasStationId
 
-`func (o *CharactersCharacterIdLocationGet) HasStationId() bool`
+`func (o *CharactersLocation) HasStationId() bool`
 
 HasStationId returns a boolean if a field has been set.
 
 ### GetStructureId
 
-`func (o *CharactersCharacterIdLocationGet) GetStructureId() int64`
+`func (o *CharactersLocation) GetStructureId() int64`
 
 GetStructureId returns the StructureId field if non-nil, zero value otherwise.
 
 ### GetStructureIdOk
 
-`func (o *CharactersCharacterIdLocationGet) GetStructureIdOk() (*int64, bool)`
+`func (o *CharactersLocation) GetStructureIdOk() (*int64, bool)`
 
 GetStructureIdOk returns a tuple with the StructureId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStructureId
 
-`func (o *CharactersCharacterIdLocationGet) SetStructureId(v int64)`
+`func (o *CharactersLocation) SetStructureId(v int64)`
 
 SetStructureId sets StructureId field to given value.
 
 ### HasStructureId
 
-`func (o *CharactersCharacterIdLocationGet) HasStructureId() bool`
+`func (o *CharactersLocation) HasStructureId() bool`
 
 HasStructureId returns a boolean if a field has been set.
 
