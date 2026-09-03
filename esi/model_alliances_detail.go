@@ -17,11 +17,11 @@ import (
 	"fmt"
 )
 
-// checks if the AllianceDetail type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AllianceDetail{}
+// checks if the AlliancesDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlliancesDetail{}
 
-// AllianceDetail struct for AllianceDetail
-type AllianceDetail struct {
+// AlliancesDetail struct for AlliancesDetail
+type AlliancesDetail struct {
 	CreatorCorporationId int64 `json:"creator_corporation_id"`
 	CreatorId int64 `json:"creator_id"`
 	// Alliance's founding date
@@ -34,14 +34,14 @@ type AllianceDetail struct {
 	Ticker string `json:"ticker"`
 }
 
-type _AllianceDetail AllianceDetail
+type _AlliancesDetail AlliancesDetail
 
-// NewAllianceDetail instantiates a new AllianceDetail object
+// NewAlliancesDetail instantiates a new AlliancesDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAllianceDetail(creatorCorporationId int64, creatorId int64, dateFounded time.Time, name string, ticker string) *AllianceDetail {
-	this := AllianceDetail{}
+func NewAlliancesDetail(creatorCorporationId int64, creatorId int64, dateFounded time.Time, name string, ticker string) *AlliancesDetail {
+	this := AlliancesDetail{}
 	this.CreatorCorporationId = creatorCorporationId
 	this.CreatorId = creatorId
 	this.DateFounded = dateFounded
@@ -50,16 +50,16 @@ func NewAllianceDetail(creatorCorporationId int64, creatorId int64, dateFounded 
 	return &this
 }
 
-// NewAllianceDetailWithDefaults instantiates a new AllianceDetail object
+// NewAlliancesDetailWithDefaults instantiates a new AlliancesDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAllianceDetailWithDefaults() *AllianceDetail {
-	this := AllianceDetail{}
+func NewAlliancesDetailWithDefaults() *AlliancesDetail {
+	this := AlliancesDetail{}
 	return &this
 }
 
 // GetCreatorCorporationId returns the CreatorCorporationId field value
-func (o *AllianceDetail) GetCreatorCorporationId() int64 {
+func (o *AlliancesDetail) GetCreatorCorporationId() int64 {
 	if o == nil {
 		var ret int64
 		return ret
@@ -70,7 +70,7 @@ func (o *AllianceDetail) GetCreatorCorporationId() int64 {
 
 // GetCreatorCorporationIdOk returns a tuple with the CreatorCorporationId field value
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetCreatorCorporationIdOk() (*int64, bool) {
+func (o *AlliancesDetail) GetCreatorCorporationIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -78,12 +78,12 @@ func (o *AllianceDetail) GetCreatorCorporationIdOk() (*int64, bool) {
 }
 
 // SetCreatorCorporationId sets field value
-func (o *AllianceDetail) SetCreatorCorporationId(v int64) {
+func (o *AlliancesDetail) SetCreatorCorporationId(v int64) {
 	o.CreatorCorporationId = v
 }
 
 // GetCreatorId returns the CreatorId field value
-func (o *AllianceDetail) GetCreatorId() int64 {
+func (o *AlliancesDetail) GetCreatorId() int64 {
 	if o == nil {
 		var ret int64
 		return ret
@@ -94,7 +94,7 @@ func (o *AllianceDetail) GetCreatorId() int64 {
 
 // GetCreatorIdOk returns a tuple with the CreatorId field value
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetCreatorIdOk() (*int64, bool) {
+func (o *AlliancesDetail) GetCreatorIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -102,12 +102,12 @@ func (o *AllianceDetail) GetCreatorIdOk() (*int64, bool) {
 }
 
 // SetCreatorId sets field value
-func (o *AllianceDetail) SetCreatorId(v int64) {
+func (o *AlliancesDetail) SetCreatorId(v int64) {
 	o.CreatorId = v
 }
 
 // GetDateFounded returns the DateFounded field value
-func (o *AllianceDetail) GetDateFounded() time.Time {
+func (o *AlliancesDetail) GetDateFounded() time.Time {
 	if o == nil {
 		var ret time.Time
 		return ret
@@ -118,7 +118,7 @@ func (o *AllianceDetail) GetDateFounded() time.Time {
 
 // GetDateFoundedOk returns a tuple with the DateFounded field value
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetDateFoundedOk() (*time.Time, bool) {
+func (o *AlliancesDetail) GetDateFoundedOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -126,12 +126,12 @@ func (o *AllianceDetail) GetDateFoundedOk() (*time.Time, bool) {
 }
 
 // SetDateFounded sets field value
-func (o *AllianceDetail) SetDateFounded(v time.Time) {
+func (o *AlliancesDetail) SetDateFounded(v time.Time) {
 	o.DateFounded = v
 }
 
 // GetExecutorCorporationId returns the ExecutorCorporationId field value if set, zero value otherwise.
-func (o *AllianceDetail) GetExecutorCorporationId() int64 {
+func (o *AlliancesDetail) GetExecutorCorporationId() int64 {
 	if o == nil || IsNil(o.ExecutorCorporationId) {
 		var ret int64
 		return ret
@@ -141,7 +141,7 @@ func (o *AllianceDetail) GetExecutorCorporationId() int64 {
 
 // GetExecutorCorporationIdOk returns a tuple with the ExecutorCorporationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetExecutorCorporationIdOk() (*int64, bool) {
+func (o *AlliancesDetail) GetExecutorCorporationIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ExecutorCorporationId) {
 		return nil, false
 	}
@@ -149,7 +149,7 @@ func (o *AllianceDetail) GetExecutorCorporationIdOk() (*int64, bool) {
 }
 
 // HasExecutorCorporationId returns a boolean if a field has been set.
-func (o *AllianceDetail) HasExecutorCorporationId() bool {
+func (o *AlliancesDetail) HasExecutorCorporationId() bool {
 	if o != nil && !IsNil(o.ExecutorCorporationId) {
 		return true
 	}
@@ -158,12 +158,12 @@ func (o *AllianceDetail) HasExecutorCorporationId() bool {
 }
 
 // SetExecutorCorporationId gets a reference to the given int64 and assigns it to the ExecutorCorporationId field.
-func (o *AllianceDetail) SetExecutorCorporationId(v int64) {
+func (o *AlliancesDetail) SetExecutorCorporationId(v int64) {
 	o.ExecutorCorporationId = &v
 }
 
 // GetFactionId returns the FactionId field value if set, zero value otherwise.
-func (o *AllianceDetail) GetFactionId() int64 {
+func (o *AlliancesDetail) GetFactionId() int64 {
 	if o == nil || IsNil(o.FactionId) {
 		var ret int64
 		return ret
@@ -173,7 +173,7 @@ func (o *AllianceDetail) GetFactionId() int64 {
 
 // GetFactionIdOk returns a tuple with the FactionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetFactionIdOk() (*int64, bool) {
+func (o *AlliancesDetail) GetFactionIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.FactionId) {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *AllianceDetail) GetFactionIdOk() (*int64, bool) {
 }
 
 // HasFactionId returns a boolean if a field has been set.
-func (o *AllianceDetail) HasFactionId() bool {
+func (o *AlliancesDetail) HasFactionId() bool {
 	if o != nil && !IsNil(o.FactionId) {
 		return true
 	}
@@ -190,12 +190,12 @@ func (o *AllianceDetail) HasFactionId() bool {
 }
 
 // SetFactionId gets a reference to the given int64 and assigns it to the FactionId field.
-func (o *AllianceDetail) SetFactionId(v int64) {
+func (o *AlliancesDetail) SetFactionId(v int64) {
 	o.FactionId = &v
 }
 
 // GetName returns the Name field value
-func (o *AllianceDetail) GetName() string {
+func (o *AlliancesDetail) GetName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -206,7 +206,7 @@ func (o *AllianceDetail) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetNameOk() (*string, bool) {
+func (o *AlliancesDetail) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -214,12 +214,12 @@ func (o *AllianceDetail) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *AllianceDetail) SetName(v string) {
+func (o *AlliancesDetail) SetName(v string) {
 	o.Name = v
 }
 
 // GetTicker returns the Ticker field value
-func (o *AllianceDetail) GetTicker() string {
+func (o *AlliancesDetail) GetTicker() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -230,7 +230,7 @@ func (o *AllianceDetail) GetTicker() string {
 
 // GetTickerOk returns a tuple with the Ticker field value
 // and a boolean to check if the value has been set.
-func (o *AllianceDetail) GetTickerOk() (*string, bool) {
+func (o *AlliancesDetail) GetTickerOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -238,11 +238,11 @@ func (o *AllianceDetail) GetTickerOk() (*string, bool) {
 }
 
 // SetTicker sets field value
-func (o *AllianceDetail) SetTicker(v string) {
+func (o *AlliancesDetail) SetTicker(v string) {
 	o.Ticker = v
 }
 
-func (o AllianceDetail) MarshalJSON() ([]byte, error) {
+func (o AlliancesDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -250,7 +250,7 @@ func (o AllianceDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o AllianceDetail) ToMap() (map[string]interface{}, error) {
+func (o AlliancesDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["creator_corporation_id"] = o.CreatorCorporationId
 	toSerialize["creator_id"] = o.CreatorId
@@ -266,7 +266,7 @@ func (o AllianceDetail) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *AllianceDetail) UnmarshalJSON(data []byte) (err error) {
+func (o *AlliancesDetail) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -292,53 +292,53 @@ func (o *AllianceDetail) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varAllianceDetail := _AllianceDetail{}
+	varAlliancesDetail := _AlliancesDetail{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAllianceDetail)
+	err = decoder.Decode(&varAlliancesDetail)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AllianceDetail(varAllianceDetail)
+	*o = AlliancesDetail(varAlliancesDetail)
 
 	return err
 }
 
-type NullableAllianceDetail struct {
-	value *AllianceDetail
+type NullableAlliancesDetail struct {
+	value *AlliancesDetail
 	isSet bool
 }
 
-func (v NullableAllianceDetail) Get() *AllianceDetail {
+func (v NullableAlliancesDetail) Get() *AlliancesDetail {
 	return v.value
 }
 
-func (v *NullableAllianceDetail) Set(val *AllianceDetail) {
+func (v *NullableAlliancesDetail) Set(val *AlliancesDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAllianceDetail) IsSet() bool {
+func (v NullableAlliancesDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAllianceDetail) Unset() {
+func (v *NullableAlliancesDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAllianceDetail(val *AllianceDetail) *NullableAllianceDetail {
-	return &NullableAllianceDetail{value: val, isSet: true}
+func NewNullableAlliancesDetail(val *AlliancesDetail) *NullableAlliancesDetail {
+	return &NullableAlliancesDetail{value: val, isSet: true}
 }
 
-func (v NullableAllianceDetail) MarshalJSON() ([]byte, error) {
+func (v NullableAlliancesDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAllianceDetail) UnmarshalJSON(src []byte) error {
+func (v *NullableAlliancesDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

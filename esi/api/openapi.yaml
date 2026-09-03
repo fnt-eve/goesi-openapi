@@ -217,7 +217,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AllianceDetail"
+                $ref: "#/components/schemas/AlliancesDetail"
           description: OK
           headers:
             Cache-Control:
@@ -25660,7 +25660,36 @@ components:
       format: int64
       type: integer
       x-common-model: "true"
-    AllianceDetail:
+    AllianceID:
+      example: 99000001
+      format: int64
+      type: integer
+      x-common-model: "true"
+    AlliancesAllianceIdContactsGet:
+      items:
+        $ref: "#/components/schemas/AlliancesAllianceIdContactsGet_inner"
+      type: array
+    AlliancesAllianceIdContactsLabelsGet:
+      items:
+        $ref: "#/components/schemas/AlliancesAllianceIdContactsLabelsGet_inner"
+      type: array
+    AlliancesAllianceIdCorporationsGet:
+      items:
+        format: int64
+        type: integer
+      type: array
+      uniqueItems: true
+    AlliancesAllianceIdIconsGet:
+      example:
+        px64x64: px64x64
+        px128x128: px128x128
+      properties:
+        px128x128:
+          type: string
+        px64x64:
+          type: string
+      type: object
+    AlliancesDetail:
       example:
         ticker: ticker
         creator_corporation_id: 98777771
@@ -25706,35 +25735,6 @@ components:
       - date_founded
       - name
       - ticker
-      type: object
-    AllianceID:
-      example: 99000001
-      format: int64
-      type: integer
-      x-common-model: "true"
-    AlliancesAllianceIdContactsGet:
-      items:
-        $ref: "#/components/schemas/AlliancesAllianceIdContactsGet_inner"
-      type: array
-    AlliancesAllianceIdContactsLabelsGet:
-      items:
-        $ref: "#/components/schemas/AlliancesAllianceIdContactsLabelsGet_inner"
-      type: array
-    AlliancesAllianceIdCorporationsGet:
-      items:
-        format: int64
-        type: integer
-      type: array
-      uniqueItems: true
-    AlliancesAllianceIdIconsGet:
-      example:
-        px64x64: px64x64
-        px128x128: px128x128
-      properties:
-        px128x128:
-          type: string
-        px64x64:
-          type: string
       type: object
     AlliancesGet:
       items:
@@ -31352,12 +31352,12 @@ components:
         routes:
           description: List of all API routes and their health status
           items:
-            $ref: "#/components/schemas/MetaStatusRoutestatus"
+            $ref: "#/components/schemas/MetaStatusRoute"
           type: array
       required:
       - routes
       type: object
-    MetaStatusRoutestatus:
+    MetaStatusRoute:
       example:
         path: path
         method: GET

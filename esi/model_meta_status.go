@@ -22,7 +22,7 @@ var _ MappedNullable = &MetaStatus{}
 // MetaStatus struct for MetaStatus
 type MetaStatus struct {
 	// List of all API routes and their health status
-	Routes []MetaStatusRoutestatus `json:"routes"`
+	Routes []MetaStatusRoute `json:"routes"`
 }
 
 type _MetaStatus MetaStatus
@@ -31,7 +31,7 @@ type _MetaStatus MetaStatus
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetaStatus(routes []MetaStatusRoutestatus) *MetaStatus {
+func NewMetaStatus(routes []MetaStatusRoute) *MetaStatus {
 	this := MetaStatus{}
 	this.Routes = routes
 	return &this
@@ -46,9 +46,9 @@ func NewMetaStatusWithDefaults() *MetaStatus {
 }
 
 // GetRoutes returns the Routes field value
-func (o *MetaStatus) GetRoutes() []MetaStatusRoutestatus {
+func (o *MetaStatus) GetRoutes() []MetaStatusRoute {
 	if o == nil {
-		var ret []MetaStatusRoutestatus
+		var ret []MetaStatusRoute
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *MetaStatus) GetRoutes() []MetaStatusRoutestatus {
 
 // GetRoutesOk returns a tuple with the Routes field value
 // and a boolean to check if the value has been set.
-func (o *MetaStatus) GetRoutesOk() ([]MetaStatusRoutestatus, bool) {
+func (o *MetaStatus) GetRoutesOk() ([]MetaStatusRoute, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *MetaStatus) GetRoutesOk() ([]MetaStatusRoutestatus, bool) {
 }
 
 // SetRoutes sets field value
-func (o *MetaStatus) SetRoutes(v []MetaStatusRoutestatus) {
+func (o *MetaStatus) SetRoutes(v []MetaStatusRoute) {
 	o.Routes = v
 }
 

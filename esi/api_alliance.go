@@ -48,8 +48,8 @@ type AllianceAPI interface {
 	GetAlliancesAllianceId(ctx context.Context, allianceId int64) ApiGetAlliancesAllianceIdRequest
 
 	// GetAlliancesAllianceIdExecute executes the request
-	//  @return AllianceDetail
-	GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AllianceDetail, *http.Response, error)
+	//  @return AlliancesDetail
+	GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AlliancesDetail, *http.Response, error)
 
 	/*
 	GetAlliancesAllianceIdCorporations List alliance's corporations
@@ -290,7 +290,7 @@ func (r ApiGetAlliancesAllianceIdRequest) IfModifiedSince(ifModifiedSince string
 	return r
 }
 
-func (r ApiGetAlliancesAllianceIdRequest) Execute() (*AllianceDetail, *http.Response, error) {
+func (r ApiGetAlliancesAllianceIdRequest) Execute() (*AlliancesDetail, *http.Response, error) {
 	return r.ApiService.GetAlliancesAllianceIdExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *AllianceAPIService) GetAlliancesAllianceId(ctx context.Context, allianc
 }
 
 // Execute executes the request
-//  @return AllianceDetail
-func (a *AllianceAPIService) GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AllianceDetail, *http.Response, error) {
+//  @return AlliancesDetail
+func (a *AllianceAPIService) GetAlliancesAllianceIdExecute(r ApiGetAlliancesAllianceIdRequest) (*AlliancesDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AllianceDetail
+		localVarReturnValue  *AlliancesDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AllianceAPIService.GetAlliancesAllianceId")

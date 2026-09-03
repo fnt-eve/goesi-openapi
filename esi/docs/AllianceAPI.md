@@ -88,7 +88,7 @@ No authorization required
 
 ## GetAlliancesAllianceId
 
-> AllianceDetail GetAlliancesAllianceId(ctx, allianceId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
+> AlliancesDetail GetAlliancesAllianceId(ctx, allianceId).XCompatibilityDate(xCompatibilityDate).AcceptLanguage(acceptLanguage).IfNoneMatch(ifNoneMatch).XTenant(xTenant).IfModifiedSince(ifModifiedSince).Execute()
 
 Get alliance's public information
 
@@ -122,7 +122,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AllianceAPI.GetAlliancesAllianceId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlliancesAllianceId`: AllianceDetail
+	// response from `GetAlliancesAllianceId`: AlliancesDetail
 	fmt.Fprintf(os.Stdout, "Response from `AllianceAPI.GetAlliancesAllianceId`: %v\n", resp)
 }
 ```
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AllianceDetail**](AllianceDetail.md)
+[**AlliancesDetail**](AlliancesDetail.md)
 
 ### Authorization
 

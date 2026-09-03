@@ -318,11 +318,11 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Alliance](docs/Alliance.md)
- - [AllianceDetail](docs/AllianceDetail.md)
  - [AllianceId](docs/AllianceId.md)
  - [AlliancesAllianceIdContactsGetInner](docs/AlliancesAllianceIdContactsGetInner.md)
  - [AlliancesAllianceIdContactsLabelsGetInner](docs/AlliancesAllianceIdContactsLabelsGetInner.md)
  - [AlliancesAllianceIdIconsGet](docs/AlliancesAllianceIdIconsGet.md)
+ - [AlliancesDetail](docs/AlliancesDetail.md)
  - [Boolean](docs/Boolean.md)
  - [CaptureFwComplex](docs/CaptureFwComplex.md)
  - [CharacterId](docs/CharacterId.md)
@@ -657,7 +657,7 @@ Class | Method | HTTP request | Description
  - [MetaName](docs/MetaName.md)
  - [MetaNameEntry](docs/MetaNameEntry.md)
  - [MetaStatus](docs/MetaStatus.md)
- - [MetaStatusRoutestatus](docs/MetaStatusRoutestatus.md)
+ - [MetaStatusRoute](docs/MetaStatusRoute.md)
  - [MilitaryCampaignsDetail](docs/MilitaryCampaignsDetail.md)
  - [MilitaryCampaignsDetailCampaign](docs/MilitaryCampaignsDetailCampaign.md)
  - [MilitaryCampaignsListing](docs/MilitaryCampaignsListing.md)

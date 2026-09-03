@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Routes** | [**[]MetaStatusRoutestatus**](MetaStatusRoutestatus.md) | List of all API routes and their health status | 
+**Routes** | [**[]MetaStatusRoute**](MetaStatusRoute.md) | List of all API routes and their health status | 
 
 ## Methods
 
 ### NewMetaStatus
 
-`func NewMetaStatus(routes []MetaStatusRoutestatus, ) *MetaStatus`
+`func NewMetaStatus(routes []MetaStatusRoute, ) *MetaStatus`
 
 NewMetaStatus instantiates a new MetaStatus object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRoutes
 
-`func (o *MetaStatus) GetRoutes() []MetaStatusRoutestatus`
+`func (o *MetaStatus) GetRoutes() []MetaStatusRoute`
 
 GetRoutes returns the Routes field if non-nil, zero value otherwise.
 
 ### GetRoutesOk
 
-`func (o *MetaStatus) GetRoutesOk() (*[]MetaStatusRoutestatus, bool)`
+`func (o *MetaStatus) GetRoutesOk() (*[]MetaStatusRoute, bool)`
 
 GetRoutesOk returns a tuple with the Routes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoutes
 
-`func (o *MetaStatus) SetRoutes(v []MetaStatusRoutestatus)`
+`func (o *MetaStatus) SetRoutes(v []MetaStatusRoute)`
 
 SetRoutes sets Routes field to given value.
 

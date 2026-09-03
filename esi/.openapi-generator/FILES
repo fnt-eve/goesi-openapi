@@ -47,11 +47,11 @@ docs/AccessListAPI.md
 docs/ActivitiesAPI.md
 docs/Alliance.md
 docs/AllianceAPI.md
-docs/AllianceDetail.md
 docs/AllianceId.md
 docs/AlliancesAllianceIdContactsGetInner.md
 docs/AlliancesAllianceIdContactsLabelsGetInner.md
 docs/AlliancesAllianceIdIconsGet.md
+docs/AlliancesDetail.md
 docs/AssetsAPI.md
 docs/Boolean.md
 docs/CalendarAPI.md
@@ -409,7 +409,7 @@ docs/MetaCompatibilityDates.md
 docs/MetaName.md
 docs/MetaNameEntry.md
 docs/MetaStatus.md
-docs/MetaStatusRoutestatus.md
+docs/MetaStatusRoute.md
 docs/MilitaryCampaignsAPI.md
 docs/MilitaryCampaignsDetail.md
 docs/MilitaryCampaignsDetailCampaign.md
@@ -529,11 +529,11 @@ docs/WarsWarIdGetAlliesInner.md
 docs/WarsWarIdGetDefender.md
 git_push.sh
 model_alliance.go
-model_alliance_detail.go
 model_alliance_id.go
 model_alliances_alliance_id_contacts_get_inner.go
 model_alliances_alliance_id_contacts_labels_get_inner.go
 model_alliances_alliance_id_icons_get.go
+model_alliances_detail.go
 model_boolean.go
 model_capture_fw_complex.go
 model_character_id.go
@@ -869,7 +869,7 @@ model_meta_compatibility_dates.go
 model_meta_name.go
 model_meta_name_entry.go
 model_meta_status.go
-model_meta_status_routestatus.go
+model_meta_status_route.go
 model_military_campaigns_detail.go
 model_military_campaigns_detail_campaign.go
 model_military_campaigns_listing.go

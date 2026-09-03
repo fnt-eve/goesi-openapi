@@ -16,11 +16,11 @@ import (
 	"fmt"
 )
 
-// checks if the MetaStatusRoutestatus type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MetaStatusRoutestatus{}
+// checks if the MetaStatusRoute type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetaStatusRoute{}
 
-// MetaStatusRoutestatus struct for MetaStatusRoutestatus
-type MetaStatusRoutestatus struct {
+// MetaStatusRoute struct for MetaStatusRoute
+type MetaStatusRoute struct {
 	// Route's HTTP method
 	Method string `json:"method"`
 	// Route's HTTP path
@@ -29,30 +29,30 @@ type MetaStatusRoutestatus struct {
 	Status string `json:"status"`
 }
 
-type _MetaStatusRoutestatus MetaStatusRoutestatus
+type _MetaStatusRoute MetaStatusRoute
 
-// NewMetaStatusRoutestatus instantiates a new MetaStatusRoutestatus object
+// NewMetaStatusRoute instantiates a new MetaStatusRoute object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetaStatusRoutestatus(method string, path string, status string) *MetaStatusRoutestatus {
-	this := MetaStatusRoutestatus{}
+func NewMetaStatusRoute(method string, path string, status string) *MetaStatusRoute {
+	this := MetaStatusRoute{}
 	this.Method = method
 	this.Path = path
 	this.Status = status
 	return &this
 }
 
-// NewMetaStatusRoutestatusWithDefaults instantiates a new MetaStatusRoutestatus object
+// NewMetaStatusRouteWithDefaults instantiates a new MetaStatusRoute object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMetaStatusRoutestatusWithDefaults() *MetaStatusRoutestatus {
-	this := MetaStatusRoutestatus{}
+func NewMetaStatusRouteWithDefaults() *MetaStatusRoute {
+	this := MetaStatusRoute{}
 	return &this
 }
 
 // GetMethod returns the Method field value
-func (o *MetaStatusRoutestatus) GetMethod() string {
+func (o *MetaStatusRoute) GetMethod() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -63,7 +63,7 @@ func (o *MetaStatusRoutestatus) GetMethod() string {
 
 // GetMethodOk returns a tuple with the Method field value
 // and a boolean to check if the value has been set.
-func (o *MetaStatusRoutestatus) GetMethodOk() (*string, bool) {
+func (o *MetaStatusRoute) GetMethodOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -71,12 +71,12 @@ func (o *MetaStatusRoutestatus) GetMethodOk() (*string, bool) {
 }
 
 // SetMethod sets field value
-func (o *MetaStatusRoutestatus) SetMethod(v string) {
+func (o *MetaStatusRoute) SetMethod(v string) {
 	o.Method = v
 }
 
 // GetPath returns the Path field value
-func (o *MetaStatusRoutestatus) GetPath() string {
+func (o *MetaStatusRoute) GetPath() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *MetaStatusRoutestatus) GetPath() string {
 
 // GetPathOk returns a tuple with the Path field value
 // and a boolean to check if the value has been set.
-func (o *MetaStatusRoutestatus) GetPathOk() (*string, bool) {
+func (o *MetaStatusRoute) GetPathOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,12 +95,12 @@ func (o *MetaStatusRoutestatus) GetPathOk() (*string, bool) {
 }
 
 // SetPath sets field value
-func (o *MetaStatusRoutestatus) SetPath(v string) {
+func (o *MetaStatusRoute) SetPath(v string) {
 	o.Path = v
 }
 
 // GetStatus returns the Status field value
-func (o *MetaStatusRoutestatus) GetStatus() string {
+func (o *MetaStatusRoute) GetStatus() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -111,7 +111,7 @@ func (o *MetaStatusRoutestatus) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
-func (o *MetaStatusRoutestatus) GetStatusOk() (*string, bool) {
+func (o *MetaStatusRoute) GetStatusOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,11 +119,11 @@ func (o *MetaStatusRoutestatus) GetStatusOk() (*string, bool) {
 }
 
 // SetStatus sets field value
-func (o *MetaStatusRoutestatus) SetStatus(v string) {
+func (o *MetaStatusRoute) SetStatus(v string) {
 	o.Status = v
 }
 
-func (o MetaStatusRoutestatus) MarshalJSON() ([]byte, error) {
+func (o MetaStatusRoute) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -131,7 +131,7 @@ func (o MetaStatusRoutestatus) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o MetaStatusRoutestatus) ToMap() (map[string]interface{}, error) {
+func (o MetaStatusRoute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["method"] = o.Method
 	toSerialize["path"] = o.Path
@@ -139,7 +139,7 @@ func (o MetaStatusRoutestatus) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *MetaStatusRoutestatus) UnmarshalJSON(data []byte) (err error) {
+func (o *MetaStatusRoute) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -163,53 +163,53 @@ func (o *MetaStatusRoutestatus) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varMetaStatusRoutestatus := _MetaStatusRoutestatus{}
+	varMetaStatusRoute := _MetaStatusRoute{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varMetaStatusRoutestatus)
+	err = decoder.Decode(&varMetaStatusRoute)
 
 	if err != nil {
 		return err
 	}
 
-	*o = MetaStatusRoutestatus(varMetaStatusRoutestatus)
+	*o = MetaStatusRoute(varMetaStatusRoute)
 
 	return err
 }
 
-type NullableMetaStatusRoutestatus struct {
-	value *MetaStatusRoutestatus
+type NullableMetaStatusRoute struct {
+	value *MetaStatusRoute
 	isSet bool
 }
 
-func (v NullableMetaStatusRoutestatus) Get() *MetaStatusRoutestatus {
+func (v NullableMetaStatusRoute) Get() *MetaStatusRoute {
 	return v.value
 }
 
-func (v *NullableMetaStatusRoutestatus) Set(val *MetaStatusRoutestatus) {
+func (v *NullableMetaStatusRoute) Set(val *MetaStatusRoute) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableMetaStatusRoutestatus) IsSet() bool {
+func (v NullableMetaStatusRoute) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableMetaStatusRoutestatus) Unset() {
+func (v *NullableMetaStatusRoute) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableMetaStatusRoutestatus(val *MetaStatusRoutestatus) *NullableMetaStatusRoutestatus {
-	return &NullableMetaStatusRoutestatus{value: val, isSet: true}
+func NewNullableMetaStatusRoute(val *MetaStatusRoute) *NullableMetaStatusRoute {
+	return &NullableMetaStatusRoute{value: val, isSet: true}
 }
 
-func (v NullableMetaStatusRoutestatus) MarshalJSON() ([]byte, error) {
+func (v NullableMetaStatusRoute) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableMetaStatusRoutestatus) UnmarshalJSON(src []byte) error {
+func (v *NullableMetaStatusRoute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
