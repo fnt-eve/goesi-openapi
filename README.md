@@ -199,13 +199,44 @@ if err != nil {
 }
 ```
 
-## Rate Limits
+## Rate Limiting
 
-ESI rate limits:
-- **20 requests/second** for authenticated requests  
-- **10 requests/second** for public requests
+This library includes a client-side rate limiter to respect ESI's floating window rate limits and prevent `429 Too Many Requests` errors. The rate limiter:
 
-The client automatically includes required headers like `X-Compatibility-Date`.
+- **Synchronizes** with ESI server state using `X-RateLimit-Remaining` headers
+- **Matches** requests to their specific rate limit groups (defined in ESI spec)
+- **Waits** automatically if the local bucket is exhausted
+- **Respects** authentication context (Character-based limits vs IP-based limits)
+
+### Usage
+
+Wrap your `http.Client` transport with `ratelimit.NewTransport`:
+
+```go
+import (
+    "net/http"
+    "github.com/fnt-eve/goesi-openapi"
+    "github.com/fnt-eve/goesi-openapi/ratelimit"
+)
+
+func main() {
+    // Create rate limiting transport
+    rlTransport := ratelimit.NewTransport(http.DefaultTransport)
+
+    // Create HTTP client with the transport
+    httpClient := &http.Client{
+        Transport: rlTransport,
+    }
+
+    // Initialize ESI client
+    client := goesi.NewESIClientWithOptions(httpClient, goesi.ClientOptions{
+        UserAgent: "MyApp/1.0 (contact@example.com)",
+    })
+    
+    // Make requests as usual
+    // The client will now automatically respect rate limits
+}
+```
 
 ## Examples
 
@@ -213,6 +244,7 @@ See [`examples/`](examples/) directory:
 - [`basic-oauth2/`](examples/basic-oauth2/main.go) - Complete OAuth2 flow with authenticated client
 - [`context-auth/`](examples/context-auth/main.go) - Context-based authentication pattern
 - [`token-persistence/`](examples/token-persistence/main.go) - Token serialization and TokenSource usage
+- [`ratelimit/`](examples/ratelimit/main.go) - Using the client-side rate limiter
 
 ## Development
 

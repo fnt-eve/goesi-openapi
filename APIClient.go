@@ -1,4 +1,5 @@
 //go:generate ./scripts/generate_scopes.sh
+//go:generate ./scripts/generate_ratelimit_map.sh
 
 package goesi
 
